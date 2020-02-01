@@ -679,6 +679,7 @@ MonoBehaviour:
   - {fileID: 31499626}
   - {fileID: 1209615465}
   - {fileID: 296868234}
+  reachPos: {fileID: 0}
 --- !u!1 &548998184
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 271178514597385451, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.399994
+      value: -6.4000244
       objectReference: {fileID: 0}
     - target: {fileID: 271178514597385451, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
@@ -1169,7 +1170,7 @@ MonoBehaviour:
   charactersInQueue: []
   scriptableChara:
   - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
-  percentNobody: 0
+  percentNobody: 10
   percentAlive: 0
   percentNewChar: 0
   characterActor: {fileID: 5133059023521512639}
@@ -1489,7 +1490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1433376133
 RectTransform:
   m_ObjectHideFlags: 0

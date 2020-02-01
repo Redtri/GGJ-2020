@@ -16,11 +16,11 @@ MonoBehaviour:
     c_Name: Samuel
     c_Surname: De Cul
     nameRandom: 1
-    gearValue: 050000000700000003000000
+    gearValue: 010000000100000001000000
     gearExpectation:
     - {x: 4, y: 9}
     - {x: 0, y: 10}
-    - {x: 0, y: 5}
+    - {x: 1, y: 5}
     hero: 4.8
     privateText: 0
     forcedText: 

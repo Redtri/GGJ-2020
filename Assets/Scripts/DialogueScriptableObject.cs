@@ -30,6 +30,30 @@ public class DialogueScriptableObject : ScriptableObject
 			high = list[3].ToArray();
 			highest = list[4].ToArray();
 		}
+
+		public string GetRandom(float distance)
+		{
+			if (distance < -2)
+			{
+				return lowest[Random.Range(0, lowest.Length)];
+			}
+			if (distance < 0)
+			{
+				return low[Random.Range(0, low.Length)];
+			}
+			if (distance == 0)
+			{
+				return equal[Random.Range(0, equal.Length)];
+			}
+
+			if (distance <= 2)
+			{
+				return high[Random.Range(0, high.Length)];
+			}else
+			{
+				return highest[Random.Range(0, highest.Length)];
+			}
+		}
 	}
 
 
@@ -53,4 +77,6 @@ public class DialogueScriptableObject : ScriptableObject
 		Selection.activeObject = data;
 		return data;
 	}
+
+	
 }

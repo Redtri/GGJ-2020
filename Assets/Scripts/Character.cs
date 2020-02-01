@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GearType { SWORD, BOW, ARMOR }
+
 [System.Serializable]
 public class Character
 {
@@ -22,7 +24,7 @@ public class Character
 
     public List<Sprite> sprites;
 
-    const float maxGearValue = 10f;
+    const float maxGearValue = 8;
 
     public Character()
     {
@@ -80,7 +82,7 @@ public class Character
 
     public float Battle()
     {
-        float p1 = 1f - Mathf.Abs(gearExpectation[0].x - gearValue[0]) / maxGearValue;
+      /*  float p1 = 1f - Mathf.Abs(gearExpectation[0].x - gearValue[0]) / maxGearValue;
 
         float p2 = 1f - Mathf.Abs(gearExpectation[1].x - gearValue[1]) / maxGearValue;
         float p3 = 1f - Mathf.Abs(gearExpectation[2].x - gearValue[2]) / maxGearValue;
@@ -88,8 +90,8 @@ public class Character
         float p1bis = 1f - Mathf.Abs(gearExpectation[0].y - gearValue[0]) / maxGearValue;
         float p2bis = 1f - Mathf.Abs(gearExpectation[1].y - gearValue[1]) / maxGearValue;
         float p3bis = 1f - Mathf.Abs(gearExpectation[2].y - gearValue[2]) / maxGearValue;
-
-        /*
+		*/
+		/*
         Debug.Log("=============");
         Debug.LogError(p1 + " - " + p1bis);
         Debug.LogError(p2 + " - " + p2bis);
@@ -97,13 +99,85 @@ public class Character
         Debug.Log("=============");
         */
 
-        p1 = Mathf.Max(p1, p1bis);
+		/*p1 = Mathf.Max(p1, p1bis);
         p2 = Mathf.Max(p2, p2bis);
-        p3 = Mathf.Max(p3, p3bis);
+        p3 = Mathf.Max(p3, p3bis);*/
 
-        return Mathf.Min(p1, p2, p3);
-
+		float sword = GetGearNormalizedDelta(0);
+		float bow = GetGearNormalizedDelta(1);
+		float armor = GetGearNormalizedDelta(2) ;
+		return Mathf.Min(sword, bow, armor);
     }
+
+	
+
+	public float GetGearNormalizedDelta(int index)
+	{
+		return 1 - Mathf.Abs(GetDistanceToRange(index)) / maxGearValue;
+	}
+
+
+	public float GetDistanceToRange(int index)
+	{
+		
+		if(gearValue[index] < gearExpectation[index].x)
+		{
+			return gearExpectation[index].x - gearValue[index];
+		}else
+		{
+			if (gearValue[index] > gearExpectation[index].y)
+			{
+				return gearExpectation[index].y - gearValue[index];
+			}
+			else
+			{
+				return 0;
+			}
+		}
+	}
+	
+
+	public GearType GetFarestGear(out float distance)
+	{
+		GearType type = GearType.ARMOR;
+		distance = 0;
+		float sword = GetGearNormalizedDelta(0);
+		float bow = GetGearNormalizedDelta(1);
+		float armor = GetGearNormalizedDelta(2);
+		if (sword < bow)
+		{
+			if (armor < sword)
+			{
+				//armor
+				type = GearType.ARMOR;
+				distance = GetDistanceToRange(2);
+			}
+			else
+			{
+				//Sword
+				type = GearType.SWORD;
+				distance = GetDistanceToRange(0);
+			}	
+		}
+		else
+		{
+			if(armor < bow)
+			{
+				//armor
+				type = GearType.ARMOR;
+				distance = GetDistanceToRange(2);
+			}
+			else
+			{
+				//bow
+				type = GearType.BOW;
+				distance = GetDistanceToRange(1);
+			}
+		}
+
+		return type;
+	}
+
 
 
 }
