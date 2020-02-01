@@ -80,8 +80,6 @@ public class UIDialogue : MonoBehaviour
 
     private void UpdateText(Text text)
     {
-        Debug.Log(text);
-
         tmp.text = text.text;
     }
 	

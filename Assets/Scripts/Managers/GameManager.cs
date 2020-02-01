@@ -7,8 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public float winPercentAlive;
+    public float winLoseAlive;
+    public int nbCharCheck;
     public PhaseHelper phaseHelper;
     public PlayerHelper playerHelper;
+
+    public int nbDead { get; private set; }
 
     private void Awake()
     {
@@ -90,7 +95,7 @@ public class GameManager : MonoBehaviour
         }
         else // Char Loose
         {
-
+            ++nbDead;
             Debug.Log("Mort");
             if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
@@ -104,5 +109,21 @@ public class GameManager : MonoBehaviour
             }
         }
         phaseHelper.LeavingEnd();
+        CheckWinLose();
+    }
+
+    private void CheckWinLose()
+    {
+        int totCharacter = nbDead + CharacterManager.instance.charactersAlive.Count;
+        Debug.Log(totCharacter);
+        if(totCharacter >= nbCharCheck) {
+            Debug.Log(((float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter) + " alive " + ((float)nbDead / (float)totCharacter) + " dead");
+            if ((float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter > winPercentAlive) {
+                Debug.Log("WIN!");
+            }
+            else if(((float)nbDead / (float)totCharacter) >= winLoseAlive) {
+                Debug.Log("LOSE");
+            }
+        }
     }
 }
