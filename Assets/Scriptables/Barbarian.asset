@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc86ad1aafc5a644a6f5c4f41e70c2e, type: 3}
+  m_Name: Barbarian
+  m_EditorClassIdentifier: 
+  bodyParts:
+  - {fileID: -7273303758747598945, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
+  - {fileID: -5144280915335171144, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
+  - {fileID: 8465169010433418629, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
+  - {fileID: 604789536130081544, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
+  - {fileID: -8514873485471245128, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
+  - {fileID: -2380465759765719836, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
