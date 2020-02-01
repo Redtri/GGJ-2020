@@ -25,6 +25,6 @@ public class UI_Manager : MonoBehaviour
         for(int i = 0; i < characterUpdated.data.gearValue.Length; ++i) {
             gearTexts[i].text = characterUpdated.data.gearValue[i].ToString();
         }
-        ironAmountTxt.text = characterUpdated.ironAmount.ToString();
+        ironAmountTxt.text = GameManager.instance.playerHelper.ironAmount.ToString();
     }
 }

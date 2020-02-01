@@ -34,7 +34,10 @@ public class Character
         Debug.Log(c_Name + " " + c_Surname);
 
         CharacterManager.instance.AddChara(c_Name+ c_Surname);*/
-
+    public Character()
+    {
+        c_Name = "GEAROES";
+    }
     public Character(string p_name, string p_surname, bool p_randomName, int[] p_gearValue, Vector2[] p_gearExpectation, int p_hero, bool p_privateText, string p_forcedText )
     {
         c_Name = p_name;
