@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e7df667e33aa2f4cb0801a926e6ed7c, type: 3}
-  m_Name: o_George Abitbol
+  m_Name: r_Samuel De Cul 2
   m_EditorClassIdentifier: 
   character:
-    c_Name: George
-    c_Surname: Abitbol
-    nameRandom: 0
-    gearValue: 050000000500000005000000
+    c_Name: Samuel
+    c_Surname: De Cul
+    nameRandom: 1
+    gearValue: 020000000200000002000000
     gearExpectation:
-    - {x: 6, y: 8}
+    - {x: 2, y: 5}
     - {x: 0, y: 2}
-    - {x: 0, y: 8}
-    hero: 4.3
-    privateText: 1
-    forcedText: 'J''aime la tarte '
+    - {x: 5, y: 8}
+    hero: 4.8
+    privateText: 0
+    forcedText: 
     ironAdd: 0
     sprites: []

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+
+#if UNITY_EDITOR 
 using UnityEditor;
+#endif 
 
 public class DialogueScriptableObject : ScriptableObject
 {
@@ -30,11 +33,36 @@ public class DialogueScriptableObject : ScriptableObject
 			high = list[3].ToArray();
 			highest = list[4].ToArray();
 		}
+
+		public string GetRandom(float distance)
+		{
+			if (distance < -2)
+			{
+				return lowest[Random.Range(0, lowest.Length)];
+			}
+			if (distance < 0)
+			{
+				return low[Random.Range(0, low.Length)];
+			}
+			if (distance == 0)
+			{
+				return equal[Random.Range(0, equal.Length)];
+			}
+
+			if (distance <= 2)
+			{
+				return high[Random.Range(0, high.Length)];
+			}else
+			{
+				return highest[Random.Range(0, highest.Length)];
+			}
+		}
 	}
 
 
 
-	public static DialogueScriptableObject CreateInstance(List<string>[] a, List<string>[] s, List<string>[] b)
+    #if UNITY_EDITOR
+    public static DialogueScriptableObject CreateInstance(List<string>[] a, List<string>[] s, List<string>[] b)
 	{
 		DialogueScriptableObject data = CreateInstance<DialogueScriptableObject>();
 		data.armor = new GearDialog();
@@ -53,4 +81,5 @@ public class DialogueScriptableObject : ScriptableObject
 		Selection.activeObject = data;
 		return data;
 	}
+    #endif
 }

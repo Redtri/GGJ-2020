@@ -52,7 +52,7 @@ public class CharacterManager : MonoBehaviour
         charactersAlive = new List<Character>();
 
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 5; i++)
         {
             AddCharacterToQueue(true);
         }
@@ -115,7 +115,7 @@ public class CharacterManager : MonoBehaviour
                     countLoop++;
                     if(countLoop > 10)
                     {
-                        AddCharacterToQueue();
+                        CreateCharacterAndAddToQueue();
                         return;
                     }
                 }
@@ -126,11 +126,11 @@ public class CharacterManager : MonoBehaviour
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-            AddCharacterToQueue();
+            CreateCharacterAndAddToQueue();
         }
     }
 
-    public void AddCharacterToQueue()
+    public void CreateCharacterAndAddToQueue()
     {
         Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
 
