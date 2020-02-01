@@ -5,6 +5,7 @@ using BrunoMikoski.TextJuicer;
 using TMPro;
 public class UIDialogue : MonoBehaviour
 {
+	public DialogueScriptableObject dialogData;
 	private TMP_TextJuicer juicer;
 	private TextMeshProUGUI tmp;
 
@@ -15,6 +16,28 @@ public class UIDialogue : MonoBehaviour
 	{
 		juicer = GetComponent<TMP_TextJuicer>();
 		tmp = GetComponent<TextMeshProUGUI>();
+	}
+
+	private void OnEnable()
+	{
+		GameManager.instance.phaseHelper.onEntranceEnd += OnEntrance;
+		GameManager.instance.phaseHelper.onLeavingEnd += OnLeave;
+	}
+
+	private void OnDisable()
+	{
+		GameManager.instance.phaseHelper.onEntranceEnd -= OnEntrance;
+		GameManager.instance.phaseHelper.onLeavingEnd -= OnLeave;
+	}
+
+	private void OnEntrance()
+	{
+		SetText(dialogData.sword.low[Random.Range(0, 4)]);
+	}
+
+	private void OnLeave()
+	{
+		SetText("");
 	}
 
 	private void Update()
