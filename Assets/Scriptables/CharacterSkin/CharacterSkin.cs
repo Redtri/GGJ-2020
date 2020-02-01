@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New CharacterSkin", menuName = "ScriptableObjects/CharacterSkin", order = 1)]
 public class CharacterSkin : ScriptableObject
 {
-    public GearSkin[] bodyParts;
+    public List<GearSkin> bodyParts;
 
     public void SwapSprites(SpriteRenderer[] renders, Sprite[] overrideSkin = null) {
-        if(renders.Length == bodyParts.Length) {
+        if(renders.Length == bodyParts.Count) {
             for(int i = 0; i < renders.Length; ++i) {
                 if (overrideSkin == null) {
                     renders[i].sprite = bodyParts[i].stateSkins[0];

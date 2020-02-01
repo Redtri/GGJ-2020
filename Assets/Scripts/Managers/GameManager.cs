@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         
         if(proba > random) // Char win
         {
+            CharacterManager.instance.charactersAlive.Add(phaseHelper.currentCharacter);
             Debug.Log("Vivant");
         }
         else // Char Loose
@@ -88,6 +89,12 @@ public class GameManager : MonoBehaviour
             if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
                 CharacterManager.instance.charactersAlive.Remove(phaseHelper.currentCharacter);
+            }
+
+            if (CharacterManager.instance.charactersInQueue.Contains(phaseHelper.currentCharacter))
+            {
+               CharacterManager.instance.charactersInQueue.Remove(phaseHelper.currentCharacter);
+               CharacterManager.instance.AddCharacterToQueue();
             }
         }
         phaseHelper.LeavingEnd();

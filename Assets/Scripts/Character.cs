@@ -27,6 +27,7 @@ public class Character
     public Character()
     {
         doesExist = false;
+        gears = new List<GearSkin>();
     }
 
     public Character(string p_name, string p_surname, bool p_randomName, int[] p_gearValue, Vector2[] p_gearExpectation, float p_hero, bool p_privateText, string p_forcedText, int p_ironAdd)
@@ -43,17 +44,14 @@ public class Character
 
         gears = new List<GearSkin>();
     }
-    public void InitSprites(Sprite[][] tSprites)
+    public void InitSprites(List<GearSkin> tGears)
     {
-        for (int i = 0; i < tSprites.Length; ++i) {
-            for (int j = 0; j < tSprites[i].Length; ++j) {
-                gears[i].stateSkins.Add(tSprites[i][j]);
-            }
-        }
+        gears = tGears;
     }
 
     public Character(Character toCopy)
     {
+        gears = new List<GearSkin>();
         doesExist = true;
         c_Name = toCopy.c_Name;
         c_Surname = toCopy.c_Surname;
