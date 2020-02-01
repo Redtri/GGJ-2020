@@ -50,25 +50,28 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CharacterEntrance(Character enteringChar)
     {
-        Debug.Log(enteringChar.c_Name + " entering the forge");
+      //  Debug.Log(enteringChar.c_Name + " entering the forge");
         phaseHelper.Enter(enteringChar);
 
         yield return new WaitForSeconds(phaseHelper.entranceDuration);
-        Debug.Log(enteringChar.c_Name + " entered the forge");
+       // Debug.Log(enteringChar.c_Name + " entered the forge");
         phaseHelper.EntranceEnd();
     }
 
     private IEnumerator VoidPhase()
     {
-        Debug.Log("Nobody's here");
+       // Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
-        Debug.Log("Time has passed...");
+        //Debug.Log("Time has passed...");
         phaseHelper.PhaseEnd();
     }
 
     private IEnumerator CharacterLeaving()
     {
-        yield return new WaitForSeconds(phaseHelper.leaveDuration);
+        yield return new WaitForSeconds(phaseHelper.leaveDuration);      
+        Debug.Log(phaseHelper.currentCharacter.Battle());
+
         phaseHelper.LeavingEnd();
+
     }
 }
