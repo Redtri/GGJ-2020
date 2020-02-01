@@ -54,7 +54,7 @@ public class CharacterManager : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            AddCharacterToQueue();          
+            AddCharacterToQueue(true);          
         }
 
         onCharacterUpdate?.Invoke(characterActor);
@@ -92,11 +92,16 @@ public class CharacterManager : MonoBehaviour
         onCharacterUpdate?.Invoke(characterActor);
     }
 
-    public void AddCharacterToQueue()
+    public void AddCharacterToQueue(bool forceNew = false)
     {
         float percent = Random.Range(0.0f, 1.0f);
 
         Character c = null;
+
+        if (forceNew)
+        {
+            percent = float.MaxValue;
+        }
 
         //Il n'y a personne on ajoute null
         if (percent <= percentNobody / 100f)
@@ -205,8 +210,6 @@ public class CharacterManager : MonoBehaviour
 
     public void UpdateActorProfile(Character character)
     {
-        Debug.Log("Bonjour Update");
-
         characterActor.data = character;
         characterActor.LoadSkin(character.sprites);
         onCharacterUpdate?.Invoke(characterActor);
