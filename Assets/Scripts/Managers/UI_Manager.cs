@@ -10,7 +10,7 @@ public class UI_Manager : MonoBehaviour
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
     
-    private void OnEnable()
+    private void Start()
     {
         CharacterManager.instance.onCharacterUpdate += UpdateGearUI;
         GameManager.instance.phaseHelper.onEntranceEnd += InverseUI;

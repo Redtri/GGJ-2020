@@ -119,7 +119,6 @@ public class CharacterManager : MonoBehaviour
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-
             Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
 
             c = new Character(scriptChar);           

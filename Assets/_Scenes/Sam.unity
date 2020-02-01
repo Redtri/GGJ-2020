@@ -558,6 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec25e5b4c3af3a4fabfa6ec4e5cf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameLayout: {fileID: 1433376133}
   ironAmountTxt: {fileID: 154881936}
   gearTexts:
   - {fileID: 31499626}
@@ -724,7 +725,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 706213107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1051172730}
+        m_MethodName: EndPhase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &706213107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,6 +820,7 @@ GameObject:
   - component: {fileID: 1051172727}
   - component: {fileID: 1051172728}
   - component: {fileID: 1051172729}
+  - component: {fileID: 1051172730}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -836,7 +849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051172726}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be487bc7a762707448de56b3b7f1dc5d, type: 3}
   m_Name: 
@@ -857,12 +870,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8365e859b281b478866b06644b321e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charactersAlive: []
+  charactersInQueue: []
+  scriptableChara:
+  - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
+  - {fileID: 11400000, guid: f78c80a82e216864282b420d64d36e2e, type: 2}
+  - {fileID: 11400000, guid: a5016fc62c0a9e24c95cc61ab20c1f33, type: 2}
+  percentNobody: 0
+  percentAlive: 0
+  percentNewChar: 0
   characterActor: {fileID: 5133059023521512639}
   characterTemplates:
   - {fileID: 11400000, guid: 143825b5e8ecc944289380241d266874, type: 2}
   - {fileID: 11400000, guid: 91acde2ccd42660429c6ff5baebdd0da, type: 2}
   - {fileID: 11400000, guid: 793a0c6b5a07328428552e061d65bcbf, type: 2}
   - {fileID: 11400000, guid: bf29b934053fc7d4d8e83a265bb32c09, type: 2}
+--- !u!114 &1051172730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051172726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b7636ed90450d45bee4168df98ad3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseHelper:
+    entranceDuration: 3
+    leaveDuration: 3
+    waitRange: {x: 3, y: 5}
+    currentCharacter:
+      c_Name: GEAROES
+      c_Surname: 
+      nameRandom: 0
+      gearValue: 000000000000000000000000
+      gearExpectation:
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      hero: 1
+      privateText: 0
+      forcedText: 
+      ironAdd: 0
+      sprites: []
+  playerHelper:
+    playerGO: {fileID: 1210055528}
+    ironAmount: 5
 --- !u!224 &1126685773 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8066357676695274869, guid: c2fa9092032695344802f24b52557b14,
@@ -1038,6 +1093,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1210055528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8623160454992616815, guid: 405da475c8a39c34892756365ffa97fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 8623160456492485156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1386083303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1433376133
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1435,7 +1496,7 @@ PrefabInstance:
     - target: {fileID: 5133059023367116671, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 5133059023367116671, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
