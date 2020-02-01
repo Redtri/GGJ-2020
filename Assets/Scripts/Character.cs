@@ -20,8 +20,15 @@ public class Character
 
     public int ironAdd;
 
+    public List<Sprite> sprites;
+
     const int maxGearValue = 8;
-    const int minGearValue = 0;    
+    const int minGearValue = 0;
+
+    public Character()
+    {
+        c_Name = "GEAROES";
+    }
 
     public Character(string p_name, string p_surname, bool p_randomName, int[] p_gearValue, Vector2[] p_gearExpectation, float p_hero, bool p_privateText, string p_forcedText, int p_ironAdd)
     {
@@ -29,12 +36,19 @@ public class Character
         c_Surname = p_surname;
         nameRandom = p_randomName;
         gearValue = p_gearValue;
-        gearExpectation = p_gearExpectation ;
+        gearExpectation = p_gearExpectation;
         hero = p_hero;
         privateText = p_privateText;
         forcedText = p_forcedText;
-        ironAdd = p_ironAdd;       
-    }    
+    }
+    public void InitSprites(Sprite[] tSprites)
+    {
+        sprites = new List<Sprite>();
+
+        for (int i = 0; i < tSprites.Length; ++i) {
+            sprites.Add(tSprites[i]);
+        }
+    }
 
     public Character(Character toCopy)
     {

@@ -15,6 +15,6 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
         }else if (eventData.button == PointerEventData.InputButton.Left) {
             rightClick = false;
         }
-        CharacterManager.instance.UpdateCurrentCharacter(index, rightClick);
+        CharacterManager.instance.UpdateActorGearValues(index, rightClick);
     }
 }

@@ -13,6 +13,7 @@ public class CharacterScriptable : ScriptableObject
     public void Init(string c_Name, string c_Surname, bool nameRandom, int[] gearValue, Vector2[] gearExpectation, float hero, bool privateText, string forcedText, int ironAdd)
     {
         character = new Character(c_Name, c_Surname, nameRandom, gearValue, gearExpectation, hero, privateText, forcedText, ironAdd);
+
     /*    character.c_Name = c_Name;
         character.c_Surname = c_Surname;
         character.nameRandom = nameRandom;

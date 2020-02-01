@@ -321,6 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5133059023367116671}
   - component: {fileID: 8582474984642919288}
+  - component: {fileID: 7881720349548473768}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -357,9 +358,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a3905d24ef30b428c72ba98341e71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ironAmount: 0
-  gears: 000000000000000000000000
-  maxGearValue: 10
+  data:
+    c_Name: 
+    c_Surname: 
+    nameRandom: 0
+    gearValue: 
+    gearExpectation: []
+    hero: 0
+    privateText: 0
+    forcedText: 
+  maxGearUpgrade: 0
   bodyParts:
   - {fileID: 5133059022068059858}
   - {fileID: 1655434548864782397}
@@ -367,6 +375,25 @@ MonoBehaviour:
   - {fileID: 8241629534202796680}
   - {fileID: 8452443736854819015}
   - {fileID: 550690199764340821}
+--- !u!95 &7881720349548473768
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133059023367116545}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f1043d331a2dda48b10b76755af0231, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5921162823789538565
 GameObject:
   m_ObjectHideFlags: 0

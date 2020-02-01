@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dc86ad1aafc5a644a6f5c4f41e70c2e, type: 3}
-  m_Name: Barbarian
+  m_Name: char-01
   m_EditorClassIdentifier: 
   bodyParts:
   - {fileID: -7273303758747598945, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
