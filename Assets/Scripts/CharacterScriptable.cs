@@ -14,14 +14,16 @@ public class CharacterScriptable : ScriptableObject
     {
         character = new Character(c_Name, c_Surname, nameRandom, gearValue, gearExpectation, hero, privateText, forcedText, ironAdd);
 
-    /*    character.c_Name = c_Name;
+        /*    
+        character.c_Name = c_Name;
         character.c_Surname = c_Surname;
         character.nameRandom = nameRandom;
         character.gearValue = gearValue;
         character.gearExpectation = gearExpectation;
         character.hero = hero;
         character.privateText = privateText;
-        character.forcedText = forcedText;*/
+        character.forcedText = forcedText;
+        */
     }
 
     public static CharacterScriptable CreateInstance(string c_Name, string c_Surname, bool nameRandom, int[] gearValue, Vector2[] gearExpectation, float hero, bool privateText, string forcedText, int ironAdd)

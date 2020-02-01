@@ -24,4 +24,5 @@ MonoBehaviour:
     hero: 4.3
     privateText: 1
     forcedText: 'J''aime la tarte '
-    ironAdd: 8
+    ironAdd: 0
+    sprites: []

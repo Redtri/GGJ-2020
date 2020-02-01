@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e7df667e33aa2f4cb0801a926e6ed7c, type: 3}
-  m_Name: r_Guigui LERAY
+  m_Name: r_Samuel De Cul
   m_EditorClassIdentifier: 
   character:
-    c_Name: GuiGui
-    c_Surname: LERAY
+    c_Name: Samuel
+    c_Surname: De Cul
     nameRandom: 1
     gearValue: 050000000700000003000000
     gearExpectation:
@@ -24,4 +24,5 @@ MonoBehaviour:
     hero: 4.8
     privateText: 0
     forcedText: 
-    ironAdd: 5
+    ironAdd: 0
+    sprites: []
