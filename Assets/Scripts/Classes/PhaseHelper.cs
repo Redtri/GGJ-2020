@@ -25,7 +25,9 @@ public class PhaseHelper
         CharacterManager.instance.charactersInQueue.Remove(character);
         CharacterManager.instance.AddCharacterToQueue();
         
+        //TODO : TEST FIX BUG
         currentCharacter = character;
+
         CharacterManager.instance.UpdateActorProfile(character);
         //Here trigger animations and stuff
         CharacterManager.instance.characterActor.EnterForge(entranceDuration);
@@ -36,7 +38,7 @@ public class PhaseHelper
         onPhaseEnd?.Invoke(currentCharacter.doesExist);
         CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
 
-        if (currentCharacter.doesExist) {
+        if (!currentCharacter.doesExist) {
             CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
             CharacterManager.instance.AddCharacterToQueue();
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 //Physical representation of the character in the world
 public class CharacterActor : MonoBehaviour
@@ -13,9 +14,16 @@ public class CharacterActor : MonoBehaviour
     [Header("Visuals")]
     public SpriteRenderer[] bodyParts;
 
+    [Header("Dotween")]
+    public Transform reachPosition;
+    public AnimationCurve sinuoisde;
+
+
+    private Vector3 basePosition;
+
     void Start()
     {
-        
+        basePosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     void Update()
@@ -52,13 +60,21 @@ public class CharacterActor : MonoBehaviour
 
     public void EnterForge(float entranceDuration)
     {
-        GetComponent<Animator>().ResetTrigger("entrance");
-        GetComponent<Animator>().SetTrigger("entrance");
+
+        Sequence myAwesomeSequence = DOTween.Sequence();
+        myAwesomeSequence.Append(transform.DOMoveX(reachPosition.position.x, entranceDuration));       
+        myAwesomeSequence.Join(transform.DOMoveY(reachPosition.position.y, entranceDuration).SetEase(sinuoisde));
+
+        //GetComponent<Animator>().SetTrigger("entrance");
     }
 
     public void LeaveForge(float leaveDuration)
     {
-        GetComponent<Animator>().ResetTrigger("leaving");
-        GetComponent<Animator>().SetTrigger("leaving");
+
+        Sequence myAwesomeSequence = DOTween.Sequence();
+        myAwesomeSequence.Append(transform.DOMoveX(basePosition.x, leaveDuration));
+        myAwesomeSequence.Join(transform.DOMoveY(basePosition.y, leaveDuration).SetEase(sinuoisde));
+
+        //GetComponent<Animator>().SetTrigger("leaving");
     }
 }

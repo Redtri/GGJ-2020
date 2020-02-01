@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class UI_Manager : MonoBehaviour
 {
     public Transform gameLayout;
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
+
+    public Transform reachPos;
+
+    private bool isDown;
     
     private void Start()
     {
@@ -34,11 +39,11 @@ public class UI_Manager : MonoBehaviour
 
     public void InverseUI()
     {
-        gameLayout.gameObject.SetActive(!gameLayout.gameObject.activeInHierarchy);
+        //gameLayout.gameObject.SetActive(!gameLayout.gameObject.activeInHierarchy);
     }
 
     public void DisplayUI(bool value)
-    {
-        gameLayout.gameObject.SetActive(value);
+    {              
+       // gameLayout.gameObject.SetActive(value);
     }
 }

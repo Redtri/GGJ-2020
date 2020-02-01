@@ -121,7 +121,11 @@ public class CharacterManager : MonoBehaviour
 
             c = new Character(scriptChar);
 
+
+
             int randomIndex = Random.Range(0, characterTemplates.Length);
+
+
 
             c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
 

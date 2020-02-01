@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     public void EndPhase()
     {
         //If there was someone in the room, The coroutine for the leaving is called$
-        if (!phaseHelper.PhaseEnd()) {
+        if (phaseHelper.PhaseEnd()) {
             StartCoroutine(CharacterLeaving());
         }//Otherwise, just start another phase
         else {
@@ -68,10 +69,25 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CharacterLeaving()
     {
-        yield return new WaitForSeconds(phaseHelper.leaveDuration);      
-        Debug.Log(phaseHelper.currentCharacter.Battle());
+        yield return new WaitForSeconds(phaseHelper.leaveDuration);        
 
+        float proba = phaseHelper.currentCharacter.Battle();
+        float random = Random.Range(0f, 1f);
+
+        
+        if(proba > random) // Char win
+        {
+            Debug.Log("Vivant");
+        }
+        else // Char Loose
+        {
+
+            Debug.Log("Mort");
+            if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
+            {
+                CharacterManager.instance.charactersAlive.Remove(phaseHelper.currentCharacter);
+            }
+        }
         phaseHelper.LeavingEnd();
-
     }
 }
