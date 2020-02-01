@@ -13,14 +13,28 @@ public class UI_Manager : MonoBehaviour
 
     public Transform reachPos;
 
+    public static UI_Manager instance;
+
     private bool isDown;
-    
+
+    void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         CharacterManager.instance.onCharacterUpdate += UpdateGearUI;
         GameManager.instance.phaseHelper.onEntranceEnd += InverseUI;
         GameManager.instance.phaseHelper.onPhaseEnd += DisplayUI;
-    }
+    }    
 
     private void OnDisable()
     {

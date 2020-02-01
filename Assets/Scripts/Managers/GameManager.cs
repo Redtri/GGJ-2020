@@ -51,7 +51,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CharacterEntrance(Character enteringChar)
     {
-      //  Debug.Log(enteringChar.c_Name + " entering the forge");
+        yield return new WaitForEndOfFrame();
+
+        //  Debug.Log(enteringChar.c_Name + " entering the forge");
         phaseHelper.Enter(enteringChar);
 
         yield return new WaitForSeconds(phaseHelper.entranceDuration);
