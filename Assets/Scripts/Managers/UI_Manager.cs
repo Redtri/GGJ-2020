@@ -13,13 +13,15 @@ public class UI_Manager : MonoBehaviour
     private void OnEnable()
     {
         CharacterManager.instance.onCharacterUpdate += UpdateGearUI;
-        GameManager.instance.phaseHelper.onEntranceEnd += ShowUI;
+        GameManager.instance.phaseHelper.onEntranceEnd += InverseUI;
+        GameManager.instance.phaseHelper.onPhaseEnd += DisplayUI;
     }
 
     private void OnDisable()
     {
         CharacterManager.instance.onCharacterUpdate -= UpdateGearUI;
-        GameManager.instance.phaseHelper.onEntranceEnd -= ShowUI;
+        GameManager.instance.phaseHelper.onEntranceEnd -= InverseUI;
+        GameManager.instance.phaseHelper.onPhaseEnd -= DisplayUI;
     }
 
     public void UpdateGearUI(CharacterActor characterUpdated)
@@ -30,8 +32,13 @@ public class UI_Manager : MonoBehaviour
         ironAmountTxt.text = GameManager.instance.playerHelper.ironAmount.ToString();
     }
 
-    public void ShowUI()
+    public void InverseUI()
     {
-        gameLayout.gameObject.SetActive(!gameLayout.gameObject.activeInHierarchy); 
+        gameLayout.gameObject.SetActive(!gameLayout.gameObject.activeInHierarchy);
+    }
+
+    public void DisplayUI(bool value)
+    {
+        gameLayout.gameObject.SetActive(value);
     }
 }

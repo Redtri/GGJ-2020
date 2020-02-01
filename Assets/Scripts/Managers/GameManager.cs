@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void EndPhase()
     {
-
+        phaseHelper.PhaseEnd();
     }
 
     private IEnumerator CharacterEntrance(Character enteringChar)
@@ -66,5 +66,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
+        Debug.Log("Time has passed...");
+        phaseHelper.PhaseEnd();
     }
 }

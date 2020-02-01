@@ -54,4 +54,9 @@ public class CharacterActor : MonoBehaviour
     {
         GetComponent<Animator>().SetTrigger("entrance");
     }
+
+    public void LeaveForge(float leaveDuration)
+    {
+        GetComponent<Animator>().SetTrigger("leaving");
+    }
 }
