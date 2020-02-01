@@ -10,10 +10,8 @@ public class CharacterManager : MonoBehaviour
     [HideInInspector()]
     public Dictionary<string, int> characters;
 
-    [HideInInspector()]
     public List<Character> charactersAlive;
 
-    [HideInInspector()]
     public List<Character> charactersInQueue;
     
     [Header("Scriptable Object")]
@@ -54,10 +52,11 @@ public class CharacterManager : MonoBehaviour
         charactersAlive = new List<Character>();
 
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 1; i++)
         {
-            AddCharacterToQueue();          
+            AddCharacterToQueue();
         }
+        AddCharacterToQueue(true);
 
         /*Debug.Log(charactersInQueue.Count);
 
@@ -89,14 +88,14 @@ public class CharacterManager : MonoBehaviour
         onCharacterUpdate?.Invoke(characterActor);
     }
 
-    public void AddCharacterToQueue()
+    public void AddCharacterToQueue(bool none = false)
     {
         float percent = Random.Range(0.0f, 1.0f);
 
         Character c = null;
 
         //Il n'y a personne on ajoute null
-        if (percent <= percentNobody / 100f)
+        if (percent <= percentNobody / 100f || none)
         {
             charactersInQueue.Add(c);
         }

@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     //Phase Handling functions
     public void StartPhase()
     {
-        if (CharacterManager.instance.charactersInQueue[0] != null) {
+        if (CharacterManager.instance.charactersInQueue[0].doesExist) {
             StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
         } else {
             StartCoroutine(VoidPhase());
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void EndPhase()
     {
-        //If there was someone in the room, The coroutine for the leaving is called
+        //If there was someone in the room, The coroutine for the leaving is called$
         if (!phaseHelper.PhaseEnd()) {
             StartCoroutine(CharacterLeaving());
         }//Otherwise, just start another phase
@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator VoidPhase()
     {
-       // Debug.Log("Nobody's here");
+        Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
-        //Debug.Log("Time has passed...");
-        phaseHelper.PhaseEnd();
+        Debug.Log("Time has passed...");
+        EndPhase();
     }
 
     private IEnumerator CharacterLeaving()

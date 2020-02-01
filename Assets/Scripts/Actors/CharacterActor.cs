@@ -52,11 +52,13 @@ public class CharacterActor : MonoBehaviour
 
     public void EnterForge(float entranceDuration)
     {
+        GetComponent<Animator>().ResetTrigger("entrance");
         GetComponent<Animator>().SetTrigger("entrance");
     }
 
     public void LeaveForge(float leaveDuration)
     {
+        GetComponent<Animator>().ResetTrigger("leaving");
         GetComponent<Animator>().SetTrigger("leaving");
     }
 }
