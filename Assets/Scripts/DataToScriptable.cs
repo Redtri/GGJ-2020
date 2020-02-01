@@ -11,7 +11,6 @@ public class DataToScriptable
         string fileData = System.IO.File.ReadAllText("./Assets/Data/Chara.csv");
         string[] lines = fileData.Split("\n"[0]);
 
-
         string name;
         string lastName;
 

@@ -50,25 +50,46 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CharacterEntrance(Character enteringChar)
     {
-        Debug.Log(enteringChar.c_Name + " entering the forge");
+      //  Debug.Log(enteringChar.c_Name + " entering the forge");
         phaseHelper.Enter(enteringChar);
 
         yield return new WaitForSeconds(phaseHelper.entranceDuration);
-        Debug.Log(enteringChar.c_Name + " entered the forge");
+       // Debug.Log(enteringChar.c_Name + " entered the forge");
         phaseHelper.EntranceEnd();
     }
 
     private IEnumerator VoidPhase()
     {
-        Debug.Log("Nobody's here");
+       // Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
-        Debug.Log("Time has passed...");
+        //Debug.Log("Time has passed...");
         phaseHelper.PhaseEnd();
     }
 
     private IEnumerator CharacterLeaving()
     {
-        yield return new WaitForSeconds(phaseHelper.leaveDuration);
+        yield return new WaitForSeconds(phaseHelper.leaveDuration);        
+
+        float proba = phaseHelper.currentCharacter.Battle();
+        float random = Random.Range(0f, 1f);
+
+        
+        if(proba > random) // Char win
+        {
+            Debug.Log("Vivant");
+        }
+        else // Char Loose
+        {
+
+            Debug.Log("Mort");
+            if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
+            {
+                CharacterManager.instance.charactersAlive.Remove(phaseHelper.currentCharacter);
+            }
+        }
+
+
         phaseHelper.LeavingEnd();
+
     }
 }

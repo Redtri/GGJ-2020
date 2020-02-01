@@ -46,7 +46,7 @@ public class CharacterManager : MonoBehaviour
     private void Start()
     {
         onCharacterUpdate?.Invoke(characterActor);
-        int randomIndex = Random.Range(0, characterTemplates.Length);
+       
 
         percentNewChar = 100f - percentNobody - percentAlive;
 
@@ -56,11 +56,10 @@ public class CharacterManager : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            AddCharacterToQueue();
-            charactersInQueue[i].InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
+            AddCharacterToQueue();          
         }
 
-        //Debug.Log(charactersInQueue.Count);
+        /*Debug.Log(charactersInQueue.Count);
 
         foreach (Character item in charactersInQueue)
         {
@@ -68,7 +67,7 @@ public class CharacterManager : MonoBehaviour
             {
                 Debug.Log(item.c_Name + " " + item.c_Surname);
             }
-        }
+        }*/
     }
 
     //Character functions
@@ -119,9 +118,13 @@ public class CharacterManager : MonoBehaviour
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-            Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
+            Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;         
 
-            c = new Character(scriptChar);           
+            c = new Character(scriptChar);
+
+            int randomIndex = Random.Range(0, characterTemplates.Length);
+
+            c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
 
             if (c.nameRandom)
             {

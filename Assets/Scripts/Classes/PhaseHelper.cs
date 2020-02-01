@@ -11,6 +11,7 @@ public class PhaseHelper
     public Vector2 waitRange;
     public bool isEntering { get; private set; }
     public Character currentCharacter;
+    public Character previousCharacter;
 
     public delegate void BasicEvent();
     public BasicEvent onEntranceEnd;
@@ -23,7 +24,10 @@ public class PhaseHelper
     {
         CharacterManager.instance.charactersInQueue.Remove(character);
         CharacterManager.instance.AddCharacterToQueue();
-        currentCharacter = new Character(character);
+        
+        //TODO : TEST FIX BUG
+        currentCharacter = character;
+
         CharacterManager.instance.UpdateActorProfile(character);
         //Here trigger animations and stuff
         CharacterManager.instance.characterActor.EnterForge(entranceDuration);
