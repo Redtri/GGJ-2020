@@ -23,6 +23,13 @@ public class CharacterActor : MonoBehaviour
         
     }
 
+    public void LoadSkin(List<Sprite> sprites)
+    {
+        for(int i = 0; i < sprites.Count; ++i) {
+            bodyParts[i].sprite = sprites[i];
+        }
+    }
+
     public void UpdateGearValue(int index, bool minus = false)
     {
         if (data.gearValue.Length > 0 && index < data.gearValue.Length) {

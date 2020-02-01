@@ -23,27 +23,43 @@ public class GameManager : MonoBehaviour
         //TEST
         if (Input.GetKeyDown(KeyCode.Space)) {
             List<Character> list = new List<Character>();
-            list.Add(new Character());
+            list.Add(CharacterManager.instance.charactersInQueue.First.Value);
             StartPhase(list);
         }
     }
 
     //Phase Handling functions
-    public void StartPhase(List<Character> queue)
+    public void StartPhase()
     {
-        if (queue[0] != null) {
-            StartCoroutine(CharacterEntrance(queue[0]));
+        if (CharacterManager.instance.charactersInQueue.First.Value != null) {
+            StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue.First.Value));
         } else {
             StartCoroutine(VoidPhase());
         }
+    }
+    //DEBUG
+    public void StartPhase(List<Character> list)
+    {
+        if (list[0] != null) {
+            StartCoroutine(CharacterEntrance(list[0]));
+        } else {
+            StartCoroutine(VoidPhase());
+        }
+    }
+
+    public void EndPhase()
+    {
+
     }
 
     private IEnumerator CharacterEntrance(Character enteringChar)
     {
         Debug.Log("Character entering the forge");
         phaseHelper.Enter(enteringChar);
+
         yield return new WaitForSeconds(phaseHelper.entranceDuration);
         Debug.Log("Character entered the forge");
+        phaseHelper.EntranceEnd();
     }
 
     private IEnumerator VoidPhase()
