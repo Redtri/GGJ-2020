@@ -55,8 +55,24 @@ public class Character
         c_Name = toCopy.c_Name;
         c_Surname = toCopy.c_Surname;
         nameRandom = toCopy.nameRandom;
-        gearValue = toCopy.gearValue;
-        gearExpectation = toCopy.gearExpectation;
+        
+        gearValue = new int[3]
+        {
+            toCopy.gearValue[0],
+            toCopy.gearValue[1],
+            toCopy.gearValue[2]
+        };      
+    
+        gearExpectation = new Vector2[3]
+        {
+              toCopy.gearExpectation[0],
+              toCopy.gearExpectation[1],
+                toCopy.gearExpectation[2]
+        };
+
+
+
+          
         hero = toCopy.hero;
         privateText = toCopy.privateText;
         forcedText = toCopy.forcedText;
