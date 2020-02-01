@@ -32,7 +32,7 @@ public class UIDialogue : MonoBehaviour
 
 	private void OnEntrance()
 	{
-		SetText(dialogData.sword.low[Random.Range(0, 4)]);
+		SetText(dialogData.sword.low[Random.Range(0, 4)]);	
 	}
 
 	private void OnLeave()
@@ -42,10 +42,12 @@ public class UIDialogue : MonoBehaviour
 
 	private void Update()
 	{
-		juicer.SetDirty();
 		if(tmp.text.Length > 0)
 		{
 			progress += Time.deltaTime / (float)(tmp.text.Length) *  speed;
+		}else
+		{
+			progress = 0;
 		}
 		
 		juicer.SetProgress(progress);
@@ -56,5 +58,6 @@ public class UIDialogue : MonoBehaviour
 	public void SetText(string txt) {
 		progress = 0;
 		tmp.text = txt;
+		juicer.SetDirty();
 	}
 }

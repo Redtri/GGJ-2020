@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UIChatlog : MonoBehaviour
 {
 
-	public string[] logText;
 	public int maxLog = 8;
 	public Font font;
 	public int textSize = 15;
