@@ -27,6 +27,7 @@ public class UIDialogue : MonoBehaviour
 		
 		juicer.SetProgress(progress);
 		juicer.SetDirty();
+		
 	}
 
 	public void SetText(string txt) {
