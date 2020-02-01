@@ -80,6 +80,12 @@ public class GameManager : MonoBehaviour
         if(proba > random) // Char win
         {
             CharacterManager.instance.charactersAlive.Add(phaseHelper.currentCharacter);
+
+            //Weapons are broken
+            phaseHelper.currentCharacter.gearValue[0] = Random.Range(0, phaseHelper.currentCharacter.gearValue[0]);
+            phaseHelper.currentCharacter.gearValue[1] = Random.Range(0, phaseHelper.currentCharacter.gearValue[1]);
+            phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
+
             Debug.Log("Vivant");
         }
         else // Char Loose
