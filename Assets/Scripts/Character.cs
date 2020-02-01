@@ -33,6 +33,21 @@ public class Character
         hero = p_hero;
         privateText = p_privateText;
         forcedText = p_forcedText;
-        ironAdd = p_ironAdd;
+        ironAdd = p_ironAdd;       
     }    
+
+    public Character(Character toCopy)
+    {
+        c_Name = toCopy.c_Name;
+        c_Surname = toCopy.c_Surname;
+        nameRandom = toCopy.nameRandom;
+        gearValue = toCopy.gearValue;
+        gearExpectation = toCopy.gearExpectation;
+        hero = toCopy.hero;
+        privateText = toCopy.privateText;
+        forcedText = toCopy.forcedText;
+        ironAdd = toCopy.ironAdd;
+    }
+
+
 }
