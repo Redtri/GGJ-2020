@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
     private void CheckWinLose()
     {
         int totCharacter = nbDead + CharacterManager.instance.charactersAlive.Count;
-        Debug.Log(totCharacter);
+        Debug.Log("Total nb characters " + totCharacter);
         if(totCharacter >= nbCharCheck) {
             Debug.Log(((float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter) + " alive " + ((float)nbDead / (float)totCharacter) + " dead");
             if ((float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter > winPercentAlive) {
