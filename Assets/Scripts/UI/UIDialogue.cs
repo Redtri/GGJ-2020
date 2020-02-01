@@ -63,25 +63,11 @@ public class UIDialogue : MonoBehaviour
 	}
 
 	public void SetText(string txt) {
-		progress = 0;
 
-        if (!children.GetComponent<Text>())
-        {
-            text = children.AddComponent<Text>();
-        }
+        DOTween.To(() => tmp.text, x =>  tmp.text = x, txt, 2.0f);
 
-        text.DOText(txt, 2.0f).OnUpdate(() => UpdateText(text)).OnComplete(() => text.text = "");
-        
         tmp.text = "";
         
 		//juicer.SetDirty();
 	}    
-
-
-    private void UpdateText(Text text)
-    {
-        Debug.Log(text);
-
-        tmp.text = text.text;
-    }
 }

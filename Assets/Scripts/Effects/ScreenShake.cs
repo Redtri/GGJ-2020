@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScreenShake
 {
     public Transform cam;
-    private Vector2 startPos;
+    private Vector3 startPos;
     public float shakeDuration;
     private float shakeStartTime;
     public float intensity;
@@ -22,7 +22,7 @@ public class ScreenShake
     {
         if (shaking) {
             if (time - shakeStartTime < shakeDuration) {
-                cam.position = new Vector2(startPos.x + Random.insideUnitCircle.x * intensity, startPos.y + Random.insideUnitCircle.y * intensity);
+                cam.position = new Vector3(startPos.x + Random.insideUnitCircle.x * intensity, startPos.y + Random.insideUnitCircle.y * intensity, startPos.z);
             }
             else {
                 cam.position = startPos;
@@ -31,9 +31,10 @@ public class ScreenShake
         }
     }
 
-    public void Shake(float time)
+    public void Shake(float time, float shakeDura)
     {
         shaking = true;
-        shakeStartTime = time;
+        shakeDuration = shakeDura;
+        shakeStartTime = Time.time + time;
     }
 }
