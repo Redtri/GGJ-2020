@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+
+#if UNITY_EDITOR 
 using UnityEditor;
+#endif 
 
 public class DialogueScriptableObject : ScriptableObject
 {
@@ -58,7 +61,8 @@ public class DialogueScriptableObject : ScriptableObject
 
 
 
-	public static DialogueScriptableObject CreateInstance(List<string>[] a, List<string>[] s, List<string>[] b)
+    #if UNITY_EDITOR
+    public static DialogueScriptableObject CreateInstance(List<string>[] a, List<string>[] s, List<string>[] b)
 	{
 		DialogueScriptableObject data = CreateInstance<DialogueScriptableObject>();
 		data.armor = new GearDialog();
@@ -77,6 +81,5 @@ public class DialogueScriptableObject : ScriptableObject
 		Selection.activeObject = data;
 		return data;
 	}
-
-	
+    #endif
 }

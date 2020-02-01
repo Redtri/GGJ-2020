@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     //Phase Handling functions
     public void StartPhase()
     {
-        if (CharacterManager.instance.charactersInQueue[0] != null) {
+        if (CharacterManager.instance.charactersInQueue[0].doesExist) {
             StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
         } else {
             StartCoroutine(VoidPhase());
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
 
     public void EndPhase()
     {
-        //If there was someone in the room, The coroutine for the leaving is called
-        if (!phaseHelper.PhaseEnd()) {
+        //If there was someone in the room, The coroutine for the leaving is called$
+        if (phaseHelper.PhaseEnd()) {
             StartCoroutine(CharacterLeaving());
         }//Otherwise, just start another phase
         else {
@@ -63,10 +63,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator VoidPhase()
     {
-       // Debug.Log("Nobody's here");
+        Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
-        //Debug.Log("Time has passed...");
-        phaseHelper.PhaseEnd();
+        Debug.Log("Time has passed...");
+        EndPhase();
     }
 
     private IEnumerator CharacterLeaving()
@@ -79,6 +79,13 @@ public class GameManager : MonoBehaviour
         
         if(proba > random) // Char win
         {
+            CharacterManager.instance.charactersAlive.Add(phaseHelper.currentCharacter);
+
+            //Weapons are broken
+            phaseHelper.currentCharacter.gearValue[0] = Random.Range(0, phaseHelper.currentCharacter.gearValue[0]);
+            phaseHelper.currentCharacter.gearValue[1] = Random.Range(0, phaseHelper.currentCharacter.gearValue[1]);
+            phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
+
             Debug.Log("Vivant");
         }
         else // Char Loose
@@ -89,10 +96,13 @@ public class GameManager : MonoBehaviour
             {
                 CharacterManager.instance.charactersAlive.Remove(phaseHelper.currentCharacter);
             }
+
+            if (CharacterManager.instance.charactersInQueue.Contains(phaseHelper.currentCharacter))
+            {
+               CharacterManager.instance.charactersInQueue.Remove(phaseHelper.currentCharacter);
+               CharacterManager.instance.AddCharacterToQueue();
+            }
         }
-
-
         phaseHelper.LeavingEnd();
-
     }
 }

@@ -10,12 +10,12 @@ public class CharacterManager : MonoBehaviour
     [HideInInspector()]
     public Dictionary<string, int> characters;
 
-    [HideInInspector()]
+    //[HideInInspector()]
     public List<Character> charactersAlive;
 
-    [HideInInspector()]
+    //[HideInInspector()]
     public List<Character> charactersInQueue;
-    
+
     [Header("Scriptable Object")]
     public CharacterScriptable[] scriptableChara;
 
@@ -52,24 +52,15 @@ public class CharacterManager : MonoBehaviour
         charactersAlive = new List<Character>();
 
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 5; i++)
         {
-            AddCharacterToQueue();          
+            AddCharacterToQueue(true);
         }
 
         onCharacterUpdate?.Invoke(characterActor);
 
         UI_Manager.instance.UpdateGearUI(characterActor);
 
-        /*Debug.Log(charactersInQueue.Count);
-
-        foreach (Character item in charactersInQueue)
-        {
-            if (item != null)
-            {
-                Debug.Log(item.c_Name + " " + item.c_Surname);
-            }
-        }*/
     }
 
     //Character functions
@@ -87,16 +78,20 @@ public class CharacterManager : MonoBehaviour
     //Character ACTOR functions
     public void UpdateActorGearValues(int index, bool rightClick)
     {
-        
         characterActor.UpdateGearValue(index, rightClick);
         onCharacterUpdate?.Invoke(characterActor);
     }
 
-    public void AddCharacterToQueue()
+    public void AddCharacterToQueue(bool forceNew = false)
     {
         float percent = Random.Range(0.0f, 1.0f);
 
         Character c = null;
+
+        if (forceNew)
+        {
+            percent = float.MaxValue;
+        }
 
         //Il n'y a personne on ajoute null
         if (percent <= percentNobody / 100f)
@@ -110,9 +105,17 @@ public class CharacterManager : MonoBehaviour
             {
                 int randomAlive = Random.Range(0, charactersAlive.Count);
 
-                while (!charactersInQueue.Contains(charactersAlive[randomAlive]))
+                int countLoop = 0;
+                
+                while (charactersInQueue.Contains(charactersAlive[randomAlive]))
                 {
-                    randomAlive = Random.Range(0, charactersAlive.Count - 1);
+                    randomAlive = Random.Range(0, charactersAlive.Count);
+                    countLoop++;
+                    if(countLoop > 10)
+                    {
+                        CreateCharacterAndAddToQueue();
+                        return;
+                    }
                 }
 
                 charactersInQueue.Add(charactersAlive[randomAlive]);
@@ -121,55 +124,55 @@ public class CharacterManager : MonoBehaviour
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-            Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;         
+            CreateCharacterAndAddToQueue();
+        }
+    }
 
-            c = new Character(scriptChar);
+    public void CreateCharacterAndAddToQueue()
+    {
+        Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
+
+        Character c = new Character(scriptChar);
+
+        int randomIndex = Random.Range(0, characterTemplates.Length);
+
+        c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
+
+        if (c.nameRandom)
+        {
+            string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
+            string[] lines2 = fileDataName.Split("\n"[0]);
+
+            int countNbrc_Name = IntParseFast(lines2[0].Trim().Split(","[0])[0]);
+
+            int nbrc_Name = Random.Range(1, countNbrc_Name);
+            int nbrSurc_Name = Random.Range(1, countNbrc_Name);
+
+            c.c_Name = (lines2[nbrc_Name].Trim()).Split(","[0])[0];
+            string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];
 
 
+            if (characters.ContainsKey(c.c_Name + hisSurname))
+                hisSurname += " " + ToRoman(characters[c.c_Name + hisSurname]);
 
-            int randomIndex = Random.Range(0, characterTemplates.Length);
+            AddChara(c.c_Name + hisSurname);
 
+            c.c_Surname = hisSurname;
 
+            charactersInQueue.Add(c);
+        }
+        else
+        {
+            string name = c.c_Surname;
 
-            c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
+            if (characters.ContainsKey(c.c_Name + name))
+                name += " " + ToRoman(characters[c.c_Name + name]);
 
-            if (c.nameRandom)
-            {
-                string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
-                string[] lines2 = fileDataName.Split("\n"[0]);
+            AddChara(c.c_Name + c.c_Surname);
 
-                int countNbrc_Name = IntParseFast(lines2[0].Trim().Split(","[0])[0]);
+            c.c_Surname = name;
 
-                int nbrc_Name = Random.Range(1, countNbrc_Name);
-                int nbrSurc_Name = Random.Range(1, countNbrc_Name);
-
-                c.c_Name = (lines2[nbrc_Name].Trim()).Split(","[0])[0];
-                string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];
-                
-
-                if (characters.ContainsKey(c.c_Name + hisSurname))
-                    hisSurname += " " + ToRoman(characters[c.c_Name + hisSurname]);
-
-                AddChara(c.c_Name + hisSurname);
-
-                c.c_Surname = hisSurname;
-
-                charactersInQueue.Add(c);
-            }
-            else
-            {
-                string name = c.c_Surname;
-
-                if (characters.ContainsKey(c.c_Name + name))
-                    name += " " + ToRoman(characters[c.c_Name + name]);
-
-                AddChara(c.c_Name + c.c_Surname);
-
-                c.c_Surname = name;
-
-                charactersInQueue.Add(c);
-            }
-
+            charactersInQueue.Add(c);
         }
     }
 
@@ -205,11 +208,8 @@ public class CharacterManager : MonoBehaviour
 
     public void UpdateActorProfile(Character character)
     {
-        Debug.Log("Bonjour Update");
-
         characterActor.data = character;
         characterActor.LoadSkin(character.sprites);
         onCharacterUpdate?.Invoke(characterActor);
     }
-
 }

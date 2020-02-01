@@ -874,8 +874,7 @@ MonoBehaviour:
   charactersInQueue: []
   scriptableChara:
   - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
-  - {fileID: 11400000, guid: f78c80a82e216864282b420d64d36e2e, type: 2}
-  - {fileID: 11400000, guid: a5016fc62c0a9e24c95cc61ab20c1f33, type: 2}
+  - {fileID: 11400000, guid: 55b8b53107e7fb5469ed7b28ae849397, type: 2}
   percentNobody: 0
   percentAlive: 0
   percentNewChar: 0
@@ -898,10 +897,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phaseHelper:
-    entranceDuration: 3
-    leaveDuration: 3
+    entranceDuration: 1
+    leaveDuration: 1
     waitRange: {x: 3, y: 5}
     currentCharacter:
+      c_Name: GEAROES
+      c_Surname: 
+      nameRandom: 0
+      gearValue: 000000000000000000000000
+      gearExpectation:
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      hero: 1
+      privateText: 0
+      forcedText: 
+      ironAdd: 0
+      sprites: []
+    previousCharacter:
       c_Name: GEAROES
       c_Surname: 
       nameRandom: 0

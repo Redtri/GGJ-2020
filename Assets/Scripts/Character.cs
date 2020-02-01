@@ -7,7 +7,7 @@ public enum GearType { SWORD, BOW, ARMOR }
 [System.Serializable]
 public class Character
 {
-
+    public bool doesExist;
     public string c_Name;
     public string c_Surname;
 
@@ -26,14 +26,14 @@ public class Character
 
     const float maxGearValue = 8;
 
-    public Character()
-    {
-        sprites = new List<Sprite>();
-        c_Name = "GEAROES";
+    public Character()
+    {
+        doesExist = false;
     }
 
     public Character(string p_name, string p_surname, bool p_randomName, int[] p_gearValue, Vector2[] p_gearExpectation, float p_hero, bool p_privateText, string p_forcedText, int p_ironAdd)
     {
+        doesExist = true;
         c_Name = p_name;
         c_Surname = p_surname;
         nameRandom = p_randomName;
@@ -54,6 +54,7 @@ public class Character
 
     public Character(Character toCopy)
     {
+        doesExist = true;
         c_Name = toCopy.c_Name;
         c_Surname = toCopy.c_Surname;
         nameRandom = toCopy.nameRandom;

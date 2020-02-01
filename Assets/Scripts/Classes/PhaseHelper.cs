@@ -21,12 +21,12 @@ public class PhaseHelper
 
     //New character entering the forge
     public void Enter(Character character)
-    {        
+    {
         CharacterManager.instance.charactersInQueue.Remove(character);
         CharacterManager.instance.AddCharacterToQueue();
-        
+
         //TODO : TEST FIX BUG
-        currentCharacter = character;        
+        currentCharacter = character;
 
         CharacterManager.instance.UpdateActorProfile(character);
         //Here trigger animations and stuff
@@ -36,10 +36,15 @@ public class PhaseHelper
     //Phase is over, returns whether there was anybody in the forge
     public bool PhaseEnd()
     {
-        onPhaseEnd?.Invoke(currentCharacter == null);
+        onPhaseEnd?.Invoke(currentCharacter.doesExist);
         CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
 
-        return currentCharacter == null;
+        if (!currentCharacter.doesExist) {
+            CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
+            CharacterManager.instance.AddCharacterToQueue();
+        }
+
+        return currentCharacter.doesExist;
     }
 
     public void EntranceEnd()

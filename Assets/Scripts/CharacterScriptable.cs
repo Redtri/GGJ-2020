@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+
+#if UNITY_EDITOR 
 using UnityEditor;
+#endif
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
 public class CharacterScriptable : ScriptableObject
@@ -26,6 +29,8 @@ public class CharacterScriptable : ScriptableObject
         */
     }
 
+    #if UNITY_EDITOR 
+
     public static CharacterScriptable CreateInstance(string c_Name, string c_Surname, bool nameRandom, int[] gearValue, Vector2[] gearExpectation, float hero, bool privateText, string forcedText, int ironAdd)
     {
         CharacterScriptable data = CreateInstance<CharacterScriptable>();
@@ -48,8 +53,7 @@ public class CharacterScriptable : ScriptableObject
         return data;
     }
 
-
+    #endif
+    
 
 }
-
-
