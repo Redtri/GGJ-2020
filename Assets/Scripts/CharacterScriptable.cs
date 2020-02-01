@@ -30,7 +30,7 @@ public class CharacterScriptable : ScriptableObject
 
         string path = AssetDatabase.GetAssetPath(Selection.activeObject);
 
-        path = "Assets/Data/Scriptable/o_";
+        path = "Assets/Data/Scriptable/" + (nameRandom ? "r_" : "o_");
 
         string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath(path + c_Name + " " + c_Surname + ".asset");
 
