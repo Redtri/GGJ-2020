@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New CharacterSkin", menuName = "Scriptable/CharacterSkin", order = 1)]
+[CreateAssetMenu(fileName = "New CharacterSkin", menuName = "ScriptableObjects/CharacterSkin", order = 1)]
 public class CharacterSkin : ScriptableObject
 {
     public Sprite[] bodyParts;

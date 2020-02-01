@@ -6,9 +6,8 @@ using UnityEngine;
 public class CharacterActor : MonoBehaviour
 {
     [Header("Data")]
-    //TODO : Put this variable in the GameManager instead of THE FUCKING CHARACTER
     public Character data;
-    public int ironAmount;
+    //TODO : Put this variable into Character scriptable object
     public int maxGearUpgrade;
 
     [Header("Visuals")]
@@ -24,18 +23,35 @@ public class CharacterActor : MonoBehaviour
         
     }
 
+    public void LoadSkin(List<Sprite> sprites)
+    {
+        for(int i = 0; i < sprites.Count; ++i) {
+            bodyParts[i].sprite = sprites[i];
+        }
+    }
+
     public void UpdateGearValue(int index, bool minus = false)
     {
         if (data.gearValue.Length > 0 && index < data.gearValue.Length) {
             if (minus) {
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
-                    ++ironAmount;
+                    ++GameManager.instance.playerHelper.ironAmount;
                 }
-            } else if(ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
+            } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
                 ++data.gearValue[index];
-                --ironAmount;
+                --GameManager.instance.playerHelper.ironAmount;
             }
         }
+    }
+
+    public void LoadCharacterProfile(Character character)
+    {
+        data = character;
+    }
+
+    public void EnterForge(float entranceDuration)
+    {
+        GetComponent<Animator>().SetTrigger("entrance");
     }
 }

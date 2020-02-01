@@ -42,11 +42,11 @@ public class CharacterManager : MonoBehaviour
 
         characters = new Dictionary<string, int> ();
     }
+
     private void Start()
     {
         onCharacterUpdate?.Invoke(characterActor);
         int randomIndex = Random.Range(0, characterTemplates.Length);
-        characterTemplates[randomIndex].SwapSprites(characterActor.bodyParts, characterTemplates[randomIndex].CherryPick(characterTemplates));
 
         percentNewChar = 100f - percentNobody - percentAlive;
 
@@ -57,6 +57,7 @@ public class CharacterManager : MonoBehaviour
         for (int i = 0; i < 100; i++)
         {
             AddCharacterToQueue();
+            charactersInQueue[i].InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
         }
 
         //Debug.Log(charactersInQueue.Count);
@@ -70,6 +71,7 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    //Character functions
     public void AddChara(string c_NameSurc_Name)
     {
         if (!characters.ContainsKey(c_NameSurc_Name))
@@ -81,8 +83,8 @@ public class CharacterManager : MonoBehaviour
             characters[c_NameSurc_Name]++;
         }
     }
-
-    public void UpdateCurrentCharacter(int index, bool rightClick)
+    //Character ACTOR functions
+    public void UpdateActorGearValues(int index, bool rightClick)
     {
         characterActor.UpdateGearValue(index, rightClick);
         onCharacterUpdate?.Invoke(characterActor);
@@ -190,6 +192,13 @@ public class CharacterManager : MonoBehaviour
         if (number >= 4) return "IV" + ToRoman(number - 4);
         if (number >= 1) return "I" + ToRoman(number - 1);
         return string.Empty;
+    }
+
+    public void UpdateActorProfile(Character character)
+    {
+        characterActor.data = character;
+        characterActor.LoadSkin(character.sprites);
+        onCharacterUpdate?.Invoke(characterActor);
     }
 
 }
