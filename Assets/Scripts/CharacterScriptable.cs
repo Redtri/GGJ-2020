@@ -8,7 +8,7 @@ using UnityEditor;
 public class CharacterScriptable : ScriptableObject
 {
    [SerializeField]
-   Character character;
+   public Character character;
 
     public void Init(string c_Name, string c_Surname, bool nameRandom, int[] gearValue, Vector2[] gearExpectation, float hero, bool privateText, string forcedText, int ironAdd)
     {
