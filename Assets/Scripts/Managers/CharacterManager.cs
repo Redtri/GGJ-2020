@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     public Character currentCharacter;
-    public CharacterInfo[] characterTemplates;
+    public CharacterSkin[] characterTemplates;
 
     public static CharacterManager instance;
 
