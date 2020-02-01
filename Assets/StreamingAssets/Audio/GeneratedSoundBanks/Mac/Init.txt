@@ -1,0 +1,16 @@
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	1404066300	Ambiances			\Default Work Unit\Master Audio Bus\Ambiances	
+	1534528548	VO			\Default Work Unit\Master Audio Bus\VO	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	4035004657	Foleys			\Default Work Unit\Master Audio Bus\Foleys	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1775981102	RVB_Battlefield			\Default Work Unit\Master Audio Bus\RVB_Battlefield	
+	3907231393	RVB_Forge			\Default Work Unit\Master Audio Bus\RVB_Forge	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

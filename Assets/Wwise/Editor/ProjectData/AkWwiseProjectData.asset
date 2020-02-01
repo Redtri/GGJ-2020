@@ -12,14 +12,161 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9726c831ad0e17479e23e8783e7f70e, type: 3}
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
-  AcousticTextureWwu: []
-  AuxBusWwu: []
-  BankWwu: []
-  EventWwu: []
-  RtpcWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  TriggerWwu: []
-  ExpandedItems: []
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 83404a80d18b054cb8952c608ddca69a
+    GuidInternal: 
+    m_lastTime: -8586210977781766963
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 97146d908d069441a767de55422c3069
+    GuidInternal: 
+    m_lastTime: -8586210588852032745
+    List:
+    - name: RVB_Battlefield
+      guid: 6e6a932451353242a95f3a08cb381711
+      id: 1775981102
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: RVB_Battlefield
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\RVB_Battlefield
+    - name: RVB_Forge
+      guid: 4f44015fd2472e4ab9e3838631482a63
+      id: 3907231393
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: RVB_Forge
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\RVB_Forge
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: bca94500ef218b468f5c737fd6c07495
+    GuidInternal: 
+    m_lastTime: -8586210977781265958
+    List: []
+  - PhysicalPath: SoundBanks\Main_SNB.wwu
+    ParentPhysicalPath: 
+    guid: d99ddfa74f0ca64e974551f6fc467fff
+    GuidInternal: 
+    m_lastTime: -8586210585487404791
+    List:
+    - name: Main_SNB
+      guid: e6a6825f6b40f34fb7ddd7748b00cd6b
+      id: 763229880
+      PathAndIcons:
+      - ElementName: Main_SNB
+        ObjectType: 12
+      - ElementName: Main_SNB
+        ObjectType: 7
+      Path: Main_SNB\Main_SNB
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 2ddaebbf4eb71c43a3d5a96f22b4ea18
+    GuidInternal: 
+    m_lastTime: -8586210585744341083
+    List: []
+  - PhysicalPath: Events\Music Event.wwu
+    ParentPhysicalPath: 
+    guid: bed930c53ead2c4b83ca5c6b9e5cd5b3
+    GuidInternal: 
+    m_lastTime: -8586210588652729945
+    List: []
+  - PhysicalPath: Events\SD Event.wwu
+    ParentPhysicalPath: 
+    guid: e316d4176dcdd946919c6a078135fbca
+    GuidInternal: 
+    m_lastTime: -8586210585744281193
+    List:
+    - name: Play_Test
+      guid: 1335c2cdc5949d43b0a0f8ffd8fb0371
+      id: 3187507146
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Play_Test
+        ObjectType: 3
+      Path: SD Event\Play_Test
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: b451e9eaee128d41bb3fb0a1485690c6
+    GuidInternal: 
+    m_lastTime: -8586210977781669281
+    List: []
+  - PhysicalPath: Game Parameters\Music RTPC.wwu
+    ParentPhysicalPath: 
+    guid: 1c6b60f8ee18ec4a85cda6a1964f4a72
+    GuidInternal: 
+    m_lastTime: -8586210588110408291
+    List: []
+  - PhysicalPath: Game Parameters\SD RTPC.wwu
+    ParentPhysicalPath: 
+    guid: b29af84eb82ce6438960835af96fc5cb
+    GuidInternal: 
+    m_lastTime: -8586210588044448379
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: ed900ebd7887d644969fa8e625fab224
+    GuidInternal: 
+    m_lastTime: -8586210977781966978
+    List: []
+  - PhysicalPath: States\Music States.wwu
+    ParentPhysicalPath: 
+    guid: 8047eb3c6c82ab4fac7c82bee5c5928b
+    GuidInternal: 
+    m_lastTime: -8586210587890239934
+    List: []
+  - PhysicalPath: States\SD States.wwu
+    ParentPhysicalPath: 
+    guid: 8e360da26bc06e448018c308ac7caf63
+    GuidInternal: 
+    m_lastTime: -8586210587839855487
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: a298b2434f03514dab6f9bc5def32644
+    GuidInternal: 
+    m_lastTime: -8586210977782267422
+    List: []
+  - PhysicalPath: Switches\Music Switches.wwu
+    ParentPhysicalPath: 
+    guid: fedf941db3de6d40a1ce6af5a85ef0ba
+    GuidInternal: 
+    m_lastTime: -8586210587777828198
+    List: []
+  - PhysicalPath: Switches\SD Switches.wwu
+    ParentPhysicalPath: 
+    guid: 6a5b517a9dd4a847b1d84208107185d6
+    GuidInternal: 
+    m_lastTime: -8586210587685531942
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 8ffa731843216a40bb39eadf9f8c7eae
+    GuidInternal: 
+    m_lastTime: -8586210977781425529
+    List: []
+  ExpandedItems:
+  - /GGJ_WwiseProject
+  - /GGJ_WwiseProject/Events
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

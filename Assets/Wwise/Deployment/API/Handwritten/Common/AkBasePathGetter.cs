@@ -133,7 +133,7 @@ public partial class AkBasePathGetter
 
 		try
 		{
-			if (System.IO.Path.GetPathRoot(SoundBankDest) == "")
+			if (SoundBankDest != "" && System.IO.Path.GetPathRoot(SoundBankDest) == "")
 			{
 				// Path is relative, make it full
 				SoundBankDest = AkUtilities.GetFullPath(System.IO.Path.GetDirectoryName(WwiseProjectFullPath), SoundBankDest);
@@ -173,7 +173,7 @@ public partial class AkBasePathGetter
 	}
 #endif
 
-	public static void FixSlashes(ref string path, char separatorChar, char badChar, bool addTrailingSlash)
+    public static void FixSlashes(ref string path, char separatorChar, char badChar, bool addTrailingSlash)
 	{
 		if (string.IsNullOrEmpty(path))
 			return;
@@ -212,10 +212,10 @@ public partial class AkBasePathGetter
 
 		if (basePathToSet == string.Empty || InitBnkFound == false)
 		{
-			UnityEngine.Debug.Log("WwiseUnity: Looking for SoundBanks in " + basePathToSet);
+			//UnityEngine.Debug.Log("WwiseUnity: Looking for SoundBanks in " + basePathToSet);
 
 #if UNITY_EDITOR
-			UnityEngine.Debug.LogError("WwiseUnity: Could not locate the SoundBanks. Did you make sure to generate them?");
+			//UnityEngine.Debug.LogError("WwiseUnity: Could not locate the SoundBanks. Did you make sure to generate them?");
 #else
 			UnityEngine.Debug.LogError("WwiseUnity: Could not locate the SoundBanks. Did you make sure to copy them to the StreamingAssets folder?");
 #endif
