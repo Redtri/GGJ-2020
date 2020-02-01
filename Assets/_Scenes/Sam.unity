@@ -679,6 +679,7 @@ MonoBehaviour:
   - {fileID: 31499626}
   - {fileID: 1209615465}
   - {fileID: 296868234}
+  reachPos: {fileID: 0}
 --- !u!1 &548998184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,8 +1170,8 @@ MonoBehaviour:
   charactersInQueue: []
   scriptableChara:
   - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
-  percentNobody: 0
-  percentAlive: 0
+  percentNobody: 10
+  percentAlive: 80
   percentNewChar: 0
   characterActor: {fileID: 5133059023521512639}
   characterTemplates:
@@ -1195,6 +1196,7 @@ MonoBehaviour:
     leaveDuration: 3
     waitRange: {x: 3, y: 5}
     currentCharacter:
+      doesExist: 0
       c_Name: GEAROES
       c_Surname: 
       nameRandom: 0
@@ -1209,6 +1211,7 @@ MonoBehaviour:
       ironAdd: 0
       sprites: []
     previousCharacter:
+      doesExist: 0
       c_Name: GEAROES
       c_Surname: 
       nameRandom: 0
@@ -1489,7 +1492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1433376133
 RectTransform:
   m_ObjectHideFlags: 0
