@@ -18,14 +18,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartPhase();
+    }
+
     private void Update()
     {
-        //TEST
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            List<Character> list = new List<Character>();
-            list.Add(CharacterManager.instance.charactersInQueue[0]);
-            StartPhase(list);
-        }
     }
 
     //Phase Handling functions
@@ -37,28 +36,25 @@ public class GameManager : MonoBehaviour
             StartCoroutine(VoidPhase());
         }
     }
-    //DEBUG
-    public void StartPhase(List<Character> list)
-    {
-        if (list[0] != null) {
-            StartCoroutine(CharacterEntrance(list[0]));
-        } else {
-            StartCoroutine(VoidPhase());
-        }
-    }
 
     public void EndPhase()
     {
-        phaseHelper.PhaseEnd();
+        //If there was someone in the room, The coroutine for the leaving is called
+        if (!phaseHelper.PhaseEnd()) {
+            StartCoroutine(CharacterLeaving());
+        }//Otherwise, just start another phase
+        else {
+            StartPhase();
+        }
     }
 
     private IEnumerator CharacterEntrance(Character enteringChar)
     {
-        Debug.Log("Character entering the forge");
+        Debug.Log(enteringChar.c_Name + " entering the forge");
         phaseHelper.Enter(enteringChar);
 
         yield return new WaitForSeconds(phaseHelper.entranceDuration);
-        Debug.Log("Character entered the forge");
+        Debug.Log(enteringChar.c_Name + " entered the forge");
         phaseHelper.EntranceEnd();
     }
 
@@ -68,5 +64,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
         Debug.Log("Time has passed...");
         phaseHelper.PhaseEnd();
+    }
+
+    private IEnumerator CharacterLeaving()
+    {
+        yield return new WaitForSeconds(phaseHelper.leaveDuration);
+        phaseHelper.LeavingEnd();
     }
 }

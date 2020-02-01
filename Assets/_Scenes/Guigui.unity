@@ -899,7 +899,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaseHelper:
     entranceDuration: 3
+    leaveDuration: 3
     waitRange: {x: 3, y: 5}
+    currentCharacter:
+      c_Name: GEAROES
+      c_Surname: 
+      nameRandom: 0
+      gearValue: 000000000000000000000000
+      gearExpectation:
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      hero: 1
+      privateText: 0
+      forcedText: 
+      ironAdd: 0
+      sprites: []
   playerHelper:
     playerGO: {fileID: 1210055528}
     ironAmount: 5

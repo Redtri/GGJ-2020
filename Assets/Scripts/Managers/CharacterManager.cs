@@ -54,7 +54,7 @@ public class CharacterManager : MonoBehaviour
         charactersAlive = new List<Character>();
 
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 3; i++)
         {
             AddCharacterToQueue();
             charactersInQueue[i].InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE

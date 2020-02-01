@@ -14,26 +14,39 @@ public class PhaseHelper
 
     public delegate void BasicEvent();
     public BasicEvent onEntranceEnd;
+    public BasicEvent onLeavingEnd;
     public delegate void BoolEvent(bool val1);
     public BoolEvent onPhaseEnd;
 
     //New character entering the forge
     public void Enter(Character character)
     {
-        currentCharacter = character;
+        CharacterManager.instance.charactersInQueue.Remove(character);
+        CharacterManager.instance.AddCharacterToQueue();
+        currentCharacter = new Character(character);
         CharacterManager.instance.UpdateActorProfile(character);
         //Here trigger animations and stuff
         CharacterManager.instance.characterActor.EnterForge(entranceDuration);
     }
-    public void PhaseEnd()
+    //Phase is over, returns whether there was anybody in the forge
+    public bool PhaseEnd()
     {
         onPhaseEnd?.Invoke(currentCharacter == null);
         CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
+
+        return currentCharacter == null;
     }
 
     public void EntranceEnd()
     {
         onEntranceEnd?.Invoke();
+    }
+
+    //Character has left
+    public void LeavingEnd()
+    {
+        onLeavingEnd?.Invoke();
+        GameManager.instance.StartPhase();
     }
 
     //New blank phase, nobody's here, returns a duration included inside waitRange
