@@ -49,5 +49,19 @@ public class Character
         ironAdd = toCopy.ironAdd;
     }
 
+    public float Battle()
+    {
+        float p1 = 1 - Mathf.Abs(gearExpectation[0].x - gearValue[0]) / maxGearValue;
+        float p2 = 1 - Mathf.Abs(gearExpectation[1].x - gearValue[1]) / maxGearValue;
+        float p3 = 1 - Mathf.Abs(gearExpectation[2].x - gearValue[2]) / maxGearValue;
+
+        float p1bis = 1 - Mathf.Abs(gearExpectation[0].y - gearValue[0]) / maxGearValue;
+        float p2bis = 1 - Mathf.Abs(gearExpectation[1].y - gearValue[1]) / maxGearValue;
+        float p3bis = 1 - Mathf.Abs(gearExpectation[2].y - gearValue[2]) / maxGearValue;
+
+        return Mathf.Min(p1, p2, p3, p1bis, p2bis, p3bis);
+        
+    }
+
 
 }
