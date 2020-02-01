@@ -41,13 +41,11 @@ public class CharacterManager : MonoBehaviour
         }
 
         characters = new Dictionary<string, int> ();
+
     }
 
     private void Start()
     {
-        onCharacterUpdate?.Invoke(characterActor);
-       
-
         percentNewChar = 100f - percentNobody - percentAlive;
 
         charactersInQueue = new List<Character>();
@@ -58,6 +56,10 @@ public class CharacterManager : MonoBehaviour
         {
             AddCharacterToQueue();          
         }
+
+        onCharacterUpdate?.Invoke(characterActor);
+
+        UI_Manager.instance.UpdateGearUI(characterActor);
 
         /*Debug.Log(charactersInQueue.Count);
 
@@ -85,6 +87,7 @@ public class CharacterManager : MonoBehaviour
     //Character ACTOR functions
     public void UpdateActorGearValues(int index, bool rightClick)
     {
+        
         characterActor.UpdateGearValue(index, rightClick);
         onCharacterUpdate?.Invoke(characterActor);
     }
@@ -202,6 +205,8 @@ public class CharacterManager : MonoBehaviour
 
     public void UpdateActorProfile(Character character)
     {
+        Debug.Log("Bonjour Update");
+
         characterActor.data = character;
         characterActor.LoadSkin(character.sprites);
         onCharacterUpdate?.Invoke(characterActor);
