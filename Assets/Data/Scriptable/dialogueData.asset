@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb4ffbcb729db04f97bcd5da5477c7b, type: 3}
+  m_Name: dialogueData
+  m_EditorClassIdentifier: 
+  armor:
+    lowest:
+    - This armor is way to heavy for me. I can barely walk!
+    - I'd need to be much lighter to climb trees and oversee the battlefield.
+    - I always feel good showing my skin. Maybe I'd be luckier if I felt at ease.
+    - Ugh, I'm covered in enemy blood... I'll make a detour by the river to have
+      a good soak!
+    - I know I'm naturally hot, but fighting under the sun feels like cooking like
+      a chicken on a stick!
+    - Quick, I need to pee, take off my armor!
+    - I'm griefly wounded and I can't treat the wound with all that iron covering
+      me.
+    low:
+    - I have an awful itch but that armor prevents me from scratching! Help!
+    - I've noticed I'm just a bit slower than my opponents. Wonder if I could move
+      a little better somehow...
+    - I'm floating a little in that armor, can you adjust it for me?
+    - I ALWAYS face my enemy, so I basically don't need my back plate.
+    - Looks like that iron you got grows thin... Here, take some off my chest.
+    - I wanna try a new fighting technique, where I evade my foe's attacks! I'll
+      still need protection but maybe not that much.
+    - I'm one-armed, so why do I even have armor for my missing arm?
+    equal:
+    - I feel good in there!
+    - Wow, was that armor made especially using my measurements?
+    - I've never been fond of change. If it works, why change any of it?
+    high:
+    - This armor is a bit tight... Could you expand it for me?
+    - There are some cracks in my armor here and there... Think you can fill them
+      for me?
+    - It's a little cold out there... I think having thicker clothes wouldn't hurt.
+    - I believe I can carry a little more load.
+    - I forgot some parts of my armor at home. Not many, but could you make me spare
+      ones please?
+    - My friend took an arrow in the knee and I don't want the same fate to befall
+      me!
+    - I lost my shoulder piece out there, I'll need a replacement.
+    highest:
+    - With the war going on, I don't have time to lift weights anymore! How could
+      I make my body stronger while on the battlefield?
+    - TURN ME INTO A TANK!
+    - I am always SO scared on the field! What if I got hit? Oh dear... If only I
+      were a living wall...
+    - I'm being sent to the front lines, so basically I'll be the only thing between
+      them and us.
+    - Wowie, all that iron you got! Give my body as much as you legally can!
+    - 'Here''s the deal: armor. Yes. Yes yes yes.'
+    - I'm in a contest with my sibling about who can carry the heaviest armor. I'm
+      definitely gonna win.
+  sword:
+    lowest:
+    - How do they expect me to carry a sword that heavy?!
+    - That sword is twice my height. I don't even know what to do with it.
+    - I'm an assassin and they gave me a claymore. Could you fix that for me?
+    - I intend to infiltrate the enemy lines while concealing my blade... I need
+      it to fit beneath my clothes.
+    - All my life I trained my knife throws. I'm the best knife thrower around.
+    - Honestly, that sword is too thick to cut ham. How am I supposed to have a snack
+      on the battlefield?
+    - A sword as beautiful as this one is a waste on me, I think I wouldn't mind
+      downgrading it if it meant another could benefit from the iron.
+    low:
+    - Y'know, I think I could swing my sword better if it were a bit lighter.
+    - The battle weakened me and that sword now feels a little heavy.
+    - I stole that sword from an enemy who was seemingly stronger that I am.
+    - That sword is looking to lose a little weight. It's been exercising, to no
+      avail. Have you got a solution?
+    - '"Have you heard of the ""no handle challenge""? It''s about swinging your
+      sword without the handle. I want in!"'
+    - With all the decorations I put on my sword, it's become a bit too jingly to
+      be waved efficiently.
+    - I'm one-armed so I need to handle that sword with one hand.
+    equal:
+    - That's my favorite sword. Please do not touch my favorite sword. It's mine.
+      And it's my favorite. It's a sword and it's perfect the way it is. I love it.
+    - Did you know? That sword have remained in that exact state for generations
+      in my family. That would be a shame if any alteration were applied to it.
+    - That melee weapon feels excellent.
+    high:
+    - That sword is a bit weak, I feel like. Can you fix it?
+    - I don't need much, the tip of my sword flew off while clashing.
+    - That weapon lacks a bit of punch, doesn't it?
+    - I'm sorry, I couldn't come up with an original way of asking you to slightly
+      improve my sword.
+    - A few inches more on my blade can't hurt, right? Although I actually want it
+      to hurt, this is war after all.
+    - Did you know? That sword have remained in that exact state for generations
+      in my family. But I think it should grow just a bit every time it's passed
+      down.
+    - Wanna decorate my sword together?
+    highest:
+    - 'I want to try out a new technique: spinning with a long sword like a tornado!'
+    - I'M SUPER STRONG I CAN WAVE SWORDS TALL LIKE TREES.
+    - Okay now, who thought it would be funny to give me a needle instead of a sword?
+    - '"I''ve always been a ""slash your enemy from afar"" kind of person."'
+    - I want to test out impaling two foes with one sword. Maybe three...
+    - Um, so you know those superstitions about greatly enlarging your sword... Can
+      you show me how it's done?
+    - I need a sword like my ego. Huge.
+  bow:
+    lowest:
+    - Yeah, no, I only need my hands to throw arrows.
+    - I'm better at shooting darts than arrows...
+    - '"A...what? A ""bow""? Did you just come up with that word?"'
+    - I practically never use my bow, I'm a deadweight at aiming.
+    - I'd like to surprise the enemy by shooting at point blank. For that, my bow
+      needs to be tiny.
+    - All my life I've been kind of weak, so obviously I'd need the thinnest bow
+      there is.
+    - Say, I feel like I don't deserve that much iron. Maybe you could use some of
+      my bow to make some stock.
+    low:
+    - Could you take out some pieces of the bow so that my fingers fit perfectly
+      around the handle?
+    - I want to surprise my enemy! Like, I'm chilling with my bow, doot-doot-doot,
+      and then SCHTACK I slice their throat with it! But then it'd have to be sharp
+      as a blade in some place.
+    - That bow is just long enough to bother my bottom when I run.
+    - I'm not sturdy enough to fire that bow correctly, it's not significant but
+      that bothers me.
+    - I stole that bow to an enemy that was slightly taller than me.
+    - 'I like my bow just like my kid''s nap: a little too short for my convenience.'
+    - I wish I could handle my bow with one hand and my teeth only, but it's slighly
+      too voluminous for that.
+    equal:
+    - Oh, no thanks, I'm just here to look.
+    - I need my bow like my self-esteem. Quite average.
+    - Look at my bow! Such grace! Such perfection! It is the epitome of what an infallible
+      bow should be!
+    high:
+    - My bowstring snapped, it's just a little thing that needs fixing.
+    - My bow is almost fine as is, I just wonder if you could make it a little more
+      stable?
+    - My dream is that someone would affix two or three more strings on my bow so
+      that, in times of loneliness, I can play it like a lyre.
+    - I'm not frail enough to fire that bow correctly, it's not significant but that
+      bothers me.
+    - Can you add a special hook on my bow to pin a portrait of my spouse?
+    - 'I like my bow like my dad''s life expectancy: a little longer than the world
+      would want.'
+    - Hey so, could you add some features to occasionally fish with my bow?
+    highest:
+    - Make my arrows so huge that I can draw the attention of enemies from very far
+      away! If I can do that skillfully, everyone will call me the Master Baiter.
+    - Those idiots gave me a blowpipe! It's a goddamn bow I need!
+    - My playstyle? I like to knock them unconscious with my bow.
+    - My bow snapped, there's only the bowstring left...
+    - I have a plan. I want a bow big enough to shoot my allies towards my foes.
+    - I'm the best sniper in the entire army, so I think I deserve the best bow in
+      the entire army.
+    - I've been assigned to the far rear of the army. I'll be standing the farthest
+      from the enemies.
