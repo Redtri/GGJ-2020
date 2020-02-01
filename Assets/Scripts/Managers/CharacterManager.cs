@@ -10,10 +10,12 @@ public class CharacterManager : MonoBehaviour
     [HideInInspector()]
     public Dictionary<string, int> characters;
 
+    [HideInInspector()]
     public List<Character> charactersAlive;
 
+    [HideInInspector()]
     public List<Character> charactersInQueue;
-    
+
     [Header("Scriptable Object")]
     public CharacterScriptable[] scriptableChara;
 
@@ -39,24 +41,25 @@ public class CharacterManager : MonoBehaviour
         }
 
         characters = new Dictionary<string, int> ();
+
     }
 
     private void Start()
     {
-        onCharacterUpdate?.Invoke(characterActor);
-       
-
         percentNewChar = 100f - percentNobody - percentAlive;
 
         charactersInQueue = new List<Character>();
         charactersAlive = new List<Character>();
 
 
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 3; i++)
         {
-            AddCharacterToQueue();
+            AddCharacterToQueue(true);
         }
-        AddCharacterToQueue(true);
+
+        onCharacterUpdate?.Invoke(characterActor);
+
+        UI_Manager.instance.UpdateGearUI(characterActor);
 
         /*Debug.Log(charactersInQueue.Count);
 
@@ -84,18 +87,24 @@ public class CharacterManager : MonoBehaviour
     //Character ACTOR functions
     public void UpdateActorGearValues(int index, bool rightClick)
     {
+
         characterActor.UpdateGearValue(index, rightClick);
         onCharacterUpdate?.Invoke(characterActor);
     }
 
-    public void AddCharacterToQueue(bool none = false)
+    public void AddCharacterToQueue(bool forceNew = false)
     {
         float percent = Random.Range(0.0f, 1.0f);
 
         Character c = null;
 
+        if (forceNew)
+        {
+            percent = float.MaxValue;
+        }
+
         //Il n'y a personne on ajoute null
-        if (percent <= percentNobody / 100f || none)
+        if (percent <= percentNobody / 100f)
         {
             charactersInQueue.Add(c);
         }
@@ -117,7 +126,7 @@ public class CharacterManager : MonoBehaviour
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-            Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;         
+            Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
 
             c = new Character(scriptChar);
 
@@ -137,7 +146,7 @@ public class CharacterManager : MonoBehaviour
 
                 c.c_Name = (lines2[nbrc_Name].Trim()).Split(","[0])[0];
                 string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];
-                
+
 
                 if (characters.ContainsKey(c.c_Name + hisSurname))
                     hisSurname += " " + ToRoman(characters[c.c_Name + hisSurname]);
@@ -201,5 +210,4 @@ public class CharacterManager : MonoBehaviour
         characterActor.LoadSkin();
         onCharacterUpdate?.Invoke(characterActor);
     }
-
 }
