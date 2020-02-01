@@ -117,7 +117,7 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
-    void int IntParseFast(string value)
+    public int IntParseFast(string value)
     {
         int result = 0;
         for (int i = 0; i < value.Length; i++)
@@ -125,5 +125,6 @@ public class CharacterManager : MonoBehaviour
             char letter = value[i];
             result = 10 * result + (letter - 48);
         }
-        return resu
+        return result;
+      }
 }
