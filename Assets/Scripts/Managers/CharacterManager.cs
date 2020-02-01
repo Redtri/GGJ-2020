@@ -120,10 +120,14 @@ public class CharacterManager : MonoBehaviour
         {
             Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;         
 
-            c = new Character(scriptChar);
-
-            int randomIndex = Random.Range(0, characterTemplates.Length);
-
+            c = new Character(scriptChar);
+
+
+
+            int randomIndex = Random.Range(0, characterTemplates.Length);
+
+
+
             c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
 
             if (c.nameRandom)

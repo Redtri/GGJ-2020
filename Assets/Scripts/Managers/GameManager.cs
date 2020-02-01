@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
