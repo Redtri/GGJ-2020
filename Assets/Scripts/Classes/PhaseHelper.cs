@@ -20,11 +20,11 @@ public class PhaseHelper
     public BoolEvent onPhaseEnd;
 
     //New character entering the forge
-    public void Enter(Character character, bool none = false)
+    public void Enter(Character character)
     {
         CharacterManager.instance.charactersInQueue.Remove(character);
         CharacterManager.instance.AddCharacterToQueue();
-        
+
         //TODO : TEST FIX BUG
         currentCharacter = character;
 
@@ -32,6 +32,7 @@ public class PhaseHelper
         //Here trigger animations and stuff
         CharacterManager.instance.characterActor.EnterForge(entranceDuration);
     }
+
     //Phase is over, returns whether there was anybody in the forge
     public bool PhaseEnd()
     {
