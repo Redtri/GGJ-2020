@@ -10,6 +10,7 @@ public class UI_Manager : MonoBehaviour
     public Transform gameLayout;
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
+    public Image[] bars;
 
     public Transform reachPos;
 
@@ -47,6 +48,7 @@ public class UI_Manager : MonoBehaviour
     {
         for(int i = 0; i < characterUpdated.data.gearValue.Length; ++i) {
             gearTexts[i].text = characterUpdated.data.gearValue[i].ToString();
+            bars[i].fillAmount = (float)characterUpdated.data.gearValue[i] / (float)characterUpdated.maxGearUpgrade;
         }
         ironAmountTxt.text = GameManager.instance.playerHelper.ironAmount.ToString();
     }

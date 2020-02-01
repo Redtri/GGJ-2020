@@ -31,10 +31,25 @@ public class CharacterActor : MonoBehaviour
         
     }
 
-    public void LoadSkin(List<Sprite> sprites)
+    public void LoadSkin()
     {
-        for(int i = 0; i < sprites.Count; ++i) {
-            bodyParts[i].sprite = sprites[i];
+        for (int i = 0; i < data.gears.Count; ++i) {
+            switch (data.gearValue[i]) {
+                case 1:
+                case 2:
+                case 3:
+                    bodyParts[i].sprite = data.gears[i].stateSkins[0];
+                break;
+                case 4:
+                case 5:
+                case 6:
+                    bodyParts[i].sprite = data.gears[i].stateSkins[1];
+                break;
+                case 7:
+                case 8:
+                    bodyParts[i].sprite = data.gears[i].stateSkins[2];
+                break;
+            }
         }
     }
 
@@ -51,6 +66,7 @@ public class CharacterActor : MonoBehaviour
                 --GameManager.instance.playerHelper.ironAmount;
             }
         }
+        LoadSkin();
     }
 
     public void LoadCharacterProfile(Character character)

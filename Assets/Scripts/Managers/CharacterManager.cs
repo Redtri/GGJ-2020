@@ -86,7 +86,9 @@ public class CharacterManager : MonoBehaviour
     {
         float percent = Random.Range(0.0f, 1.0f);
 
-        Character c = null;
+        Character c = new Character();
+
+        c.InitSprites(characterTemplates[0].bodyParts);
 
         if (forceNew)
         {
@@ -136,8 +138,8 @@ public class CharacterManager : MonoBehaviour
 
         int randomIndex = Random.Range(0, characterTemplates.Length);
 
-        c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
-
+        c.InitSprites(characterTemplates[0].bodyParts);
+            //c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
         if (c.nameRandom)
         {
             string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
@@ -173,6 +175,7 @@ public class CharacterManager : MonoBehaviour
             c.c_Surname = name;
 
             charactersInQueue.Add(c);
+
         }
     }
 
@@ -209,7 +212,7 @@ public class CharacterManager : MonoBehaviour
     public void UpdateActorProfile(Character character)
     {
         characterActor.data = character;
-        characterActor.LoadSkin(character.sprites);
+        characterActor.LoadSkin();
         onCharacterUpdate?.Invoke(characterActor);
     }
 }
