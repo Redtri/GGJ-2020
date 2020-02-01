@@ -12,10 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc86ad1aafc5a644a6f5c4f41e70c2e, type: 3}
   m_Name: char-03
   m_EditorClassIdentifier: 
-  bodyParts:
-  - {fileID: 3602430193687246736, guid: b64f310c215039a4cb118f4b40484f01, type: 3}
-  - {fileID: 4469707333657897994, guid: b64f310c215039a4cb118f4b40484f01, type: 3}
-  - {fileID: -7888572027569737909, guid: b64f310c215039a4cb118f4b40484f01, type: 3}
-  - {fileID: 8812918150279519865, guid: b64f310c215039a4cb118f4b40484f01, type: 3}
-  - {fileID: -2865679857307726718, guid: b64f310c215039a4cb118f4b40484f01, type: 3}
-  - {fileID: -235797444749228661, guid: b64f310c215039a4cb118f4b40484f01, type: 3}
+  bodyParts: []

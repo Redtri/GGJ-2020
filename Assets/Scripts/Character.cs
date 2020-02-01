@@ -20,7 +20,7 @@ public class Character
 
     public int ironAdd;
 
-    public List<Sprite> sprites;
+    public List<GearSkin> gears;
 
     const float maxGearValue = 10f;
 
@@ -41,12 +41,14 @@ public class Character
         privateText = p_privateText;
         forcedText = p_forcedText;
 
-        sprites = new List<Sprite>();
+        gears = new List<GearSkin>();
     }
-    public void InitSprites(Sprite[] tSprites)
+    public void InitSprites(Sprite[][] tSprites)
     {
         for (int i = 0; i < tSprites.Length; ++i) {
-            sprites.Add(tSprites[i]);
+            for (int j = 0; j < tSprites[i].Length; ++j) {
+                gears[i].stateSkins.Add(tSprites[i][j]);
+            }
         }
     }
 
@@ -71,7 +73,7 @@ public class Character
               toCopy.gearExpectation[2]
         };
 
-        sprites = new List<Sprite>();
+        gears = new List<GearSkin>();
 
         hero = toCopy.hero;
         privateText = toCopy.privateText;

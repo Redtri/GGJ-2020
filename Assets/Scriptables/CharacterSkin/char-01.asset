@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: char-01
   m_EditorClassIdentifier: 
   bodyParts:
-  - {fileID: -7273303758747598945, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
-  - {fileID: -5144280915335171144, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
-  - {fileID: 8465169010433418629, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
-  - {fileID: 604789536130081544, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
-  - {fileID: -8514873485471245128, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
-  - {fileID: -2380465759765719836, guid: c407e58e05563c24d97f148b23c916a0, type: 3}
+  - {fileID: 11400000, guid: f3f3d514f95f73c499ec74a2582e1013, type: 2}
+  - {fileID: 11400000, guid: 18c7d66f5b88b494daa83d567d5c10be, type: 2}
+  - {fileID: 11400000, guid: c8eedb7c09fb87e47934aacff9b688df, type: 2}

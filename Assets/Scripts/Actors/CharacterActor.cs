@@ -31,10 +31,13 @@ public class CharacterActor : MonoBehaviour
         
     }
 
-    public void LoadSkin(List<Sprite> sprites)
+    public void LoadSkin()
     {
-        for(int i = 0; i < sprites.Count; ++i) {
-            bodyParts[i].sprite = sprites[i];
+        for(int i = 0; i < data.gears.Count; ++i) {
+            int tmp = data.gearValue[i];
+            Debug.Log(data.gears[i].stateSkins[tmp]);
+            Mathf.Clamp(tmp, 0, data.gears[i].stateSkins.Count-1);
+            bodyParts[i].sprite = data.gears[i].stateSkins[tmp];
         }
     }
 

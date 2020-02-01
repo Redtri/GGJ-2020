@@ -121,13 +121,9 @@ public class CharacterManager : MonoBehaviour
 
             c = new Character(scriptChar);
 
-
-
             int randomIndex = Random.Range(0, characterTemplates.Length);
 
-
-
-            c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
+            //c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
 
             if (c.nameRandom)
             {
@@ -202,7 +198,7 @@ public class CharacterManager : MonoBehaviour
     public void UpdateActorProfile(Character character)
     {
         characterActor.data = character;
-        characterActor.LoadSkin(character.sprites);
+        characterActor.LoadSkin();
         onCharacterUpdate?.Invoke(characterActor);
     }
 
