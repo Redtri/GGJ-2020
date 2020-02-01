@@ -9,7 +9,7 @@ public class UI_Manager : MonoBehaviour
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
     
-    private void Start()
+    private void OnEnable()
     {
         CharacterManager.instance.onCharacterUpdate += UpdateGearUI;
 
@@ -20,10 +20,10 @@ public class UI_Manager : MonoBehaviour
         CharacterManager.instance.onCharacterUpdate -= UpdateGearUI;
     }
 
-    public void UpdateGearUI(Character characterUpdated)
+    public void UpdateGearUI(CharacterActor characterUpdated)
     {
-        for(int i = 0; i < characterUpdated.gears.Length; ++i) {
-            gearTexts[i].text = characterUpdated.gears[i].ToString();
+        for(int i = 0; i < characterUpdated.data.gearValue.Length; ++i) {
+            gearTexts[i].text = characterUpdated.data.gearValue[i].ToString();
         }
         ironAmountTxt.text = characterUpdated.ironAmount.ToString();
     }
