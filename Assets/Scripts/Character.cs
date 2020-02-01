@@ -20,25 +20,15 @@ public class Character
 
     public int ironAdd;
 
+    public List<Sprite> sprites;
+
     const int maxGearValue = 8;
     const int minGearValue = 0;
 
-        /*
-        string fileData = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
-        string[] lines = fileData.Split("\n"[0]);
-
-
-        int countNbrc_Name = IntParseFast(lines[0].Trim().Split(";"[0])[0]);
-
-        int nbrc_Name = Random.Range(1, countNbrc_Name);
-        int nbrSurc_Name = Random.Range(1, countNbrc_Name);
-
-        c_Name = (lines[nbrc_Name].Trim()).Split(";"[0])[0];
-        c_Surname = (lines[nbrSurc_Name].Trim()).Split(";"[0])[1];
-
-        Debug.Log(c_Name + " " + c_Surname);
-
-        CharacterManager.instance.AddChara(c_Name+ c_Surname);*/
+    public Character()
+    {
+        c_Name = "GEAROES";
+    }
 
     public Character(string p_name, string p_surname, bool p_randomName, int[] p_gearValue, Vector2[] p_gearExpectation, float p_hero, bool p_privateText, string p_forcedText, int p_ironAdd)
     {
@@ -46,10 +36,46 @@ public class Character
         c_Surname = p_surname;
         nameRandom = p_randomName;
         gearValue = p_gearValue;
-        gearExpectation = p_gearExpectation ;
+        gearExpectation = p_gearExpectation;
         hero = p_hero;
         privateText = p_privateText;
         forcedText = p_forcedText;
-        ironAdd = p_ironAdd;
-    }    
+    }
+    public void InitSprites(Sprite[] tSprites)
+    {
+        sprites = new List<Sprite>();
+
+        for (int i = 0; i < tSprites.Length; ++i) {
+            sprites.Add(tSprites[i]);
+        }
+    }
+
+    public Character(Character toCopy)
+    {
+        c_Name = toCopy.c_Name;
+        c_Surname = toCopy.c_Surname;
+        nameRandom = toCopy.nameRandom;
+        gearValue = toCopy.gearValue;
+        gearExpectation = toCopy.gearExpectation;
+        hero = toCopy.hero;
+        privateText = toCopy.privateText;
+        forcedText = toCopy.forcedText;
+        ironAdd = toCopy.ironAdd;
+    }
+
+    public float Battle()
+    {
+        float p1 = 1 - Mathf.Abs(gearExpectation[0].x - gearValue[0]) / maxGearValue;
+        float p2 = 1 - Mathf.Abs(gearExpectation[1].x - gearValue[1]) / maxGearValue;
+        float p3 = 1 - Mathf.Abs(gearExpectation[2].x - gearValue[2]) / maxGearValue;
+
+        float p1bis = 1 - Mathf.Abs(gearExpectation[0].y - gearValue[0]) / maxGearValue;
+        float p2bis = 1 - Mathf.Abs(gearExpectation[1].y - gearValue[1]) / maxGearValue;
+        float p3bis = 1 - Mathf.Abs(gearExpectation[2].y - gearValue[2]) / maxGearValue;
+
+        return Mathf.Min(p1, p2, p3, p1bis, p2bis, p3bis);
+        
+    }
+
+
 }
