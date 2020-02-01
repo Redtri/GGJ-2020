@@ -22,7 +22,7 @@ public class Character
 
     public List<Sprite> sprites;
 
-    const int maxGearValue = 10;
+    const float maxGearValue = 10f;
 
     public Character()
     {
@@ -80,26 +80,28 @@ public class Character
 
     public float Battle()
     {
-        float p1 = 1 - Mathf.Abs(gearExpectation[0].x - gearValue[0]) / maxGearValue;
-        float p2 = 1 - Mathf.Abs(gearExpectation[1].x - gearValue[1]) / maxGearValue;
-        float p3 = 1 - Mathf.Abs(gearExpectation[2].x - gearValue[2]) / maxGearValue;
+        float p1 = 1f - Mathf.Abs(gearExpectation[0].x - gearValue[0]) / maxGearValue;
 
+        float p2 = 1f - Mathf.Abs(gearExpectation[1].x - gearValue[1]) / maxGearValue;
+        float p3 = 1f - Mathf.Abs(gearExpectation[2].x - gearValue[2]) / maxGearValue;
 
-        Debug.Log("Name " + c_Name + " Surname " + c_Surname);
-        Debug.LogError("E : " + gearExpectation[0].x + " V: " + gearValue[0] + " res -> " + Mathf.Abs(gearExpectation[0].x - gearValue[0]));
+        float p1bis = 1f - Mathf.Abs(gearExpectation[0].y - gearValue[0]) / maxGearValue;
+        float p2bis = 1f - Mathf.Abs(gearExpectation[1].y - gearValue[1]) / maxGearValue;
+        float p3bis = 1f - Mathf.Abs(gearExpectation[2].y - gearValue[2]) / maxGearValue;
 
         /*
-
-        float p1bis = 1 - Mathf.Abs(gearExpectation[0].y - gearValue[0]) / maxGearValue;
-        float p2bis = 1 - Mathf.Abs(gearExpectation[1].y - gearValue[1]) / maxGearValue;
-        float p3bis = 1 - Mathf.Abs(gearExpectation[2].y - gearValue[2]) / maxGearValue;
+        Debug.Log("=============");
+        Debug.LogError(p1 + " - " + p1bis);
+        Debug.LogError(p2 + " - " + p2bis);
+        Debug.LogError(p3 + " - " + p3bis);
+        Debug.Log("=============");
         */
 
-        //Debug.LogError("Value " + p1 + " " + p2 + " " + p3 + " " + p1bis + " " + p2bis + " " + p3bis);
+        p1 = Mathf.Max(p1, p1bis);
+        p2 = Mathf.Max(p2, p2bis);
+        p3 = Mathf.Max(p3, p3bis);
 
         return Mathf.Min(p1, p2, p3);
-
-        //  return Mathf.Min(p1, p2, p3, p1bis, p2bis, p3bis);
 
     }
 

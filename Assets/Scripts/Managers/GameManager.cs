@@ -68,8 +68,26 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CharacterLeaving()
     {
-        yield return new WaitForSeconds(phaseHelper.leaveDuration);      
-        Debug.Log(phaseHelper.currentCharacter.Battle());
+        yield return new WaitForSeconds(phaseHelper.leaveDuration);        
+
+        float proba = phaseHelper.currentCharacter.Battle();
+        float random = Random.Range(0f, 1f);
+
+        
+        if(proba > random) // Char win
+        {
+            Debug.Log("Vivant");
+        }
+        else // Char Loose
+        {
+
+            Debug.Log("Mort");
+            if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
+            {
+                CharacterManager.instance.charactersAlive.Remove(phaseHelper.currentCharacter);
+            }
+        }
+
 
         phaseHelper.LeavingEnd();
 
