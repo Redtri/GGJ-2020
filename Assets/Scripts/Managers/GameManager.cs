@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         //TEST
         if (Input.GetKeyDown(KeyCode.Space)) {
             List<Character> list = new List<Character>();
-            list.Add(CharacterManager.instance.charactersInQueue.First.Value);
+            list.Add(CharacterManager.instance.charactersInQueue[0]);
             StartPhase(list);
         }
     }
@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
     //Phase Handling functions
     public void StartPhase()
     {
-        if (CharacterManager.instance.charactersInQueue.First.Value != null) {
-            StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue.First.Value));
+        if (CharacterManager.instance.charactersInQueue[0] != null) {
+            StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
         } else {
             StartCoroutine(VoidPhase());
         }

@@ -36,13 +36,11 @@ public class Character
         c_Surname = p_surname;
         nameRandom = p_randomName;
         gearValue = p_gearValue;
-        gearExpectation = p_gearExpectation ;
+        gearExpectation = p_gearExpectation;
         hero = p_hero;
         privateText = p_privateText;
         forcedText = p_forcedText;
-        ironAdd = p_ironAdd;
     }
-
     public void InitSprites(Sprite[] tSprites)
     {
         sprites = new List<Sprite>();
@@ -51,4 +49,19 @@ public class Character
             sprites.Add(tSprites[i]);
         }
     }
+
+    public Character(Character toCopy)
+    {
+        c_Name = toCopy.c_Name;
+        c_Surname = toCopy.c_Surname;
+        nameRandom = toCopy.nameRandom;
+        gearValue = toCopy.gearValue;
+        gearExpectation = toCopy.gearExpectation;
+        hero = toCopy.hero;
+        privateText = toCopy.privateText;
+        forcedText = toCopy.forcedText;
+        ironAdd = toCopy.ironAdd;
+    }
+
+
 }

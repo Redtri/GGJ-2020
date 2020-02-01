@@ -860,7 +860,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charactersAlive: []
-  scriptableChara: []
+  charactersInQueue: []
+  scriptableChara:
+  - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
+  - {fileID: 11400000, guid: f78c80a82e216864282b420d64d36e2e, type: 2}
+  - {fileID: 11400000, guid: a5016fc62c0a9e24c95cc61ab20c1f33, type: 2}
   percentNobody: 0
   percentAlive: 0
   percentNewChar: 0
