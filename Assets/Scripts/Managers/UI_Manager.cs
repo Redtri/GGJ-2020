@@ -11,6 +11,7 @@ public class UI_Manager : MonoBehaviour
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
     public Image[] bars;
+    public Button[] buttons;
 
     public Transform reachPos;
 
@@ -33,15 +34,16 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         CharacterManager.instance.onCharacterUpdate += UpdateGearUI;
-        GameManager.instance.phaseHelper.onEntranceEnd += InverseUI;
-        GameManager.instance.phaseHelper.onPhaseEnd += DisplayUI;
+        GameManager.instance.phaseHelper.onEntranceEnd += EnableButtons;
+        GameManager.instance.phaseHelper.onPhaseEnd += DisableButtons;
+        DisableButtons();
     }    
 
     private void OnDisable()
     {
         CharacterManager.instance.onCharacterUpdate -= UpdateGearUI;
-        GameManager.instance.phaseHelper.onEntranceEnd -= InverseUI;
-        GameManager.instance.phaseHelper.onPhaseEnd -= DisplayUI;
+        GameManager.instance.phaseHelper.onEntranceEnd -= EnableButtons;
+        GameManager.instance.phaseHelper.onPhaseEnd -= DisableButtons;
     }
 
     public void UpdateGearUI(CharacterActor characterUpdated)
@@ -53,13 +55,17 @@ public class UI_Manager : MonoBehaviour
         ironAmountTxt.text = GameManager.instance.playerHelper.ironAmount.ToString();
     }
 
-    public void InverseUI()
+    public void EnableButtons()
     {
-        //gameLayout.gameObject.SetActive(!gameLayout.gameObject.activeInHierarchy);
+        foreach(Button bt in buttons) {
+            bt.interactable = true;
+        }
     }
 
-    public void DisplayUI(bool value)
-    {              
-       // gameLayout.gameObject.SetActive(value);
+    public void DisableButtons(bool val1 = false)
+    {
+        foreach (Button bt in buttons) {
+            bt.interactable = false;
+        }
     }
 }
