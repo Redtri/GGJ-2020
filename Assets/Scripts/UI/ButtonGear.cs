@@ -15,7 +15,6 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         GameObject myEventSystem = GameObject.Find("EventSystem");
-
         index = transform.GetSiblingIndex();
         if(eventData.button == PointerEventData.InputButton.Right){
             rightClick = true;
