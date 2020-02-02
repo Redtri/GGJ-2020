@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 //Physical representation of the character in the world
 public class CharacterActor : MonoBehaviour
 {
@@ -62,11 +65,19 @@ public class CharacterActor : MonoBehaviour
             if (minus) {
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
-                    ++GameManager.instance.playerHelper.ironAmount;
+                    ++GameManager.instance.playerHelper.ironAmount;     
+                    EffectManager.instance.screenShake.Shake(0, 0.01f);
+
                 }
             } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
                 ++data.gearValue[index];
                 --GameManager.instance.playerHelper.ironAmount;
+
+                WhiteBalance lens = null;
+                EffectManager.instance.postProcessVolume.profile.TryGet(out lens);
+                DOVirtual.Float(0, 30f, 0.2f, (float value) => UpdateLens(value, lens))
+                         .OnComplete(() => DOVirtual.Float(30f, 0, 0.4f, (float value) => UpdateLens(value, lens)));
+                EffectManager.instance.screenShake.Shake(0, 0.05f);
             }
         }
         LoadSkin();
@@ -96,4 +107,11 @@ public class CharacterActor : MonoBehaviour
 
         //GetComponent<Animator>().SetTrigger("leaving");
     }
+
+    private void UpdateLens(float value, WhiteBalance lens)
+    {
+        lens.temperature.value = value;
+    }
+
+
 }

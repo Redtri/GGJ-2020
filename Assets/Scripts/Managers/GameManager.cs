@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
             ++nbDead;
 
             //Debug.Log("Mort");
-			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
+		//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
 
 			if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
