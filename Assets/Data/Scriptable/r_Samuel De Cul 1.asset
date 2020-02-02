@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: r_Samuel De Cul 1
   m_EditorClassIdentifier: 
   character:
+    doesExist: 0
     c_Name: Samuel
     c_Surname: De Cul
     nameRandom: 1
-    gearValue: 050000000100000003000000
+    gearValue: 040000000000000002000000
     gearExpectation:
-    - {x: 0, y: 2}
-    - {x: 3, y: 5}
-    - {x: 1, y: 5}
+    - {x: 4, y: 8}
+    - {x: 4, y: 8}
+    - {x: 0, y: 8}
     hero: 4.8
     privateText: 0
     forcedText: 
     ironAdd: 4
-    sprites: []
+    gears: []
