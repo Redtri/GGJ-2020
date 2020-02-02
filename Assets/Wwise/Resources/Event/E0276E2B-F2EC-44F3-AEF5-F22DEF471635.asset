@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630bd66eb738c6343bb0e3dc5e494528, type: 3}
+  m_Name: E0276E2B-F2EC-44F3-AEF5-F22DEF471635
+  m_EditorClassIdentifier: 
+  objectName: Set_IntensityLow
+  id: 3635806469
+  guid: E0276E2B-F2EC-44F3-AEF5-F22DEF471635

@@ -24,8 +24,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 97146d908d069441a767de55422c3069
     GuidInternal: 
-    m_lastTime: -8586210588852032745
+    m_lastTime: -8586209652444466742
     List:
+    - name: Battlefield_Filtered
+      guid: c653fa2b34a3e84cb3d200047bba5e9b
+      id: 1550058001
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Ambiance Battlefield
+        ObjectType: 2
+      - ElementName: Battlefield_Filtered
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Ambiance Battlefield\Battlefield_Filtered
     - name: RVB_Battlefield
       guid: 6e6a932451353242a95f3a08cb381711
       id: 1775981102
@@ -87,8 +100,52 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: e316d4176dcdd946919c6a078135fbca
     GuidInternal: 
-    m_lastTime: -8586210585744281193
+    m_lastTime: -8586209589362152590
     List:
+    - name: Foley_Door
+      guid: 7f8fefbbef715344acc6e9b6073b5058
+      id: 3332999173
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Foley
+        ObjectType: 4
+      - ElementName: Foley_Door
+        ObjectType: 3
+      Path: SD Event\Foley\Foley_Door
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Forge_Fire_Loop
+      guid: a2c647c1b4b5e84cb7eb75a127b537c2
+      id: 870714546
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Ambiance
+        ObjectType: 4
+      - ElementName: Forge
+        ObjectType: 4
+      - ElementName: Forge_Fire_Loop
+        ObjectType: 3
+      Path: SD Event\Ambiance\Forge\Forge_Fire_Loop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_BattlefieldAmbiance
+      guid: 4036245fabe0a34c82cca9f03a75395d
+      id: 3316639316
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Play_BattlefieldAmbiance
+        ObjectType: 3
+      Path: SD Event\Battlefield\Play_BattlefieldAmbiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Test
       guid: 1335c2cdc5949d43b0a0f8ffd8fb0371
       id: 3187507146
@@ -98,6 +155,216 @@ MonoBehaviour:
       - ElementName: Play_Test
         ObjectType: 3
       Path: SD Event\Play_Test
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_DoorClose
+      guid: a73757f1ea94874799d81a947ed7565c
+      id: 238286794
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_DoorClose
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_DoorClose
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_DoorOpen
+      guid: 1d69c7fff62d0c4f9e09fcc4ed625213
+      id: 2718873070
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_DoorOpen
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_DoorOpen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_IntensityCalm
+      guid: 869f5e324464954ea86f13b4f2443a5e
+      id: 4236667796
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_IntensityCalm
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_IntensityCalm
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_IntensityExtreme
+      guid: fbd340491256d848b9e0438db7edc2c3
+      id: 1912983523
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_IntensityExtreme
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_IntensityExtreme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_IntensityHigh
+      guid: b9ad694825660a408dc6e769daca9045
+      id: 4034190369
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_IntensityHigh
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_IntensityHigh
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_IntensityLow
+      guid: 2b6e27e0ecf2f344aef5f22def471635
+      id: 3635806469
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_IntensityLow
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_IntensityLow
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_IntensityMedium
+      guid: 4c3b1027f270f74baafee54323fa0726
+      id: 716215376
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_IntensityMedium
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_IntensityMedium
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_Loosing
+      guid: 1baa9210ee5d67419ecae34220cbc6ce
+      id: 1592413729
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_Loosing
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_Loosing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_Winning
+      guid: 4cb1388b7b8443408fa6742a844e8bfc
+      id: 1205857978
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Set_Winning
+        ObjectType: 3
+      Path: SD Event\Battlefield\Set_Winning
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_AddItem
+      guid: 07f6c35f6a0d0c4aa3913accc1a6d114
+      id: 2921734634
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_AddItem
+        ObjectType: 3
+      Path: SD Event\UI\UI_AddItem
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_DeathEvent
+      guid: ee47782c03db7a40b4f46bcd9e314900
+      id: 802821452
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_DeathEvent
+        ObjectType: 3
+      Path: SD Event\UI\UI_DeathEvent
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_DialEvent
+      guid: 9c7c684009d3c340b1a6659b5f931ebc
+      id: 3688695384
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_DialEvent
+        ObjectType: 3
+      Path: SD Event\UI\UI_DialEvent
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_Hammer
+      guid: c1ce16eed73a174c8da86a72f6a59110
+      id: 971535008
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_Hammer
+        ObjectType: 3
+      Path: SD Event\UI\UI_Hammer
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_RemoveItem
+      guid: 98c807a9aeac354da85564af947963dc
+      id: 2628486379
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_RemoveItem
+        ObjectType: 3
+      Path: SD Event\UI\UI_RemoveItem
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_Validate
+      guid: 041c2c503142d546a310e4306911a28e
+      id: 873092944
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_Validate
+        ObjectType: 3
+      Path: SD Event\UI\UI_Validate
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -118,8 +385,26 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: b29af84eb82ce6438960835af96fc5cb
     GuidInternal: 
-    m_lastTime: -8586210588044448379
-    List: []
+    m_lastTime: -8586209590213179698
+    List:
+    - name: Intensity
+      guid: baddd7195a0b4c4888615536033a132d
+      id: 2470328564
+      PathAndIcons:
+      - ElementName: SD RTPC
+        ObjectType: 12
+      - ElementName: Intensity
+        ObjectType: 13
+      Path: SD RTPC\Intensity
+    - name: SideChain
+      guid: 869c2151cb26f84fbbe3170fe980e1e3
+      id: 1883033791
+      PathAndIcons:
+      - ElementName: SD RTPC
+        ObjectType: 12
+      - ElementName: SideChain
+        ObjectType: 13
+      Path: SD RTPC\SideChain
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -137,8 +422,70 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8e360da26bc06e448018c308ac7caf63
     GuidInternal: 
-    m_lastTime: -8586210587839855487
-    List: []
+    m_lastTime: -8586209661549209335
+    List:
+    - name: DoorStates
+      guid: 0f7ca327a2024547aa5199e8f8346823
+      id: 33159115
+      PathAndIcons:
+      - ElementName: SD States
+        ObjectType: 12
+      - ElementName: DoorStates
+        ObjectType: 9
+      Path: SD States\DoorStates
+      values:
+      - name: Closed
+        guid: 0d3e53c2e6ffda4cbaa1366a3343cb8b
+        id: 3012222945
+        PathAndIcons:
+        - ElementName: Closed
+          ObjectType: 8
+      - name: None
+        guid: 41d1165eaf424f4094d85c66ac92d041
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Open
+        guid: 82915332db4874499a26327339ba3d66
+        id: 3072142513
+        PathAndIcons:
+        - ElementName: Open
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: WinningState
+      guid: f5b3a26178effb42a7929545a750b5f1
+      id: 125032842
+      PathAndIcons:
+      - ElementName: SD States
+        ObjectType: 12
+      - ElementName: WinningState
+        ObjectType: 9
+      Path: SD States\WinningState
+      values:
+      - name: Loosing
+        guid: e802886844458f4993dc5974315b174f
+        id: 1545774708
+        PathAndIcons:
+        - ElementName: Loosing
+          ObjectType: 8
+      - name: None
+        guid: 35b51680cd22fd45a77bae6692072be4
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Winning
+        guid: 0770da2de7a6ee499c088f8242aaf947
+        id: 2996998095
+        PathAndIcons:
+        - ElementName: Winning
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -168,5 +515,11 @@ MonoBehaviour:
   ExpandedItems:
   - /GGJ_WwiseProject
   - /GGJ_WwiseProject/Events
+  - /GGJ_WwiseProject/Events/SD Event
+  - /GGJ_WwiseProject/Events/SD Event/Ambiance
+  - /GGJ_WwiseProject/Events/SD Event/Ambiance/Forge
+  - /GGJ_WwiseProject/Events/SD Event/Battlefield
+  - /GGJ_WwiseProject/Events/SD Event/Foley
+  - /GGJ_WwiseProject/Events/SD Event/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
