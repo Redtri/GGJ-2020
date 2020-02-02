@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int nbCharCheck;
     public PhaseHelper phaseHelper;
     public PlayerHelper playerHelper;
+	public AnimationCurve deathCurve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(1, 0));
 
 
     public int nbDead { get; private set; }
@@ -32,9 +33,6 @@ public class GameManager : MonoBehaviour
        // StartPhase();
     }
 
-    private void Update()
-    {
-    }
 
 
     //Phase Handling functions
@@ -85,11 +83,13 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(phaseHelper.leaveDuration);        
 
-        float proba = phaseHelper.currentCharacter.Battle();
+       // float proba = phaseHelper.currentCharacter.Battle();
         float random = Random.Range(0f, 1f);
 
-        
-        if(proba > random) // Char win
+		float eval = phaseHelper.currentCharacter.Battle();
+		float proba = deathCurve.Evaluate(eval);
+		float rand = Random.Range(3, 20);
+		if (random > proba) // Char win
         {
             CharacterManager.instance.charactersAlive.Add(phaseHelper.currentCharacter);
 
@@ -98,7 +98,8 @@ public class GameManager : MonoBehaviour
             phaseHelper.currentCharacter.gearValue[1] = Random.Range(0, phaseHelper.currentCharacter.gearValue[1]);
             phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
 
-			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetVictoryLog(), Random.Range(3, 20), UIChatlog.TyopeOfLog.Good);
+			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetVictoryLog(), rand, UIChatlog.TyopeOfLog.Good);
+			
 			//Debug.Log("Vivant");
 		}
         else // Char Loose
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
 
 			//Debug.Log("Mort");
 			//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
-			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), Random.Range(3, 20), UIChatlog.TyopeOfLog.Bad);
+			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), rand, UIChatlog.TyopeOfLog.Bad);
 
 			if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
@@ -122,8 +123,16 @@ public class GameManager : MonoBehaviour
         }
         phaseHelper.LeavingEnd();
         CheckWinLose();
-    }
-
+		if (theWinRatio > 0.5f)
+		{
+			UIChatlog.AddLogMessage((int)(theWinRatio * 100) + "% chances to win the war", rand + 2, UIChatlog.TyopeOfLog.Good);
+		}
+		else
+		{
+			UIChatlog.AddLogMessage((int)(theWinRatio * 100) + "% chances to win the war", rand + 2, UIChatlog.TyopeOfLog.Bad);
+		}
+	}
+	private float theWinRatio;
     private void CheckWinLose()
     {
         int totCharacter = nbDead + CharacterManager.instance.charactersAlive.Count;
@@ -141,13 +150,8 @@ public class GameManager : MonoBehaviour
 		winRatio = winRatio/heroCount;
 		float loseRatio = 1 - winRatio;
 
-		if(winRatio > 0.5f)
-		{
-			UIChatlog.AddLogMessage((int)(winRatio * 100) + "% chances to win the war", Random.Range(0,3),UIChatlog.TyopeOfLog.Good); 
-		}else
-		{
-			UIChatlog.AddLogMessage((int)(winRatio * 100) + "% chances to win the war", Random.Range(0, 3), UIChatlog.TyopeOfLog.Bad);
-		}
+		theWinRatio = winRatio;
+		
 		
 
         if(winRatio > 0.5f) {

@@ -199,14 +199,14 @@ public class Character
 
 	public string GetVictoryLog()
 	{
-		return c_Name + " " + c_Surname + " " +CharacterManager.instance.logData.GetRandom(CharacterManager.instance.logData.victoryLog);
+		return "<color=yellow>"+c_Name + " " + c_Surname + "</color> " + CharacterManager.instance.logData.GetRandom(CharacterManager.instance.logData.victoryLog);
 	}
 
 	public string GetDeathLog()
 	{
 		float d = 0;
 		var gt =GetFarestGear(out d);
-		string str = c_Name + " " + c_Surname + " ";
+		string str = "<color=yellow>"+c_Name + " " + c_Surname + "</color> ";
 		var lData = CharacterManager.instance.logData;
 		switch (gt)
 		{
