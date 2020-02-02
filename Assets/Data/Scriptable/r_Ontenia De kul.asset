@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7df667e33aa2f4cb0801a926e6ed7c, type: 3}
+  m_Name: r_Ontenia De kul
+  m_EditorClassIdentifier: 
+  character:
+    doesExist: 1
+    c_Name: Ontenia
+    c_Surname: De kul
+    nameRandom: 1
+    gearValue: 070000000200000001000000
+    gearExpectation:
+    - {x: 0, y: 10}
+    - {x: 7, y: 8}
+    - {x: 0, y: 10}
+    hero: 11
+    privateText: 0
+    forcedText: '"Good afternoon! My sword is perfect as it is now'
+    ironAdd: 0
+    gears: []
+    skin: {fileID: 0}

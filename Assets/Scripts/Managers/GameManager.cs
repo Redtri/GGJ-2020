@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
@@ -13,9 +14,9 @@ public class GameManager : MonoBehaviour
     public PhaseHelper phaseHelper;
     public PlayerHelper playerHelper;
 
-
+    public bool gameOver {get; private set;}
     public int nbDead { get; private set; }
-    public bool winning;
+    public bool winning { get; private set; }
 
 
     private void Awake()
@@ -32,31 +33,54 @@ public class GameManager : MonoBehaviour
         StartPhase();
     }
 
+
+
     private void Update()
     {
+        if(Input.anyKeyDown && CharacterManager.instance.endCharArrived) {
+            SceneManager.LoadSceneAsync(0);
+        }
     }
 
     //Phase Handling functions
     public void StartPhase()
     {
-        if (CharacterManager.instance.charactersInQueue[0].doesExist) {
-            StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
+        if (!gameOver) {
+            if (CharacterManager.instance.charactersInQueue[0].doesExist) {
+                StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
+            }
+            else {
+                StartCoroutine(VoidPhase());
+            }
         } else {
-            StartCoroutine(VoidPhase());
+            Debug.Log("Ending character entering");
+            CharacterManager.instance.endCharacter.privateText = true;
+            CharacterManager.instance.endCharacter.forcedText = (winning) ? "T'as gagné" : "T'as perdu";
+            StartCoroutine(CharacterEntrance(CharacterManager.instance.endCharacter));
         }
     }
 
-    public void EndPhase()
+    public void EndPhase(bool force = false)
     {
-        //If there was someone in the room, The coroutine for the leaving is called$
-        if (phaseHelper.PhaseEnd()) {
+        bool test = false;
 
-            EffectManager.instance.screenShake.Shake(0, 0.1f);
+        test = force ? true : !GameObject.FindGameObjectWithTag("ValidateButton").GetComponent<UIButton>().lockButton;
 
-            StartCoroutine(CharacterLeaving());
-        }//Otherwise, just start another phase
-        else {
-            StartPhase();
+        if(test)
+        {
+            //If there was someone in the room, The coroutine for the leaving is called$
+            if (phaseHelper.PhaseEnd())
+            {
+                if (!gameOver)
+                {
+                    EffectManager.instance.screenShake.Shake(0, 0.1f);
+                    StartCoroutine(CharacterLeaving());
+                }//Otherwise, just start another phase
+            }
+            else
+            {
+                StartPhase();
+            }
         }
     }
 
@@ -77,17 +101,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
         Debug.Log("Time has passed...");
-        EndPhase();
+        EndPhase(true);
     }
 
     private IEnumerator CharacterLeaving()
     {
-        yield return new WaitForSeconds(phaseHelper.leaveDuration);        
+        yield return new WaitForSeconds(phaseHelper.leaveDuration);
 
         float proba = phaseHelper.currentCharacter.Battle();
         float random = Random.Range(0f, 1f);
 
-        
+
         if(proba > random) // Char win
         {
             CharacterManager.instance.charactersAlive.Add(phaseHelper.currentCharacter);
@@ -97,8 +121,9 @@ public class GameManager : MonoBehaviour
             phaseHelper.currentCharacter.gearValue[1] = Random.Range(0, phaseHelper.currentCharacter.gearValue[1]);
             phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
 
-            //Debug.Log("Vivant");
-        }
+			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetVictoryLog(), Random.Range(3, 20), UIChatlog.TyopeOfLog.Good);
+			//Debug.Log("Vivant");
+		}
         else // Char Loose
         {
             ++nbDead;
@@ -108,6 +133,9 @@ public class GameManager : MonoBehaviour
 
             //Debug.Log("Mort");
 		//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
+			//Debug.Log("Mort");
+			//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
+			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), Random.Range(3, 20), UIChatlog.TyopeOfLog.Bad);
 
 			if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
@@ -120,8 +148,8 @@ public class GameManager : MonoBehaviour
                CharacterManager.instance.AddCharacterToQueue();
             }
         }
-        phaseHelper.LeavingEnd();
         CheckWinLose();
+        phaseHelper.LeavingEnd();
     }
 
     private void CheckWinLose()
@@ -145,9 +173,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Total nb characters " + totCharacter);
         if(totCharacter >= nbCharCheck) {
             if ( winRatio > winPercentAlive) {
+                gameOver = true;
                 Debug.Log("WIN!");
             }
             else if( winRatio <= winLoseAlive) {
+                gameOver = true;
                 Debug.Log("LOSE");
             }
         }

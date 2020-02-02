@@ -15,6 +15,7 @@ public class PhaseHelper
 
     public delegate void BasicEvent();
     public BasicEvent onEntranceEnd;
+    public BasicEvent onEntrance;
     public BasicEvent onLeaving;
     public BasicEvent onLeavingEnd;
     public delegate void BoolEvent(bool val1);
@@ -24,16 +25,18 @@ public class PhaseHelper
     public int soldiersInc;
 
     //New character entering the forge
-    public void Enter(Character character)
+    public void Enter(Character character, bool end = false)
     {
-        CharacterManager.instance.charactersInQueue.Remove(character);
-        CharacterManager.instance.AddCharacterToQueue();
+        if (!end) {
+            CharacterManager.instance.charactersInQueue.Remove(character);
+            CharacterManager.instance.AddCharacterToQueue();
 
-        //TODO : TEST FIX BUG
-        currentCharacter = character;
+            //TODO : TEST FIX BUG
+            currentCharacter = character;
 
+            //Here trigger animations and stuff
+        }
         CharacterManager.instance.UpdateActorProfile(character);
-        //Here trigger animations and stuff
         CharacterManager.instance.characterActor.EnterForge(entranceDuration);
 
         //Sound
@@ -71,15 +74,18 @@ public class PhaseHelper
                 AudioManager.instance.SetIntensityExtreme();
                 break;
         }
+
+        onEntrance?.Invoke();
     }
 
     //Phase is over, returns whether there was anybody in the forge
     public bool PhaseEnd()
-    {
+    {        
         onPhaseEnd?.Invoke(currentCharacter.doesExist);
         CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
 
-        if (!currentCharacter.doesExist) {
+        if (!currentCharacter.doesExist)
+        {
             CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
             CharacterManager.instance.AddCharacterToQueue();
         }
@@ -90,6 +96,9 @@ public class PhaseHelper
     public void EntranceEnd()
     {
         onEntranceEnd?.Invoke();
+        if (GameManager.instance.gameOver) {
+            CharacterManager.instance.endCharArrived = true;
+        }
 
         //Sound
         AudioManager.instance.DialEvent.Post(GameManager.instance.gameObject);
