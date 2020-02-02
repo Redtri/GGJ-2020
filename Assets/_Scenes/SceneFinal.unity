@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 706213106}
   m_Layer: 5
   m_Name: Validate
-  m_TagString: Untagged
+  m_TagString: ValidateButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -936,7 +936,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 1ac99158d33da3f49a742cc0a441595f, type: 3}
   hoverSprite: {fileID: 21300000, guid: 63e837682a0863c45a94512b9f849b25, type: 3}
   leftClickSprite: {fileID: 21300000, guid: ec105073d9ff65745ace58b4d1816da1, type: 3}
-  rightClickSprite: {fileID: 0}
+  rightClickSprite: {fileID: 21300000, guid: 1ac99158d33da3f49a742cc0a441595f, type: 3}
   lockSprite: {fileID: 21300000, guid: af2ac46470aef4e47bf550ea507dea32, type: 3}
   clickEvent:
     m_PersistentCalls:
@@ -1513,13 +1513,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charactersAlive: []
   charactersInQueue: []
+  logData: {fileID: 11400000, guid: 307bd0f981b17094285e1a523813a8b8, type: 2}
   scriptableChara:
   - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
   - {fileID: 11400000, guid: efefb29621ae0994ca28af85109989dc, type: 2}
   - {fileID: 11400000, guid: 5e5b6062309b58041a82863d05bd46c7, type: 2}
   - {fileID: 11400000, guid: 55b8b53107e7fb5469ed7b28ae849397, type: 2}
-  percentNobody: 10
-  percentAlive: 80
+  percentNobody: 5
+  percentAlive: 90
   percentNewChar: 0
   nbrFirstCharInForge: 3
   characterActor: {fileID: 5133059023521512639}
@@ -1656,7 +1657,7 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0
+      - m_Value: 0.5
         m_Name: MultiplySize
         m_Overridden: 1
     m_Vector2f:
@@ -1669,7 +1670,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 40
+      - m_Value: 30
         m_Name: BurstAmount
         m_Overridden: 1
     m_Matrix4x4f:
@@ -1963,6 +1964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d1d0c7b7e27e449b2b9c0988038e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minTimeNeutralLog: 2
+  maxTimeNeutralLog: 10
 --- !u!114 &1233036109
 MonoBehaviour:
   m_ObjectHideFlags: 0

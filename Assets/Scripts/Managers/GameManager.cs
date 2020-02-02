@@ -45,17 +45,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EndPhase()
+    public void EndPhase(bool force = false)
     {
-        //If there was someone in the room, The coroutine for the leaving is called$
-        if (phaseHelper.PhaseEnd()) {
+        bool test = false;
 
-            EffectManager.instance.screenShake.Shake(0, 0.1f);
+        test = force ? true : !GameObject.FindGameObjectWithTag("ValidateButton").GetComponent<UIButton>().lockButton;
 
-            StartCoroutine(CharacterLeaving());
-        }//Otherwise, just start another phase
-        else {
-            StartPhase();
+        if(test)
+        {
+            //If there was someone in the room, The coroutine for the leaving is called$
+            if (phaseHelper.PhaseEnd())
+            {
+
+                EffectManager.instance.screenShake.Shake(0, 0.1f);
+
+                StartCoroutine(CharacterLeaving());
+            }//Otherwise, just start another phase
+            else
+            {
+                StartPhase();
+            }
         }
     }
 
@@ -76,7 +85,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
         Debug.Log("Time has passed...");
-        EndPhase();
+        EndPhase(true);
     }
 
     private IEnumerator CharacterLeaving()
