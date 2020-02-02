@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bdc597fc8ed08458018899e76a481f, type: 3}
+  m_Name: log data
+  m_EditorClassIdentifier: 
+  muchSword:
+  - self-impales on the sword that is too voluminous.
+  - cannot even lift the sword you gave and dies, unable to retaliate.
+  lessSword:
+  - cannot harm foes and loses every fight until standing becomes impossible.
+  - has a sword too tiny and dies, unable to retaliate.
+  muchBow:
+  - is too small compared to the bow, so the bow keeps firing the human and the latter
+    dies.
+  - has a bow so infallible that the foes keep dying too easily. The boredom drives
+    them out of the battlefield.
+  lessBow:
+  - has a bow with no string to draw, gets confused and falls in an enemy's lethal
+    trap.
+  - has a bow too weak to counterattack and dies during a duel.
+  muchArmor:
+  - tries to cross a puddle but drowns.
+  - collapses from exhaustion under the weight of the armor.
+  lessArmor:
+  - gets targeted by everyone and dies.
+  - is so naked that the ridicule becomes fatal.
+  victoryLog:
+  - does something incredible! No one sees it though.
+  - is very scared but fights bravely.
+  - survives for the time being, one small victory after the other.
+  - lives, and manages to help some others.
+  - talks an opponent through his personal problems and is spared.
+  - fights with magnificent acrobatic figures. Outstanding!
+  - thinks about deserting but casts aside the doubts and resumes battling.
+  - was saved in the nick of time by an ally.
+  - will unfortunately remain on this Earth a little while longer.
+  - intends to live and come back to the forge.
+  - hides behind a tree and succeeds in ambushing an enemy troup!
+  - struggles to not wipe out the opposing squad! Wow!
+  - is hailed as a hero for winning.
+  - settles a brawl with a throw of dice and wins.
+  - competes like a god on the battlefield.
+  neutralLog:
+  - A fat pigeon carries an important message above the battlefield. Will it ever
+    reach its destination?
+  - A dance battle occurs between two squads. The tension is unbearable.
+  - Some swordsmen are taking a coffee break.
+  - A bowman caught a fish.
+  - Amidst the chaos, someone blows a horn. Someone else blows it louder. It turns
+    into a contest.
+  - Some cries echo through the mist. Are they weeping or laughing?
+  - The enemies dig a trench to ambush your front line.
+  - The enemy troups brought a trebuchet that fires mini-trebuchets.
+  - 'A duel is occurring just outside: you can hear the clashing of swords.'
+  - A group of allies agreed on praying the gods but can't settle on which gods to
+    pray.
+  - The rain suddenly starts falling outside and some drops slither through your
+    roof.
+  - Rays of sun pierce through the clouds... Some warriors are blinded and trip on
+    rocks.
+  - The wind carries songs of hope, glee and determination.
+  - A merchant carriage crosses the field and the fighters politely let it through.
+  - The ground is shaking! Did the stomping of armies wake up the Earth?
+  - Two soldiers from opposite sides found happiness in the bushes.
+  - A commanding officer is thinking about tricking the enemy...
+  - A commanding officer is thinking about tricking her allies...
+  - A commanding officer is thinking about breakfast...
+  - A commanding officer is thinking about thinking...
+  - Someone trips, falls and accidentally murders someone's sister.
+  - An officer was feeling ill but another brought him cookies.
+  - A comet crosses the skies at full speed! But it's daytime so nobody noticed.
+  - The grass turns to mud, and the mud to blood. What a sore sight.
+  - Night has come but sleep hasn't.
+  - Oh my, is she actually giving birth while defending herself?!
+  - Either someone is whistling, or arrows are rending the air at unbelievable speed.
+  - Trained battle dogs from both sides were sent on the battlefield but they just
+    started playing with one another.
+  - The battle doesn't look like it's going to end anytime soon.
+  - An enemy recognizes a family member amongst the allies. They lower their weapons
+    and rejoice.
+  - A third army nobody knows has appeared. They begin fighting before realizing
+    they came to the wrong battlefield.
+  - Tacticians gather to come up with a trap idea.
+  - People camouflaged as the ground are stomped before they can intervene.
+  - While trying to bury a dead comrade, an ally finds a secret vault underground.

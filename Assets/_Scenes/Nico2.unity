@@ -1513,6 +1513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charactersAlive: []
   charactersInQueue: []
+  logData: {fileID: 11400000, guid: 307bd0f981b17094285e1a523813a8b8, type: 2}
   scriptableChara:
   - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
   - {fileID: 11400000, guid: efefb29621ae0994ca28af85109989dc, type: 2}
@@ -1938,6 +1939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d1d0c7b7e27e449b2b9c0988038e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minTimeNeutralLog: 2
+  maxTimeNeutralLog: 10
 --- !u!114 &1233036109
 MonoBehaviour:
   m_ObjectHideFlags: 0

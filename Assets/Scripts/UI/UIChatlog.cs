@@ -12,6 +12,12 @@ public class UIChatlog : MonoBehaviour
 	private Text[] texts;
 	private int count = 0;
 
+	public float minTimeNeutralLog = 2;
+	public float maxTimeNeutralLog = 10;
+	private float nextDuration;
+	private float lastTime;
+	private List<string> neutralList;
+
     public enum TyopeOfLog
     {
         Bad,
@@ -29,11 +35,34 @@ public class UIChatlog : MonoBehaviour
 		{
 			t.text = "";
 		}
+		neutralList = new List<string>();
+		neutralList.AddRange(CharacterManager.instance.logData.neutralLog);
 	}
 
+	private string GetNeutralLog()
+	{
+		if(neutralList.Count == 0)
+		{
+			neutralList.AddRange(CharacterManager.instance.logData.neutralLog);
+		}
+		int id = Random.Range(0, neutralList.Count);
+		string s = neutralList[id];
+		neutralList.RemoveAt(id);
+		return s;
+
+	}
 
     private void Update()
     {
+		if(Time.time > lastTime + nextDuration)
+		{
+			nextDuration = Random.Range(minTimeNeutralLog, maxTimeNeutralLog);
+			lastTime = Time.time;
+
+			SendMessage(GetNeutralLog(),Random.Range(0,5),TyopeOfLog.Neutral);
+			if (Random.value > 0.5)
+				SendMessage(GetNeutralLog(), Random.Range(5, 10), TyopeOfLog.Neutral);
+		}
         /*
         TyopeOfLog type = TyopeOfLog.Good;
 
@@ -87,8 +116,8 @@ public class UIChatlog : MonoBehaviour
         }
     }
 
-	public static void AddLogMessage(string message, float delay, TyopeOfLog tyopeOfLog)
+	public static void AddLogMessage(string message, float delay, TyopeOfLog typeOfLog)
 	{
-		FindObjectOfType<UIChatlog>().SendMessage(message, delay);
+		FindObjectOfType<UIChatlog>().SendMessage(message, delay,typeOfLog);
 	}
 }
