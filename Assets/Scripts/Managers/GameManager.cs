@@ -92,14 +92,16 @@ public class GameManager : MonoBehaviour
             phaseHelper.currentCharacter.gearValue[1] = Random.Range(0, phaseHelper.currentCharacter.gearValue[1]);
             phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
 
-            //Debug.Log("Vivant");
-        }
+			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetVictoryLog(), Random.Range(3, 20), UIChatlog.TyopeOfLog.Good);
+			//Debug.Log("Vivant");
+		}
         else // Char Loose
         {
             ++nbDead;
 
-            //Debug.Log("Mort");
-		//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
+			//Debug.Log("Mort");
+			//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
+			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), Random.Range(3, 20), UIChatlog.TyopeOfLog.Bad);
 
 			if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
