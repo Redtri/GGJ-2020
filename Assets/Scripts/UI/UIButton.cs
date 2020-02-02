@@ -32,6 +32,9 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		if (lockButton)
 		{
 			SetSprite(lockSprite);
+		}else
+		{
+			
 		}
 	}
 
@@ -80,6 +83,26 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		}else
 		{
 			img.sprite = s;
+		}
+	}
+
+	public void SetLock(bool l)
+	{
+		if (l)
+		{
+			lockButton = true;
+			SetSprite(lockSprite);
+		}
+		else
+		{
+			lockButton = false;
+			if (isHover)
+			{
+				SetSprite(hoverSprite);
+			}else
+			{
+				SetSprite(idleSprite);
+			}
 		}
 	}
 

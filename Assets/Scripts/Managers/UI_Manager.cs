@@ -11,7 +11,7 @@ public class UI_Manager : MonoBehaviour
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
     public Image[] bars;
-    public Button[] buttons;
+    public UIButton[] buttons;
 
     public Transform reachPos;
 
@@ -57,15 +57,15 @@ public class UI_Manager : MonoBehaviour
 
     public void EnableButtons()
     {
-        foreach(Button bt in buttons) {
-            bt.interactable = true;
-        }
+        foreach(UIButton bt in buttons) {
+			bt.SetLock(false);
+		}
     }
 
     public void DisableButtons(bool val1 = false)
     {
-        foreach (Button bt in buttons) {
-            bt.interactable = false;
+        foreach (UIButton bt in buttons) {
+			bt.SetLock(true);
         }
     }
 }
