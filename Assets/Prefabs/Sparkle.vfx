@@ -18,10 +18,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 880
-    y: -394
-    width: 455
-    height: 1977
+    x: 899
+    y: -392
+    width: 436
+    height: 1975
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,7 +67,9 @@ VisualEffectResource:
       1\n#define VFX_USE_LIFETIME_CURRENT 1\n#define VFX_USE_ANGLEX_CURRENT 1\n#define
       VFX_USE_ANGLEY_CURRENT 1\n#define VFX_USE_ANGLEZ_CURRENT 1\n#define VFX_USE_POSITION_CURRENT
       1\n#define VFX_USE_ALIVE_CURRENT 1\n#define VFX_USE_AGE_CURRENT 1\n#define
-      VFX_LOCAL_SPACE 1\n#include \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXDefines.hlsl\"\n\n\r\n\nstruct
+      VFX_LOCAL_SPACE 1\n#include \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXDefines.hlsl\"\n\n\r\nCBUFFER_START(parameters)\n   
+      float3 A_a;\n    float A_b;\n    float3 B_a;\n    float B_b;\n    float3 A_c;\n   
+      uint PADDING_0;\n    float3 B_c;\n    uint PADDING_1;\nCBUFFER_END\n\nstruct
       Attributes\n{\n    float3 velocity;\n    uint seed;\n    float lifetime;\n   
       float angleX;\n    float angleY;\n    float angleZ;\n    float3 position;\n   
       bool alive;\n    float age;\n};\n\nstruct SourceAttributes\n{\n};\n\n\n\r\n\r\n#define
@@ -131,16 +133,14 @@ VisualEffectResource:
       return;\r\n\r\n        const StripData stripData = GetStripDataFromStripIndex(stripIndex,
       PARTICLE_PER_STRIP_COUNT);\r\n\t\tInitStripAttributes(particleIndex, attributes,
       stripData);\r\n\t\t// TODO Change seed to be sure we're deterministic on random
-      with strip\r\n#endif\r\n        \r\n        {\n            SetAttribute_E6295C0(
-      /*inout */attributes.velocity,  /*inout */attributes.seed, float3(-7, -7, -3),
-      float3(7, 7, 3));\n        }\n        {\n            SetAttribute_F01429A3(
-      /*inout */attributes.lifetime,  /*inout */attributes.seed, (float)0.5, (float)1);\n       
-      }\n        {\n            SetAttribute_48A7BD6A( /*inout */attributes.angleX, 
-      /*inout */attributes.angleY,  /*inout */attributes.angleZ,  /*inout */attributes.seed,
-      float3(-90, -90, -90), float3(90, 90, 90));\n        }\n        \n\r\n\t\t\r\n#if
-      VFX_USE_ALIVE_CURRENT\r\n        if (attributes.alive)\r\n#endif       \r\n       
-      {\r\n#if USE_DEAD_LIST\r\n\t        uint deadIndex = deadListIn.DecrementCounter();\r\n           
-      uint index = deadListIn[deadIndex];\r\n#else\r\n            uint index = particleIndex;\r\n#endif\r\n           
+      with strip\r\n#endif\r\n        \r\n        SetAttribute_E6295C0( /*inout */attributes.velocity, 
+      /*inout */attributes.seed, A_a, B_a);\n        SetAttribute_F01429A3( /*inout
+      */attributes.lifetime,  /*inout */attributes.seed, A_b, B_b);\n        SetAttribute_48A7BD6A(
+      /*inout */attributes.angleX,  /*inout */attributes.angleY,  /*inout */attributes.angleZ, 
+      /*inout */attributes.seed, A_c, B_c);\n        \n\r\n\t\t\r\n#if VFX_USE_ALIVE_CURRENT\r\n       
+      if (attributes.alive)\r\n#endif       \r\n        {\r\n#if USE_DEAD_LIST\r\n\t       
+      uint deadIndex = deadListIn.DecrementCounter();\r\n            uint index =
+      deadListIn[deadIndex];\r\n#else\r\n            uint index = particleIndex;\r\n#endif\r\n           
       attributeBuffer.Store3((index * 0x4 + 0x0) << 2,asuint(attributes.velocity));\n           
       attributeBuffer.Store((index * 0x1 + 0x61B00) << 2,asuint(attributes.lifetime));\n           
       attributeBuffer.Store((index * 0x3 + 0x7A1C0) << 2,asuint(attributes.angleX));\n           
@@ -158,7 +158,7 @@ VisualEffectResource:
       1\n#define VFX_USE_POSITION_CURRENT 1\n#define VFX_USE_ALIVE_CURRENT 1\n#define
       VFX_USE_AGE_CURRENT 1\n#define VFX_HAS_INDIRECT_DRAW 1\n#define VFX_LOCAL_SPACE
       1\n#include \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXDefines.hlsl\"\n\n\r\nCBUFFER_START(parameters)\n   
-      float deltaTime_a;\n    uint3 PADDING_0;\nCBUFFER_END\n\nstruct Attributes\n{\n   
+      float3 Force_a;\n    float deltaTime_a;\nCBUFFER_END\n\nstruct Attributes\n{\n   
       float3 velocity;\n    float lifetime;\n    float3 position;\n    bool alive;\n   
       float age;\n};\n\nstruct SourceAttributes\n{\n};\n\n\n\r\n\r\n#define USE_DEAD_LIST
       (VFX_USE_ALIVE_CURRENT && !HAS_STRIPS)\r\n\r\nRWByteAddressBuffer attributeBuffer;\r\n\r\n#if
@@ -189,8 +189,8 @@ VisualEffectResource:
       VFX_USE_OLDPOSITION_CURRENT\r\n\t\t\tattributes.oldPosition = attributes.position;\r\n#endif\r\n#if
       HAS_STRIPS\r\n            const StripData stripData = GetStripDataFromParticleIndex(index,
       PARTICLE_PER_STRIP_COUNT);\r\n            InitStripAttributes(index, attributes,
-      stripData);\r\n#endif\r\n\t\t\t\r\n\t\t\t{\n\t\t\t    Gravity( /*inout */attributes.velocity,
-      float3(0, -5, 0), deltaTime_a);\n\t\t\t}\n\t\t\tEulerIntegration( /*inout */attributes.position,
+      stripData);\r\n#endif\r\n\t\t\t\r\n\t\t\tGravity( /*inout */attributes.velocity,
+      Force_a, deltaTime_a);\n\t\t\tEulerIntegration( /*inout */attributes.position,
       attributes.velocity, deltaTime_a);\n\t\t\tAge( /*inout */attributes.age, deltaTime_a);\n\t\t\tReap(attributes.age,
       attributes.lifetime,  /*inout */attributes.alive);\n\t\t\t\n\r\n\r\n\t\t\tif
       (attributes.alive)\r\n\t\t\t{\r\n\t\t\t\tattributeBuffer.Store3((index * 0x4
@@ -218,8 +218,8 @@ VisualEffectResource:
       VFX_USE_OLDPOSITION_CURRENT\r\n\t\tattributes.oldPosition = attributes.position;\r\n#endif\r\n#if
       HAS_STRIPS\r\n        const StripData stripData = GetStripDataFromParticleIndex(index,
       PARTICLE_PER_STRIP_COUNT);\r\n        InitStripAttributes(index, attributes,
-      stripData);\r\n#endif\r\n\t\t\r\n\t\t{\n\t\t    Gravity( /*inout */attributes.velocity,
-      float3(0, -5, 0), deltaTime_a);\n\t\t}\n\t\tEulerIntegration( /*inout */attributes.position,
+      stripData);\r\n#endif\r\n\t\t\r\n\t\tGravity( /*inout */attributes.velocity,
+      Force_a, deltaTime_a);\n\t\tEulerIntegration( /*inout */attributes.position,
       attributes.velocity, deltaTime_a);\n\t\tAge( /*inout */attributes.age, deltaTime_a);\n\t\tReap(attributes.age,
       attributes.lifetime,  /*inout */attributes.alive);\n\t\t\n\r\n\t\tattributeBuffer.Store3((index
       * 0x4 + 0x0) << 2,asuint(attributes.velocity));\n\t\tattributeBuffer.Store3((index
@@ -734,55 +734,115 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 14
+        data[3]: 1
       - op: 1
         valueIndex: 1
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 13
+        data[3]: 1
       - op: 1
         valueIndex: 2
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 2
-      - op: 57
+        data[3]: 1
+      - op: 1
+        valueIndex: 3
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
         valueIndex: 4
-        data[0]: 0
+        data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 0
-      - op: 56
+        data[3]: 1
+      - op: 1
         valueIndex: 5
-        data[0]: 1
+        data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 0
-      - op: 6
+        data[3]: 1
+      - op: 1
+        valueIndex: 6
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 7
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 8
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
         valueIndex: 9
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: -1
+        data[3]: 1
       - op: 1
         valueIndex: 10
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
+        data[3]: 1
+      - op: 1
+        valueIndex: 11
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 12
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
       - op: 1
         valueIndex: 13
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
+        data[3]: 1
+      - op: 1
+        valueIndex: 14
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 15
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
       - op: 1
         valueIndex: 16
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
+        data[3]: 1
+      - op: 1
+        valueIndex: 17
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 18
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
       - op: 1
         valueIndex: 19
         data[0]: -1
@@ -794,45 +854,141 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
+        data[3]: 13
       - op: 1
         valueIndex: 21
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
+        data[3]: 1
       - op: 1
-        valueIndex: 24
+        valueIndex: 22
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
+        data[3]: 1
+      - op: 1
+        valueIndex: 23
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 31
+        valueIndex: 24
+        data[0]: 2
+        data[1]: 1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 25
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 14
+      - op: 31
+        valueIndex: 26
+        data[0]: 0
+        data[1]: 1
+        data[2]: -1
+        data[3]: 1
       - op: 1
         valueIndex: 27
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
-      - op: 1
-        valueIndex: 30
+        data[3]: 1
+      - op: 6
+        valueIndex: 28
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
-      - op: 1
+        data[3]: -1
+      - op: 3
+        valueIndex: 29
+        data[0]: 8
+        data[1]: 9
+        data[2]: 11
+        data[3]: -1
+      - op: 57
+        valueIndex: 32
+        data[0]: 25
+        data[1]: -1
+        data[2]: -1
+        data[3]: 0
+      - op: 56
         valueIndex: 33
+        data[0]: 20
+        data[1]: -1
+        data[2]: -1
+        data[3]: 0
+      - op: 2
+        valueIndex: 37
+        data[0]: 26
+        data[1]: 26
+        data[2]: -1
+        data[3]: -1
+      - op: 3
+        valueIndex: 39
+        data[0]: 7
+        data[1]: 6
+        data[2]: 5
+        data[3]: -1
+      - op: 1
+        valueIndex: 42
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 2
+        data[3]: 1
       - op: 1
-        valueIndex: 35
+        valueIndex: 43
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 44
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 7
+      - op: 3
+        valueIndex: 45
+        data[0]: 12
+        data[1]: 3
+        data[2]: 10
+        data[3]: -1
+      - op: 3
+        valueIndex: 48
+        data[0]: 15
+        data[1]: 14
+        data[2]: 13
+        data[3]: -1
+      - op: 3
+        valueIndex: 51
+        data[0]: 19
+        data[1]: 18
+        data[2]: 17
+        data[3]: -1
+      - op: 3
+        valueIndex: 54
+        data[0]: 23
+        data[1]: 22
+        data[2]: 21
+        data[3]: -1
+      - op: 2
+        valueIndex: 57
+        data[0]: 24
+        data[1]: 24
+        data[2]: -1
+        data[3]: -1
+      - op: 3
+        valueIndex: 59
+        data[0]: 27
+        data[1]: 16
+        data[2]: 4
+        data[3]: -1
       - op: 9
-        valueIndex: 36
+        valueIndex: 62
         data[0]: -1
         data[1]: -1
         data[2]: -1
@@ -843,32 +999,62 @@ VisualEffectResource:
     m_PropertySheet:
       m_Float:
         m_Array:
+        - m_ExpressionIndex: 0
+          m_Value: 64
+        - m_ExpressionIndex: 1
+          m_Value: 0
+        - m_ExpressionIndex: 2
+          m_Value: 0
+        - m_ExpressionIndex: 3
+          m_Value: 7
+        - m_ExpressionIndex: 4
+          m_Value: 90
+        - m_ExpressionIndex: 5
+          m_Value: -90
+        - m_ExpressionIndex: 6
+          m_Value: -90
+        - m_ExpressionIndex: 7
+          m_Value: -90
+        - m_ExpressionIndex: 8
+          m_Value: 0
         - m_ExpressionIndex: 9
-          m_Value: 1
+          m_Value: -15
         - m_ExpressionIndex: 10
+          m_Value: 3
+        - m_ExpressionIndex: 11
+          m_Value: 0
+        - m_ExpressionIndex: 12
+          m_Value: 7
+        - m_ExpressionIndex: 13
+          m_Value: -3
+        - m_ExpressionIndex: 14
+          m_Value: -7
+        - m_ExpressionIndex: 15
+          m_Value: -7
+        - m_ExpressionIndex: 16
+          m_Value: 90
+        - m_ExpressionIndex: 17
+          m_Value: 2
+        - m_ExpressionIndex: 18
+          m_Value: 3
+        - m_ExpressionIndex: 19
+          m_Value: 2
+        - m_ExpressionIndex: 21
+          m_Value: 0
+        - m_ExpressionIndex: 22
+          m_Value: 1
+        - m_ExpressionIndex: 23
+          m_Value: 0
+        - m_ExpressionIndex: 27
+          m_Value: 90
+        - m_ExpressionIndex: 34
+          m_Value: 1
+        - m_ExpressionIndex: 35
           m_Value: 0.5
       m_Vector2f:
-        m_Array:
-        - m_ExpressionIndex: 2
-          m_Value: {x: 64, y: 64}
-        - m_ExpressionIndex: 15
-          m_Value: {x: 0, y: 0}
+        m_Array: []
       m_Vector3f:
-        m_Array:
-        - m_ExpressionIndex: 6
-          m_Value: {x: 0, y: -5, z: 0}
-        - m_ExpressionIndex: 7
-          m_Value: {x: 90, y: 90, z: 90}
-        - m_ExpressionIndex: 8
-          m_Value: {x: -90, y: -90, z: -90}
-        - m_ExpressionIndex: 11
-          m_Value: {x: 7, y: 7, z: 3}
-        - m_ExpressionIndex: 12
-          m_Value: {x: -7, y: -7, z: -3}
-        - m_ExpressionIndex: 13
-          m_Value: {x: 2, y: 3, z: 2}
-        - m_ExpressionIndex: 14
-          m_Value: {x: 0, y: 1, z: 0}
+        m_Array: []
       m_Vector4f:
         m_Array: []
       m_Uint:
@@ -879,7 +1065,7 @@ VisualEffectResource:
         m_Array: []
       m_AnimationCurve:
         m_Array:
-        - m_ExpressionIndex: 1
+        - m_ExpressionIndex: 20
           m_Value:
             serializedVersion: 2
             m_Curve:
@@ -915,7 +1101,7 @@ VisualEffectResource:
             m_RotationOrder: 4
       m_Gradient:
         m_Array:
-        - m_ExpressionIndex: 0
+        - m_ExpressionIndex: 25
           m_Value:
             serializedVersion: 2
             key0: {r: 5.992157, g: 3.3254902, b: 0, a: 1}
@@ -947,7 +1133,7 @@ VisualEffectResource:
             m_NumAlphaKeys: 4
       m_NamedObject:
         m_Array:
-        - m_ExpressionIndex: 16
+        - m_ExpressionIndex: 36
           m_Value: {fileID: 2800000, guid: 49cb5aa34272b034d8b754c65d9cdbfa, type: 3}
       m_Bool:
         m_Array: []
@@ -1103,9 +1289,9 @@ VisualEffectResource:
       temporaryBuffers: []
       values:
       - nameId: Count
-        index: 2
+        index: 32
       - nameId: Delay
-        index: 15
+        index: 41
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: -1
@@ -1132,9 +1318,9 @@ VisualEffectResource:
       index: 6
     values:
     - nameId: bounds_center
-      index: 14
+      index: 40
     - nameId: bounds_size
-      index: 13
+      index: 39
     tasks:
     - type: 536870912
       buffers:
@@ -1147,12 +1333,24 @@ VisualEffectResource:
       - nameId: sourceAttributeBuffer
         index: 1
       temporaryBuffers: []
-      values: []
+      values:
+      - nameId: A_a
+        index: 38
+      - nameId: B_a
+        index: 37
+      - nameId: A_b
+        index: 35
+      - nameId: B_b
+        index: 34
+      - nameId: A_c
+        index: 33
+      - nameId: B_c
+        index: 42
       params:
       - nameId: bounds_center
-        index: 14
+        index: 40
       - nameId: bounds_size
-        index: 13
+        index: 39
       processor: {fileID: 0}
       shaderSourceIndex: 0
     - type: 805306368
@@ -1165,8 +1363,10 @@ VisualEffectResource:
         index: 4
       temporaryBuffers: []
       values:
+      - nameId: Force_a
+        index: 29
       - nameId: deltaTime_a
-        index: 5
+        index: 28
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: 1
@@ -1183,7 +1383,7 @@ VisualEffectResource:
       temporaryBuffers: []
       values:
       - nameId: localToWorld
-        index: 17
+        index: 43
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: 3
@@ -1198,11 +1398,11 @@ VisualEffectResource:
       temporaryBuffers: []
       values:
       - nameId: Size_b
-        index: 4
+        index: 31
       - nameId: Color_c
-        index: 3
+        index: 30
       - nameId: mainTexture
-        index: 16
+        index: 36
       params:
       - nameId: sortPriority
         index: 0
@@ -2447,7 +2647,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":0.0,"y":-5.0,"z":0.0}}'
+      m_SerializableObject: '{"vector":{"x":0.0,"y":-15.0,"z":0.0}}'
     m_Space: 0
   m_Property:
     name: Force
@@ -2735,7 +2935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 880, y: -394}
+  m_UIPosition: {x: 899, y: -392}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
