@@ -1219,8 +1219,15 @@ MonoBehaviour:
   percentAlive: 80
   percentNewChar: 0
   characterActor: {fileID: 5133059023521512639}
-  characterTemplates:
+  gearTemplates:
   - {fileID: 11400000, guid: 143825b5e8ecc944289380241d266874, type: 2}
+  skinTemplates:
+  - {fileID: 21300000, guid: f5e468804c45d17439d0c74ed8712852, type: 3}
+  - {fileID: 21300000, guid: 6610e590effc742479f9f3986ca36689, type: 3}
+  - {fileID: 21300000, guid: d92840a70316baa46b3db3f9168abb74, type: 3}
+  - {fileID: 21300000, guid: d83c058bf2f5f8c4290fcd8c2809a660, type: 3}
+  - {fileID: 21300000, guid: e71d52e13dd49ac49b7d46ea7ba2a457, type: 3}
+  - {fileID: 21300000, guid: d4a658679528a6946a1671e6c479576b, type: 3}
 --- !u!114 &1051172730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1255,6 +1262,7 @@ MonoBehaviour:
       forcedText: 
       ironAdd: 0
       gears: []
+      skin: {fileID: 0}
     previousCharacter:
       doesExist: 0
       c_Name: GEAROES
@@ -1270,6 +1278,7 @@ MonoBehaviour:
       forcedText: 
       ironAdd: 0
       gears: []
+      skin: {fileID: 0}
   playerHelper:
     playerGO: {fileID: 1210055528}
     ironAmount: 5

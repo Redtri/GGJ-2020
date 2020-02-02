@@ -23,6 +23,7 @@ public class Character
     public int ironAdd;
 
     public List<GearSkin> gears;
+    public Sprite skin;
 
     const float maxGearValue = 8;
 
@@ -46,9 +47,9 @@ public class Character
 
         gears = new List<GearSkin>();
     }
-    public void InitSprites(List<GearSkin> tGears)
+    public void InitSprites(List<GearSkin> tGears, Sprite tSkin)
     {
-        gears = tGears;
+        gears = tGears;        skin = tSkin;
     }
 
     public Character(Character toCopy)

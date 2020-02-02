@@ -14,19 +14,11 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
         index = transform.GetSiblingIndex();
         if(eventData.button == PointerEventData.InputButton.Right) {
             rightClick = true;
+        }else if (eventData.button == PointerEventData.InputButton.Left) {
+            rightClick = false;
             GetComponent<Button>().onClick.Invoke();
         }
-        else if (eventData.button == PointerEventData.InputButton.Left) {
-            rightClick = false;
-        }
         CharacterManager.instance.UpdateActorGearValues(index, rightClick);
-    }
-
-    //TODO : Debug de mes couilles
-    public void OnSelect(BaseEventData eventData)
-    {
-        GetComponent<Button>().OnDeselect(eventData);
-        Debug.Log(this.gameObject.name + " was selected");
     }
 
     public void UpdateBar(float fillAmount)
