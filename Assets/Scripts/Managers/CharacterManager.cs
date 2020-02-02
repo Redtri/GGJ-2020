@@ -97,6 +97,7 @@ public class CharacterManager : MonoBehaviour
 
         c.InitSprites(gearTemplates[0].gearParts, skinTemplates[Random.Range(0, skinTemplates.Length)]);
 
+
         if (forceNew)
         {
             percent = float.MaxValue;
@@ -114,27 +115,30 @@ public class CharacterManager : MonoBehaviour
             {
                 int randomAlive = Random.Range(0, charactersAlive.Count);
 
-                int countLoop = 0;
-                
-                while (charactersInQueue.Contains(charactersAlive[randomAlive]))
+                int countLoop = 0;            
+
+                while (charactersInQueue.Contains(charactersAlive[randomAlive]) || GameManager.instance.phaseHelper.currentCharacter == charactersAlive[randomAlive])
                 {
+
+                    Debug.Log("sdfsd");
+
                     randomAlive = Random.Range(0, charactersAlive.Count);
                     countLoop++;
                     if(countLoop > 10)
                     {
-                        int index = Random.Range(0, scriptableChara.Length);
+                        int index = Random.Range(nbrFirstCharInForge + 1, scriptableChara.Length);
                         CreateCharacterAndAddToQueue(index);
                         return;
                     }
                 }
-
+                charactersAlive[randomAlive].privateText = false;
                 charactersInQueue.Add(charactersAlive[randomAlive]);
             }
         }
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-            int index = Random.Range(0, scriptableChara.Length);
+            int index = Random.Range(nbrFirstCharInForge + 1, scriptableChara.Length);
 
             if (forceNew)
             {

@@ -86,6 +86,7 @@ public class PhaseHelper
 
         if (!currentCharacter.doesExist)
         {
+            currentCharacter.privateText = false;
             CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
             CharacterManager.instance.AddCharacterToQueue();
         }
