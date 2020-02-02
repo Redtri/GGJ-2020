@@ -103,6 +103,12 @@ public class CharacterActor : MonoBehaviour
         myAwesomeSequence.Append(transform.DOMoveX(reachPosition.position.x, entranceDuration));       
         myAwesomeSequence.Join(transform.DOMoveY(reachPosition.position.y, entranceDuration).SetEase(sinuoisde));
 
+        foreach(var sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.color = new Color(0, 0, 0, 0.0f);
+            sprite.DOColor(new Color(1, 1, 1, 1.0f), 1.0f);
+        }
+
         //GetComponent<Animator>().SetTrigger("entrance");
     }
 
@@ -112,6 +118,11 @@ public class CharacterActor : MonoBehaviour
         Sequence myAwesomeSequence = DOTween.Sequence();
         myAwesomeSequence.Append(transform.DOMoveX(basePosition.x, leaveDuration));
         myAwesomeSequence.Join(transform.DOMoveY(basePosition.y, leaveDuration).SetEase(sinuoisde));
+
+        foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.DOColor(new Color(0, 0, 0, 0.0f), 1.0f);
+        }
 
         //GetComponent<Animator>().SetTrigger("leaving");
     }
