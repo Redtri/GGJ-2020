@@ -10,6 +10,7 @@ public class UIDialogue : MonoBehaviour
 {
 	public DialogueScriptableObject dialogData;
     public GameObject children;
+	public TextMeshProUGUI nameText;
 
 	//private TMP_TextJuicer juicer;
 	private TextMeshProUGUI tmp;
@@ -38,29 +39,17 @@ public class UIDialogue : MonoBehaviour
 
 	private void OnEntrance()
 	{
-		SetText(GetString());	
+		SetText(GetString());
+		Character c = GameManager.instance.phaseHelper.currentCharacter;
+		nameText.text = c.c_Name + "  " + c.c_Surname;
 	}
 
 	private void OnLeave()
 	{
 		SetText("");
+		nameText.text = "";
 	}
 
-	private void Update()
-	{
-        /*
-		if(tmp.text.Length > 0)
-		{
-			progress += Time.deltaTime / (float)(tmp.text.Length) *  speed;
-		}else
-		{
-			progress = 0;
-		}*/
-		
-		//juicer.SetProgress(progress);
-		//juicer.SetDirty();
-		
-	}
 
 	public void SetText(string txt) {
 		progress = 0;
@@ -73,8 +62,6 @@ public class UIDialogue : MonoBehaviour
         text.DOText(txt, 2.0f).OnUpdate(() => UpdateText(text)).OnComplete(() => text.text = "");
         
         tmp.text = "";
-        
-		//juicer.SetDirty();
 	}    
 
 

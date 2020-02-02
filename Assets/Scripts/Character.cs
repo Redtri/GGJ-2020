@@ -26,10 +26,14 @@ public class Character
 
     const float maxGearValue = 8;
 
-    public Character()
-    {
-        doesExist = false;
-        gears = new List<GearSkin>();
+    public Character()
+
+    {
+
+        doesExist = false;
+
+        gears = new List<GearSkin>();
+
     }
 
     public Character(string p_name, string p_surname, bool p_randomName, int[] p_gearValue, Vector2[] p_gearExpectation, float p_hero, bool p_privateText, string p_forcedText, int p_ironAdd)
@@ -42,17 +46,24 @@ public class Character
         gearExpectation = p_gearExpectation;
         hero = p_hero;
         privateText = p_privateText;
-        forcedText = p_forcedText;
-
-        gears = new List<GearSkin>();
+        forcedText = p_forcedText;
+
+
+
+        gears = new List<GearSkin>();
+
     }
-    public void InitSprites(List<GearSkin> tGears)
-    {
-        gears = tGears;
+    public void InitSprites(List<GearSkin> tGears)
+
+    {
+
+        gears = tGears;
+
     }
 
     public Character(Character toCopy)
-    {
+    {
+
         gears = new List<GearSkin>();
         doesExist = true;
         c_Name = toCopy.c_Name;
@@ -66,15 +77,24 @@ public class Character
             toCopy.gearValue[2]
         };      
     
-        gearExpectation = new Vector2[3]
-        {
-              toCopy.gearExpectation[0],
-              toCopy.gearExpectation[1],
-              toCopy.gearExpectation[2]
-        };
-
-        gears = new List<GearSkin>();
-
+        gearExpectation = new Vector2[3]
+
+        {
+
+              toCopy.gearExpectation[0],
+
+              toCopy.gearExpectation[1],
+
+              toCopy.gearExpectation[2]
+
+        };
+
+
+
+        gears = new List<GearSkin>();
+
+
+
         hero = toCopy.hero;
         privateText = toCopy.privateText;
         forcedText = toCopy.forcedText;
@@ -179,6 +199,44 @@ public class Character
 		return type;
 	}
 
-
+	public string GetDeathLog()
+	{
+		float d = 0;
+		var gt =GetFarestGear(out d);
+		string str = c_Name + " " + c_Surname + " ";
+		switch (gt)
+		{
+			case GearType.SWORD:
+				if(d > 0)
+				{
+					return str + "died to a better sword!";
+				}
+				else
+				{
+					return str + "cut himself!";
+				}
+				
+			case GearType.BOW:
+				if (d > 0)
+				{
+					return str + "shoot himself!";
+				}
+				else
+				{
+					return str + "cut himself!";
+				}
+				break;
+			case GearType.ARMOR:
+				if (d > 0)
+				{
+					return str + " got killed easily!";
+				}
+				else
+				{
+					return str + " died under the weight of his armor!";
+				}
+		}
+		return str + "died from a bug";
+	}
 
 }
