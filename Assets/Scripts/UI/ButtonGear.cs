@@ -12,18 +12,25 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
     public Image bar;
     private bool rightClick = false;
     private int index = 0;
+
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameObject myEventSystem = GameObject.Find("EventSystem");
-        index = transform.GetSiblingIndex();
-        if(eventData.button == PointerEventData.InputButton.Right){
-            rightClick = true;
-        }
-        else if (eventData.button == PointerEventData.InputButton.Left) {
-            rightClick = false;
-        }
-        CharacterManager.instance.UpdateActorGearValues(index, rightClick);
-        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+        if (!GetComponent<UIButton>().lockButton)
+        {
+            GameObject myEventSystem = GameObject.Find("EventSystem");
+            index = transform.GetSiblingIndex();
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                rightClick = true;
+            }
+            else if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                rightClick = false;
+            }
+            CharacterManager.instance.UpdateActorGearValues(index, rightClick);
+            myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+        }       
     }
     public void UpdateBar(float fillAmount)
     {

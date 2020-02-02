@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e7df667e33aa2f4cb0801a926e6ed7c, type: 3}
-  m_Name: r_Samuel De Cul 1
+  m_Name: r_Hosmat Habestoen
   m_EditorClassIdentifier: 
   character:
-    doesExist: 0
-    c_Name: Samuel
-    c_Surname: De Cul
+    doesExist: 1
+    c_Name: Hosmat
+    c_Surname: Habestoen
     nameRandom: 1
-    gearValue: 040000000000000002000000
+    gearValue: 000000000700000001000000
     gearExpectation:
-    - {x: 4, y: 8}
-    - {x: 4, y: 8}
-    - {x: 0, y: 8}
-    hero: 4.8
+    - {x: 0, y: 10}
+    - {x: 0, y: 10}
+    - {x: 0, y: 1}
+    hero: 5
     privateText: 0
-    forcedText: 
-    ironAdd: 4
+    forcedText: '"Good afternoon! My sword is perfect as it is now'
+    ironAdd: 0
     gears: []
+    skin: {fileID: 0}

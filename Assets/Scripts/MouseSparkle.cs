@@ -41,6 +41,8 @@ public class MouseSparkle : MonoBehaviour
             transform.position = point;            
 
             vfx.SendEvent("OnBurst");
+
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("Forge");
         }
     }
 

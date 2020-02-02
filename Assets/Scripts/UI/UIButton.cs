@@ -55,14 +55,15 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
-		if (eventData.button == PointerEventData.InputButton.Left)
-		{
-			SetSprite(leftClickSprite);
-		}
-		else
-		{
-			SetSprite(rightClickSprite);
-		}
+            if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                SetSprite(leftClickSprite);
+            }
+            else
+            {
+                SetSprite(rightClickSprite);
+            }
+        
 	}
 	public void OnPointerUp(PointerEventData eventData)
 	{
@@ -135,6 +136,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 			{
 				SetSprite(idleSprite);
 			}
+            
 		}
 	}
 

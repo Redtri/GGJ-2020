@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
@@ -15,9 +16,9 @@ public class GameManager : MonoBehaviour
     public PlayerHelper playerHelper;
 	public AnimationCurve deathCurve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(1, 0));
 
-
+    public bool gameOver {get; private set;}
     public int nbDead { get; private set; }
-    public bool winning;
+    public bool winning { get; private set; }
 
     private void Awake()
     {
@@ -35,27 +36,53 @@ public class GameManager : MonoBehaviour
 
 
 
-    //Phase Handling functions
-    public void StartPhase()
+    private void Update()
     {
-        if (CharacterManager.instance.charactersInQueue[0].doesExist) {
-            StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
-        } else {
-            StartCoroutine(VoidPhase());
+        if(Input.anyKeyDown && CharacterManager.instance.endCharArrived) {
+            SceneManager.LoadSceneAsync(0);
         }
     }
 
-    public void EndPhase()
+
+    //Phase Handling functions
+    public void StartPhase()
     {
-        //If there was someone in the room, The coroutine for the leaving is called$
-        if (phaseHelper.PhaseEnd()) {
+        if (!gameOver) {
+            if (CharacterManager.instance.charactersInQueue[0].doesExist) {
+                StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
+            }
+            else {
+                StartCoroutine(VoidPhase());
+            }
+        } else {
+            Debug.Log("Ending character entering");
+            CharacterManager.instance.endCharacter.privateText = true;
+            CharacterManager.instance.endCharacter.forcedText = (winning) ? "T'as gagné" : "T'as perdu";
+            StartCoroutine(CharacterEntrance(CharacterManager.instance.endCharacter));
+        }
+    }
 
-            EffectManager.instance.screenShake.Shake(0, 0.1f);
+    public void EndPhase(bool force = false)
+    {
+        bool test = false;
 
-            StartCoroutine(CharacterLeaving());
-        }//Otherwise, just start another phase
-        else {
-            StartPhase();
+        test = force ? true : !GameObject.FindGameObjectWithTag("ValidateButton").GetComponent<UIButton>().lockButton;
+
+        if(test)
+        {
+            //If there was someone in the room, The coroutine for the leaving is called$
+            if (phaseHelper.PhaseEnd())
+            {
+                if (!gameOver)
+                {
+                    EffectManager.instance.screenShake.Shake(0, 0.1f);
+                    StartCoroutine(CharacterLeaving());
+                }//Otherwise, just start another phase
+            }
+            else
+            {
+                StartPhase();
+            }
         }
     }
 
@@ -76,12 +103,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
         Debug.Log("Time has passed...");
-        EndPhase();
+        EndPhase(true);
     }
 
     private IEnumerator CharacterLeaving()
     {
-        yield return new WaitForSeconds(phaseHelper.leaveDuration);        
+        yield return new WaitForSeconds(phaseHelper.leaveDuration);
 
        // float proba = phaseHelper.currentCharacter.Battle();
         float random = Random.Range(0f, 1f);
@@ -121,6 +148,7 @@ public class GameManager : MonoBehaviour
                CharacterManager.instance.AddCharacterToQueue();
             }
         }
+        CheckWinLose();
         phaseHelper.LeavingEnd();
         CheckWinLose();
 		if (theWinRatio > 0.5f)
@@ -166,9 +194,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Total nb characters " + totCharacter);
         if(totCharacter >= nbCharCheck) {
             if ( winRatio > winPercentAlive) {
+                gameOver = true;
                 Debug.Log("WIN!");
             }
             else if( winRatio <= winLoseAlive) {
+                gameOver = true;
                 Debug.Log("LOSE");
             }
         }
