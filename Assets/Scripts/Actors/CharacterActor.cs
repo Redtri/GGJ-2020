@@ -35,19 +35,22 @@ public class CharacterActor : MonoBehaviour
     {
         for (int i = 0; i < data.gears.Count; ++i) {
             switch (data.gearValue[i]) {
+                case 0:
+                    bodyParts[i].sprite = data.gears[i].stateSkins[0];
+                    break;
                 case 1:
                 case 2:
                 case 3:
-                    bodyParts[i].sprite = data.gears[i].stateSkins[0];
+                    bodyParts[i].sprite = data.gears[i].stateSkins[1];
                 break;
                 case 4:
                 case 5:
                 case 6:
-                    bodyParts[i].sprite = data.gears[i].stateSkins[1];
+                    bodyParts[i].sprite = data.gears[i].stateSkins[2];
                 break;
                 case 7:
                 case 8:
-                    bodyParts[i].sprite = data.gears[i].stateSkins[2];
+                    bodyParts[i].sprite = data.gears[i].stateSkins[3];
                 break;
             }
         }

@@ -15,6 +15,7 @@ public class PhaseHelper
 
     public delegate void BasicEvent();
     public BasicEvent onEntranceEnd;
+    public BasicEvent onLeaving;
     public BasicEvent onLeavingEnd;
     public delegate void BoolEvent(bool val1);
     public BoolEvent onPhaseEnd;
