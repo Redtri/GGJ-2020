@@ -17,9 +17,9 @@ MonoBehaviour:
     c_Name: Ueeck
     c_Surname: Bowdi
     nameRandom: 0
-    gearValue: 000000000000000000000000
+    gearValue: 0a0000000000000000000000
     gearExpectation:
-    - {x: 10, y: 10}
+    - {x: -10, y: -1}
     - {x: 10, y: 10}
     - {x: 11, y: 15}
     hero: 1
