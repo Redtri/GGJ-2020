@@ -172,3 +172,23 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 16d19398f397f1b47a4a15dc260a9eb7,
       type: 2}
+  MusicSplashScreen:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 68da0503a92ca69449d8c94a53a39862,
+      type: 2}
+  MusicWin:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b69efc80a41fe9247b1f057b2cc1d53f,
+      type: 2}
+  MusicLoose:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e8555a4fc5af49c4481e5e6db30d4bf6,
+      type: 2}
+  StopAll:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 61c338a65e0ca7543a1c3e9a62d893e6,
+      type: 2}

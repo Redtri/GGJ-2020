@@ -20,6 +20,10 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event DialEvent;
     public AK.Wwise.Event DeathEvent;
     public AK.Wwise.Event HammerHit;
+    public AK.Wwise.Event MusicSplashScreen;
+    public AK.Wwise.Event MusicWin;
+    public AK.Wwise.Event MusicLoose;
+    public AK.Wwise.Event StopAll;
 
 
     public static AudioManager instance;
@@ -67,5 +71,11 @@ public class AudioManager : MonoBehaviour
     {
         BattlefieldAmbiance.Post(gameObject);
         ForgeFire.Post(gameObject);
+        MusicSplashScreen.Post(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        StopAll.Post(gameObject);
     }
 }

@@ -204,10 +204,14 @@ public class GameManager : MonoBehaviour
             if ( winRatio > winPercentAlive) {
                 gameOver = true;
                 Debug.Log("WIN!");
+                //Sound
+                AudioManager.instance.MusicWin.Post(gameObject);
             }
             else if( winRatio <= winLoseAlive) {
                 gameOver = true;
                 Debug.Log("LOSE");
+                //Sound
+                AudioManager.instance.MusicLoose.Post(gameObject);
             }
         }
     }

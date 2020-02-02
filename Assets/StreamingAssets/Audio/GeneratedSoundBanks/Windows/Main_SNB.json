@@ -46,6 +46,33 @@
       "DurationType": "Infinite"
      },
      {
+      "Id": "3640900608",
+      "Name": "Play_Music_Loose",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_Loose",
+      "GUID": "{EBC70276-D288-4CD0-B375-BFFCDA8BFEBE}",
+      "DurationType": "OneShot",
+      "DurationMin": "12.446383",
+      "DurationMax": "12.446383"
+     },
+     {
+      "Id": "2524099115",
+      "Name": "Play_Music_SplashScreen",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_SplashScreen",
+      "GUID": "{13D75482-C667-4BC6-ACD2-58021A4F0524}",
+      "DurationType": "OneShot",
+      "DurationMin": "36.583767",
+      "DurationMax": "36.583767"
+     },
+     {
+      "Id": "3368677440",
+      "Name": "Play_Music_Win",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_Win",
+      "GUID": "{BA66792F-A4A3-4A7A-971E-0CD9968F9B54}",
+      "DurationType": "OneShot",
+      "DurationMin": "9.711509",
+      "DurationMax": "9.711509"
+     },
+     {
       "Id": "3187507146",
       "Name": "Play_Test",
       "ObjectPath": "\\Events\\SD Event\\Play_Test",
@@ -170,7 +197,7 @@
       "GUID": "{2C7847EE-DB03-407A-B4F4-6BCD9E314900}",
       "DurationType": "OneShot",
       "DurationMin": "1.495992",
-      "DurationMax": "6.530854"
+      "DurationMax": "5.043708"
      },
      {
       "Id": "3688695384",
@@ -389,6 +416,12 @@
       "Language": "SFX",
       "ShortName": "VO_HumanPain_24.wav",
       "Path": "SFX\\VO_HumanPain_24_10C4C929.wem"
+     },
+     {
+      "Id": "178380289",
+      "Language": "SFX",
+      "ShortName": "EndOfTheFightVictory_Mastered.wav",
+      "Path": "SFX\\EndOfTheFightVictory_Mastered_D79FB2B7.wem"
      },
      {
       "Id": "178721171",
@@ -779,6 +812,12 @@
       "Language": "SFX",
       "ShortName": "VO_HumanLaugh_28.wav",
       "Path": "SFX\\VO_HumanLaugh_28_10C4C929.wem"
+     },
+     {
+      "Id": "451334125",
+      "Language": "SFX",
+      "ShortName": "EndOfTheFightDefeat_Mastered.wav",
+      "Path": "SFX\\EndOfTheFightDefeat_Mastered_D79FB2B7.wem"
      },
      {
       "Id": "452836353",
@@ -1291,6 +1330,12 @@
       "Path": "SFX\\Foley_HorsePassBy_05_10C4C929.wem"
      },
      {
+      "Id": "836406767",
+      "Language": "SFX",
+      "ShortName": "MainTheme_FateSmith_Mastered.wav",
+      "Path": "SFX\\MainTheme_FateSmith_Mastered_D79FB2B7.wem"
+     },
+     {
       "Id": "836942275",
       "Language": "SFX",
       "ShortName": "Foley_ArmorMovement_06.wav",
@@ -1360,7 +1405,7 @@
       "Id": "885061589",
       "Language": "SFX",
       "ShortName": "UI_Validating_01.wav",
-      "Path": "SFX\\UI_Validating_01_36D33FF6.wem"
+      "Path": "SFX\\UI_Validating_01_A2CB9C52.wem"
      },
      {
       "Id": "886792925",

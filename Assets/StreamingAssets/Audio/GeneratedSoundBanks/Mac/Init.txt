@@ -25,6 +25,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	2127285419	AddItem			\Default Work Unit\Master Audio Bus\Ambiance Forge\Forge\AddItem	
 	3005663867	Ambiance Battlefield			\Default Work Unit\Master Audio Bus\Ambiance Battlefield	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 	4035004657	Foleys			\Default Work Unit\Master Audio Bus\Foleys	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes

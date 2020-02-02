@@ -16,6 +16,9 @@ namespace AK
         static const AkUniqueID FOLEY_DOOR = 3332999173U;
         static const AkUniqueID FORGE_FIRE_LOOP = 870714546U;
         static const AkUniqueID PLAY_BATTLEFIELDAMBIANCE = 3316639316U;
+        static const AkUniqueID PLAY_MUSIC_LOOSE = 3640900608U;
+        static const AkUniqueID PLAY_MUSIC_SPLASHSCREEN = 2524099115U;
+        static const AkUniqueID PLAY_MUSIC_WIN = 3368677440U;
         static const AkUniqueID PLAY_TEST = 3187507146U;
         static const AkUniqueID SET_DOORCLOSE = 238286794U;
         static const AkUniqueID SET_DOOROPEN = 2718873070U;
@@ -83,6 +86,7 @@ namespace AK
         static const AkUniqueID FORGE = 12377074U;
         static const AkUniqueID HAMMER = 703486095U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID VO = 1534528548U;

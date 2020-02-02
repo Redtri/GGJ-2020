@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 97146d908d069441a767de55422c3069
     GuidInternal: 
-    m_lastTime: -8586209652444466742
+    m_lastTime: -8586209525792683466
     List:
     - name: Battlefield_Filtered
       guid: c653fa2b34a3e84cb3d200047bba5e9b
@@ -94,13 +94,49 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: bed930c53ead2c4b83ca5c6b9e5cd5b3
     GuidInternal: 
-    m_lastTime: -8586210588652729945
-    List: []
+    m_lastTime: -8586209525728607009
+    List:
+    - name: Play_Music_Loose
+      guid: 7602c7eb88d2d04cb375bffcda8bfebe
+      id: 3640900608
+      PathAndIcons:
+      - ElementName: Music Event
+        ObjectType: 12
+      - ElementName: Play_Music_Loose
+        ObjectType: 3
+      Path: Music Event\Play_Music_Loose
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Music_SplashScreen
+      guid: 8254d71367c6c64bacd258021a4f0524
+      id: 2524099115
+      PathAndIcons:
+      - ElementName: Music Event
+        ObjectType: 12
+      - ElementName: Play_Music_SplashScreen
+        ObjectType: 3
+      Path: Music Event\Play_Music_SplashScreen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Music_Win
+      guid: 2f7966baa3a47a4a971e0cd9968f9b54
+      id: 3368677440
+      PathAndIcons:
+      - ElementName: Music Event
+        ObjectType: 12
+      - ElementName: Play_Music_Win
+        ObjectType: 3
+      Path: Music Event\Play_Music_Win
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\SD Event.wwu
     ParentPhysicalPath: 
     guid: e316d4176dcdd946919c6a078135fbca
     GuidInternal: 
-    m_lastTime: -8586209589362152590
+    m_lastTime: -8586209569351500844
     List:
     - name: Foley_Door
       guid: 7f8fefbbef715344acc6e9b6073b5058
@@ -284,6 +320,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_All
+      guid: 2cc101567465714285034a2e0e8c671f
+      id: 452547817
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Stop_All
+        ObjectType: 3
+      Path: SD Event\Stop_All
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: UI_AddItem
       guid: 07f6c35f6a0d0c4aa3913accc1a6d114
       id: 2921734634
@@ -326,17 +374,17 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: UI_Hammer
+    - name: UI_HammerHit
       guid: c1ce16eed73a174c8da86a72f6a59110
-      id: 971535008
+      id: 2200300695
       PathAndIcons:
       - ElementName: SD Event
         ObjectType: 12
       - ElementName: UI
         ObjectType: 4
-      - ElementName: UI_Hammer
+      - ElementName: UI_HammerHit
         ObjectType: 3
-      Path: SD Event\UI\UI_Hammer
+      Path: SD Event\UI\UI_HammerHit
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -515,6 +563,7 @@ MonoBehaviour:
   ExpandedItems:
   - /GGJ_WwiseProject
   - /GGJ_WwiseProject/Events
+  - /GGJ_WwiseProject/Events/Music Event
   - /GGJ_WwiseProject/Events/SD Event
   - /GGJ_WwiseProject/Events/SD Event/Ambiance
   - /GGJ_WwiseProject/Events/SD Event/Ambiance/Forge
