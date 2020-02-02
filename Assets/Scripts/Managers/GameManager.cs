@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 [DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
 {
+	
     public static GameManager instance;
 
     public float winPercentAlive;
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartPhase();
+       // StartPhase();
     }
 
 
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadSceneAsync(0);
         }
     }
+
 
     //Phase Handling functions
     public void StartPhase()
@@ -150,8 +152,27 @@ public class GameManager : MonoBehaviour
     {
         int totCharacter = nbDead + CharacterManager.instance.charactersAlive.Count;
 
-        float winRatio = (float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter;
-        float loseRatio = ((float)nbDead / (float)totCharacter);
+        //float winRatio = (float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter;
+        //float loseRatio = ((float)nbDead / (float)totCharacter);
+		float winRatio = 0;
+		float heroCount = 0;
+		foreach(Character c in CharacterManager.instance.charactersAlive)
+		{
+			winRatio += c.hero;
+			heroCount += c.hero;
+		}
+		heroCount += nbDead;
+		winRatio = winRatio/heroCount;
+		float loseRatio = 1 - winRatio;
+
+		if(winRatio > 0.5f)
+		{
+			UIChatlog.AddLogMessage((int)(winRatio * 100) + "% chances to win the war", Random.Range(0,3),UIChatlog.TyopeOfLog.Good); 
+		}else
+		{
+			UIChatlog.AddLogMessage((int)(winRatio * 100) + "% chances to win the war", Random.Range(0, 3), UIChatlog.TyopeOfLog.Bad);
+		}
+		
 
         if(winRatio > 0.5f) {
             winning = true;

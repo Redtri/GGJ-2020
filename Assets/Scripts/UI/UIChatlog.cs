@@ -60,27 +60,9 @@ public class UIChatlog : MonoBehaviour
 			lastTime = Time.time;
 
 			SendMessage(GetNeutralLog(),Random.Range(0,5),TyopeOfLog.Neutral);
-			if (Random.value > 0.5)
-				SendMessage(GetNeutralLog(), Random.Range(5, 10), TyopeOfLog.Neutral);
 		}
-        /*
-        TyopeOfLog type = TyopeOfLog.Good;
-
-        switch (Random.Range(0, 3))
-        {
-            case 0:
-                type = TyopeOfLog.Bad;
-                break;
-            case 1:
-                type = TyopeOfLog.Neutral;
-                break;
-            case 2:
-                type = TyopeOfLog.Good;
-                break;
-        }
-
-        FindObjectOfType<UIChatlog>().SendMessage("Salut " + (Random.Range(0,100) > 50 ?  "toi" : "mec "), 0.5f, type);*/
-    }
+		//if(Input.anyKeyDown)SendMessage(GetNeutralLog(), Random.Range(0, 5), TyopeOfLog.Neutral);
+	}
 
 
     public void SendMessage(string text, float delay, TyopeOfLog tyopeOfLog)

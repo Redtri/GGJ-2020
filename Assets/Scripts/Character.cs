@@ -199,7 +199,7 @@ public class Character
 
 	public string GetVictoryLog()
 	{
-		return CharacterManager.instance.logData.GetRandom(CharacterManager.instance.logData.victoryLog);
+		return c_Name + " " + c_Surname + " " +CharacterManager.instance.logData.GetRandom(CharacterManager.instance.logData.victoryLog);
 	}
 
 	public string GetDeathLog()
