@@ -15,6 +15,8 @@ public class CharacterManager : MonoBehaviour
 
     //[HideInInspector()]
     public List<Character> charactersInQueue;
+    public Character endCharacter;
+    public bool endCharArrived { get; set; }
 
     [Header("Scriptable Object")]
 	public LogScriptableObject logData;
@@ -34,8 +36,6 @@ public class CharacterManager : MonoBehaviour
 
     public delegate void CharacterEvent(CharacterActor character);
     public CharacterEvent onCharacterUpdate;
-
-	
 
     void Awake()
     {
@@ -62,6 +62,7 @@ public class CharacterManager : MonoBehaviour
         {
             AddCharacterToQueue(true, i);
         }
+        endCharacter = SimpleCharaCreation();
 
         onCharacterUpdate?.Invoke(characterActor);
 
@@ -191,6 +192,37 @@ public class CharacterManager : MonoBehaviour
             charactersInQueue.Add(c);
 
         }
+    }
+
+    public Character SimpleCharaCreation()
+    {
+
+        Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
+
+        Character c = new Character(scriptChar);
+
+        c.InitSprites(gearTemplates[0].gearParts, skinTemplates[Random.Range(0, skinTemplates.Length)]);
+
+        string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
+        string[] lines2 = fileDataName.Split("\n"[0]);
+
+        int countNbrc_Name = IntParseFast(lines2[0].Trim().Split(","[0])[0]);
+
+        int nbrc_Name = Random.Range(1, countNbrc_Name);
+        int nbrSurc_Name = Random.Range(1, countNbrc_Name);
+
+        c.c_Name = (lines2[nbrc_Name].Trim()).Split(","[0])[0];
+        string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];
+
+
+        if (characters.ContainsKey(c.c_Name + hisSurname))
+            hisSurname += " " + ToRoman(characters[c.c_Name + hisSurname]);
+
+        AddChara(c.c_Name + hisSurname);
+
+        c.c_Surname = hisSurname;
+
+        return c;
     }
 
     public int IntParseFast(string value)
