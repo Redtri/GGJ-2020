@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559b7453a3afb9141afc4ebcb266f09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bar: {fileID: 0}
+  bar: {fileID: 1613122325431610993}
 --- !u!114 &1950810130172498494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,13 +330,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c9ab4912ec6cf49b493ffd102c66cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 3671043961008797612, guid: dadc6fbed73826f4b801acce8138eb56,
-    type: 3}
-  hoverSprite: {fileID: 3602430193687246736, guid: b64f310c215039a4cb118f4b40484f01,
-    type: 3}
-  leftClickSprite: {fileID: 21300000, guid: b02ed293ddb7ec343a806d5ac2a85b97, type: 3}
-  rightClickSprite: {fileID: 21300000, guid: 7a0f57464bc394f438497ce4ac3ca1d1, type: 3}
-  lockSprite: {fileID: -8985680732576350864, guid: 38be81f86ec11e348a7649e46b23b860,
-    type: 3}
+  idleSprite: {fileID: 21300000, guid: 7f4ab2136d420694db67f270218dc464, type: 3}
+  hoverSprite: {fileID: 21300000, guid: c5f8da707a544b54f8e124a8714a3ac0, type: 3}
+  leftClickSprite: {fileID: 21300000, guid: c374227cafe770242b5023983141c591, type: 3}
+  rightClickSprite: {fileID: 21300000, guid: f45fe499d0bcac54da78e51ee808dcff, type: 3}
+  lockSprite: {fileID: 21300000, guid: 5a533ccb7a1200140b2c6883dfa50dee, type: 3}
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  buttonType: 0
   gearLevel: 0
   lockButton: 0
