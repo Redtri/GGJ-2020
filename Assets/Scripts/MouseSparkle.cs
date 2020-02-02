@@ -8,6 +8,21 @@ public class MouseSparkle : MonoBehaviour
     private  VisualEffect vfx;
     private Camera cam;
 
+    public static MouseSparkle instance;
+
+    private void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     private void Start()
     {
         vfx = GetComponent<VisualEffect>();
@@ -27,7 +42,15 @@ public class MouseSparkle : MonoBehaviour
 
             vfx.SendEvent("OnBurst");
         }
+    }
 
-       
+    public void SetSparkleSize(float sizeMultiply)
+    {
+        vfx.SetFloat("MultiplySize", sizeMultiply);
+    }
+
+    public void SetBurstAmount(int amount)
+    {
+        vfx.SetInt("BurstAmount", amount);
     }
 }

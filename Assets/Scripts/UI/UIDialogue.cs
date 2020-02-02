@@ -68,6 +68,12 @@ public class UIDialogue : MonoBehaviour
 	{
 		Character c = GameManager.instance.phaseHelper.currentCharacter;
 		if (c == null) return "";
+
+        if (c.privateText)
+        {
+            return c.forcedText;
+        }
+        
 		float dist = 0;
 		GearType gt = c.GetFarestGear(out dist);
 		switch (gt)

@@ -7,10 +7,19 @@ using System;
 using UnityEngine.Events;
 
 
+
+
+
 public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-	private Image img;
+    public enum ButtonType
+    {
+        Forge,
+        Validate
+    }
+
+    private Image img;
 	public Sprite idleSprite;
 	public Sprite hoverSprite;
 	public Sprite leftClickSprite;
@@ -18,8 +27,10 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public Sprite lockSprite;
 	[SerializeField]
 	public UnityEvent clickEvent;
-	
-	public int gearLevel;
+
+    public ButtonType buttonType = ButtonType.Forge;
+
+    public int gearLevel;
 
 	public bool lockButton = false;
 	private bool isHover = false;
@@ -70,7 +81,20 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	{
 		SetSprite(hoverSprite);
 		isHover = true;
-	}
+
+        switch (buttonType)
+        {
+            case ButtonType.Forge:
+                MouseSparkle.instance.SetSparkleSize(0.7f);
+                MouseSparkle.instance.SetBurstAmount(50);
+                break;
+            case ButtonType.Validate:
+                MouseSparkle.instance.SetSparkleSize(1f);
+                MouseSparkle.instance.SetBurstAmount(80);
+                break;
+        }
+
+    }
 
 	
 
@@ -78,7 +102,10 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	{
 		SetSprite(idleSprite);
 		isHover = false;
-	}
+
+        MouseSparkle.instance.SetSparkleSize(0.5f);
+        MouseSparkle.instance.SetBurstAmount(30);
+    }
 
 	private void SetSprite(Sprite s)
 	{
