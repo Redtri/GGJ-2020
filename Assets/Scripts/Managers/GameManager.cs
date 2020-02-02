@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
     {
         //If there was someone in the room, The coroutine for the leaving is called$
         if (phaseHelper.PhaseEnd()) {
+
+            EffectManager.instance.screenShake.Shake(0, 0.1f);
+
             StartCoroutine(CharacterLeaving());
         }//Otherwise, just start another phase
         else {

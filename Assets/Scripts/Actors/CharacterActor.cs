@@ -79,10 +79,12 @@ public class CharacterActor : MonoBehaviour
                 ++data.gearValue[index];
                 --GameManager.instance.playerHelper.ironAmount;
 
-                WhiteBalance lens = null;
-                EffectManager.instance.postProcessVolume.profile.TryGet(out lens);
-                DOVirtual.Float(0, 30f, 0.2f, (float value) => UpdateLens(value, lens))
-                         .OnComplete(() => DOVirtual.Float(30f, 0, 0.4f, (float value) => UpdateLens(value, lens)));
+                WhiteBalance balance = null;
+                EffectManager.instance.postProcessVolume.profile.TryGet(out balance);
+                DOVirtual.Float(0, 80f, 0.2f, (float value) => UpdateLens(value, balance))
+                         .OnComplete(() => DOVirtual.Float(80f, 0, 0.4f, (float value) => UpdateLens(value, balance)));
+
+
                 EffectManager.instance.screenShake.Shake(0, 0.05f);
             }
         }
