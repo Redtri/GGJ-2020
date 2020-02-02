@@ -2,32 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Linq;
 
 public class UIChatlog : MonoBehaviour
 {
 
-	public int maxLog = 8;
-	public Font font;
-	public int textSize = 15;
-	private List<Text> texts = new List<Text>();
+	private Text[] texts;
+	private int count = 0;
 
-
-	
-	void Update()
+	private void Awake()
 	{
-		if(Random.value > 0.94f)
+		texts = GetComponentsInChildren<Text>();
+		texts.OrderBy(t => t.transform.position.y);
+		texts = texts.Reverse().ToArray();
+		foreach(Text t in texts)
 		{
-			if(Random.value > 0.5f)
-			{
-				SendMessage("gustave -> prout", Random.Range(0, 2));
-			}
-			else
-			{
-				SendMessage("gustave -> dead", Random.Range(0, 3));
-			}
-			
+			t.text = "";
 		}
 	}
+
 
 
 	public void SendMessage(string text, float delay)
@@ -38,18 +31,18 @@ public class UIChatlog : MonoBehaviour
 	private IEnumerator LogMessage(string text, float delay)
 	{
 		yield return new WaitForSecondsRealtime(delay);
-		if (texts.Count >= maxLog)
-		{
-			Destroy(texts[0].gameObject);
-			texts.RemoveAt(0);
-		}
-		GameObject g = new GameObject("chatLog");
-		g.transform.parent = transform;
-		Text t = g.AddComponent<Text>();
-		t.text = text;
-		t.font = font;
-		t.fontSize = textSize;
-		texts.Add(t);
 		
+		for(int i = texts.Length-1; i>0; i--)
+		{
+			texts[i].text = texts[i - 1].text;
+		}
+		
+		texts[0].text = text;
+		
+	}
+
+	public static void AddLogMessage(string message, float value)
+	{
+		FindObjectOfType<UIChatlog>().SendMessage(message, value);
 	}
 }
