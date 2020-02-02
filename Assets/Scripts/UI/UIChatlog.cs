@@ -89,7 +89,7 @@ public class UIChatlog : MonoBehaviour
                 break;
 
             case TyopeOfLog.Neutral:
-                texts[0].color = Color.black;
+                texts[0].color = Color.white;
                 break;
 
             case TyopeOfLog.Good:

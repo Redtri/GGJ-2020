@@ -24,7 +24,7 @@ MonoBehaviour:
     - {x: 0, y: 10}
     hero: 12
     privateText: 0
-    forcedText: '"Good afternoon! My sword is perfect as it is now'
+    forcedText: 
     ironAdd: 0
     gears: []
     skin: {fileID: 0}

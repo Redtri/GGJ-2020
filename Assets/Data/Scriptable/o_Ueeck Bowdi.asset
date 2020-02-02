@@ -17,15 +17,19 @@ MonoBehaviour:
     c_Name: Ueeck
     c_Surname: Bowdi
     nameRandom: 0
-    gearValue: 010000000600000005000000
+    gearValue: 000000000000000000000000
     gearExpectation:
-    - {x: 0, y: 10}
-    - {x: 0, y: 5}
-    - {x: 0, y: 10}
+    - {x: 10, y: 10}
+    - {x: 10, y: 10}
+    - {x: 11, y: 15}
     hero: 1
     privateText: 1
     forcedText: Hello! I also have a problem with my sword. I won't tell you exactly
-      what to do with it
+      what to do with it, because it's your job to decide, but know that it is slightly
+      too heavy for me in that state! Some people around here can be a little cryptic
+      about what they need. Your work doesn't have to be perfect, but the closer
+      you are to their expectations, the higher their chance of survival and the
+      closer you get to winning the war!
     ironAdd: 0
     gears: []
     skin: {fileID: 0}

@@ -125,7 +125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8066357675583978576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -330,11 +330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c9ab4912ec6cf49b493ffd102c66cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 21300000, guid: 7f4ab2136d420694db67f270218dc464, type: 3}
-  hoverSprite: {fileID: 21300000, guid: c5f8da707a544b54f8e124a8714a3ac0, type: 3}
-  leftClickSprite: {fileID: 21300000, guid: c374227cafe770242b5023983141c591, type: 3}
-  rightClickSprite: {fileID: 21300000, guid: f45fe499d0bcac54da78e51ee808dcff, type: 3}
-  lockSprite: {fileID: 21300000, guid: 5a533ccb7a1200140b2c6883dfa50dee, type: 3}
+  idleSprite: {fileID: 21300000, guid: edb4d7acc6324b946a76e203f324eab5, type: 3}
+  hoverSprite: {fileID: 21300000, guid: 3c74d9221b3dcb04a9c57a0dd86ea78c, type: 3}
+  leftClickSprite: {fileID: 21300000, guid: de66f44d83d7280409e4ed456f0cbcdb, type: 3}
+  rightClickSprite: {fileID: 21300000, guid: 41f3195e776ab684a9f0dd88d2245c3f, type: 3}
+  lockSprite: {fileID: 21300000, guid: ab2b5b4573c018048b6d2baa282119f5, type: 3}
   clickEvent:
     m_PersistentCalls:
       m_Calls: []
