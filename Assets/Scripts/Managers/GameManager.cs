@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         } else {
             Debug.Log("Ending character entering");
             CharacterManager.instance.endCharacter.privateText = true;
-            CharacterManager.instance.endCharacter.forcedText = (winning) ? "T'as gagné" : "T'as perdu";
+            CharacterManager.instance.endCharacter.forcedText = (winning) ? "The allies came out victorious! You greatly contributed to the war effort. We would never have won without your excellent services." : "Your efforts were not enough... We lost. If you choose to fight again, pay close attention to what the soldiers need to adapt their equipment!";
             StartCoroutine(CharacterEntrance(CharacterManager.instance.endCharacter));
         }
     }

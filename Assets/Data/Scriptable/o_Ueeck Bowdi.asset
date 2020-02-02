@@ -17,11 +17,11 @@ MonoBehaviour:
     c_Name: Ueeck
     c_Surname: Bowdi
     nameRandom: 0
-    gearValue: 060000000100000005000000
+    gearValue: 000000000000000000000000
     gearExpectation:
-    - {x: 0, y: 5}
-    - {x: 0, y: 10}
-    - {x: 0, y: 10}
+    - {x: 10, y: 10}
+    - {x: 10, y: 10}
+    - {x: 11, y: 15}
     hero: 1
     privateText: 1
     forcedText: Hello! I also have a problem with my sword. I won't tell you exactly
