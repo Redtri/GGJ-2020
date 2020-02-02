@@ -12,7 +12,8 @@ public class CharacterActor : MonoBehaviour
     public int maxGearUpgrade;
 
     [Header("Visuals")]
-    public SpriteRenderer[] bodyParts;
+    public SpriteRenderer[] gearParts;
+    public SpriteRenderer skinRender;
 
     [Header("Dotween")]
     public Transform reachPosition;
@@ -31,29 +32,34 @@ public class CharacterActor : MonoBehaviour
         
     }
 
-    public void LoadSkin()
+    public void LoadGearSkins()
     {
         for (int i = 0; i < data.gears.Count; ++i) {
             switch (data.gearValue[i]) {
                 case 0:
-                    bodyParts[i].sprite = data.gears[i].stateSkins[0];
+                    gearParts[i].sprite = data.gears[i].stateSkins[0];
                     break;
                 case 1:
                 case 2:
                 case 3:
-                    bodyParts[i].sprite = data.gears[i].stateSkins[1];
+                    gearParts[i].sprite = data.gears[i].stateSkins[1];
                 break;
                 case 4:
                 case 5:
                 case 6:
-                    bodyParts[i].sprite = data.gears[i].stateSkins[2];
+                    gearParts[i].sprite = data.gears[i].stateSkins[2];
                 break;
                 case 7:
                 case 8:
-                    bodyParts[i].sprite = data.gears[i].stateSkins[3];
+                    gearParts[i].sprite = data.gears[i].stateSkins[3];
                 break;
             }
         }
+    }
+
+    public void LoadSkin()
+    {
+        skinRender.sprite = data.skin;
     }
 
     public void UpdateGearValue(int index, bool minus = false)
@@ -69,7 +75,7 @@ public class CharacterActor : MonoBehaviour
                 --GameManager.instance.playerHelper.ironAmount;
             }
         }
-        LoadSkin();
+        LoadGearSkins();
     }
 
     public void LoadCharacterProfile(Character character)
