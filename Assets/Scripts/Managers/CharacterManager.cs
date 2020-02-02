@@ -17,9 +17,10 @@ public class CharacterManager : MonoBehaviour
     public List<Character> charactersInQueue;
 
     [Header("Scriptable Object")]
-    public CharacterScriptable[] scriptableChara;
+	public LogScriptableObject logData;
+	public CharacterScriptable[] scriptableChara;
 
-    [Header("Queue")]
+	[Header("Queue")]
     public float percentNobody;
     public float percentAlive;
     public float percentNewChar;
@@ -33,6 +34,8 @@ public class CharacterManager : MonoBehaviour
 
     public delegate void CharacterEvent(CharacterActor character);
     public CharacterEvent onCharacterUpdate;
+
+	
 
     void Awake()
     {

@@ -197,41 +197,46 @@ public class Character
 		return type;
 	}
 
+	public string GetVictoryLog()
+	{
+		return CharacterManager.instance.logData.GetRandom(CharacterManager.instance.logData.victoryLog);
+	}
+
 	public string GetDeathLog()
 	{
 		float d = 0;
 		var gt =GetFarestGear(out d);
 		string str = c_Name + " " + c_Surname + " ";
+		var lData = CharacterManager.instance.logData;
 		switch (gt)
 		{
 			case GearType.SWORD:
 				if(d > 0)
 				{
-					return str + "died to a better sword!";
+					return str + lData.GetRandom(lData.lessSword);
 				}
 				else
 				{
-					return str + "cut himself!";
+					return str + lData.GetRandom(lData.muchSword);
 				}
 				
 			case GearType.BOW:
 				if (d > 0)
 				{
-					return str + "shoot himself!";
+					return str + lData.GetRandom(lData.lessBow);
 				}
 				else
 				{
-					return str + "cut himself!";
+					return str + lData.GetRandom(lData.muchBow);
 				}
-				break;
 			case GearType.ARMOR:
 				if (d > 0)
 				{
-					return str + " got killed easily!";
+					return str + lData.GetRandom(lData.lessArmor);
 				}
 				else
 				{
-					return str + " died under the weight of his armor!";
+					return str + lData.GetRandom(lData.muchArmor);
 				}
 		}
 		return str + "died from a bug";
