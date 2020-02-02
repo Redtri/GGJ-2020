@@ -416,22 +416,22 @@ PrefabInstance:
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_fontSize
-      value: 41.9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 1
+      value: 393
       objectReference: {fileID: 0}
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 1
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
@@ -441,17 +441,17 @@ PrefabInstance:
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: -1
+      value: 373
       objectReference: {fileID: 0}
     - target: {fileID: 271178515700752489, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_fontSizeMin
-      value: 15.61
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 271178515700752490, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
@@ -518,6 +518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: -16.239998
+      objectReference: {fileID: 0}
+    - target: {fileID: 271178515700752493, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98de34e4b3c9ce04fa820b9c6acbac10, type: 3}
@@ -745,12 +750,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charactersAlive: []
   charactersInQueue: []
+  endCharacter:
+    doesExist: 0
+    c_Name: 
+    c_Surname: 
+    nameRandom: 0
+    gearValue: 000000000000000000000000
+    gearExpectation:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    hero: 1
+    privateText: 0
+    forcedText: 
+    ironAdd: 0
+    gears: []
+    skin: {fileID: 0}
   logData: {fileID: 11400000, guid: 307bd0f981b17094285e1a523813a8b8, type: 2}
   scriptableChara:
-  - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
-  - {fileID: 11400000, guid: efefb29621ae0994ca28af85109989dc, type: 2}
-  - {fileID: 11400000, guid: 5e5b6062309b58041a82863d05bd46c7, type: 2}
-  - {fileID: 11400000, guid: 55b8b53107e7fb5469ed7b28ae849397, type: 2}
+  - {fileID: 11400000, guid: 2fc1667c7309f5c40a9526cbd4c5d83e, type: 2}
+  - {fileID: 11400000, guid: 2a36cf8123bf31e419cdd05494746ff5, type: 2}
+  - {fileID: 11400000, guid: 5a178d238f9b82d4bacef1ead1647a4c, type: 2}
+  - {fileID: 11400000, guid: b719fff4ea14a7f4cbb3f9f50e23adb4, type: 2}
+  - {fileID: 11400000, guid: 4ea176c205b05514db3bbfbd515e0fb3, type: 2}
+  - {fileID: 11400000, guid: 7343d0bbda538604d9146eeaa0dc028b, type: 2}
+  - {fileID: 11400000, guid: 0db29802b9cdbd243b9287c674ace9ff, type: 2}
+  - {fileID: 11400000, guid: 65ef80d9147abf54693da3fd879b8364, type: 2}
+  - {fileID: 11400000, guid: 0818a73ed27891e4e8ac4b700fae6cba, type: 2}
+  - {fileID: 11400000, guid: 1b13c3528f5345e49ac4db1692cfe66a, type: 2}
+  - {fileID: 11400000, guid: f1c205e993911234da7c4742ddb6f267, type: 2}
+  - {fileID: 11400000, guid: adc136e5cf4243147923d1d401607328, type: 2}
+  - {fileID: 11400000, guid: d06ef6a1bb22ec641b48167361a8dee5, type: 2}
+  - {fileID: 11400000, guid: 984d8a1c6e619d34c9d585d57dcb2795, type: 2}
+  - {fileID: 11400000, guid: e9aebac1e710aac409f451a5394caf07, type: 2}
+  - {fileID: 11400000, guid: b4a8e1e9d019b8741bac04f84b2a2037, type: 2}
+  - {fileID: 11400000, guid: bbd6d525652862b44b5a861403e4bc37, type: 2}
+  - {fileID: 11400000, guid: 2d4813ee852bf9743a7269d6288de8a8, type: 2}
+  - {fileID: 11400000, guid: 1fa865d35fedcd7488eb9d5346ab10d0, type: 2}
+  - {fileID: 11400000, guid: 2a23ec08e33353349975e62ff7dcf3e6, type: 2}
+  - {fileID: 11400000, guid: 7d2c1a70b54c986488097ff0f934c309, type: 2}
+  - {fileID: 11400000, guid: da4a59ddffa7be741a54cc7c723ee42f, type: 2}
+  - {fileID: 11400000, guid: 80d34d871749d504ebed6aaff5d28e2a, type: 2}
+  - {fileID: 11400000, guid: 633af79a619949143bcc5a2272c65fd1, type: 2}
+  - {fileID: 11400000, guid: 8719f58d57d6fbf498ddeb809bd086d2, type: 2}
+  - {fileID: 11400000, guid: c30003f12c5054d4685f9b15934c8b19, type: 2}
+  - {fileID: 11400000, guid: c863c209e4df349438d132971bc0b434, type: 2}
+  - {fileID: 11400000, guid: c48b674c8228b2c408f919c2cd9bd3e7, type: 2}
+  - {fileID: 11400000, guid: d7290ec415b43634a8db487c257f0632, type: 2}
+  - {fileID: 11400000, guid: b12f6f55bb6a7c944b8ea9463781e515, type: 2}
   percentNobody: 10
   percentAlive: 80
   percentNewChar: 0
@@ -838,7 +885,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  winning: 0
 --- !u!1 &1115306381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,7 +2424,7 @@ PrefabInstance:
     - target: {fileID: 8730542542876097695, guid: 10e0bb5461cb42e4a99df7404ecf6ec9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8730542543196964219, guid: 10e0bb5461cb42e4a99df7404ecf6ec9,
         type: 3}

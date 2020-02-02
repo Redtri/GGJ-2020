@@ -17,16 +17,19 @@ MonoBehaviour:
     c_Name: Morrh
     c_Surname: Airon
     nameRandom: 0
-    gearValue: 060000000200000007000000
+    gearValue: 020000000600000007000000
     gearExpectation:
-    - {x: 0, y: 10}
     - {x: 3, y: 8}
-    - {x: 0, y: 10}
+    - {x: 0, y: 8}
+    - {x: 0, y: 8}
     hero: 1
     privateText: 1
-    forcedText: '"Hey! I''m your first visitor? Everyone who comes here has got a
-      problem with ONE piece of equipment only. The rest is fine. Mine is with my
-      sword. I have two pieces of iron assigned to it. Can you see it'
+    forcedText: Hey! I'm your first visitor? Everyone who comes here has got a problem
+      with ONE piece of equipment only. The rest is fine. Mine is with my sword.
+      I have two pieces of iron assigned to it. Can you see it, down the screen?
+      I would like you to assign more iron to it, with a left click of your hammer.
+      You can retrieve iron with a right click. When it's done, validate in the bottom
+      right corner!
     ironAdd: 0
     gears: []
     skin: {fileID: 0}
