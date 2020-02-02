@@ -24,8 +24,8 @@ MonoBehaviour:
     - {x: 0, y: 10}
     hero: 1
     privateText: 1
-    forcedText: '"Hello! I also have a problem with my sword. I won''t tell you exactly
-      what to do with it'
+    forcedText: Hello! I also have a problem with my sword. I won't tell you exactly
+      what to do with it
     ironAdd: 0
     gears: []
     skin: {fileID: 0}

@@ -24,9 +24,9 @@ MonoBehaviour:
     - {x: 0, y: 10}
     hero: 1
     privateText: 1
-    forcedText: '"Hey! I''m your first visitor? Everyone who comes here has got a
-      problem with ONE piece of equipment only. The rest is fine. Mine is with my
-      sword. I have two pieces of iron assigned to it. Can you see it'
+    forcedText: Hey! I'm your first visitor? Everyone who comes here has got a problem
+      with ONE piece of equipment only. The rest is fine. Mine is with my sword.
+      I have two pieces of iron assigned to it. Can you see it
     ironAdd: 0
     gears: []
     skin: {fileID: 0}

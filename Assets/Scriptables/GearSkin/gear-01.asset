@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: gear-01
   m_EditorClassIdentifier: 
   stateSkins:
-  - {fileID: 21300000, guid: cb8e1c3e3f53e2440b2101da19d4d681, type: 3}
-  - {fileID: 21300000, guid: ef0ecf3ac858d3541acd649ac2ba0196, type: 3}
-  - {fileID: 21300000, guid: 2caa0c2dd7d21ec4eb0cfebc28795525, type: 3}
-  - {fileID: 21300000, guid: b02ed293ddb7ec343a806d5ac2a85b97, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 86eb7a2bade618c4d8688878fcad8bcc, type: 3}
+  - {fileID: 21300000, guid: d5c85c1b1cf722245ad4a9228a37adc2, type: 3}
+  - {fileID: 21300000, guid: d15e9be678394044cab4c332135acd8a, type: 3}
