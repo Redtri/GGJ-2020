@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public PlayerHelper playerHelper;
 
     public int nbDead { get; private set; }
+    public bool winning;
 
     private void Awake()
     {
@@ -115,13 +116,25 @@ public class GameManager : MonoBehaviour
     private void CheckWinLose()
     {
         int totCharacter = nbDead + CharacterManager.instance.charactersAlive.Count;
+
+        float winRatio = (float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter;
+        float loseRatio = ((float)nbDead / (float)totCharacter);
+
+        if(winRatio > 0.5f) {
+            winning = true;
+            //TODO : call wwise events for winning state
+        } else {
+            winning = false;
+            //TODO : call wwise events for winning state
+        }
+        Debug.Log(winRatio + " alive " + loseRatio + " dead. Winning : " + winning);
+
         Debug.Log("Total nb characters " + totCharacter);
         if(totCharacter >= nbCharCheck) {
-            Debug.Log(((float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter) + " alive " + ((float)nbDead / (float)totCharacter) + " dead");
-            if ((float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter > winPercentAlive) {
+            if ( winRatio > winPercentAlive) {
                 Debug.Log("WIN!");
             }
-            else if(((float)nbDead / (float)totCharacter) >= winLoseAlive) {
+            else if( winRatio <= winLoseAlive) {
                 Debug.Log("LOSE");
             }
         }
