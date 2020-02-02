@@ -59,9 +59,9 @@ public class UIChatlog : MonoBehaviour
 			nextDuration = Random.Range(minTimeNeutralLog, maxTimeNeutralLog);
 			lastTime = Time.time;
 
-			//SendMessage(GetNeutralLog(),Random.Range(0,5),TyopeOfLog.Neutral);
+			SendMessage(GetNeutralLog(),Random.Range(0,5),TyopeOfLog.Neutral);
 		}
-		if(Input.anyKeyDown)SendMessage(GetNeutralLog(), Random.Range(0, 5), TyopeOfLog.Neutral);
+		//if(Input.anyKeyDown)SendMessage(GetNeutralLog(), Random.Range(0, 5), TyopeOfLog.Neutral);
 	}
 
 

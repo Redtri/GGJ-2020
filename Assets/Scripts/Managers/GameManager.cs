@@ -131,12 +131,23 @@ public class GameManager : MonoBehaviour
         //float winRatio = (float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter;
         //float loseRatio = ((float)nbDead / (float)totCharacter);
 		float winRatio = 0;
+		float heroCount = 0;
 		foreach(Character c in CharacterManager.instance.charactersAlive)
 		{
 			winRatio += c.hero;
+			heroCount += c.hero;
 		}
-		winRatio /= totCharacter;
+		heroCount += nbDead;
+		winRatio = winRatio/heroCount;
 		float loseRatio = 1 - winRatio;
+
+		if(winRatio > 0.5f)
+		{
+			UIChatlog.AddLogMessage((int)(winRatio * 100) + "% chances to win the war", Random.Range(0,3),UIChatlog.TyopeOfLog.Good); 
+		}else
+		{
+			UIChatlog.AddLogMessage((int)(winRatio * 100) + "% chances to win the war", Random.Range(0, 3), UIChatlog.TyopeOfLog.Bad);
+		}
 		
 
         if(winRatio > 0.5f) {
