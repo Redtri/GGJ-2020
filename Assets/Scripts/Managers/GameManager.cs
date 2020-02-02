@@ -5,6 +5,7 @@ using UnityEngine;
 [DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
 {
+	
     public static GameManager instance;
 
     public float winPercentAlive;
@@ -28,12 +29,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartPhase();
+       // StartPhase();
     }
 
     private void Update()
     {
     }
+
 
     //Phase Handling functions
     public void StartPhase()
@@ -126,8 +128,16 @@ public class GameManager : MonoBehaviour
     {
         int totCharacter = nbDead + CharacterManager.instance.charactersAlive.Count;
 
-        float winRatio = (float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter;
-        float loseRatio = ((float)nbDead / (float)totCharacter);
+        //float winRatio = (float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter;
+        //float loseRatio = ((float)nbDead / (float)totCharacter);
+		float winRatio = 0;
+		foreach(Character c in CharacterManager.instance.charactersAlive)
+		{
+			winRatio += c.hero;
+		}
+		winRatio /= totCharacter;
+		float loseRatio = 1 - winRatio;
+		
 
         if(winRatio > 0.5f) {
             winning = true;
