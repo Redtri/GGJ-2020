@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &581329547093003665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581329547093003664}
+  - component: {fileID: 581329547093003679}
+  - component: {fileID: 581329547093003678}
+  - component: {fileID: 581329547093003677}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &581329547093003664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581329547093003665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581329547093003679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581329547093003665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be487bc7a762707448de56b3b7f1dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenShake:
+    cam: {fileID: 0}
+    shakeDuration: 0.25
+    intensity: 0.25
+  postProcessVolume: {fileID: 0}
+--- !u!114 &581329547093003678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581329547093003665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8365e859b281b478866b06644b321e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charactersAlive: []
+  charactersInQueue: []
+  scriptableChara:
+  - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
+  - {fileID: 11400000, guid: efefb29621ae0994ca28af85109989dc, type: 2}
+  - {fileID: 11400000, guid: 5e5b6062309b58041a82863d05bd46c7, type: 2}
+  - {fileID: 11400000, guid: 55b8b53107e7fb5469ed7b28ae849397, type: 2}
+  percentNobody: 10
+  percentAlive: 80
+  percentNewChar: 0
+  characterActor: {fileID: 0}
+  gearTemplates:
+  - {fileID: 11400000, guid: 143825b5e8ecc944289380241d266874, type: 2}
+  skinTemplates:
+  - {fileID: 21300000, guid: f5e468804c45d17439d0c74ed8712852, type: 3}
+  - {fileID: 21300000, guid: 6610e590effc742479f9f3986ca36689, type: 3}
+  - {fileID: 21300000, guid: d92840a70316baa46b3db3f9168abb74, type: 3}
+  - {fileID: 21300000, guid: d83c058bf2f5f8c4290fcd8c2809a660, type: 3}
+  - {fileID: 21300000, guid: e71d52e13dd49ac49b7d46ea7ba2a457, type: 3}
+  - {fileID: 21300000, guid: d4a658679528a6946a1671e6c479576b, type: 3}
+--- !u!114 &581329547093003677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581329547093003665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b7636ed90450d45bee4168df98ad3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winPercentAlive: 0.7
+  winLoseAlive: 0.3
+  nbCharCheck: 10
+  phaseHelper:
+    entranceDuration: 1
+    leaveDuration: 1
+    waitRange: {x: 3, y: 5}
+    currentCharacter:
+      doesExist: 0
+      c_Name: GEAROES
+      c_Surname: 
+      nameRandom: 0
+      gearValue: 000000000000000000000000
+      gearExpectation:
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      hero: 1
+      privateText: 0
+      forcedText: 
+      ironAdd: 0
+      gears: []
+      skin: {fileID: 0}
+    previousCharacter:
+      doesExist: 0
+      c_Name: GEAROES
+      c_Surname: 
+      nameRandom: 0
+      gearValue: 000000000000000000000000
+      gearExpectation:
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      hero: 1
+      privateText: 0
+      forcedText: 
+      ironAdd: 0
+      gears: []
+      skin: {fileID: 0}
+  playerHelper:
+    playerGO: {fileID: 0}
+    ironAmount: 5
+  winning: 0

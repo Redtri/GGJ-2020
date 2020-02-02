@@ -26,7 +26,8 @@ public class CharacterManager : MonoBehaviour
 
     [Header("Misc")]
     public CharacterActor characterActor;
-    public CharacterSkin[] characterTemplates;
+    public GearSet[] gearTemplates;
+    public Sprite[] skinTemplates;
 
     public delegate void CharacterEvent(CharacterActor character);
     public CharacterEvent onCharacterUpdate;
@@ -88,7 +89,7 @@ public class CharacterManager : MonoBehaviour
 
         Character c = new Character();
 
-        c.InitSprites(characterTemplates[0].bodyParts);
+        c.InitSprites(gearTemplates[0].gearParts, skinTemplates[Random.Range(0, skinTemplates.Length)]);
 
         if (forceNew)
         {
@@ -136,9 +137,9 @@ public class CharacterManager : MonoBehaviour
 
         Character c = new Character(scriptChar);
 
-        int randomIndex = Random.Range(0, characterTemplates.Length);
+        int randomIndex = Random.Range(0, gearTemplates.Length);
 
-        c.InitSprites(characterTemplates[0].bodyParts);
+        c.InitSprites(gearTemplates[0].gearParts, skinTemplates[Random.Range(0, skinTemplates.Length)]);
             //c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
         if (c.nameRandom)
         {
@@ -212,6 +213,7 @@ public class CharacterManager : MonoBehaviour
     public void UpdateActorProfile(Character character)
     {
         characterActor.data = character;
+        characterActor.LoadGearSkins();
         characterActor.LoadSkin();
         onCharacterUpdate?.Invoke(characterActor);
     }
