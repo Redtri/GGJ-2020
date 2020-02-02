@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems; // 1
 using System;
+using UnityEngine.Events;
 
 
 public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
@@ -15,6 +16,9 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public Sprite leftClickSprite;
 	public Sprite rightClickSprite;
 	public Sprite lockSprite;
+	[SerializeField]
+	public UnityEvent clickEvent;
+	
 	public int gearLevel;
 
 	public bool lockButton = false;
@@ -54,6 +58,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		if (isHover)
 		{
 			SetSprite(hoverSprite);
+			clickEvent.Invoke();
 		}
 		else
 		{
