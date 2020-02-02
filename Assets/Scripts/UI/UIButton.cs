@@ -58,11 +58,33 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		if (eventData.button == PointerEventData.InputButton.Left)
 		{
 			SetSprite(leftClickSprite);
-		}
+
+            //Sound
+            switch (buttonType)
+            {
+                case ButtonType.Forge:
+                    AudioManager.instance.AddItem.Post(GameManager.instance.gameObject);
+                    break;
+                case ButtonType.Validate:
+                    AudioManager.instance.Validate.Post(GameManager.instance.gameObject);
+                    break;
+            }
+}
 		else
 		{
 			SetSprite(rightClickSprite);
-		}
+            //Sound
+            switch (buttonType)
+            {
+                case ButtonType.Forge:
+                    AudioManager.instance.RemoveItem.Post(GameManager.instance.gameObject);
+                    break;
+                case ButtonType.Validate:
+                    break;
+            }
+        }
+
+       
 	}
 	public void OnPointerUp(PointerEventData eventData)
 	{
