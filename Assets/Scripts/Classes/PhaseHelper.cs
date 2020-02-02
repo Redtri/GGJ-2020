@@ -15,6 +15,7 @@ public class PhaseHelper
 
     public delegate void BasicEvent();
     public BasicEvent onEntranceEnd;
+    public BasicEvent onEntrance;
     public BasicEvent onLeaving;
     public BasicEvent onLeavingEnd;
     public delegate void BoolEvent(bool val1);
@@ -34,6 +35,8 @@ public class PhaseHelper
         }
         CharacterManager.instance.UpdateActorProfile(character);
         CharacterManager.instance.characterActor.EnterForge(entranceDuration);
+
+        onEntrance?.Invoke();
     }
 
     //Phase is over, returns whether there was anybody in the forge
