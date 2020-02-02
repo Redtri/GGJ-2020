@@ -645,7 +645,7 @@ RectTransform:
   - {fileID: 1433376133}
   - {fileID: 782424990}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -861,7 +861,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &548998184
 GameObject:
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051172730}
+      - m_Target: {fileID: 0}
         m_MethodName: EndPhase
         m_Mode: 1
         m_Arguments:
@@ -1643,133 +1643,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030271825}
   m_CullTransparentMesh: 0
---- !u!1 &1051172726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051172727}
-  - component: {fileID: 1051172728}
-  - component: {fileID: 1051172729}
-  - component: {fileID: 1051172730}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1051172727
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051172726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1051172728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051172726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be487bc7a762707448de56b3b7f1dc5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenShake:
-    cam: {fileID: 2037880702}
-    shakeDuration: 0.25
-    intensity: 0.25
-  postProcessVolume: {fileID: 1984009455}
---- !u!114 &1051172729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051172726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8365e859b281b478866b06644b321e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charactersAlive: []
-  charactersInQueue: []
-  scriptableChara:
-  - {fileID: 11400000, guid: 8b6cd3d383f3c30499dbfd86a2ff249a, type: 2}
-  - {fileID: 11400000, guid: efefb29621ae0994ca28af85109989dc, type: 2}
-  - {fileID: 11400000, guid: 5e5b6062309b58041a82863d05bd46c7, type: 2}
-  - {fileID: 11400000, guid: 55b8b53107e7fb5469ed7b28ae849397, type: 2}
-  percentNobody: 10
-  percentAlive: 80
-  percentNewChar: 0
-  characterActor: {fileID: 5133059023521512639}
-  characterTemplates:
-  - {fileID: 11400000, guid: 143825b5e8ecc944289380241d266874, type: 2}
---- !u!114 &1051172730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051172726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b7636ed90450d45bee4168df98ad3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winPercentAlive: 0.7
-  winLoseAlive: 0.3
-  nbCharCheck: 10
-  phaseHelper:
-    entranceDuration: 1
-    leaveDuration: 1
-    waitRange: {x: 3, y: 5}
-    currentCharacter:
-      doesExist: 0
-      c_Name: GEAROES
-      c_Surname: 
-      nameRandom: 0
-      gearValue: 000000000000000000000000
-      gearExpectation:
-      - {x: 0, y: 0}
-      - {x: 0, y: 0}
-      - {x: 0, y: 0}
-      hero: 1
-      privateText: 0
-      forcedText: 
-      ironAdd: 0
-      gears: []
-    previousCharacter:
-      doesExist: 0
-      c_Name: GEAROES
-      c_Surname: 
-      nameRandom: 0
-      gearValue: 000000000000000000000000
-      gearExpectation:
-      - {x: 0, y: 0}
-      - {x: 0, y: 0}
-      - {x: 0, y: 0}
-      hero: 1
-      privateText: 0
-      forcedText: 
-      ironAdd: 0
-      gears: []
-  playerHelper:
-    playerGO: {fileID: 1210055528}
-    ironAmount: 5
 --- !u!1 &1115306381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,12 +1943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1210055528 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8623160454992616815, guid: 405da475c8a39c34892756365ffa97fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 8623160456492485156}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1233036106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,18 +3178,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 740a55039304e2e42b36d39cc7303b00, type: 3}
---- !u!114 &5133059023521512639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 5133059023521512638}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11a3905d24ef30b428c72ba98341e71e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8066357675602811192
 PrefabInstance:
   m_ObjectHideFlags: 0
