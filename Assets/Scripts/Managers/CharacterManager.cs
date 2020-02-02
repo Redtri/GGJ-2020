@@ -24,9 +24,12 @@ public class CharacterManager : MonoBehaviour
     public float percentAlive;
     public float percentNewChar;
 
+    public int nbrFirstCharInForge = 3;
+
     [Header("Misc")]
     public CharacterActor characterActor;
-    public CharacterSkin[] characterTemplates;
+    public GearSet[] gearTemplates;
+    public Sprite[] skinTemplates;
 
     public delegate void CharacterEvent(CharacterActor character);
     public CharacterEvent onCharacterUpdate;
@@ -52,9 +55,9 @@ public class CharacterManager : MonoBehaviour
         charactersAlive = new List<Character>();
 
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < nbrFirstCharInForge; i++)
         {
-            AddCharacterToQueue(true);
+            AddCharacterToQueue(true, i);
         }
 
         onCharacterUpdate?.Invoke(characterActor);
@@ -82,11 +85,13 @@ public class CharacterManager : MonoBehaviour
         onCharacterUpdate?.Invoke(characterActor);
     }
 
-    public void AddCharacterToQueue(bool forceNew = false)
+    public void AddCharacterToQueue(bool forceNew = false, int i = 0)
     {
         float percent = Random.Range(0.0f, 1.0f);
 
-        Character c = null;
+        Character c = new Character();
+
+        c.InitSprites(gearTemplates[0].gearParts, skinTemplates[Random.Range(0, skinTemplates.Length)]);
 
         if (forceNew)
         {
@@ -113,7 +118,8 @@ public class CharacterManager : MonoBehaviour
                     countLoop++;
                     if(countLoop > 10)
                     {
-                        CreateCharacterAndAddToQueue();
+                        int index = Random.Range(0, scriptableChara.Length);
+                        CreateCharacterAndAddToQueue(index);
                         return;
                     }
                 }
@@ -124,20 +130,27 @@ public class CharacterManager : MonoBehaviour
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-            CreateCharacterAndAddToQueue();
+            int index = Random.Range(0, scriptableChara.Length);
+
+            if (forceNew)
+            {
+                index = i;
+            }
+
+            CreateCharacterAndAddToQueue(index);
         }
     }
 
-    public void CreateCharacterAndAddToQueue()
+    public void CreateCharacterAndAddToQueue(int index)
     {
-        Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
+        Character scriptChar = scriptableChara[index].character;
 
         Character c = new Character(scriptChar);
 
-        int randomIndex = Random.Range(0, characterTemplates.Length);
+        int randomIndex = Random.Range(0, gearTemplates.Length);
 
-        c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
-
+        c.InitSprites(gearTemplates[0].gearParts, skinTemplates[Random.Range(0, skinTemplates.Length)]);
+            //c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
         if (c.nameRandom)
         {
             string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
@@ -173,6 +186,7 @@ public class CharacterManager : MonoBehaviour
             c.c_Surname = name;
 
             charactersInQueue.Add(c);
+
         }
     }
 
@@ -209,7 +223,8 @@ public class CharacterManager : MonoBehaviour
     public void UpdateActorProfile(Character character)
     {
         characterActor.data = character;
-        characterActor.LoadSkin(character.sprites);
+        characterActor.LoadGearSkins();
+        characterActor.LoadSkin();
         onCharacterUpdate?.Invoke(characterActor);
     }
 }

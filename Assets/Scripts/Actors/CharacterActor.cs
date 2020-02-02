@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 //Physical representation of the character in the world
 public class CharacterActor : MonoBehaviour
 {
@@ -12,7 +15,8 @@ public class CharacterActor : MonoBehaviour
     public int maxGearUpgrade;
 
     [Header("Visuals")]
-    public SpriteRenderer[] bodyParts;
+    public SpriteRenderer[] gearParts;
+    public SpriteRenderer skinRender;
 
     [Header("Dotween")]
     public Transform reachPosition;
@@ -31,11 +35,34 @@ public class CharacterActor : MonoBehaviour
         
     }
 
-    public void LoadSkin(List<Sprite> sprites)
+    public void LoadGearSkins()
     {
-        for(int i = 0; i < sprites.Count; ++i) {
-            bodyParts[i].sprite = sprites[i];
+        for (int i = 0; i < data.gears.Count; ++i) {
+            switch (data.gearValue[i]) {
+                case 0:
+                    gearParts[i].sprite = data.gears[i].stateSkins[0];
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                    gearParts[i].sprite = data.gears[i].stateSkins[1];
+                break;
+                case 4:
+                case 5:
+                case 6:
+                    gearParts[i].sprite = data.gears[i].stateSkins[2];
+                break;
+                case 7:
+                case 8:
+                    gearParts[i].sprite = data.gears[i].stateSkins[3];
+                break;
+            }
         }
+    }
+
+    public void LoadSkin()
+    {
+        skinRender.sprite = data.skin;
     }
 
     public void UpdateGearValue(int index, bool minus = false)
@@ -44,13 +71,24 @@ public class CharacterActor : MonoBehaviour
             if (minus) {
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
-                    ++GameManager.instance.playerHelper.ironAmount;
+                    ++GameManager.instance.playerHelper.ironAmount;     
+                    EffectManager.instance.screenShake.Shake(0, 0.01f);
+
                 }
             } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
                 ++data.gearValue[index];
                 --GameManager.instance.playerHelper.ironAmount;
+
+                WhiteBalance balance = null;
+                EffectManager.instance.postProcessVolume.profile.TryGet(out balance);
+                DOVirtual.Float(0, 80f, 0.2f, (float value) => UpdateLens(value, balance))
+                         .OnComplete(() => DOVirtual.Float(80f, 0, 0.4f, (float value) => UpdateLens(value, balance)));
+
+
+                EffectManager.instance.screenShake.Shake(0, 0.05f);
             }
         }
+        LoadGearSkins();
     }
 
     public void LoadCharacterProfile(Character character)
@@ -77,4 +115,11 @@ public class CharacterActor : MonoBehaviour
 
         //GetComponent<Animator>().SetTrigger("leaving");
     }
+
+    private void UpdateLens(float value, WhiteBalance lens)
+    {
+        lens.temperature.value = value;
+    }
+
+
 }

@@ -2,54 +2,93 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Linq;
+
+
 
 public class UIChatlog : MonoBehaviour
 {
 
-	public int maxLog = 8;
-	public Font font;
-	public int textSize = 15;
-	private List<Text> texts = new List<Text>();
+	private Text[] texts;
+	private int count = 0;
+
+    public enum TyopeOfLog
+    {
+        Bad,
+        Neutral,
+        Good
+    }
 
 
-	
-	void Update()
+    private void Awake()
 	{
-		if(Random.value > 0.94f)
+		texts = GetComponentsInChildren<Text>();
+		texts.OrderBy(t => t.transform.position.y);
+		texts = texts.Reverse().ToArray();
+		foreach(Text t in texts)
 		{
-			if(Random.value > 0.5f)
-			{
-				SendMessage("gustave -> prout", Random.Range(0, 2));
-			}
-			else
-			{
-				SendMessage("gustave -> dead", Random.Range(0, 3));
-			}
-			
+			t.text = "";
 		}
 	}
 
 
-	public void SendMessage(string text, float delay)
+    private void Update()
+    {
+        /*
+        TyopeOfLog type = TyopeOfLog.Good;
+
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+                type = TyopeOfLog.Bad;
+                break;
+            case 1:
+                type = TyopeOfLog.Neutral;
+                break;
+            case 2:
+                type = TyopeOfLog.Good;
+                break;
+        }
+
+        FindObjectOfType<UIChatlog>().SendMessage("Salut " + (Random.Range(0,100) > 50 ?  "toi" : "mec "), 0.5f, type);*/
+    }
+
+
+    public void SendMessage(string text, float delay, TyopeOfLog tyopeOfLog)
 	{
-		StartCoroutine(LogMessage(text,delay));
+		StartCoroutine(LogMessage(text,delay, tyopeOfLog));
 	}
 
-	private IEnumerator LogMessage(string text, float delay)
+	private IEnumerator LogMessage(string text, float delay, TyopeOfLog tyopeOfLog)
 	{
 		yield return new WaitForSecondsRealtime(delay);
-		if (texts.Count >= maxLog)
-		{
-			Destroy(texts[0].gameObject);
-			texts.RemoveAt(0);
-		}
-		GameObject g = new GameObject("chatLog");
-		g.transform.parent = transform;
-		Text t = g.AddComponent<Text>();
-		t.text = text;
-		t.font = font;
-		t.fontSize = textSize;
-		texts.Add(t);
 		
+		for(int i = texts.Length-1; i>0; i--)
+		{
+			texts[i].text = texts[i - 1].text;
+            texts[i].color = texts[i - 1].color;
+        }
+
+        texts[0].text = text;
+
+        switch (tyopeOfLog)
+        {
+            case TyopeOfLog.Bad:
+                texts[0].color = Color.red;
+                break;
+
+            case TyopeOfLog.Neutral:
+                texts[0].color = Color.black;
+                break;
+
+            case TyopeOfLog.Good:
+                texts[0].color = Color.green;
+                break;
+        }
+    }
+
+	public static void AddLogMessage(string message, float delay, TyopeOfLog tyopeOfLog)
+	{
+		FindObjectOfType<UIChatlog>().SendMessage(message, delay);
 	}
 }

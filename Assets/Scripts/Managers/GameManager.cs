@@ -7,8 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public float winPercentAlive;
+    public float winLoseAlive;
+    public int nbCharCheck;
     public PhaseHelper phaseHelper;
     public PlayerHelper playerHelper;
+
+
+    public int nbDead { get; private set; }
+    public bool winning;
 
     private void Awake()
     {
@@ -42,6 +49,9 @@ public class GameManager : MonoBehaviour
     {
         //If there was someone in the room, The coroutine for the leaving is called$
         if (phaseHelper.PhaseEnd()) {
+
+            EffectManager.instance.screenShake.Shake(0, 0.1f);
+
             StartCoroutine(CharacterLeaving());
         }//Otherwise, just start another phase
         else {
@@ -86,13 +96,16 @@ public class GameManager : MonoBehaviour
             phaseHelper.currentCharacter.gearValue[1] = Random.Range(0, phaseHelper.currentCharacter.gearValue[1]);
             phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
 
-            Debug.Log("Vivant");
+            //Debug.Log("Vivant");
         }
         else // Char Loose
         {
+            ++nbDead;
 
-            Debug.Log("Mort");
-            if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
+            //Debug.Log("Mort");
+		//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
+
+			if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
                 CharacterManager.instance.charactersAlive.Remove(phaseHelper.currentCharacter);
             }
@@ -104,5 +117,33 @@ public class GameManager : MonoBehaviour
             }
         }
         phaseHelper.LeavingEnd();
+        CheckWinLose();
+    }
+
+    private void CheckWinLose()
+    {
+        int totCharacter = nbDead + CharacterManager.instance.charactersAlive.Count;
+
+        float winRatio = (float)CharacterManager.instance.charactersAlive.Count / (float)totCharacter;
+        float loseRatio = ((float)nbDead / (float)totCharacter);
+
+        if(winRatio > 0.5f) {
+            winning = true;
+            //TODO : call wwise events for winning state
+        } else {
+            winning = false;
+            //TODO : call wwise events for winning state
+        }
+        Debug.Log(winRatio + " alive " + loseRatio + " dead. Winning : " + winning);
+
+        Debug.Log("Total nb characters " + totCharacter);
+        if(totCharacter >= nbCharCheck) {
+            if ( winRatio > winPercentAlive) {
+                Debug.Log("WIN!");
+            }
+            else if( winRatio <= winLoseAlive) {
+                Debug.Log("LOSE");
+            }
+        }
     }
 }

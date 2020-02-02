@@ -10,6 +10,7 @@ public class UIDialogue : MonoBehaviour
 {
 	public DialogueScriptableObject dialogData;
     public GameObject children;
+	public TextMeshProUGUI nameText;
 
 	//private TMP_TextJuicer juicer;
 	private TextMeshProUGUI tmp;
@@ -38,50 +39,28 @@ public class UIDialogue : MonoBehaviour
 
 	private void OnEntrance()
 	{
-		SetText(GetString());	
+		SetText(GetString());
+		Character c = GameManager.instance.phaseHelper.currentCharacter;
+		nameText.text = c.c_Name + "  " + c.c_Surname;
 	}
 
 	private void OnLeave()
 	{
 		SetText("");
+		nameText.text = "";
 	}
 
-	private void Update()
-	{
-        /*
-		if(tmp.text.Length > 0)
-		{
-			progress += Time.deltaTime / (float)(tmp.text.Length) *  speed;
-		}else
-		{
-			progress = 0;
-		}*/
-		
-		//juicer.SetProgress(progress);
-		//juicer.SetDirty();
-		
-	}
 
 	public void SetText(string txt) {
-		progress = 0;
 
-        if (!children.GetComponent<Text>())
-        {
-            text = children.AddComponent<Text>();
-        }
+        DOTween.To(() => tmp.text, x =>  tmp.text = x, txt, 2.0f);
 
-        text.DOText(txt, 2.0f).OnUpdate(() => UpdateText(text)).OnComplete(() => text.text = "");
-        
         tmp.text = "";
-        
-		//juicer.SetDirty();
 	}    
 
 
     private void UpdateText(Text text)
     {
-        Debug.Log(text);
-
         tmp.text = text.text;
     }
 	
@@ -89,6 +68,12 @@ public class UIDialogue : MonoBehaviour
 	{
 		Character c = GameManager.instance.phaseHelper.currentCharacter;
 		if (c == null) return "";
+
+        if (c.privateText)
+        {
+            return c.forcedText;
+        }
+        
 		float dist = 0;
 		GearType gt = c.GetFarestGear(out dist);
 		switch (gt)
