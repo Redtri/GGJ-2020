@@ -14,6 +14,8 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
     private int index = 0;
     public void OnPointerClick(PointerEventData eventData)
     {
+        GameObject myEventSystem = GameObject.Find("EventSystem");
+
         index = transform.GetSiblingIndex();
         if(eventData.button == PointerEventData.InputButton.Right){
             rightClick = true;
@@ -31,7 +33,7 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
             EffectManager.instance.screenShake.Shake(0, 0.05f);
         }
         CharacterManager.instance.UpdateActorGearValues(index, rightClick);
-
+        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
     }
 
     private void UpdateLens(float value, LensDistortion lens)
