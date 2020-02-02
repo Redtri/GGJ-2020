@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public PhaseHelper phaseHelper;
     public PlayerHelper playerHelper;
 
+
     public int nbDead { get; private set; }
     public bool winning;
 

@@ -24,6 +24,8 @@ public class CharacterManager : MonoBehaviour
     public float percentAlive;
     public float percentNewChar;
 
+    public int nbrFirstCharInForge = 3;
+
     [Header("Misc")]
     public CharacterActor characterActor;
     public GearSet[] gearTemplates;
@@ -53,9 +55,9 @@ public class CharacterManager : MonoBehaviour
         charactersAlive = new List<Character>();
 
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < nbrFirstCharInForge; i++)
         {
-            AddCharacterToQueue(true);
+            AddCharacterToQueue(true, i);
         }
 
         onCharacterUpdate?.Invoke(characterActor);
@@ -83,7 +85,7 @@ public class CharacterManager : MonoBehaviour
         onCharacterUpdate?.Invoke(characterActor);
     }
 
-    public void AddCharacterToQueue(bool forceNew = false)
+    public void AddCharacterToQueue(bool forceNew = false, int i = 0)
     {
         float percent = Random.Range(0.0f, 1.0f);
 
@@ -116,7 +118,8 @@ public class CharacterManager : MonoBehaviour
                     countLoop++;
                     if(countLoop > 10)
                     {
-                        CreateCharacterAndAddToQueue();
+                        int index = Random.Range(0, scriptableChara.Length);
+                        CreateCharacterAndAddToQueue(index);
                         return;
                     }
                 }
@@ -127,13 +130,20 @@ public class CharacterManager : MonoBehaviour
         // On ajoute un nouveau personnage
         else if (percent > percentAlive / 100f)
         {
-            CreateCharacterAndAddToQueue();
+            int index = Random.Range(0, scriptableChara.Length);
+
+            if (forceNew)
+            {
+                index = i;
+            }
+
+            CreateCharacterAndAddToQueue(index);
         }
     }
 
-    public void CreateCharacterAndAddToQueue()
+    public void CreateCharacterAndAddToQueue(int index)
     {
-        Character scriptChar = scriptableChara[Random.Range(0, scriptableChara.Length)].character;
+        Character scriptChar = scriptableChara[index].character;
 
         Character c = new Character(scriptChar);
 
