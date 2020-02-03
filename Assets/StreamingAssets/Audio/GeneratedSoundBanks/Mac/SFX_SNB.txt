@@ -1,0 +1,57 @@
+Event	ID	Name			Wwise Object Path	Notes
+	452547817	Stop_All			\SD Event\Stop_All	
+	802821452	UI_DeathEvent			\SD Event\UI\UI_DeathEvent	
+	870714546	Forge_Fire_Loop			\SD Event\Ambiance\Forge\Forge_Fire_Loop	
+	873092944	UI_Validate			\SD Event\UI\UI_Validate	
+	2200300695	UI_HammerHit			\SD Event\UI\UI_HammerHit	
+	2628486379	UI_RemoveItem			\SD Event\UI\UI_RemoveItem	
+	2921734634	UI_AddItem			\SD Event\UI\UI_AddItem	
+	3332999173	Foley_Door			\SD Event\Foley\Foley_Door	
+	3688695384	UI_DialEvent			\SD Event\UI\UI_DialEvent	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	2209506	UI_DeathEvent_02	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_DeathEvent_02_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\DeathEvent\UI_DeathEvent_02		338468
+	39654774	Foley_Forge_DoorOpen_03	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_DoorOpen_03_10C4C929.wem		\Actor-Mixer Hierarchy\Foleys\Forge\DoorOpen\Foley_Forge_DoorOpen_03		282512
+	77145014	Foley_Forge_Hammer_05	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_Hammer_05_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\Hammer\Foley_Forge_Hammer_05		112860
+	130716600	Foley_Forge_DoorClose_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_DoorClose_04_10C4C929.wem		\Actor-Mixer Hierarchy\Foleys\Forge\DoorClose\Foley_Forge_DoorClose_04		303872
+	186025753	VO_HumanDeath_12	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_12_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_12		513540
+	208439808	DialEvent	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_DialStart_01_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\DialEvent		180512
+	234379008	VO_HumanDeath_18	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_18_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_18		350084
+	258911680	UI_AddItem_03	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_AddItem_03_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\AddItem\UI_AddItem_03		215388
+	280047487	UI_AddItem_02	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_AddItem_02_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\AddItem\UI_AddItem_02		145184
+	292425264	UI_AddItem_05	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_AddItem_05_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\AddItem\UI_AddItem_05		189064
+	324564729	Ambiance_Forge_Fire _01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Ambiance_Forge_Fire _01_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Forge\Ambiance_ForgeFire\Ambiance_Forge_Fire _01		2648340
+	332472738	Foley_Forge_DoorOpen_02	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_DoorOpen_02_10C4C929.wem		\Actor-Mixer Hierarchy\Foleys\Forge\DoorOpen\Foley_Forge_DoorOpen_02		262052
+	339969412	Foley_Forge_Hammer_10	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_Hammer_10_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\Hammer\Foley_Forge_Hammer_10		128172
+	340519242	UI_DeathEvent_03	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_DeathEvent_03_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\DeathEvent\UI_DeathEvent_03		323144
+	351528331	UI_AddItem_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_AddItem_04_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\AddItem\UI_AddItem_04		171048
+	418639538	Ambiance_Forge_Fire _04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Ambiance_Forge_Fire _04_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Forge\Ambiance_ForgeFire\Ambiance_Forge_Fire _04		4887620
+	434347177	Foley_Forge_DoorOpen_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_DoorOpen_01_10C4C929.wem		\Actor-Mixer Hierarchy\Foleys\Forge\DoorOpen\Foley_Forge_DoorOpen_01		262500
+	466639735	Foley_Forge_DoorClose_06	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_DoorClose_06_10C4C929.wem		\Actor-Mixer Hierarchy\Foleys\Forge\DoorClose\Foley_Forge_DoorClose_06		295192
+	467072950	VO_HumanDeath_17	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_17_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_17		223376
+	485048125	VO_HumanDeath_08	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_08_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_08		758092
+	498041040	Foley_Forge_Hammer_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_Hammer_04_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\Hammer\Foley_Forge_Hammer_04		100340
+	505504781	Foley_Forge_Hammer_08	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_Hammer_08_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\Hammer\Foley_Forge_Hammer_08		94352
+	514079439	Ambiance_Forge_Fire _03	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Ambiance_Forge_Fire _03_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Forge\Ambiance_ForgeFire\Ambiance_Forge_Fire _03		2948064
+	578299481	Foley_Forge_DoorClose_05	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_DoorClose_05_10C4C929.wem		\Actor-Mixer Hierarchy\Foleys\Forge\DoorClose\Foley_Forge_DoorClose_05		333928
+	646630935	VO_HumanDeath_06	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_06_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_06		238144
+	667966913	UI_DeathEvent_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_DeathEvent_01_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\DeathEvent\UI_DeathEvent_01		290632
+	682955743	UI_AddItem_06	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_AddItem_06_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\AddItem\UI_AddItem_06		216320
+	686491622	Foley_Forge_Hammer_09	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Foley_Forge_Hammer_09_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\Hammer\Foley_Forge_Hammer_09		139284
+	714966060	VO_HumanDeath_09	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_09_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_09		306560
+	744952790	UI_RemoveItem_03	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_RemoveItem_03_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\RemoveItem\UI_RemoveItem_03		107276
+	787527737	VO_HumanDeath_16	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_16_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_16		514320
+	819914912	VO_HumanDeath_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_01_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_01		164564
+	829455255	VO_HumanDeath_03	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_03_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_03		305512
+	842788958	UI_RemoveItem_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_RemoveItem_04_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\RemoveItem\UI_RemoveItem_04		98444
+	878578496	VO_HumanDeath_14	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_14_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_14		930056
+	885061589	Validate	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_Validating_01_A2CB9C52.wem		\Actor-Mixer Hierarchy\UI\Forge\Validate		536332
+	888105879	UI_RemoveItem_02	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_RemoveItem_02_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\RemoveItem\UI_RemoveItem_02		101648
+	897649659	VO_HumanDeath_07	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_07_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_07		612416
+	904044069	VO_HumanDeath_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_04_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_04		298084
+	909392212	VO_HumanDeath_05	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_05_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_05		183680
+	940566288	UI_RemoveItem_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_RemoveItem_01_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\RemoveItem\UI_RemoveItem_01		96876
+	969768019	VO_HumanDeath_02	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\VO_HumanDeath_02_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\VODeath\VO_HumanDeath_02		416104
+	977396476	Ambiance_Forge_Fire _02	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\Ambiance_Forge_Fire _02_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Forge\Ambiance_ForgeFire\Ambiance_Forge_Fire _02		2972472
+	1016913808	UI_AddItem_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Mac\SFX\UI_AddItem_01_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Forge\AddItem\UI_AddItem_01		150524
+
