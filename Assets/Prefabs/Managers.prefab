@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 581329547093003679}
   - component: {fileID: 581329547093003678}
   - component: {fileID: 581329547093003677}
+  - component: {fileID: -786004523995988664}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -72,6 +73,7 @@ MonoBehaviour:
   percentNobody: 10
   percentAlive: 80
   percentNewChar: 0
+  nbrFirstCharInForge: 3
   characterActor: {fileID: 0}
   gearTemplates:
   - {fileID: 11400000, guid: 143825b5e8ecc944289380241d266874, type: 2}
@@ -133,7 +135,85 @@ MonoBehaviour:
       ironAdd: 0
       gears: []
       skin: {fileID: 0}
+    soldiersInc: 0
   playerHelper:
     playerGO: {fileID: 0}
     ironAmount: 5
   winning: 0
+--- !u!114 &-786004523995988664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581329547093003665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4321f1470627e624e8c594e9072ad58f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BattlefieldAmbiance:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 661767259f7942d4f9fbf458bae77e20,
+      type: 2}
+  ForgeFire:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ea51f5ba0fba0754f87e2f8623b0d5a0,
+      type: 2}
+  IntensityCalm:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 02d0f444a8bb81d45ac92ecb1af18842,
+      type: 2}
+  IntensityLow:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4ccd8a7d5b9222245b2c963f60ab2d93,
+      type: 2}
+  IntensityMedium:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 596abae6d121a0c4c94bbcaaf418e113,
+      type: 2}
+  IntensityHigh:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e6e7b9480c5075d4eb24abb241d395fd,
+      type: 2}
+  IntensityExtreme:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 36b1fe884a8902742a8eaeba0640e423,
+      type: 2}
+  SetWinning:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9b32023163f49754ba675e4236477d50,
+      type: 2}
+  SetLoosing:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 485385d4742e2be4981494558327f63c,
+      type: 2}
+  DoorOpen:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2e24508410e49d546b578e159c1292cd,
+      type: 2}
+  AddItem:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6efa9cfd1977a3845ad3db617e5de3da,
+      type: 2}
+  RemoveItem:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c51576fdb3559c547aa5d26a1ba919a3,
+      type: 2}
+  Validate:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5bbdc8fb304f25f4d95d4dc97183730d,
+      type: 2}

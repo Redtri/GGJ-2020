@@ -42,6 +42,9 @@ public class MouseSparkle : MonoBehaviour
 
             vfx.SendEvent("OnBurst");
 
+            //Sound
+            AudioManager.instance.HammerHit.Post(GameManager.instance.gameObject);
+
             GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("Forge");
         }
     }

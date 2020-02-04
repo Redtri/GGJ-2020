@@ -1,0 +1,1330 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "11",
+  "SoundbankVersion": "134",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\GGJ-2020Unity\\Assets\\StreamingAssets\\Audio\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "776956199",
+    "GUID": "{B1FF7F2A-8B8F-46AB-8D5D-8972D113E9DE}",
+    "Language": "SFX",
+    "ObjectPath": "\\SoundBanks\\Main_SNB\\Battlefield_SNB",
+    "ShortName": "Battlefield_SNB",
+    "Path": "Battlefield_SNB.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "3316639316",
+      "Name": "Play_BattlefieldAmbiance",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Play_BattlefieldAmbiance",
+      "GUID": "{5F243640-E0AB-4CA3-82CC-A9F03A75395D}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "4236667796",
+      "Name": "Set_IntensityCalm",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_IntensityCalm",
+      "GUID": "{325E9F86-6444-4E95-A86F-13B4F2443A5E}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1912983523",
+      "Name": "Set_IntensityExtreme",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_IntensityExtreme",
+      "GUID": "{4940D3FB-5612-48D8-B9E0-438DB7EDC2C3}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "4034190369",
+      "Name": "Set_IntensityHigh",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_IntensityHigh",
+      "GUID": "{4869ADB9-6625-400A-8DC6-E769DACA9045}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "3635806469",
+      "Name": "Set_IntensityLow",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_IntensityLow",
+      "GUID": "{E0276E2B-F2EC-44F3-AEF5-F22DEF471635}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "716215376",
+      "Name": "Set_IntensityMedium",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_IntensityMedium",
+      "GUID": "{27103B4C-70F2-4BF7-AAFE-E54323FA0726}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1592413729",
+      "Name": "Set_Loosing",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_Loosing",
+      "GUID": "{1092AA1B-5DEE-4167-9ECA-E34220CBC6CE}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1205857978",
+      "Name": "Set_Winning",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_Winning",
+      "GUID": "{8B38B14C-847B-4043-8FA6-742A844E8BFC}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     }
+    ],
+    "IncludedMemoryFiles": [
+     {
+      "Id": "22759682",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_14.wav",
+      "Path": "SFX\\VO_HumanFight_14_10C4C929.wem"
+     },
+     {
+      "Id": "28968322",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultShoot_04.wav",
+      "Path": "SFX\\Foley_CatapultShoot_04_10C4C929.wem"
+     },
+     {
+      "Id": "33143554",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_31.wav",
+      "Path": "SFX\\VO_HumanLaugh_31_10C4C929.wem"
+     },
+     {
+      "Id": "34090732",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_17.wav",
+      "Path": "SFX\\VO_HumanFight_17_10C4C929.wem"
+     },
+     {
+      "Id": "47231151",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_14.wav",
+      "Path": "SFX\\VO_HumanShout_14_10C4C929.wem"
+     },
+     {
+      "Id": "49820022",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_08.wav",
+      "Path": "SFX\\VO_HumanPain_08_10C4C929.wem"
+     },
+     {
+      "Id": "50079581",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_08.wav",
+      "Path": "SFX\\VO_HumanFight_08_10C4C929.wem"
+     },
+     {
+      "Id": "53288929",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_15.wav",
+      "Path": "SFX\\VO_HumanPain_15_10C4C929.wem"
+     },
+     {
+      "Id": "59374194",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_18.wav",
+      "Path": "SFX\\VO_HumanShout_18_10C4C929.wem"
+     },
+     {
+      "Id": "65426245",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_23.wav",
+      "Path": "SFX\\VO_HumanLaugh_23_10C4C929.wem"
+     },
+     {
+      "Id": "66784747",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_10.wav",
+      "Path": "SFX\\VO_HumanLaugh_10_10C4C929.wem"
+     },
+     {
+      "Id": "76841919",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_08.wav",
+      "Path": "SFX\\Foley_ArrowHit_08_10C4C929.wem"
+     },
+     {
+      "Id": "81026808",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_04.wav",
+      "Path": "SFX\\VO_HumanLaugh_04_10C4C929.wem"
+     },
+     {
+      "Id": "96978677",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_01.wav",
+      "Path": "SFX\\VO_HumanLaugh_01_10C4C929.wem"
+     },
+     {
+      "Id": "109108939",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_29.wav",
+      "Path": "SFX\\VO_HumanLaugh_29_10C4C929.wem"
+     },
+     {
+      "Id": "129408918",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_08.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_08_10C4C929.wem"
+     },
+     {
+      "Id": "131545334",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_09.wav",
+      "Path": "SFX\\VO_HumanLaugh_09_10C4C929.wem"
+     },
+     {
+      "Id": "143952928",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_32.wav",
+      "Path": "SFX\\VO_HumanLaugh_32_10C4C929.wem"
+     },
+     {
+      "Id": "145532093",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_05.wav",
+      "Path": "SFX\\VO_HumanLaugh_05_10C4C929.wem"
+     },
+     {
+      "Id": "148712609",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_49.wav",
+      "Path": "SFX\\VO_HumanLaugh_49_10C4C929.wem"
+     },
+     {
+      "Id": "152296678",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_03.wav",
+      "Path": "SFX\\VO_HumanFight_03_10C4C929.wem"
+     },
+     {
+      "Id": "156630310",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_09.wav",
+      "Path": "SFX\\VO_HumanPain_09_10C4C929.wem"
+     },
+     {
+      "Id": "171328663",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_02.wav",
+      "Path": "SFX\\VO_HumanShout_02_10C4C929.wem"
+     },
+     {
+      "Id": "174458325",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorHit_03.wav",
+      "Path": "SFX\\Foley_ArmorHit_03_10C4C929.wem"
+     },
+     {
+      "Id": "174500354",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_10.wav",
+      "Path": "SFX\\VO_HumanDeath_10_10C4C929.wem"
+     },
+     {
+      "Id": "176041095",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_24.wav",
+      "Path": "SFX\\VO_HumanPain_24_10C4C929.wem"
+     },
+     {
+      "Id": "178721171",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_45.wav",
+      "Path": "SFX\\VO_HumanLaugh_45_10C4C929.wem"
+     },
+     {
+      "Id": "186025753",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_12.wav",
+      "Path": "SFX\\VO_HumanDeath_12_10C4C929.wem"
+     },
+     {
+      "Id": "198098697",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_20.wav",
+      "Path": "SFX\\VO_HumanFight_20_10C4C929.wem"
+     },
+     {
+      "Id": "198842251",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_26.wav",
+      "Path": "SFX\\VO_HumanPain_26_10C4C929.wem"
+     },
+     {
+      "Id": "200290418",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultHit_03.wav",
+      "Path": "SFX\\Foley_CatapultHit_03_10C4C929.wem"
+     },
+     {
+      "Id": "217270485",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_20.wav",
+      "Path": "SFX\\VO_HumanShout_20_10C4C929.wem"
+     },
+     {
+      "Id": "221191316",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_13.wav",
+      "Path": "SFX\\VO_HumanFight_13_10C4C929.wem"
+     },
+     {
+      "Id": "224295355",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_06.wav",
+      "Path": "SFX\\VO_HumanFight_06_10C4C929.wem"
+     },
+     {
+      "Id": "226083040",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_06.wav",
+      "Path": "SFX\\VO_HumanLaugh_06_10C4C929.wem"
+     },
+     {
+      "Id": "234379008",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_18.wav",
+      "Path": "SFX\\VO_HumanDeath_18_10C4C929.wem"
+     },
+     {
+      "Id": "236254822",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowShoot_02.wav",
+      "Path": "SFX\\Foley_ArrowShoot_02_10C4C929.wem"
+     },
+     {
+      "Id": "236452890",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_07.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_07_10C4C929.wem"
+     },
+     {
+      "Id": "245543135",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_05.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_05_10C4C929.wem"
+     },
+     {
+      "Id": "248179840",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowShoot_05.wav",
+      "Path": "SFX\\Foley_ArrowShoot_05_10C4C929.wem"
+     },
+     {
+      "Id": "262992618",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_43.wav",
+      "Path": "SFX\\VO_HumanLaugh_43_10C4C929.wem"
+     },
+     {
+      "Id": "265082081",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_16.wav",
+      "Path": "SFX\\VO_HumanShout_16_10C4C929.wem"
+     },
+     {
+      "Id": "275013822",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_06.wav",
+      "Path": "SFX\\Foley_ArrowHit_06_10C4C929.wem"
+     },
+     {
+      "Id": "276178405",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_04.wav",
+      "Path": "SFX\\Foley_SwordHit_04_10C4C929.wem"
+     },
+     {
+      "Id": "284067683",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_30.wav",
+      "Path": "SFX\\VO_HumanLaugh_30_10C4C929.wem"
+     },
+     {
+      "Id": "284790454",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_07.wav",
+      "Path": "SFX\\Foley_HorsePassBy_07_10C4C929.wem"
+     },
+     {
+      "Id": "287469497",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_50.wav",
+      "Path": "SFX\\VO_HumanLaugh_50_10C4C929.wem"
+     },
+     {
+      "Id": "288087575",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_22.wav",
+      "Path": "SFX\\VO_HumanPain_22_10C4C929.wem"
+     },
+     {
+      "Id": "291233660",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_23.wav",
+      "Path": "SFX\\VO_HumanFight_23_10C4C929.wem"
+     },
+     {
+      "Id": "293312613",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_19.wav",
+      "Path": "SFX\\VO_HumanPain_19_10C4C929.wem"
+     },
+     {
+      "Id": "294311703",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorMovement_01.wav",
+      "Path": "SFX\\Foley_ArmorMovement_01_10C4C929.wem"
+     },
+     {
+      "Id": "295031926",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_24.wav",
+      "Path": "SFX\\VO_HumanFight_24_10C4C929.wem"
+     },
+     {
+      "Id": "297882737",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_01.wav",
+      "Path": "SFX\\Foley_HorsePassBy_01_10C4C929.wem"
+     },
+     {
+      "Id": "306845812",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_01.wav",
+      "Path": "SFX\\Foley_SwordHit_01_10C4C929.wem"
+     },
+     {
+      "Id": "310000558",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_41.wav",
+      "Path": "SFX\\VO_HumanLaugh_41_10C4C929.wem"
+     },
+     {
+      "Id": "317686184",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorMovement_04.wav",
+      "Path": "SFX\\Foley_ArmorMovement_04_10C4C929.wem"
+     },
+     {
+      "Id": "320041422",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_12.wav",
+      "Path": "SFX\\VO_HumanFight_12_10C4C929.wem"
+     },
+     {
+      "Id": "320433832",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowShoot_03.wav",
+      "Path": "SFX\\Foley_ArrowShoot_03_10C4C929.wem"
+     },
+     {
+      "Id": "322758028",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_03.wav",
+      "Path": "SFX\\Foley_ArrowHit_03_10C4C929.wem"
+     },
+     {
+      "Id": "328289515",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_04.wav",
+      "Path": "SFX\\VO_HumanPain_04_10C4C929.wem"
+     },
+     {
+      "Id": "335234107",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_28.wav",
+      "Path": "SFX\\VO_HumanPain_28_10C4C929.wem"
+     },
+     {
+      "Id": "345022327",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorMovement_03.wav",
+      "Path": "SFX\\Foley_ArmorMovement_03_10C4C929.wem"
+     },
+     {
+      "Id": "352430130",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_02.wav",
+      "Path": "SFX\\Foley_ArrowHit_02_10C4C929.wem"
+     },
+     {
+      "Id": "352633689",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_20.wav",
+      "Path": "SFX\\VO_HumanLaugh_20_10C4C929.wem"
+     },
+     {
+      "Id": "373773735",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_33.wav",
+      "Path": "SFX\\VO_HumanLaugh_33_10C4C929.wem"
+     },
+     {
+      "Id": "380281116",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_48.wav",
+      "Path": "SFX\\VO_HumanLaugh_48_10C4C929.wem"
+     },
+     {
+      "Id": "382751139",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_39.wav",
+      "Path": "SFX\\VO_HumanLaugh_39_10C4C929.wem"
+     },
+     {
+      "Id": "386143391",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_40.wav",
+      "Path": "SFX\\VO_HumanLaugh_40_10C4C929.wem"
+     },
+     {
+      "Id": "395130551",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_16.wav",
+      "Path": "SFX\\VO_HumanLaugh_16_10C4C929.wem"
+     },
+     {
+      "Id": "398467467",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_12.wav",
+      "Path": "SFX\\VO_HumanShout_12_10C4C929.wem"
+     },
+     {
+      "Id": "407695857",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_03.wav",
+      "Path": "SFX\\Foley_HorsePassBy_03_10C4C929.wem"
+     },
+     {
+      "Id": "411041556",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_06.wav",
+      "Path": "SFX\\Foley_HorsePassBy_06_10C4C929.wem"
+     },
+     {
+      "Id": "415123672",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_11.wav",
+      "Path": "SFX\\VO_HumanPain_11_10C4C929.wem"
+     },
+     {
+      "Id": "417002623",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_08.wav",
+      "Path": "SFX\\VO_HumanLaugh_08_10C4C929.wem"
+     },
+     {
+      "Id": "417762554",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_03.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_03_10C4C929.wem"
+     },
+     {
+      "Id": "422238456",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_26.wav",
+      "Path": "SFX\\VO_HumanLaugh_26_10C4C929.wem"
+     },
+     {
+      "Id": "437714292",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_07.wav",
+      "Path": "SFX\\VO_HumanPain_07_10C4C929.wem"
+     },
+     {
+      "Id": "445742108",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_12.wav",
+      "Path": "SFX\\VO_HumanLaugh_12_10C4C929.wem"
+     },
+     {
+      "Id": "447154927",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_11.wav",
+      "Path": "SFX\\VO_HumanFight_11_10C4C929.wem"
+     },
+     {
+      "Id": "449609809",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_28.wav",
+      "Path": "SFX\\VO_HumanLaugh_28_10C4C929.wem"
+     },
+     {
+      "Id": "452836353",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_17.wav",
+      "Path": "SFX\\VO_HumanPain_17_10C4C929.wem"
+     },
+     {
+      "Id": "456392663",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_02.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_02_10C4C929.wem"
+     },
+     {
+      "Id": "467072950",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_17.wav",
+      "Path": "SFX\\VO_HumanDeath_17_10C4C929.wem"
+     },
+     {
+      "Id": "485048125",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_08.wav",
+      "Path": "SFX\\VO_HumanDeath_08_10C4C929.wem"
+     },
+     {
+      "Id": "486803568",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_01.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_01_10C4C929.wem"
+     },
+     {
+      "Id": "487702715",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_27.wav",
+      "Path": "SFX\\VO_HumanLaugh_27_10C4C929.wem"
+     },
+     {
+      "Id": "489727180",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_37.wav",
+      "Path": "SFX\\VO_HumanLaugh_37_10C4C929.wem"
+     },
+     {
+      "Id": "493565661",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_04.wav",
+      "Path": "SFX\\VO_HumanShout_04_10C4C929.wem"
+     },
+     {
+      "Id": "496186149",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_21.wav",
+      "Path": "SFX\\VO_HumanFight_21_10C4C929.wem"
+     },
+     {
+      "Id": "501455388",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_01.wav",
+      "Path": "SFX\\VO_HumanShout_01_10C4C929.wem"
+     },
+     {
+      "Id": "508687556",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_05.wav",
+      "Path": "SFX\\VO_HumanShout_05_10C4C929.wem"
+     },
+     {
+      "Id": "518377247",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_19.wav",
+      "Path": "SFX\\VO_HumanFight_19_10C4C929.wem"
+     },
+     {
+      "Id": "523379387",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_06.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_06_10C4C929.wem"
+     },
+     {
+      "Id": "525327572",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_19.wav",
+      "Path": "SFX\\VO_HumanShout_19_10C4C929.wem"
+     },
+     {
+      "Id": "529946100",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_15.wav",
+      "Path": "SFX\\VO_HumanShout_15_10C4C929.wem"
+     },
+     {
+      "Id": "535059839",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_11.wav",
+      "Path": "SFX\\VO_HumanShout_11_10C4C929.wem"
+     },
+     {
+      "Id": "546685790",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_29.wav",
+      "Path": "SFX\\VO_HumanPain_29_10C4C929.wem"
+     },
+     {
+      "Id": "550389871",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultHit_04.wav",
+      "Path": "SFX\\Foley_CatapultHit_04_10C4C929.wem"
+     },
+     {
+      "Id": "551604091",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_30.wav",
+      "Path": "SFX\\VO_HumanPain_30_10C4C929.wem"
+     },
+     {
+      "Id": "553177109",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_24.wav",
+      "Path": "SFX\\VO_HumanLaugh_24_10C4C929.wem"
+     },
+     {
+      "Id": "553717613",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_14.wav",
+      "Path": "SFX\\VO_HumanPain_14_10C4C929.wem"
+     },
+     {
+      "Id": "554982113",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_09.wav",
+      "Path": "SFX\\VO_HumanShout_09_10C4C929.wem"
+     },
+     {
+      "Id": "556883509",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowPassBy_04.wav",
+      "Path": "SFX\\Foley_ArrowPassBy_04_10C4C929.wem"
+     },
+     {
+      "Id": "558162905",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultShoot_01.wav",
+      "Path": "SFX\\Foley_CatapultShoot_01_10C4C929.wem"
+     },
+     {
+      "Id": "565388860",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_06.wav",
+      "Path": "SFX\\Foley_SwordHit_06_10C4C929.wem"
+     },
+     {
+      "Id": "585300315",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_11.wav",
+      "Path": "SFX\\VO_HumanDeath_11_10C4C929.wem"
+     },
+     {
+      "Id": "589338251",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_21.wav",
+      "Path": "SFX\\VO_HumanShout_21_10C4C929.wem"
+     },
+     {
+      "Id": "610439504",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_12.wav",
+      "Path": "SFX\\VO_HumanPain_12_10C4C929.wem"
+     },
+     {
+      "Id": "611753423",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_47.wav",
+      "Path": "SFX\\VO_HumanLaugh_47_10C4C929.wem"
+     },
+     {
+      "Id": "637992047",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorHit_02.wav",
+      "Path": "SFX\\Foley_ArmorHit_02_10C4C929.wem"
+     },
+     {
+      "Id": "643694087",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultHit_02.wav",
+      "Path": "SFX\\Foley_CatapultHit_02_10C4C929.wem"
+     },
+     {
+      "Id": "646630935",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_06.wav",
+      "Path": "SFX\\VO_HumanDeath_06_10C4C929.wem"
+     },
+     {
+      "Id": "646823122",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_21.wav",
+      "Path": "SFX\\VO_HumanLaugh_21_10C4C929.wem"
+     },
+     {
+      "Id": "651688277",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_08.wav",
+      "Path": "SFX\\VO_HumanShout_08_10C4C929.wem"
+     },
+     {
+      "Id": "661450896",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_02.wav",
+      "Path": "SFX\\Foley_SwordHit_02_10C4C929.wem"
+     },
+     {
+      "Id": "671024985",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_09.wav",
+      "Path": "SFX\\Foley_HorsePassBy_09_10C4C929.wem"
+     },
+     {
+      "Id": "681810803",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_10.wav",
+      "Path": "SFX\\Foley_HorsePassBy_10_10C4C929.wem"
+     },
+     {
+      "Id": "685140277",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_35.wav",
+      "Path": "SFX\\VO_HumanLaugh_35_10C4C929.wem"
+     },
+     {
+      "Id": "689480548",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_15.wav",
+      "Path": "SFX\\VO_HumanDeath_15_10C4C929.wem"
+     },
+     {
+      "Id": "695750544",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultHit_01.wav",
+      "Path": "SFX\\Foley_CatapultHit_01_10C4C929.wem"
+     },
+     {
+      "Id": "707861849",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_02.wav",
+      "Path": "SFX\\VO_HumanPain_02_10C4C929.wem"
+     },
+     {
+      "Id": "708422970",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_04.wav",
+      "Path": "SFX\\Foley_ArrowHit_04_10C4C929.wem"
+     },
+     {
+      "Id": "714966060",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_09.wav",
+      "Path": "SFX\\VO_HumanDeath_09_10C4C929.wem"
+     },
+     {
+      "Id": "715325664",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_18.wav",
+      "Path": "SFX\\VO_HumanLaugh_18_10C4C929.wem"
+     },
+     {
+      "Id": "722682449",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_13.wav",
+      "Path": "SFX\\VO_HumanLaugh_13_10C4C929.wem"
+     },
+     {
+      "Id": "728603024",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_15.wav",
+      "Path": "SFX\\VO_HumanFight_15_10C4C929.wem"
+     },
+     {
+      "Id": "729006421",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_42.wav",
+      "Path": "SFX\\VO_HumanLaugh_42_10C4C929.wem"
+     },
+     {
+      "Id": "730114276",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_38.wav",
+      "Path": "SFX\\VO_HumanLaugh_38_10C4C929.wem"
+     },
+     {
+      "Id": "730964078",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorHit_04.wav",
+      "Path": "SFX\\Foley_ArmorHit_04_10C4C929.wem"
+     },
+     {
+      "Id": "744968807",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_10.wav",
+      "Path": "SFX\\VO_HumanShout_10_10C4C929.wem"
+     },
+     {
+      "Id": "748082791",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_18.wav",
+      "Path": "SFX\\VO_HumanPain_18_10C4C929.wem"
+     },
+     {
+      "Id": "748159786",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_11.wav",
+      "Path": "SFX\\VO_HumanLaugh_11_10C4C929.wem"
+     },
+     {
+      "Id": "751775881",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_03.wav",
+      "Path": "SFX\\Foley_SwordHit_03_10C4C929.wem"
+     },
+     {
+      "Id": "753035382",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_46.wav",
+      "Path": "SFX\\VO_HumanLaugh_46_10C4C929.wem"
+     },
+     {
+      "Id": "756157752",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_34.wav",
+      "Path": "SFX\\VO_HumanLaugh_34_10C4C929.wem"
+     },
+     {
+      "Id": "771534103",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_22.wav",
+      "Path": "SFX\\VO_HumanFight_22_10C4C929.wem"
+     },
+     {
+      "Id": "773414852",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorMovement_02.wav",
+      "Path": "SFX\\Foley_ArmorMovement_02_10C4C929.wem"
+     },
+     {
+      "Id": "774205752",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_19.wav",
+      "Path": "SFX\\VO_HumanLaugh_19_10C4C929.wem"
+     },
+     {
+      "Id": "783648347",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_13.wav",
+      "Path": "SFX\\VO_HumanPain_13_10C4C929.wem"
+     },
+     {
+      "Id": "784412568",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_21.wav",
+      "Path": "SFX\\VO_HumanPain_21_10C4C929.wem"
+     },
+     {
+      "Id": "786773727",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowShoot_04.wav",
+      "Path": "SFX\\Foley_ArrowShoot_04_10C4C929.wem"
+     },
+     {
+      "Id": "787527737",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_16.wav",
+      "Path": "SFX\\VO_HumanDeath_16_10C4C929.wem"
+     },
+     {
+      "Id": "790078184",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_10.wav",
+      "Path": "SFX\\VO_HumanFight_10_10C4C929.wem"
+     },
+     {
+      "Id": "797133948",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_07.wav",
+      "Path": "SFX\\VO_HumanLaugh_07_10C4C929.wem"
+     },
+     {
+      "Id": "797379788",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_27.wav",
+      "Path": "SFX\\VO_HumanPain_27_10C4C929.wem"
+     },
+     {
+      "Id": "800330961",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_02.wav",
+      "Path": "SFX\\Foley_HorsePassBy_02_10C4C929.wem"
+     },
+     {
+      "Id": "810108056",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_23.wav",
+      "Path": "SFX\\VO_HumanShout_23_10C4C929.wem"
+     },
+     {
+      "Id": "819914912",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_01.wav",
+      "Path": "SFX\\VO_HumanDeath_01_10C4C929.wem"
+     },
+     {
+      "Id": "821161843",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowShoot_01.wav",
+      "Path": "SFX\\Foley_ArrowShoot_01_10C4C929.wem"
+     },
+     {
+      "Id": "821971352",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_07.wav",
+      "Path": "SFX\\Foley_ArrowHit_07_10C4C929.wem"
+     },
+     {
+      "Id": "822200930",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_03.wav",
+      "Path": "SFX\\VO_HumanShout_03_10C4C929.wem"
+     },
+     {
+      "Id": "824568792",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_03.wav",
+      "Path": "SFX\\VO_HumanLaugh_03_10C4C929.wem"
+     },
+     {
+      "Id": "827935201",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_15.wav",
+      "Path": "SFX\\VO_HumanLaugh_15_10C4C929.wem"
+     },
+     {
+      "Id": "829455255",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_03.wav",
+      "Path": "SFX\\VO_HumanDeath_03_10C4C929.wem"
+     },
+     {
+      "Id": "833232613",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_05.wav",
+      "Path": "SFX\\Foley_HorsePassBy_05_10C4C929.wem"
+     },
+     {
+      "Id": "836942275",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorMovement_06.wav",
+      "Path": "SFX\\Foley_ArmorMovement_06_10C4C929.wem"
+     },
+     {
+      "Id": "838671749",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_10.wav",
+      "Path": "SFX\\VO_HumanPain_10_10C4C929.wem"
+     },
+     {
+      "Id": "854041923",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_03.wav",
+      "Path": "SFX\\VO_HumanPain_03_10C4C929.wem"
+     },
+     {
+      "Id": "854210622",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_05.wav",
+      "Path": "SFX\\Foley_SwordHit_05_10C4C929.wem"
+     },
+     {
+      "Id": "858551582",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_44.wav",
+      "Path": "SFX\\VO_HumanLaugh_44_10C4C929.wem"
+     },
+     {
+      "Id": "863370774",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_16.wav",
+      "Path": "SFX\\VO_HumanFight_16_10C4C929.wem"
+     },
+     {
+      "Id": "876270038",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultShoot_03.wav",
+      "Path": "SFX\\Foley_CatapultShoot_03_10C4C929.wem"
+     },
+     {
+      "Id": "878578496",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_14.wav",
+      "Path": "SFX\\VO_HumanDeath_14_10C4C929.wem"
+     },
+     {
+      "Id": "881685049",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_02.wav",
+      "Path": "SFX\\VO_HumanFight_02_10C4C929.wem"
+     },
+     {
+      "Id": "882401956",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_20.wav",
+      "Path": "SFX\\VO_HumanPain_20_10C4C929.wem"
+     },
+     {
+      "Id": "886792925",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_22.wav",
+      "Path": "SFX\\VO_HumanLaugh_22_10C4C929.wem"
+     },
+     {
+      "Id": "888371612",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_04.wav",
+      "Path": "SFX\\VO_HumanFight_04_10C4C929.wem"
+     },
+     {
+      "Id": "889890329",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_25.wav",
+      "Path": "SFX\\VO_HumanLaugh_25_10C4C929.wem"
+     },
+     {
+      "Id": "897649659",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_07.wav",
+      "Path": "SFX\\VO_HumanDeath_07_10C4C929.wem"
+     },
+     {
+      "Id": "900672792",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_14.wav",
+      "Path": "SFX\\VO_HumanLaugh_14_10C4C929.wem"
+     },
+     {
+      "Id": "902729210",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_01.wav",
+      "Path": "SFX\\VO_HumanFight_01_10C4C929.wem"
+     },
+     {
+      "Id": "904044069",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_04.wav",
+      "Path": "SFX\\VO_HumanDeath_04_10C4C929.wem"
+     },
+     {
+      "Id": "905460515",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_07.wav",
+      "Path": "SFX\\VO_HumanFight_07_10C4C929.wem"
+     },
+     {
+      "Id": "906501537",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_05.wav",
+      "Path": "SFX\\VO_HumanFight_05_10C4C929.wem"
+     },
+     {
+      "Id": "907625347",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorMovement_05.wav",
+      "Path": "SFX\\Foley_ArmorMovement_05_10C4C929.wem"
+     },
+     {
+      "Id": "909392212",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_05.wav",
+      "Path": "SFX\\VO_HumanDeath_05_10C4C929.wem"
+     },
+     {
+      "Id": "914136314",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_08.wav",
+      "Path": "SFX\\Foley_HorsePassBy_08_10C4C929.wem"
+     },
+     {
+      "Id": "922804477",
+      "Language": "SFX",
+      "ShortName": "Foley_ArmorHit_01.wav",
+      "Path": "SFX\\Foley_ArmorHit_01_10C4C929.wem"
+     },
+     {
+      "Id": "934279406",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_06.wav",
+      "Path": "SFX\\VO_HumanPain_06_10C4C929.wem"
+     },
+     {
+      "Id": "936038537",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_17.wav",
+      "Path": "SFX\\VO_HumanLaugh_17_10C4C929.wem"
+     },
+     {
+      "Id": "939167597",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_25.wav",
+      "Path": "SFX\\VO_HumanFight_25_10C4C929.wem"
+     },
+     {
+      "Id": "953806479",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_05.wav",
+      "Path": "SFX\\Foley_ArrowHit_05_10C4C929.wem"
+     },
+     {
+      "Id": "967318865",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_18.wav",
+      "Path": "SFX\\VO_HumanFight_18_10C4C929.wem"
+     },
+     {
+      "Id": "969768019",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_02.wav",
+      "Path": "SFX\\VO_HumanDeath_02_10C4C929.wem"
+     },
+     {
+      "Id": "991005686",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_04.wav",
+      "Path": "SFX\\Foley_HorsePassBy_04_10C4C929.wem"
+     },
+     {
+      "Id": "991974713",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultShoot_02.wav",
+      "Path": "SFX\\Foley_CatapultShoot_02_10C4C929.wem"
+     },
+     {
+      "Id": "993759901",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_13.wav",
+      "Path": "SFX\\VO_HumanShout_13_10C4C929.wem"
+     },
+     {
+      "Id": "1004566559",
+      "Language": "SFX",
+      "ShortName": "VO_HumanFight_09.wav",
+      "Path": "SFX\\VO_HumanFight_09_10C4C929.wem"
+     },
+     {
+      "Id": "1009111609",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_17.wav",
+      "Path": "SFX\\VO_HumanShout_17_10C4C929.wem"
+     },
+     {
+      "Id": "1014765048",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_05.wav",
+      "Path": "SFX\\VO_HumanPain_05_10C4C929.wem"
+     },
+     {
+      "Id": "1018060132",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_01.wav",
+      "Path": "SFX\\VO_HumanPain_01_10C4C929.wem"
+     },
+     {
+      "Id": "1020838405",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_22.wav",
+      "Path": "SFX\\VO_HumanShout_22_10C4C929.wem"
+     },
+     {
+      "Id": "1023464492",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_13.wav",
+      "Path": "SFX\\VO_HumanDeath_13_10C4C929.wem"
+     },
+     {
+      "Id": "1044889848",
+      "Language": "SFX",
+      "ShortName": "Foley_ArrowHit_01.wav",
+      "Path": "SFX\\Foley_ArrowHit_01_10C4C929.wem"
+     },
+     {
+      "Id": "1048014707",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_07.wav",
+      "Path": "SFX\\VO_HumanShout_07_10C4C929.wem"
+     },
+     {
+      "Id": "1051247190",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_02.wav",
+      "Path": "SFX\\VO_HumanLaugh_02_10C4C929.wem"
+     },
+     {
+      "Id": "1053116672",
+      "Language": "SFX",
+      "ShortName": "Foley_HorsePassBy_11.wav",
+      "Path": "SFX\\Foley_HorsePassBy_11_10C4C929.wem"
+     },
+     {
+      "Id": "1053251459",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_23.wav",
+      "Path": "SFX\\VO_HumanPain_23_10C4C929.wem"
+     },
+     {
+      "Id": "1053568171",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_25.wav",
+      "Path": "SFX\\VO_HumanPain_25_10C4C929.wem"
+     },
+     {
+      "Id": "1056088940",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_08.wav",
+      "Path": "SFX\\Foley_SwordHit_08_10C4C929.wem"
+     },
+     {
+      "Id": "1056906694",
+      "Language": "SFX",
+      "ShortName": "Foley_SwordHit_07.wav",
+      "Path": "SFX\\Foley_SwordHit_07_10C4C929.wem"
+     },
+     {
+      "Id": "1058312628",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_36.wav",
+      "Path": "SFX\\VO_HumanLaugh_36_10C4C929.wem"
+     },
+     {
+      "Id": "1067618389",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_06.wav",
+      "Path": "SFX\\VO_HumanShout_06_10C4C929.wem"
+     },
+     {
+      "Id": "1071995254",
+      "Language": "SFX",
+      "ShortName": "VO_HumanPain_16.wav",
+      "Path": "SFX\\VO_HumanPain_16_10C4C929.wem"
+     }
+    ]
+   }
+  ]
+ }
+}

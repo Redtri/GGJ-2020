@@ -7,7 +7,7 @@
   "RootPaths": {
    "ProjectRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\",
    "SourceFilesRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\.cache\\Windows\\",
-   "SoundBanksRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Unity\\branches\\BranchSound\\Assets\\StreamingAssets\\Audio\\GeneratedSoundBanks\\Windows\\",
+   "SoundBanksRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\GGJ-2020Unity\\Assets\\StreamingAssets\\Audio\\GeneratedSoundBanks\\Windows\\",
    "ExternalSourcesInputFile": "",
    "ExternalSourcesOutputRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\GeneratedSoundBanks\\Windows"
   },
@@ -16,12 +16,12 @@
   "MediaFilesNotInAnyBank": [],
   "SoundBanks": [
    {
-    "Id": "763229880",
+    "Id": "26215100",
     "GUID": "{5F82A6E6-406B-4FF3-B7DD-D7748B00CD6B}",
     "Language": "SFX",
-    "ObjectPath": "\\SoundBanks\\Main_SNB\\Main_SNB",
-    "ShortName": "Main_SNB",
-    "Path": "Main_SNB.bnk",
+    "ObjectPath": "\\SoundBanks\\Main_SNB\\SFX_SNB",
+    "ShortName": "SFX_SNB",
+    "Path": "SFX_SNB.bnk",
     "IncludedEvents": [
      {
       "Id": "3332999173",
@@ -42,40 +42,351 @@
       "DurationMax": "67.084579"
      },
      {
+      "Id": "452547817",
+      "Name": "Stop_All",
+      "ObjectPath": "\\Events\\SD Event\\Stop_All",
+      "GUID": "{5601C12C-6574-4271-8503-4A2E0E8C671F}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "2921734634",
+      "Name": "UI_AddItem",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_AddItem",
+      "GUID": "{5FC3F607-0D6A-4A0C-A391-3ACCC1A6D114}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.747152",
+      "DurationMax": "1.139421"
+     },
+     {
+      "Id": "802821452",
+      "Name": "UI_DeathEvent",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_DeathEvent",
+      "GUID": "{2C7847EE-DB03-407A-B4F4-6BCD9E314900}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.495992",
+      "DurationMax": "5.043708"
+     },
+     {
+      "Id": "3688695384",
+      "Name": "UI_DialEvent",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_DialEvent",
+      "GUID": "{40687C9C-D309-40C3-B1A6-659B5F931EBC}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.929038",
+      "DurationMax": "0.950754"
+     },
+     {
+      "Id": "2200300695",
+      "Name": "UI_HammerHit",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_HammerHit",
+      "GUID": "{EE16CEC1-3AD7-4C17-8DA8-6A72F6A59110}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.485443",
+      "DurationMax": "0.733529"
+     },
+     {
+      "Id": "2628486379",
+      "Name": "UI_RemoveItem",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_RemoveItem",
+      "GUID": "{A907C898-ACAE-4D35-A855-64AF947963DC}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.498438",
+      "DurationMax": "0.564884"
+     },
+     {
+      "Id": "873092944",
+      "Name": "UI_Validate",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_Validate",
+      "GUID": "{502C1C04-4231-46D5-A310-E4306911A28E}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.713554",
+      "DurationMax": "2.874910"
+     }
+    ],
+    "IncludedMemoryFiles": [
+     {
+      "Id": "2209506",
+      "Language": "SFX",
+      "ShortName": "UI_DeathEvent_02.wav",
+      "Path": "SFX\\UI_DeathEvent_02_10C4C929.wem"
+     },
+     {
+      "Id": "39654774",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_DoorOpen_03.wav",
+      "Path": "SFX\\Foley_Forge_DoorOpen_03_10C4C929.wem"
+     },
+     {
+      "Id": "77145014",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_Hammer_05.wav",
+      "Path": "SFX\\Foley_Forge_Hammer_05_10C4C929.wem"
+     },
+     {
+      "Id": "130716600",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_DoorClose_04.wav",
+      "Path": "SFX\\Foley_Forge_DoorClose_04_10C4C929.wem"
+     },
+     {
+      "Id": "186025753",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_12.wav",
+      "Path": "SFX\\VO_HumanDeath_12_10C4C929.wem"
+     },
+     {
+      "Id": "208439808",
+      "Language": "SFX",
+      "ShortName": "UI_DialStart_01.wav",
+      "Path": "SFX\\UI_DialStart_01_10C4C929.wem"
+     },
+     {
+      "Id": "234379008",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_18.wav",
+      "Path": "SFX\\VO_HumanDeath_18_10C4C929.wem"
+     },
+     {
+      "Id": "258911680",
+      "Language": "SFX",
+      "ShortName": "UI_AddItem_03.wav",
+      "Path": "SFX\\UI_AddItem_03_10C4C929.wem"
+     },
+     {
+      "Id": "280047487",
+      "Language": "SFX",
+      "ShortName": "UI_AddItem_02.wav",
+      "Path": "SFX\\UI_AddItem_02_10C4C929.wem"
+     },
+     {
+      "Id": "292425264",
+      "Language": "SFX",
+      "ShortName": "UI_AddItem_05.wav",
+      "Path": "SFX\\UI_AddItem_05_10C4C929.wem"
+     },
+     {
+      "Id": "324564729",
+      "Language": "SFX",
+      "ShortName": "Ambiance_Forge_Fire _01.wav",
+      "Path": "SFX\\Ambiance_Forge_Fire _01_10C4C929.wem"
+     },
+     {
+      "Id": "332472738",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_DoorOpen_02.wav",
+      "Path": "SFX\\Foley_Forge_DoorOpen_02_10C4C929.wem"
+     },
+     {
+      "Id": "339969412",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_Hammer_10.wav",
+      "Path": "SFX\\Foley_Forge_Hammer_10_10C4C929.wem"
+     },
+     {
+      "Id": "340519242",
+      "Language": "SFX",
+      "ShortName": "UI_DeathEvent_03.wav",
+      "Path": "SFX\\UI_DeathEvent_03_10C4C929.wem"
+     },
+     {
+      "Id": "351528331",
+      "Language": "SFX",
+      "ShortName": "UI_AddItem_04.wav",
+      "Path": "SFX\\UI_AddItem_04_10C4C929.wem"
+     },
+     {
+      "Id": "418639538",
+      "Language": "SFX",
+      "ShortName": "Ambiance_Forge_Fire _04.wav",
+      "Path": "SFX\\Ambiance_Forge_Fire _04_10C4C929.wem"
+     },
+     {
+      "Id": "434347177",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_DoorOpen_01.wav",
+      "Path": "SFX\\Foley_Forge_DoorOpen_01_10C4C929.wem"
+     },
+     {
+      "Id": "466639735",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_DoorClose_06.wav",
+      "Path": "SFX\\Foley_Forge_DoorClose_06_10C4C929.wem"
+     },
+     {
+      "Id": "467072950",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_17.wav",
+      "Path": "SFX\\VO_HumanDeath_17_10C4C929.wem"
+     },
+     {
+      "Id": "485048125",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_08.wav",
+      "Path": "SFX\\VO_HumanDeath_08_10C4C929.wem"
+     },
+     {
+      "Id": "498041040",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_Hammer_04.wav",
+      "Path": "SFX\\Foley_Forge_Hammer_04_10C4C929.wem"
+     },
+     {
+      "Id": "505504781",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_Hammer_08.wav",
+      "Path": "SFX\\Foley_Forge_Hammer_08_10C4C929.wem"
+     },
+     {
+      "Id": "514079439",
+      "Language": "SFX",
+      "ShortName": "Ambiance_Forge_Fire _03.wav",
+      "Path": "SFX\\Ambiance_Forge_Fire _03_10C4C929.wem"
+     },
+     {
+      "Id": "578299481",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_DoorClose_05.wav",
+      "Path": "SFX\\Foley_Forge_DoorClose_05_10C4C929.wem"
+     },
+     {
+      "Id": "646630935",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_06.wav",
+      "Path": "SFX\\VO_HumanDeath_06_10C4C929.wem"
+     },
+     {
+      "Id": "667966913",
+      "Language": "SFX",
+      "ShortName": "UI_DeathEvent_01.wav",
+      "Path": "SFX\\UI_DeathEvent_01_10C4C929.wem"
+     },
+     {
+      "Id": "682955743",
+      "Language": "SFX",
+      "ShortName": "UI_AddItem_06.wav",
+      "Path": "SFX\\UI_AddItem_06_10C4C929.wem"
+     },
+     {
+      "Id": "686491622",
+      "Language": "SFX",
+      "ShortName": "Foley_Forge_Hammer_09.wav",
+      "Path": "SFX\\Foley_Forge_Hammer_09_10C4C929.wem"
+     },
+     {
+      "Id": "714966060",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_09.wav",
+      "Path": "SFX\\VO_HumanDeath_09_10C4C929.wem"
+     },
+     {
+      "Id": "744952790",
+      "Language": "SFX",
+      "ShortName": "UI_RemoveItem_03.wav",
+      "Path": "SFX\\UI_RemoveItem_03_10C4C929.wem"
+     },
+     {
+      "Id": "787527737",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_16.wav",
+      "Path": "SFX\\VO_HumanDeath_16_10C4C929.wem"
+     },
+     {
+      "Id": "819914912",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_01.wav",
+      "Path": "SFX\\VO_HumanDeath_01_10C4C929.wem"
+     },
+     {
+      "Id": "829455255",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_03.wav",
+      "Path": "SFX\\VO_HumanDeath_03_10C4C929.wem"
+     },
+     {
+      "Id": "842788958",
+      "Language": "SFX",
+      "ShortName": "UI_RemoveItem_04.wav",
+      "Path": "SFX\\UI_RemoveItem_04_10C4C929.wem"
+     },
+     {
+      "Id": "878578496",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_14.wav",
+      "Path": "SFX\\VO_HumanDeath_14_10C4C929.wem"
+     },
+     {
+      "Id": "885061589",
+      "Language": "SFX",
+      "ShortName": "UI_Validating_01.wav",
+      "Path": "SFX\\UI_Validating_01_A2CB9C52.wem"
+     },
+     {
+      "Id": "888105879",
+      "Language": "SFX",
+      "ShortName": "UI_RemoveItem_02.wav",
+      "Path": "SFX\\UI_RemoveItem_02_10C4C929.wem"
+     },
+     {
+      "Id": "897649659",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_07.wav",
+      "Path": "SFX\\VO_HumanDeath_07_10C4C929.wem"
+     },
+     {
+      "Id": "904044069",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_04.wav",
+      "Path": "SFX\\VO_HumanDeath_04_10C4C929.wem"
+     },
+     {
+      "Id": "909392212",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_05.wav",
+      "Path": "SFX\\VO_HumanDeath_05_10C4C929.wem"
+     },
+     {
+      "Id": "940566288",
+      "Language": "SFX",
+      "ShortName": "UI_RemoveItem_01.wav",
+      "Path": "SFX\\UI_RemoveItem_01_10C4C929.wem"
+     },
+     {
+      "Id": "969768019",
+      "Language": "SFX",
+      "ShortName": "VO_HumanDeath_02.wav",
+      "Path": "SFX\\VO_HumanDeath_02_10C4C929.wem"
+     },
+     {
+      "Id": "977396476",
+      "Language": "SFX",
+      "ShortName": "Ambiance_Forge_Fire _02.wav",
+      "Path": "SFX\\Ambiance_Forge_Fire _02_10C4C929.wem"
+     },
+     {
+      "Id": "1016913808",
+      "Language": "SFX",
+      "ShortName": "UI_AddItem_01.wav",
+      "Path": "SFX\\UI_AddItem_01_10C4C929.wem"
+     }
+    ]
+   },
+   {
+    "Id": "776956199",
+    "GUID": "{B1FF7F2A-8B8F-46AB-8D5D-8972D113E9DE}",
+    "Language": "SFX",
+    "ObjectPath": "\\SoundBanks\\Main_SNB\\Battlefield_SNB",
+    "ShortName": "Battlefield_SNB",
+    "Path": "Battlefield_SNB.bnk",
+    "IncludedEvents": [
+     {
       "Id": "3316639316",
       "Name": "Play_BattlefieldAmbiance",
       "ObjectPath": "\\Events\\SD Event\\Battlefield\\Play_BattlefieldAmbiance",
       "GUID": "{5F243640-E0AB-4CA3-82CC-A9F03A75395D}",
       "DurationType": "Infinite"
-     },
-     {
-      "Id": "3187507146",
-      "Name": "Play_Test",
-      "ObjectPath": "\\Events\\SD Event\\Play_Test",
-      "GUID": "{CDC23513-94C5-439D-B0A0-F8FFD8FB0371}",
-      "DurationType": "OneShot",
-      "DurationMin": "135.877411",
-      "DurationMax": "135.877411"
-     },
-     {
-      "Id": "238286794",
-      "Name": "Set_DoorClose",
-      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_DoorClose",
-      "GUID": "{F15737A7-94EA-4787-99D8-1A947ED7565C}",
-      "MaxAttenuation": "0.000000",
-      "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
-     },
-     {
-      "Id": "2718873070",
-      "Name": "Set_DoorOpen",
-      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_DoorOpen",
-      "GUID": "{FFC7691D-2DF6-4F0C-9E09-FCC4ED625213}",
-      "MaxAttenuation": "0.000000",
-      "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
      },
      {
       "Id": "4236667796",
@@ -146,60 +457,9 @@
       "DurationType": "OneShot",
       "DurationMin": "0.000000",
       "DurationMax": "0.000000"
-     },
-     {
-      "Id": "2921734634",
-      "Name": "UI_AddItem",
-      "ObjectPath": "\\Events\\SD Event\\UI\\UI_AddItem",
-      "GUID": "{5FC3F607-0D6A-4A0C-A391-3ACCC1A6D114}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.747152",
-      "DurationMax": "1.139421"
-     },
-     {
-      "Id": "802821452",
-      "Name": "UI_DeathEvent",
-      "ObjectPath": "\\Events\\SD Event\\UI\\UI_DeathEvent",
-      "GUID": "{2C7847EE-DB03-407A-B4F4-6BCD9E314900}",
-      "DurationType": "OneShot",
-      "DurationMin": "1.495992",
-      "DurationMax": "6.530854"
-     },
-     {
-      "Id": "3688695384",
-      "Name": "UI_DialEvent",
-      "ObjectPath": "\\Events\\SD Event\\UI\\UI_DialEvent",
-      "GUID": "{40687C9C-D309-40C3-B1A6-659B5F931EBC}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.929038",
-      "DurationMax": "0.950754"
-     },
-     {
-      "Id": "2628486379",
-      "Name": "UI_RemoveItem",
-      "ObjectPath": "\\Events\\SD Event\\UI\\UI_RemoveItem",
-      "GUID": "{A907C898-ACAE-4D35-A855-64AF947963DC}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.498438",
-      "DurationMax": "0.564884"
-     },
-     {
-      "Id": "873092944",
-      "Name": "UI_Validate",
-      "ObjectPath": "\\Events\\SD Event\\UI\\UI_Validate",
-      "GUID": "{502C1C04-4231-46D5-A310-E4306911A28E}",
-      "DurationType": "OneShot",
-      "DurationMin": "5.353768",
-      "DurationMax": "5.672120"
      }
     ],
     "IncludedMemoryFiles": [
-     {
-      "Id": "2209506",
-      "Language": "SFX",
-      "ShortName": "UI_DeathEvent_02.wav",
-      "Path": "SFX\\UI_DeathEvent_02_10C4C929.wem"
-     },
      {
       "Id": "22759682",
       "Language": "SFX",
@@ -223,12 +483,6 @@
       "Language": "SFX",
       "ShortName": "VO_HumanFight_17.wav",
       "Path": "SFX\\VO_HumanFight_17_10C4C929.wem"
-     },
-     {
-      "Id": "39654774",
-      "Language": "SFX",
-      "ShortName": "Foley_Forge_DoorOpen_03.wav",
-      "Path": "SFX\\Foley_Forge_DoorOpen_03_10C4C929.wem"
      },
      {
       "Id": "47231151",
@@ -301,12 +555,6 @@
       "Language": "SFX",
       "ShortName": "Foley_ArrowPassBy_08.wav",
       "Path": "SFX\\Foley_ArrowPassBy_08_10C4C929.wem"
-     },
-     {
-      "Id": "130716600",
-      "Language": "SFX",
-      "ShortName": "Foley_Forge_DoorClose_04.wav",
-      "Path": "SFX\\Foley_Forge_DoorClose_04_10C4C929.wem"
      },
      {
       "Id": "131545334",
@@ -399,12 +647,6 @@
       "Path": "SFX\\Foley_CatapultHit_03_10C4C929.wem"
      },
      {
-      "Id": "208439808",
-      "Language": "SFX",
-      "ShortName": "UI_DialStart_01.wav",
-      "Path": "SFX\\UI_DialStart_01_10C4C929.wem"
-     },
-     {
       "Id": "217270485",
       "Language": "SFX",
       "ShortName": "VO_HumanShout_20.wav",
@@ -459,12 +701,6 @@
       "Path": "SFX\\Foley_ArrowShoot_05_10C4C929.wem"
      },
      {
-      "Id": "258911680",
-      "Language": "SFX",
-      "ShortName": "UI_AddItem_03.wav",
-      "Path": "SFX\\UI_AddItem_03_10C4C929.wem"
-     },
-     {
       "Id": "262992618",
       "Language": "SFX",
       "ShortName": "VO_HumanLaugh_43.wav",
@@ -487,12 +723,6 @@
       "Language": "SFX",
       "ShortName": "Foley_SwordHit_04.wav",
       "Path": "SFX\\Foley_SwordHit_04_10C4C929.wem"
-     },
-     {
-      "Id": "280047487",
-      "Language": "SFX",
-      "ShortName": "UI_AddItem_02.wav",
-      "Path": "SFX\\UI_AddItem_02_10C4C929.wem"
      },
      {
       "Id": "284067683",
@@ -523,12 +753,6 @@
       "Language": "SFX",
       "ShortName": "VO_HumanFight_23.wav",
       "Path": "SFX\\VO_HumanFight_23_10C4C929.wem"
-     },
-     {
-      "Id": "292425264",
-      "Language": "SFX",
-      "ShortName": "UI_AddItem_05.wav",
-      "Path": "SFX\\UI_AddItem_05_10C4C929.wem"
      },
      {
       "Id": "293312613",
@@ -591,22 +815,10 @@
       "Path": "SFX\\Foley_ArrowHit_03_10C4C929.wem"
      },
      {
-      "Id": "324564729",
-      "Language": "SFX",
-      "ShortName": "Ambiance_Forge_Fire _01.wav",
-      "Path": "SFX\\Ambiance_Forge_Fire _01_10C4C929.wem"
-     },
-     {
       "Id": "328289515",
       "Language": "SFX",
       "ShortName": "VO_HumanPain_04.wav",
       "Path": "SFX\\VO_HumanPain_04_10C4C929.wem"
-     },
-     {
-      "Id": "332472738",
-      "Language": "SFX",
-      "ShortName": "Foley_Forge_DoorOpen_02.wav",
-      "Path": "SFX\\Foley_Forge_DoorOpen_02_10C4C929.wem"
      },
      {
       "Id": "335234107",
@@ -615,22 +827,10 @@
       "Path": "SFX\\VO_HumanPain_28_10C4C929.wem"
      },
      {
-      "Id": "340519242",
-      "Language": "SFX",
-      "ShortName": "UI_DeathEvent_03.wav",
-      "Path": "SFX\\UI_DeathEvent_03_10C4C929.wem"
-     },
-     {
       "Id": "345022327",
       "Language": "SFX",
       "ShortName": "Foley_ArmorMovement_03.wav",
       "Path": "SFX\\Foley_ArmorMovement_03_10C4C929.wem"
-     },
-     {
-      "Id": "351528331",
-      "Language": "SFX",
-      "ShortName": "UI_AddItem_04.wav",
-      "Path": "SFX\\UI_AddItem_04_10C4C929.wem"
      },
      {
       "Id": "352430130",
@@ -711,22 +911,10 @@
       "Path": "SFX\\Foley_ArrowPassBy_03_10C4C929.wem"
      },
      {
-      "Id": "418639538",
-      "Language": "SFX",
-      "ShortName": "Ambiance_Forge_Fire _04.wav",
-      "Path": "SFX\\Ambiance_Forge_Fire _04_10C4C929.wem"
-     },
-     {
       "Id": "422238456",
       "Language": "SFX",
       "ShortName": "VO_HumanLaugh_26.wav",
       "Path": "SFX\\VO_HumanLaugh_26_10C4C929.wem"
-     },
-     {
-      "Id": "434347177",
-      "Language": "SFX",
-      "ShortName": "Foley_Forge_DoorOpen_01.wav",
-      "Path": "SFX\\Foley_Forge_DoorOpen_01_10C4C929.wem"
      },
      {
       "Id": "437714292",
@@ -763,12 +951,6 @@
       "Language": "SFX",
       "ShortName": "Foley_ArrowPassBy_02.wav",
       "Path": "SFX\\Foley_ArrowPassBy_02_10C4C929.wem"
-     },
-     {
-      "Id": "466639735",
-      "Language": "SFX",
-      "ShortName": "Foley_Forge_DoorClose_06.wav",
-      "Path": "SFX\\Foley_Forge_DoorClose_06_10C4C929.wem"
      },
      {
       "Id": "467072950",
@@ -823,12 +1005,6 @@
       "Language": "SFX",
       "ShortName": "VO_HumanShout_05.wav",
       "Path": "SFX\\VO_HumanShout_05_10C4C929.wem"
-     },
-     {
-      "Id": "514079439",
-      "Language": "SFX",
-      "ShortName": "Ambiance_Forge_Fire _03.wav",
-      "Path": "SFX\\Ambiance_Forge_Fire _03_10C4C929.wem"
      },
      {
       "Id": "518377247",
@@ -915,12 +1091,6 @@
       "Path": "SFX\\Foley_SwordHit_06_10C4C929.wem"
      },
      {
-      "Id": "578299481",
-      "Language": "SFX",
-      "ShortName": "Foley_Forge_DoorClose_05.wav",
-      "Path": "SFX\\Foley_Forge_DoorClose_05_10C4C929.wem"
-     },
-     {
       "Id": "585300315",
       "Language": "SFX",
       "ShortName": "VO_HumanDeath_11.wav",
@@ -949,12 +1119,6 @@
       "Language": "SFX",
       "ShortName": "Foley_ArmorHit_02.wav",
       "Path": "SFX\\Foley_ArmorHit_02_10C4C929.wem"
-     },
-     {
-      "Id": "639390812",
-      "Language": "SFX",
-      "ShortName": "Main Title.wav",
-      "Path": "SFX\\Main Title_10C4C929.wem"
      },
      {
       "Id": "643694087",
@@ -987,12 +1151,6 @@
       "Path": "SFX\\Foley_SwordHit_02_10C4C929.wem"
      },
      {
-      "Id": "667966913",
-      "Language": "SFX",
-      "ShortName": "UI_DeathEvent_01.wav",
-      "Path": "SFX\\UI_DeathEvent_01_10C4C929.wem"
-     },
-     {
       "Id": "671024985",
       "Language": "SFX",
       "ShortName": "Foley_HorsePassBy_09.wav",
@@ -1003,12 +1161,6 @@
       "Language": "SFX",
       "ShortName": "Foley_HorsePassBy_10.wav",
       "Path": "SFX\\Foley_HorsePassBy_10_10C4C929.wem"
-     },
-     {
-      "Id": "682955743",
-      "Language": "SFX",
-      "ShortName": "UI_AddItem_06.wav",
-      "Path": "SFX\\UI_AddItem_06_10C4C929.wem"
      },
      {
       "Id": "685140277",
@@ -1081,12 +1233,6 @@
       "Language": "SFX",
       "ShortName": "Foley_ArmorHit_04.wav",
       "Path": "SFX\\Foley_ArmorHit_04_10C4C929.wem"
-     },
-     {
-      "Id": "744952790",
-      "Language": "SFX",
-      "ShortName": "UI_RemoveItem_03.wav",
-      "Path": "SFX\\UI_RemoveItem_03_10C4C929.wem"
      },
      {
       "Id": "744968807",
@@ -1257,12 +1403,6 @@
       "Path": "SFX\\VO_HumanPain_10_10C4C929.wem"
      },
      {
-      "Id": "842788958",
-      "Language": "SFX",
-      "ShortName": "UI_RemoveItem_04.wav",
-      "Path": "SFX\\UI_RemoveItem_04_10C4C929.wem"
-     },
-     {
       "Id": "854041923",
       "Language": "SFX",
       "ShortName": "VO_HumanPain_03.wav",
@@ -1311,22 +1451,10 @@
       "Path": "SFX\\VO_HumanPain_20_10C4C929.wem"
      },
      {
-      "Id": "885061589",
-      "Language": "SFX",
-      "ShortName": "UI_Validating_01.wav",
-      "Path": "SFX\\UI_Validating_01_10C4C929.wem"
-     },
-     {
       "Id": "886792925",
       "Language": "SFX",
       "ShortName": "VO_HumanLaugh_22.wav",
       "Path": "SFX\\VO_HumanLaugh_22_10C4C929.wem"
-     },
-     {
-      "Id": "888105879",
-      "Language": "SFX",
-      "ShortName": "UI_RemoveItem_02.wav",
-      "Path": "SFX\\UI_RemoveItem_02_10C4C929.wem"
      },
      {
       "Id": "888371612",
@@ -1419,12 +1547,6 @@
       "Path": "SFX\\VO_HumanFight_25_10C4C929.wem"
      },
      {
-      "Id": "940566288",
-      "Language": "SFX",
-      "ShortName": "UI_RemoveItem_01.wav",
-      "Path": "SFX\\UI_RemoveItem_01_10C4C929.wem"
-     },
-     {
       "Id": "953806479",
       "Language": "SFX",
       "ShortName": "Foley_ArrowHit_05.wav",
@@ -1441,12 +1563,6 @@
       "Language": "SFX",
       "ShortName": "VO_HumanDeath_02.wav",
       "Path": "SFX\\VO_HumanDeath_02_10C4C929.wem"
-     },
-     {
-      "Id": "977396476",
-      "Language": "SFX",
-      "ShortName": "Ambiance_Forge_Fire _02.wav",
-      "Path": "SFX\\Ambiance_Forge_Fire _02_10C4C929.wem"
      },
      {
       "Id": "991005686",
@@ -1483,12 +1599,6 @@
       "Language": "SFX",
       "ShortName": "VO_HumanPain_05.wav",
       "Path": "SFX\\VO_HumanPain_05_10C4C929.wem"
-     },
-     {
-      "Id": "1016913808",
-      "Language": "SFX",
-      "ShortName": "UI_AddItem_01.wav",
-      "Path": "SFX\\UI_AddItem_01_10C4C929.wem"
      },
      {
       "Id": "1018060132",
@@ -1583,6 +1693,63 @@
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk"
+   },
+   {
+    "Id": "2767260180",
+    "GUID": "{58030B55-8A5F-4136-9F2C-B4A0ADF33E2B}",
+    "Language": "SFX",
+    "ObjectPath": "\\SoundBanks\\Main_SNB\\Music_SNB",
+    "ShortName": "Music_SNB",
+    "Path": "Music_SNB.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "3640900608",
+      "Name": "Play_Music_Loose",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_Loose",
+      "GUID": "{EBC70276-D288-4CD0-B375-BFFCDA8BFEBE}",
+      "DurationType": "OneShot",
+      "DurationMin": "12.446383",
+      "DurationMax": "12.446383"
+     },
+     {
+      "Id": "2524099115",
+      "Name": "Play_Music_SplashScreen",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_SplashScreen",
+      "GUID": "{13D75482-C667-4BC6-ACD2-58021A4F0524}",
+      "DurationType": "OneShot",
+      "DurationMin": "36.583767",
+      "DurationMax": "36.583767"
+     },
+     {
+      "Id": "3368677440",
+      "Name": "Play_Music_Win",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_Win",
+      "GUID": "{BA66792F-A4A3-4A7A-971E-0CD9968F9B54}",
+      "DurationType": "OneShot",
+      "DurationMin": "9.711509",
+      "DurationMax": "9.711509"
+     }
+    ],
+    "IncludedMemoryFiles": [
+     {
+      "Id": "178380289",
+      "Language": "SFX",
+      "ShortName": "EndOfTheFightVictory_Mastered.wav",
+      "Path": "SFX\\EndOfTheFightVictory_Mastered_D79FB2B7.wem"
+     },
+     {
+      "Id": "451334125",
+      "Language": "SFX",
+      "ShortName": "EndOfTheFightDefeat_Mastered.wav",
+      "Path": "SFX\\EndOfTheFightDefeat_Mastered_D79FB2B7.wem"
+     },
+     {
+      "Id": "836406767",
+      "Language": "SFX",
+      "ShortName": "MainTheme_FateSmith_Mastered.wav",
+      "Path": "SFX\\MainTheme_FateSmith_Mastered_D79FB2B7.wem"
+     }
+    ]
    }
   ]
  }

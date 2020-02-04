@@ -19,14 +19,11 @@ public class LightManager : MonoBehaviour
 
     public void DisplayLigth()
     {
-        Debug.Log("Sprite ligth");
-
         GetComponent<SpriteRenderer>().sprite = ligth_on;
     }
 
     public void HideLigth()
     {
-        Debug.Log("Sprite ligth hide");
         GetComponent<SpriteRenderer>().sprite = ligth_off;
     }
 }

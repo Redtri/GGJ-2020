@@ -1,0 +1,74 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "11",
+  "SoundbankVersion": "134",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\GGJ-2020Unity\\Assets\\StreamingAssets\\Audio\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Documents\\- ENJMIN\\- PROJETS\\Global Game Jam 2020\\Repo_Wwise\\trunk\\GGJ_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "2767260180",
+    "GUID": "{58030B55-8A5F-4136-9F2C-B4A0ADF33E2B}",
+    "Language": "SFX",
+    "ObjectPath": "\\SoundBanks\\Main_SNB\\Music_SNB",
+    "ShortName": "Music_SNB",
+    "Path": "Music_SNB.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "3640900608",
+      "Name": "Play_Music_Loose",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_Loose",
+      "GUID": "{EBC70276-D288-4CD0-B375-BFFCDA8BFEBE}",
+      "DurationType": "OneShot",
+      "DurationMin": "12.446383",
+      "DurationMax": "12.446383"
+     },
+     {
+      "Id": "2524099115",
+      "Name": "Play_Music_SplashScreen",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_SplashScreen",
+      "GUID": "{13D75482-C667-4BC6-ACD2-58021A4F0524}",
+      "DurationType": "OneShot",
+      "DurationMin": "36.583767",
+      "DurationMax": "36.583767"
+     },
+     {
+      "Id": "3368677440",
+      "Name": "Play_Music_Win",
+      "ObjectPath": "\\Events\\Music Event\\Play_Music_Win",
+      "GUID": "{BA66792F-A4A3-4A7A-971E-0CD9968F9B54}",
+      "DurationType": "OneShot",
+      "DurationMin": "9.711509",
+      "DurationMax": "9.711509"
+     }
+    ],
+    "IncludedMemoryFiles": [
+     {
+      "Id": "178380289",
+      "Language": "SFX",
+      "ShortName": "EndOfTheFightVictory_Mastered.wav",
+      "Path": "SFX\\EndOfTheFightVictory_Mastered_D79FB2B7.wem"
+     },
+     {
+      "Id": "451334125",
+      "Language": "SFX",
+      "ShortName": "EndOfTheFightDefeat_Mastered.wav",
+      "Path": "SFX\\EndOfTheFightDefeat_Mastered_D79FB2B7.wem"
+     },
+     {
+      "Id": "836406767",
+      "Language": "SFX",
+      "ShortName": "MainTheme_FateSmith_Mastered.wav",
+      "Path": "SFX\\MainTheme_FateSmith_Mastered_D79FB2B7.wem"
+     }
+    ]
+   }
+  ]
+ }
+}

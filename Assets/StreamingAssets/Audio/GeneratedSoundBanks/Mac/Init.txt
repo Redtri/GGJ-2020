@@ -17,12 +17,15 @@ Custom State	ID	Name	State Group	Owner		Notes
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	12377074	Forge			\Default Work Unit\Master Audio Bus\Ambiance Forge\Forge	
 	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	703486095	Hammer			\Default Work Unit\Master Audio Bus\Ambiance Forge\Forge\Hammer	
 	1210761507	Battlefield_Dry			\Default Work Unit\Master Audio Bus\Ambiance Battlefield\Battlefield_Dry	
 	1444523224	Ambiance Forge			\Default Work Unit\Master Audio Bus\Ambiance Forge	
 	1534528548	VO			\Default Work Unit\Master Audio Bus\VO	
 	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	2127285419	AddItem			\Default Work Unit\Master Audio Bus\Ambiance Forge\Forge\AddItem	
 	3005663867	Ambiance Battlefield			\Default Work Unit\Master Audio Bus\Ambiance Battlefield	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 	4035004657	Foleys			\Default Work Unit\Master Audio Bus\Foleys	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes

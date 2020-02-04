@@ -16,6 +16,9 @@
 				<Event Id="3332999173" Name="Foley_Door" ObjectPath="\Events\SD Event\Foley\Foley_Door" GUID="{BBEF8F7F-71EF-4453-ACC6-E9B6073B5058}" DurationType="OneShot" DurationMin="3.948854" DurationMax="4.287714"/>
 				<Event Id="870714546" Name="Forge_Fire_Loop" ObjectPath="\Events\SD Event\Ambiance\Forge\Forge_Fire_Loop" GUID="{C147C6A2-B5B4-4CE8-B7EB-75A127B537C2}" DurationType="OneShot" DurationMin="67.084579" DurationMax="67.084579"/>
 				<Event Id="3316639316" Name="Play_BattlefieldAmbiance" ObjectPath="\Events\SD Event\Battlefield\Play_BattlefieldAmbiance" GUID="{5F243640-E0AB-4CA3-82CC-A9F03A75395D}" DurationType="Infinite"/>
+				<Event Id="3640900608" Name="Play_Music_Loose" ObjectPath="\Events\Music Event\Play_Music_Loose" GUID="{EBC70276-D288-4CD0-B375-BFFCDA8BFEBE}" DurationType="OneShot" DurationMin="12.446383" DurationMax="12.446383"/>
+				<Event Id="2524099115" Name="Play_Music_SplashScreen" ObjectPath="\Events\Music Event\Play_Music_SplashScreen" GUID="{13D75482-C667-4BC6-ACD2-58021A4F0524}" DurationType="OneShot" DurationMin="36.583767" DurationMax="36.583767"/>
+				<Event Id="3368677440" Name="Play_Music_Win" ObjectPath="\Events\Music Event\Play_Music_Win" GUID="{BA66792F-A4A3-4A7A-971E-0CD9968F9B54}" DurationType="OneShot" DurationMin="9.711509" DurationMax="9.711509"/>
 				<Event Id="3187507146" Name="Play_Test" ObjectPath="\Events\SD Event\Play_Test" GUID="{CDC23513-94C5-439D-B0A0-F8FFD8FB0371}" DurationType="OneShot" DurationMin="135.877411" DurationMax="135.877411"/>
 				<Event Id="238286794" Name="Set_DoorClose" ObjectPath="\Events\SD Event\Battlefield\Set_DoorClose" GUID="{F15737A7-94EA-4787-99D8-1A947ED7565C}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2718873070" Name="Set_DoorOpen" ObjectPath="\Events\SD Event\Battlefield\Set_DoorOpen" GUID="{FFC7691D-2DF6-4F0C-9E09-FCC4ED625213}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -26,11 +29,13 @@
 				<Event Id="716215376" Name="Set_IntensityMedium" ObjectPath="\Events\SD Event\Battlefield\Set_IntensityMedium" GUID="{27103B4C-70F2-4BF7-AAFE-E54323FA0726}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1592413729" Name="Set_Loosing" ObjectPath="\Events\SD Event\Battlefield\Set_Loosing" GUID="{1092AA1B-5DEE-4167-9ECA-E34220CBC6CE}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1205857978" Name="Set_Winning" ObjectPath="\Events\SD Event\Battlefield\Set_Winning" GUID="{8B38B14C-847B-4043-8FA6-742A844E8BFC}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\SD Event\Stop_All" GUID="{5601C12C-6574-4271-8503-4A2E0E8C671F}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2921734634" Name="UI_AddItem" ObjectPath="\Events\SD Event\UI\UI_AddItem" GUID="{5FC3F607-0D6A-4A0C-A391-3ACCC1A6D114}" DurationType="OneShot" DurationMin="0.747152" DurationMax="1.139421"/>
-				<Event Id="802821452" Name="UI_DeathEvent" ObjectPath="\Events\SD Event\UI\UI_DeathEvent" GUID="{2C7847EE-DB03-407A-B4F4-6BCD9E314900}" DurationType="OneShot" DurationMin="1.495992" DurationMax="6.530854"/>
+				<Event Id="802821452" Name="UI_DeathEvent" ObjectPath="\Events\SD Event\UI\UI_DeathEvent" GUID="{2C7847EE-DB03-407A-B4F4-6BCD9E314900}" DurationType="OneShot" DurationMin="1.495992" DurationMax="5.043708"/>
 				<Event Id="3688695384" Name="UI_DialEvent" ObjectPath="\Events\SD Event\UI\UI_DialEvent" GUID="{40687C9C-D309-40C3-B1A6-659B5F931EBC}" DurationType="OneShot" DurationMin="0.929038" DurationMax="0.950754"/>
+				<Event Id="2200300695" Name="UI_HammerHit" ObjectPath="\Events\SD Event\UI\UI_HammerHit" GUID="{EE16CEC1-3AD7-4C17-8DA8-6A72F6A59110}" DurationType="OneShot" DurationMin="0.485443" DurationMax="0.733529"/>
 				<Event Id="2628486379" Name="UI_RemoveItem" ObjectPath="\Events\SD Event\UI\UI_RemoveItem" GUID="{A907C898-ACAE-4D35-A855-64AF947963DC}" DurationType="OneShot" DurationMin="0.498438" DurationMax="0.564884"/>
-				<Event Id="873092944" Name="UI_Validate" ObjectPath="\Events\SD Event\UI\UI_Validate" GUID="{502C1C04-4231-46D5-A310-E4306911A28E}" DurationType="OneShot" DurationMin="5.353768" DurationMax="5.672120"/>
+				<Event Id="873092944" Name="UI_Validate" ObjectPath="\Events\SD Event\UI\UI_Validate" GUID="{502C1C04-4231-46D5-A310-E4306911A28E}" DurationType="OneShot" DurationMin="2.713554" DurationMax="2.874910"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="2209506" Language="SFX">
@@ -88,6 +93,10 @@
 				<File Id="76841919" Language="SFX">
 					<ShortName>Foley_ArrowHit_08.wav</ShortName>
 					<Path>SFX\Foley_ArrowHit_08_10C4C929.wem</Path>
+				</File>
+				<File Id="77145014" Language="SFX">
+					<ShortName>Foley_Forge_Hammer_05.wav</ShortName>
+					<Path>SFX\Foley_Forge_Hammer_05_10C4C929.wem</Path>
 				</File>
 				<File Id="81026808" Language="SFX">
 					<ShortName>VO_HumanLaugh_04.wav</ShortName>
@@ -148,6 +157,10 @@
 				<File Id="176041095" Language="SFX">
 					<ShortName>VO_HumanPain_24.wav</ShortName>
 					<Path>SFX\VO_HumanPain_24_10C4C929.wem</Path>
+				</File>
+				<File Id="178380289" Language="SFX">
+					<ShortName>EndOfTheFightVictory_Mastered.wav</ShortName>
+					<Path>SFX\EndOfTheFightVictory_Mastered_D79FB2B7.wem</Path>
 				</File>
 				<File Id="178721171" Language="SFX">
 					<ShortName>VO_HumanLaugh_45.wav</ShortName>
@@ -313,6 +326,10 @@
 					<ShortName>VO_HumanPain_28.wav</ShortName>
 					<Path>SFX\VO_HumanPain_28_10C4C929.wem</Path>
 				</File>
+				<File Id="339969412" Language="SFX">
+					<ShortName>Foley_Forge_Hammer_10.wav</ShortName>
+					<Path>SFX\Foley_Forge_Hammer_10_10C4C929.wem</Path>
+				</File>
 				<File Id="340519242" Language="SFX">
 					<ShortName>UI_DeathEvent_03.wav</ShortName>
 					<Path>SFX\UI_DeathEvent_03_10C4C929.wem</Path>
@@ -405,6 +422,10 @@
 					<ShortName>VO_HumanLaugh_28.wav</ShortName>
 					<Path>SFX\VO_HumanLaugh_28_10C4C929.wem</Path>
 				</File>
+				<File Id="451334125" Language="SFX">
+					<ShortName>EndOfTheFightDefeat_Mastered.wav</ShortName>
+					<Path>SFX\EndOfTheFightDefeat_Mastered_D79FB2B7.wem</Path>
+				</File>
 				<File Id="452836353" Language="SFX">
 					<ShortName>VO_HumanPain_17.wav</ShortName>
 					<Path>SFX\VO_HumanPain_17_10C4C929.wem</Path>
@@ -445,9 +466,17 @@
 					<ShortName>VO_HumanFight_21.wav</ShortName>
 					<Path>SFX\VO_HumanFight_21_10C4C929.wem</Path>
 				</File>
+				<File Id="498041040" Language="SFX">
+					<ShortName>Foley_Forge_Hammer_04.wav</ShortName>
+					<Path>SFX\Foley_Forge_Hammer_04_10C4C929.wem</Path>
+				</File>
 				<File Id="501455388" Language="SFX">
 					<ShortName>VO_HumanShout_01.wav</ShortName>
 					<Path>SFX\VO_HumanShout_01_10C4C929.wem</Path>
+				</File>
+				<File Id="505504781" Language="SFX">
+					<ShortName>Foley_Forge_Hammer_08.wav</ShortName>
+					<Path>SFX\Foley_Forge_Hammer_08_10C4C929.wem</Path>
 				</File>
 				<File Id="508687556" Language="SFX">
 					<ShortName>VO_HumanShout_05.wav</ShortName>
@@ -580,6 +609,10 @@
 				<File Id="685140277" Language="SFX">
 					<ShortName>VO_HumanLaugh_35.wav</ShortName>
 					<Path>SFX\VO_HumanLaugh_35_10C4C929.wem</Path>
+				</File>
+				<File Id="686491622" Language="SFX">
+					<ShortName>Foley_Forge_Hammer_09.wav</ShortName>
+					<Path>SFX\Foley_Forge_Hammer_09_10C4C929.wem</Path>
 				</File>
 				<File Id="689480548" Language="SFX">
 					<ShortName>VO_HumanDeath_15.wav</ShortName>
@@ -733,6 +766,10 @@
 					<ShortName>Foley_HorsePassBy_05.wav</ShortName>
 					<Path>SFX\Foley_HorsePassBy_05_10C4C929.wem</Path>
 				</File>
+				<File Id="836406767" Language="SFX">
+					<ShortName>MainTheme_FateSmith_Mastered.wav</ShortName>
+					<Path>SFX\MainTheme_FateSmith_Mastered_D79FB2B7.wem</Path>
+				</File>
 				<File Id="836942275" Language="SFX">
 					<ShortName>Foley_ArmorMovement_06.wav</ShortName>
 					<Path>SFX\Foley_ArmorMovement_06_10C4C929.wem</Path>
@@ -779,7 +816,7 @@
 				</File>
 				<File Id="885061589" Language="SFX">
 					<ShortName>UI_Validating_01.wav</ShortName>
-					<Path>SFX\UI_Validating_01_10C4C929.wem</Path>
+					<Path>SFX\UI_Validating_01_A2CB9C52.wem</Path>
 				</File>
 				<File Id="886792925" Language="SFX">
 					<ShortName>VO_HumanLaugh_22.wav</ShortName>

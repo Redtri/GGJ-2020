@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int nbDead { get; private set; }
     public bool winning { get; private set; }
 
+
     private void Awake()
     {
         if (!instance) {
@@ -133,6 +134,11 @@ public class GameManager : MonoBehaviour
         {
             ++nbDead;
 
+            //Sound
+            AudioManager.instance.DeathEvent.Post(GameManager.instance.gameObject);
+
+            //Debug.Log("Mort");
+		//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
 			//Debug.Log("Mort");
 			//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
 			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), rand, UIChatlog.TyopeOfLog.Bad);
@@ -185,9 +191,11 @@ public class GameManager : MonoBehaviour
         if(winRatio > 0.5f) {
             winning = true;
             //TODO : call wwise events for winning state
+            AudioManager.instance.SetWinning.Post(gameObject);
         } else {
             winning = false;
             //TODO : call wwise events for winning state
+            AudioManager.instance.SetLoosing.Post(gameObject);
         }
         Debug.Log(winRatio + " alive " + loseRatio + " dead. Winning : " + winning);
 
@@ -196,10 +204,14 @@ public class GameManager : MonoBehaviour
             if ( winRatio > winPercentAlive) {
                 gameOver = true;
                 Debug.Log("WIN!");
+                //Sound
+                AudioManager.instance.MusicWin.Post(gameObject);
             }
             else if( winRatio <= winLoseAlive) {
                 gameOver = true;
                 Debug.Log("LOSE");
+                //Sound
+                AudioManager.instance.MusicLoose.Post(gameObject);
             }
         }
     }
