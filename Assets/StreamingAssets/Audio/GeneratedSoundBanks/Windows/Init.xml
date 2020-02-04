@@ -3,7 +3,7 @@
 	<RootPaths>
 		<ProjectRoot>D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\</ProjectRoot>
 		<SourceFilesRoot>D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Unity\branches\BranchSound\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<SoundBanksRoot>D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\GGJ-2020Unity\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
