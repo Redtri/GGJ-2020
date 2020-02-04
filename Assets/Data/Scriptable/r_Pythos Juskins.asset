@@ -16,7 +16,7 @@ MonoBehaviour:
     doesExist: 1
     c_Name: Pythos
     c_Surname: Juskins
-    nameRandom: 1
+    nameRandom: 0
     gearValue: 000000000200000002000000
     gearExpectation:
     - {x: 0, y: 10}

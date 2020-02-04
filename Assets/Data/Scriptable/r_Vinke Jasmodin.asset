@@ -16,7 +16,7 @@ MonoBehaviour:
     doesExist: 1
     c_Name: Vinke
     c_Surname: Jasmodin
-    nameRandom: 1
+    nameRandom: 0
     gearValue: 030000000900000005000000
     gearExpectation:
     - {x: 0, y: 10}
