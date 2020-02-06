@@ -16,7 +16,7 @@ MonoBehaviour:
     doesExist: 1
     c_Name: Clavinios
     c_Surname: Thrandsson
-    nameRandom: 1
+    nameRandom: 0
     gearValue: 010000000800000006000000
     gearExpectation:
     - {x: 7, y: 8}

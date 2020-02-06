@@ -16,7 +16,7 @@ MonoBehaviour:
     doesExist: 1
     c_Name: Thandocar
     c_Surname: Folenrickssen
-    nameRandom: 1
+    nameRandom: 0
     gearValue: 070000000100000002000000
     gearExpectation:
     - {x: 0, y: 10}

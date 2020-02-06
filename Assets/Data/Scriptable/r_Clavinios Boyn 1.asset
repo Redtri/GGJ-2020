@@ -16,7 +16,7 @@ MonoBehaviour:
     doesExist: 1
     c_Name: Clavinios
     c_Surname: Boyn
-    nameRandom: 1
+    nameRandom: 0
     gearValue: 060000000500000003000000
     gearExpectation:
     - {x: 0, y: 1}

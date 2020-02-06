@@ -16,7 +16,7 @@ MonoBehaviour:
     doesExist: 1
     c_Name: Ontenia
     c_Surname: Thelasnoir
-    nameRandom: 1
+    nameRandom: 0
     gearValue: 020000000400000008000000
     gearExpectation:
     - {x: 5, y: 8}
