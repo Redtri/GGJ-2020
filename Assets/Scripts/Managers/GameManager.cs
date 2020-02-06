@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if(Input.anyKeyDown && CharacterManager.instance.endCharArrived) {
-            SceneManager.LoadSceneAsync(0);
+			SceneManager.LoadScene(0);
         }
     }
 
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
             {
                 StartPhase();
             }
-        }
+		}
     }
 
     private IEnumerator CharacterEntrance(Character enteringChar)

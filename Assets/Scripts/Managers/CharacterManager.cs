@@ -20,6 +20,7 @@ public class CharacterManager : MonoBehaviour
 
     [Header("Scriptable Object")]
 	public LogScriptableObject logData;
+	public NameScriptableObject names;
 	public CharacterScriptable[] scriptableChara;
 
 	[Header("Queue")]
@@ -103,8 +104,8 @@ public class CharacterManager : MonoBehaviour
             percent = float.MaxValue;
         }
 
-        //Il n'y a personne on ajoute null
-        if (percent <= percentNobody / 100f)
+        //Il n'y a personne on ajoute null --> ajout d'un check pour qu'une phase vide mêne a une autre phase vide
+        if (percent <= percentNobody / 100f && charactersInQueue[charactersInQueue.Count-1].doesExist)
         {
             charactersInQueue.Add(c);
         }
@@ -161,19 +162,21 @@ public class CharacterManager : MonoBehaviour
             //c.InitSprites(characterTemplates[randomIndex].CherryPick(characterTemplates)); //HERE
         if (c.nameRandom)
         {
-            string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
-            string[] lines2 = fileDataName.Split("\n"[0]);
+			/* string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
+			 string[] lines2 = fileDataName.Split("\n"[0]);
 
-            int countNbrc_Name = IntParseFast(lines2[0].Trim().Split(","[0])[0]);
+			 int countNbrc_Name = IntParseFast(lines2[0].Trim().Split(","[0])[0]);
 
-            int nbrc_Name = Random.Range(1, countNbrc_Name);
-            int nbrSurc_Name = Random.Range(1, countNbrc_Name);
+			 int nbrc_Name = Random.Range(1, countNbrc_Name);
+			 int nbrSurc_Name = Random.Range(1, countNbrc_Name);
 
-            c.c_Name = (lines2[nbrc_Name].Trim()).Split(","[0])[0];
-            string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];
+			 c.c_Name = (lines2[nbrc_Name].Trim()).Split(","[0])[0];
+			 string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];*/
+			c.c_Name = names.GetRandomName();
+			string hisSurname = names.GetRandomSurname();
 
 
-            if (characters.ContainsKey(c.c_Name + hisSurname))
+			if (characters.ContainsKey(c.c_Name + hisSurname))
                 hisSurname += " " + ToRoman(characters[c.c_Name + hisSurname]);
 
             AddChara(c.c_Name + hisSurname);
@@ -207,7 +210,7 @@ public class CharacterManager : MonoBehaviour
 
         c.InitSprites(gearTemplates[0].gearParts, skinTemplates[Random.Range(0, skinTemplates.Length)]);
 
-        string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
+       /* string fileDataName = System.IO.File.ReadAllText("./Assets/Data/Name.csv");
         string[] lines2 = fileDataName.Split("\n"[0]);
 
         int countNbrc_Name = IntParseFast(lines2[0].Trim().Split(","[0])[0]);
@@ -216,10 +219,13 @@ public class CharacterManager : MonoBehaviour
         int nbrSurc_Name = Random.Range(1, countNbrc_Name);
 
         c.c_Name = (lines2[nbrc_Name].Trim()).Split(","[0])[0];
-        string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];
+        string hisSurname = (lines2[nbrSurc_Name].Trim()).Split(","[0])[1];*/
+
+		c.c_Name = names.GetRandomName();
+		string hisSurname = names.GetRandomSurname();
 
 
-        if (characters.ContainsKey(c.c_Name + hisSurname))
+		if (characters.ContainsKey(c.c_Name + hisSurname))
             hisSurname += " " + ToRoman(characters[c.c_Name + hisSurname]);
 
         AddChara(c.c_Name + hisSurname);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-100)]
 public class AudioManager : MonoBehaviour
 {
     public AK.Wwise.Event BattlefieldAmbiance;

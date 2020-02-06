@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-[CreateAssetMenu(fileName = "log data", menuName = "LOOOOOOOOOOOOOOOOG/createLog", order = 0)]
+[CreateAssetMenu(fileName = "log data", menuName = "FateSmith/createLog", order = 0)]
 public class LogScriptableObject : ScriptableObject
 {
 	public string[] muchSword;

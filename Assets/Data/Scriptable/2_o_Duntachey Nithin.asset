@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e7df667e33aa2f4cb0801a926e6ed7c, type: 3}
-  m_Name: o_Duntachey Nithin
+  m_Name: 2_o_Duntachey Nithin
   m_EditorClassIdentifier: 
   character:
     doesExist: 1
