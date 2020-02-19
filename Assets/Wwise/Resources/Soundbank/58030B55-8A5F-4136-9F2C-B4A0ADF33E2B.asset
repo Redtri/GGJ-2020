@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f50745d99d682bc409724d0d37f98541, type: 3}
-  m_Name: 5F82A6E6-406B-4FF3-B7DD-D7748B00CD6B
+  m_Name: 58030B55-8A5F-4136-9F2C-B4A0ADF33E2B
   m_EditorClassIdentifier: 
-  objectName: SFX_SNB
-  id: 26215100
-  guid: 5F82A6E6-406B-4FF3-B7DD-D7748B00CD6B
+  objectName: Music_SNB
+  id: 2767260180
+  guid: 58030B55-8A5F-4136-9F2C-B4A0ADF33E2B

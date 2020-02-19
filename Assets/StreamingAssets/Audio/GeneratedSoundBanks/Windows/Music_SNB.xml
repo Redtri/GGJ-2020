@@ -16,6 +16,7 @@
 				<Event Id="3640900608" Name="Play_Music_Loose" ObjectPath="\Events\Music Event\Play_Music_Loose" GUID="{EBC70276-D288-4CD0-B375-BFFCDA8BFEBE}" DurationType="OneShot" DurationMin="12.446383" DurationMax="12.446383"/>
 				<Event Id="2524099115" Name="Play_Music_SplashScreen" ObjectPath="\Events\Music Event\Play_Music_SplashScreen" GUID="{13D75482-C667-4BC6-ACD2-58021A4F0524}" DurationType="OneShot" DurationMin="36.583767" DurationMax="36.583767"/>
 				<Event Id="3368677440" Name="Play_Music_Win" ObjectPath="\Events\Music Event\Play_Music_Win" GUID="{BA66792F-A4A3-4A7A-971E-0CD9968F9B54}" DurationType="OneShot" DurationMin="9.711509" DurationMax="9.711509"/>
+				<Event Id="4236667796" Name="Set_IntensityCalm" ObjectPath="\Events\SD Event\Battlefield\Set_IntensityCalm" GUID="{325E9F86-6444-4E95-A86F-13B4F2443A5E}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="178380289" Language="SFX">

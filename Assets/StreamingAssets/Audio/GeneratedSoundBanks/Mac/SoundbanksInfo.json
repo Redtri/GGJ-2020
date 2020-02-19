@@ -37,14 +37,12 @@
       "Name": "Forge_Fire_Loop",
       "ObjectPath": "\\Events\\SD Event\\Ambiance\\Forge\\Forge_Fire_Loop",
       "GUID": "{C147C6A2-B5B4-4CE8-B7EB-75A127B537C2}",
-      "DurationType": "OneShot",
-      "DurationMin": "67.084579",
-      "DurationMax": "67.084579"
+      "DurationType": "Infinite"
      },
      {
-      "Id": "452547817",
-      "Name": "Stop_All",
-      "ObjectPath": "\\Events\\SD Event\\Stop_All",
+      "Id": "2839405212",
+      "Name": "Stop_Ambiance",
+      "ObjectPath": "\\Events\\SD Event\\Stop_Ambiance",
       "GUID": "{5601C12C-6574-4271-8503-4A2E0E8C671F}",
       "MaxAttenuation": "0.000000",
       "DurationType": "OneShot",
@@ -67,7 +65,7 @@
       "GUID": "{2C7847EE-DB03-407A-B4F4-6BCD9E314900}",
       "DurationType": "OneShot",
       "DurationMin": "1.495992",
-      "DurationMax": "5.043708"
+      "DurationMax": "5.099989"
      },
      {
       "Id": "3688695384",
@@ -86,6 +84,15 @@
       "DurationType": "OneShot",
       "DurationMin": "0.485443",
       "DurationMax": "0.733529"
+     },
+     {
+      "Id": "4012865327",
+      "Name": "UI_LivingEvent",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_LivingEvent",
+      "GUID": "{93134628-CB60-4246-B0C2-0427C17FBCB0}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.495992",
+      "DurationMax": "3.085630"
      },
      {
       "Id": "2628486379",
@@ -114,10 +121,22 @@
       "Path": "SFX\\UI_DeathEvent_02_10C4C929.wem"
      },
      {
+      "Id": "33143554",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_31.wav",
+      "Path": "SFX\\VO_HumanLaugh_31_10C4C929.wem"
+     },
+     {
       "Id": "39654774",
       "Language": "SFX",
       "ShortName": "Foley_Forge_DoorOpen_03.wav",
       "Path": "SFX\\Foley_Forge_DoorOpen_03_10C4C929.wem"
+     },
+     {
+      "Id": "66784747",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_10.wav",
+      "Path": "SFX\\VO_HumanLaugh_10_10C4C929.wem"
      },
      {
       "Id": "77145014",
@@ -126,10 +145,22 @@
       "Path": "SFX\\Foley_Forge_Hammer_05_10C4C929.wem"
      },
      {
+      "Id": "109108939",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_29.wav",
+      "Path": "SFX\\VO_HumanLaugh_29_10C4C929.wem"
+     },
+     {
       "Id": "130716600",
       "Language": "SFX",
       "ShortName": "Foley_Forge_DoorClose_04.wav",
       "Path": "SFX\\Foley_Forge_DoorClose_04_10C4C929.wem"
+     },
+     {
+      "Id": "143952928",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_32.wav",
+      "Path": "SFX\\VO_HumanLaugh_32_10C4C929.wem"
      },
      {
       "Id": "186025753",
@@ -160,6 +191,12 @@
       "Language": "SFX",
       "ShortName": "UI_AddItem_02.wav",
       "Path": "SFX\\UI_AddItem_02_10C4C929.wem"
+     },
+     {
+      "Id": "284067683",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_30.wav",
+      "Path": "SFX\\VO_HumanLaugh_30_10C4C929.wem"
      },
      {
       "Id": "292425264",
@@ -198,16 +235,34 @@
       "Path": "SFX\\UI_AddItem_04_10C4C929.wem"
      },
      {
+      "Id": "373773735",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_33.wav",
+      "Path": "SFX\\VO_HumanLaugh_33_10C4C929.wem"
+     },
+     {
       "Id": "418639538",
       "Language": "SFX",
       "ShortName": "Ambiance_Forge_Fire _04.wav",
       "Path": "SFX\\Ambiance_Forge_Fire _04_10C4C929.wem"
      },
      {
+      "Id": "422238456",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_26.wav",
+      "Path": "SFX\\VO_HumanLaugh_26_10C4C929.wem"
+     },
+     {
       "Id": "434347177",
       "Language": "SFX",
       "ShortName": "Foley_Forge_DoorOpen_01.wav",
       "Path": "SFX\\Foley_Forge_DoorOpen_01_10C4C929.wem"
+     },
+     {
+      "Id": "449609809",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_28.wav",
+      "Path": "SFX\\VO_HumanLaugh_28_10C4C929.wem"
      },
      {
       "Id": "466639735",
@@ -228,6 +283,12 @@
       "Path": "SFX\\VO_HumanDeath_08_10C4C929.wem"
      },
      {
+      "Id": "487702715",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_27.wav",
+      "Path": "SFX\\VO_HumanLaugh_27_10C4C929.wem"
+     },
+     {
       "Id": "498041040",
       "Language": "SFX",
       "ShortName": "Foley_Forge_Hammer_04.wav",
@@ -238,6 +299,12 @@
       "Language": "SFX",
       "ShortName": "Foley_Forge_Hammer_08.wav",
       "Path": "SFX\\Foley_Forge_Hammer_08_10C4C929.wem"
+     },
+     {
+      "Id": "508687556",
+      "Language": "SFX",
+      "ShortName": "VO_HumanShout_05.wav",
+      "Path": "SFX\\VO_HumanShout_05_10C4C929.wem"
      },
      {
       "Id": "514079439",
@@ -288,10 +355,28 @@
       "Path": "SFX\\UI_RemoveItem_03_10C4C929.wem"
      },
      {
+      "Id": "748159786",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_11.wav",
+      "Path": "SFX\\VO_HumanLaugh_11_10C4C929.wem"
+     },
+     {
+      "Id": "756157752",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_34.wav",
+      "Path": "SFX\\VO_HumanLaugh_34_10C4C929.wem"
+     },
+     {
       "Id": "787527737",
       "Language": "SFX",
       "ShortName": "VO_HumanDeath_16.wav",
       "Path": "SFX\\VO_HumanDeath_16_10C4C929.wem"
+     },
+     {
+      "Id": "797133948",
+      "Language": "SFX",
+      "ShortName": "VO_HumanLaugh_07.wav",
+      "Path": "SFX\\VO_HumanLaugh_07_10C4C929.wem"
      },
      {
       "Id": "819914912",
@@ -1728,6 +1813,16 @@
       "DurationType": "OneShot",
       "DurationMin": "9.711509",
       "DurationMax": "9.711509"
+     },
+     {
+      "Id": "4236667796",
+      "Name": "Set_IntensityCalm",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_IntensityCalm",
+      "GUID": "{325E9F86-6444-4E95-A86F-13B4F2443A5E}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
      }
     ],
     "IncludedMemoryFiles": [

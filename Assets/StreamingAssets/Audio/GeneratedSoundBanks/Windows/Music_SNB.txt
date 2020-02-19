@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2524099115	Play_Music_SplashScreen			\Music Event\Play_Music_SplashScreen	
 	3368677440	Play_Music_Win			\Music Event\Play_Music_Win	
 	3640900608	Play_Music_Loose			\Music Event\Play_Music_Loose	
+	4236667796	Set_IntensityCalm			\SD Event\Battlefield\Set_IntensityCalm	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	178380289	EndOfTheFightVictory_Mastered	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\EndOfTheFightVictory_Mastered_D79FB2B7.wem		\Interactive Music Hierarchy\Music\Music_Win\EndOfTheFightVictory_Mastered		1885780

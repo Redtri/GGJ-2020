@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630bd66eb738c6343bb0e3dc5e494528, type: 3}
   m_Name: 5601C12C-6574-4271-8503-4A2E0E8C671F
   m_EditorClassIdentifier: 
-  objectName: Stop_All
-  id: 452547817
+  objectName: Stop_Ambiance
+  id: 2839405212
   guid: 5601C12C-6574-4271-8503-4A2E0E8C671F

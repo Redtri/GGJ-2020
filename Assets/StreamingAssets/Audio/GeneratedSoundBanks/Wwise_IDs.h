@@ -26,11 +26,12 @@ namespace AK
         static const AkUniqueID SET_INTENSITYMEDIUM = 716215376U;
         static const AkUniqueID SET_LOOSING = 1592413729U;
         static const AkUniqueID SET_WINNING = 1205857978U;
-        static const AkUniqueID STOP_ALL = 452547817U;
+        static const AkUniqueID STOP_AMBIANCE = 2839405212U;
         static const AkUniqueID UI_ADDITEM = 2921734634U;
         static const AkUniqueID UI_DEATHEVENT = 802821452U;
         static const AkUniqueID UI_DIALEVENT = 3688695384U;
         static const AkUniqueID UI_HAMMERHIT = 2200300695U;
+        static const AkUniqueID UI_LIVINGEVENT = 4012865327U;
         static const AkUniqueID UI_REMOVEITEM = 2628486379U;
         static const AkUniqueID UI_VALIDATE = 873092944U;
     } // namespace EVENTS
