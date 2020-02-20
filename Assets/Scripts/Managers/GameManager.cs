@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public int nbDead { get; private set; }
     public bool winning { get; private set; }
 
+	private int phaseCount = 0;
+
 
     private void Awake()
     {
@@ -49,21 +51,21 @@ public class GameManager : MonoBehaviour
 	public void StartPhase(bool canWait = true)
     {
         if (!gameOver) {
-			if (canWait && CharacterManager.instance.WillWait())
+			if (canWait && CharacterManager.instance.WillWait() && phaseCount > CharacterManager.instance.nbrFirstCharInForge)
 			{
 				StartCoroutine(WaitPhase());
 			}else
 			{
 				StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
 			}
-			
+			phaseCount++;
 			/*if (CharacterManager.instance.charactersInQueue[0].doesExist) {
                 
             }
             else {
                 StartCoroutine(VoidPhase());
             }*/
-        } else {
+		} else {
             Debug.Log("Ending character entering");
             CharacterManager.instance.endCharacter.privateText = true;
             CharacterManager.instance.endCharacter.forcedText = (winning) ? "The allies came out victorious! You greatly contributed to the war effort. We would never have won without your excellent services." : "Your efforts were not enough... We lost. If you choose to fight again, pay close attention to what the soldiers need to adapt their equipment!";

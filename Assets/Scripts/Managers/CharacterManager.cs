@@ -38,6 +38,7 @@ public class CharacterManager : MonoBehaviour
 	public delegate void CharacterEvent(CharacterActor character);
 	public CharacterEvent onCharacterUpdate;
 
+
 	void Awake()
 	{
 		if (!instance)
@@ -123,8 +124,6 @@ public class CharacterManager : MonoBehaviour
 
 				while (charactersInQueue.Contains(charactersAlive[randomAlive]) || GameManager.instance.phaseHelper.currentCharacter == charactersAlive[randomAlive])
 				{
-
-					Debug.Log("sdfsd");
 
 					randomAlive = Random.Range(0, charactersAlive.Count);
 					countLoop++;
