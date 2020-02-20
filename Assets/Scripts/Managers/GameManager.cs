@@ -45,16 +45,24 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //Phase Handling functions
-    public void StartPhase()
+	//Phase Handling functions
+	public void StartPhase(bool canWait = true)
     {
         if (!gameOver) {
-            if (CharacterManager.instance.charactersInQueue[0].doesExist) {
-                StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
+			if (canWait && CharacterManager.instance.WillWait())
+			{
+				StartCoroutine(WaitPhase());
+			}else
+			{
+				StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
+			}
+			
+			/*if (CharacterManager.instance.charactersInQueue[0].doesExist) {
+                
             }
             else {
                 StartCoroutine(VoidPhase());
-            }
+            }*/
         } else {
             Debug.Log("Ending character entering");
             CharacterManager.instance.endCharacter.privateText = true;
@@ -71,8 +79,14 @@ public class GameManager : MonoBehaviour
 
         if(test)
         {
-            //If there was someone in the room, The coroutine for the leaving is called$
-            if (phaseHelper.PhaseEnd())
+			phaseHelper.PhaseEnd();
+			if (!gameOver)
+			{
+				EffectManager.instance.screenShake.Shake(0, 0.1f);
+				StartCoroutine(CharacterLeaving());
+			}
+			//If there was someone in the room, The coroutine for the leaving is called$
+			/*if (phaseHelper.PhaseEnd())
             {
                 if (!gameOver)
                 {
@@ -83,7 +97,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 StartPhase();
-            }
+            }*/
 		}
     }
 
@@ -99,13 +113,21 @@ public class GameManager : MonoBehaviour
         phaseHelper.EntranceEnd();
     }
 
-    private IEnumerator VoidPhase()
+   /* private IEnumerator VoidPhase()
     {
         Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
         Debug.Log("Time has passed...");
         EndPhase(true);
-    }
+    }*/
+
+	private IEnumerator WaitPhase()
+	{
+		phaseHelper.StartWait();
+		yield return new WaitForSeconds(phaseHelper.GetWaitDuration());
+		phaseHelper.EndWait();
+		StartPhase(false);
+	}
 
     private IEnumerator CharacterLeaving()
     {

@@ -1417,7 +1417,6 @@ MonoBehaviour:
   charactersAlive: []
   charactersInQueue: []
   endCharacter:
-    doesExist: 0
     c_Name: 
     c_Surname: 
     nameRandom: 0
@@ -1463,7 +1462,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c48b674c8228b2c408f919c2cd9bd3e7, type: 2}
   - {fileID: 11400000, guid: d7290ec415b43634a8db487c257f0632, type: 2}
   - {fileID: 11400000, guid: b12f6f55bb6a7c944b8ea9463781e515, type: 2}
-  percentNobody: 10
+  percentNobody: 15
   percentAlive: 20
   percentNewChar: 0
   nbrFirstCharInForge: 3
@@ -1497,9 +1496,8 @@ MonoBehaviour:
   phaseHelper:
     entranceDuration: 1
     leaveDuration: 1
-    waitRange: {x: 1, y: 3}
+    waitRange: {x: 7, y: 8}
     currentCharacter:
-      doesExist: 0
       c_Name: GEAROES
       c_Surname: 
       nameRandom: 0
@@ -1515,7 +1513,6 @@ MonoBehaviour:
       gears: []
       skin: {fileID: 0}
     previousCharacter:
-      doesExist: 0
       c_Name: GEAROES
       c_Surname: 
       nameRandom: 0
