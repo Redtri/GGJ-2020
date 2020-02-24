@@ -90,12 +90,9 @@ public class PhaseHelper
 		onPhaseEnd?.Invoke(true);
 		CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
 
-       // if (!currentCharacter.doesExist)
-       // {
-            currentCharacter.privateText = false;
-            CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
-            CharacterManager.instance.AddCharacterToQueue();
-      //  }
+        currentCharacter.privateText = false;
+        CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
+        CharacterManager.instance.AddCharacterToQueue();
 
       //  return currentCharacter.doesExist;
     }
@@ -127,6 +124,7 @@ public class PhaseHelper
 		isWaitPhase = true;
 		onWaitStart?.Invoke();
 	}
+
 	//No character phase end
 	public void EndWait()
 	{
@@ -138,14 +136,4 @@ public class PhaseHelper
 	{
 		return Random.Range(waitRange.x, waitRange.y);
 	}
-
-    //New blank phase, nobody's here, returns a duration included inside waitRange
-   /* public float BlankPhase()
-    {
-        currentCharacter = null;
-        //Sound
-        soldiersInc = 0;
-        //Add logic here, trigger events ?
-        return Random.Range(waitRange.x, waitRange.y);
-    }*/
 }

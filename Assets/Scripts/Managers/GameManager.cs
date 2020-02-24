@@ -59,12 +59,6 @@ public class GameManager : MonoBehaviour
 				StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
 			}
 			phaseCount++;
-			/*if (CharacterManager.instance.charactersInQueue[0].doesExist) {
-                
-            }
-            else {
-                StartCoroutine(VoidPhase());
-            }*/
 		} else {
             Debug.Log("Ending character entering");
             CharacterManager.instance.endCharacter.privateText = true;
@@ -87,19 +81,6 @@ public class GameManager : MonoBehaviour
 				EffectManager.instance.screenShake.Shake(0, 0.1f);
 				StartCoroutine(CharacterLeaving());
 			}
-			//If there was someone in the room, The coroutine for the leaving is called$
-			/*if (phaseHelper.PhaseEnd())
-            {
-                if (!gameOver)
-                {
-                    EffectManager.instance.screenShake.Shake(0, 0.1f);
-                    StartCoroutine(CharacterLeaving());
-                }//Otherwise, just start another phase
-            }
-            else
-            {
-                StartPhase();
-            }*/
 		}
     }
 
@@ -115,14 +96,6 @@ public class GameManager : MonoBehaviour
         phaseHelper.EntranceEnd();
     }
 
-   /* private IEnumerator VoidPhase()
-    {
-        Debug.Log("Nobody's here");
-        yield return new WaitForSeconds(phaseHelper.BlankPhase());
-        Debug.Log("Time has passed...");
-        EndPhase(true);
-    }*/
-
 	private IEnumerator WaitPhase()
 	{
 		phaseHelper.StartWait();
@@ -133,6 +106,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CharacterLeaving()
     {
+
         yield return new WaitForSeconds(phaseHelper.leaveDuration);
 
        // float proba = phaseHelper.currentCharacter.Battle();
