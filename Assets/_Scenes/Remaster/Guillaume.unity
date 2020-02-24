@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -423,8 +423,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1170884359}
   - {fileID: 846800854}
+  - {fileID: 1170884359}
   - {fileID: 1386083306}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -481,6 +481,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5a533ccb7a1200140b2c6883dfa50dee,
         type: 3}
+    - target: {fileID: 1950810130172498494, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: gearType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066357675583978578, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
     - target: {fileID: 8066357676695274868, guid: c2fa9092032695344802f24b52557b14,
         type: 3}
       propertyPath: m_Name
@@ -842,7 +853,7 @@ PrefabInstance:
     - target: {fileID: 8431092728993478283, guid: 29e9e8eaada7de14c9a6cea48ad928ac,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13.489998
+      value: 13.48999
       objectReference: {fileID: 0}
     - target: {fileID: 8431092728993478283, guid: 29e9e8eaada7de14c9a6cea48ad928ac,
         type: 3}
@@ -980,6 +991,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   buttonType: 1
+  gearType: 0
   gearLevel: 0
   lockButton: 0
 --- !u!114 &706213107
@@ -1297,7 +1309,7 @@ Transform:
   - {fileID: 1269545786}
   - {fileID: 369015810}
   m_Father: {fileID: 251418396}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892696364
 GameObject:
@@ -1721,6 +1733,11 @@ PrefabInstance:
       propertyPath: duration
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8730542542876097681, guid: 0d6c69975c3298d41923ed3153a29c67,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8730542542876097683, guid: 0d6c69975c3298d41923ed3153a29c67,
         type: 3}
       propertyPath: m_Camera
@@ -1764,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 8730542542876097684, guid: 0d6c69975c3298d41923ed3153a29c67,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8730542542876097684, guid: 0d6c69975c3298d41923ed3153a29c67,
         type: 3}
@@ -1896,6 +1913,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 3c74d9221b3dcb04a9c57a0dd86ea78c,
         type: 3}
+    - target: {fileID: 1950810130172498494, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: gearIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950810130172498494, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: gearType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066357675583978578, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
     - target: {fileID: 8066357676695274868, guid: c2fa9092032695344802f24b52557b14,
         type: 3}
       propertyPath: m_Name
@@ -3688,6 +3721,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5b5ec269497b35040831d0456cb75d90,
         type: 3}
+    - target: {fileID: 1950810130172498494, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: gearIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066357675583978578, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
     - target: {fileID: 8066357676695274868, guid: c2fa9092032695344802f24b52557b14,
         type: 3}
       propertyPath: m_Name

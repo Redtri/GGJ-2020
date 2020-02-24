@@ -31,6 +31,7 @@ public class UIMainScreen : MonoBehaviour
 		startSequence.Join(transition.DOFade(0f, duration/2f));
 		//Start game
 		startSequence.AppendCallback(() => GameManager.instance.StartPhase());
+		//startSequence.AppendCallback(() => GetComponent<Canvas>().enabled = false);
 	}
 
 	private void Update()
