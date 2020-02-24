@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7df667e33aa2f4cb0801a926e6ed7c, type: 3}
+  m_Name: 0_o_Morrh Airon
+  m_EditorClassIdentifier: 
+  character:
+    doesExist: 1
+    c_Name: Morrh
+    c_Surname: Airon
+    nameRandom: 0
+    gearValue: 020000000600000007000000
+    gearExpectation:
+    - {x: 3, y: 8}
+    - {x: 0, y: 8}
+    - {x: 0, y: 8}
+    hero: 1
+    privateText: 1
+    forcedText: Hey! I'm your first visitor? Everyone who comes here has got a problem
+      with ONE piece of equipment only. The rest is fine. Mine is with my sword.
+      I have two pieces of iron assigned to it. Can you see it, down the screen?
+      I would like you to assign more iron to it, with a left click of your hammer.
+      You can retrieve iron with a right click. When it's done, validate in the bottom
+      right corner!
+    ironAdd: 0
+    gears: []
+    skin: {fileID: 0}

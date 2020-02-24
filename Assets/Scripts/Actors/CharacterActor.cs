@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 //Physical representation of the character in the world
 public class CharacterActor : MonoBehaviour
 {
@@ -68,11 +71,21 @@ public class CharacterActor : MonoBehaviour
             if (minus) {
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
-                    ++GameManager.instance.playerHelper.ironAmount;
+                    ++GameManager.instance.playerHelper.ironAmount;     
+                    EffectManager.instance.screenShake.Shake(0, 0.01f);
+
                 }
             } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
                 ++data.gearValue[index];
                 --GameManager.instance.playerHelper.ironAmount;
+
+                WhiteBalance balance = null;
+                EffectManager.instance.postProcessVolume.profile.TryGet(out balance);
+                DOVirtual.Float(0, 80f, 0.2f, (float value) => UpdateLens(value, balance))
+                         .OnComplete(() => DOVirtual.Float(80f, 0, 0.4f, (float value) => UpdateLens(value, balance)));
+
+
+                EffectManager.instance.screenShake.Shake(0, 0.05f);
             }
         }
         LoadGearSkins();
@@ -90,6 +103,12 @@ public class CharacterActor : MonoBehaviour
         myAwesomeSequence.Append(transform.DOMoveX(reachPosition.position.x, entranceDuration));       
         myAwesomeSequence.Join(transform.DOMoveY(reachPosition.position.y, entranceDuration).SetEase(sinuoisde));
 
+        foreach(var sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.color = new Color(0, 0, 0, 0.0f);
+            sprite.DOColor(new Color(1, 1, 1, 1.0f), 1.0f);
+        }
+
         //GetComponent<Animator>().SetTrigger("entrance");
     }
 
@@ -100,6 +119,18 @@ public class CharacterActor : MonoBehaviour
         myAwesomeSequence.Append(transform.DOMoveX(basePosition.x, leaveDuration));
         myAwesomeSequence.Join(transform.DOMoveY(basePosition.y, leaveDuration).SetEase(sinuoisde));
 
+        foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.DOColor(new Color(0, 0, 0, 0.0f), 1.0f);
+        }
+
         //GetComponent<Animator>().SetTrigger("leaving");
     }
+
+    private void UpdateLens(float value, WhiteBalance lens)
+    {
+        lens.temperature.value = value;
+    }
+
+
 }

@@ -1,0 +1,43 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	33159115	DoorStates			\SD States\DoorStates	
+	125032842	WinningState			\SD States\WinningState	
+
+State	ID	Name	State Group			Notes
+	0	None	DoorStates			
+	3012222945	Closed	DoorStates			
+	3072142513	Open	DoorStates			
+	0	None	WinningState			
+	1545774708	Loosing	WinningState			
+	2996998095	Winning	WinningState			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	145881226	Open	DoorStates	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Ambiance Battlefield\Battlefield_Filtered		
+	155080179	Closed	DoorStates	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Ambiance Battlefield\Battlefield_Dry		
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	12377074	Forge			\Default Work Unit\Master Audio Bus\Ambiance Forge\Forge	
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	703486095	Hammer			\Default Work Unit\Master Audio Bus\Ambiance Forge\Forge\Hammer	
+	1210761507	Battlefield_Dry			\Default Work Unit\Master Audio Bus\Ambiance Battlefield\Battlefield_Dry	
+	1444523224	Ambiance Forge			\Default Work Unit\Master Audio Bus\Ambiance Forge	
+	1534528548	VO			\Default Work Unit\Master Audio Bus\VO	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	2127285419	AddItem			\Default Work Unit\Master Audio Bus\Ambiance Forge\Forge\AddItem	
+	3005663867	Ambiance Battlefield			\Default Work Unit\Master Audio Bus\Ambiance Battlefield	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+	4035004657	Foleys			\Default Work Unit\Master Audio Bus\Foleys	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1550058001	Battlefield_Filtered			\Default Work Unit\Master Audio Bus\Ambiance Battlefield\Battlefield_Filtered	
+	1775981102	RVB_Battlefield			\Default Work Unit\Master Audio Bus\RVB_Battlefield	
+	3907231393	RVB_Forge			\Default Work Unit\Master Audio Bus\RVB_Forge	
+
+Effect plug-ins	ID	Name	Type				Notes
+	2995775460	Room_Small	Wwise RoomVerb			
+	3043085106	High_Impact	Wwise Compressor			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

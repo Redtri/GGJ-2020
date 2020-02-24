@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7df667e33aa2f4cb0801a926e6ed7c, type: 3}
+  m_Name: 2_o_Duntachey Nithin
+  m_EditorClassIdentifier: 
+  character:
+    doesExist: 1
+    c_Name: Duntachey
+    c_Surname: Nithin
+    nameRandom: 0
+    gearValue: 020000000000000004000000
+    gearExpectation:
+    - {x: 0, y: 5}
+    - {x: 0, y: 10}
+    - {x: 0, y: 10}
+    hero: 1
+    privateText: 1
+    forcedText: Good afternoon! My sword is perfect as it is now, I just came here
+      to explain that sometimes, you don't necessarily have to change anything about
+      one piece of equipment. Keep an eye out on the log, in the top right corner,
+      to check how the soldiers are doing after their visit here. Their color indicate
+      how strong they influence the battle. See ya later.
+    ironAdd: 0
+    gears: []
+    skin: {fileID: 0}
