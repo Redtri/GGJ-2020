@@ -1,0 +1,1303 @@
+fileFormatVersion: 2
+guid: 8aa8287d5dcc7e447b0d55b8cdf12051
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 256081792264705238
+    second: FlameRoundParticleSheet_0
+  - first:
+      213: 373002960879443126
+    second: FlameRoundParticleSheet_1
+  - first:
+      213: 5837135118099963042
+    second: FlameRoundParticleSheet_2
+  - first:
+      213: 4726891786450400659
+    second: FlameRoundParticleSheet_3
+  - first:
+      213: -8682436445297040560
+    second: FlameRoundParticleSheet_4
+  - first:
+      213: -6099443180733778351
+    second: FlameRoundParticleSheet_5
+  - first:
+      213: -2672237950190129041
+    second: FlameRoundParticleSheet_6
+  - first:
+      213: 3093100937648744377
+    second: FlameRoundParticleSheet_7
+  - first:
+      213: -5080897256799226721
+    second: FlameRoundParticleSheet_8
+  - first:
+      213: 6814829364302797894
+    second: FlameRoundParticleSheet_9
+  - first:
+      213: 1826237667691623408
+    second: FlameRoundParticleSheet_10
+  - first:
+      213: -8023883875333462413
+    second: FlameRoundParticleSheet_11
+  - first:
+      213: 5350303239253985817
+    second: FlameRoundParticleSheet_12
+  - first:
+      213: 7757593158013550477
+    second: FlameRoundParticleSheet_13
+  - first:
+      213: -1565971103859111040
+    second: FlameRoundParticleSheet_14
+  - first:
+      213: -402700231108119249
+    second: FlameRoundParticleSheet_15
+  - first:
+      213: -1121625438043754266
+    second: FlameRoundParticleSheet_16
+  - first:
+      213: -8973746024635974497
+    second: FlameRoundParticleSheet_17
+  - first:
+      213: 1691847333636451617
+    second: FlameRoundParticleSheet_18
+  - first:
+      213: 515466778489274341
+    second: FlameRoundParticleSheet_19
+  - first:
+      213: -8253941858434073368
+    second: FlameRoundParticleSheet_20
+  - first:
+      213: 4005081857515814717
+    second: FlameRoundParticleSheet_21
+  - first:
+      213: 5583346236776777235
+    second: FlameRoundParticleSheet_22
+  - first:
+      213: -7382227395954741294
+    second: FlameRoundParticleSheet_23
+  - first:
+      213: 7288166609545919356
+    second: FlameRoundParticleSheet_24
+  - first:
+      213: -6380951023685562782
+    second: FlameRoundParticleSheet_25
+  - first:
+      213: -2883610477021672928
+    second: FlameRoundParticleSheet_26
+  - first:
+      213: -3404135022796369100
+    second: FlameRoundParticleSheet_27
+  - first:
+      213: -5931258813156799417
+    second: FlameRoundParticleSheet_28
+  - first:
+      213: -534506194393291895
+    second: FlameRoundParticleSheet_29
+  - first:
+      213: -1671155267951653947
+    second: FlameRoundParticleSheet_30
+  - first:
+      213: -1848062498227852367
+    second: FlameRoundParticleSheet_31
+  - first:
+      213: 683191791546416014
+    second: FlameRoundParticleSheet_32
+  - first:
+      213: -1940227248020140867
+    second: FlameRoundParticleSheet_33
+  - first:
+      213: -5487610675140392357
+    second: FlameRoundParticleSheet_34
+  - first:
+      213: -1396508619359610627
+    second: FlameRoundParticleSheet_35
+  - first:
+      213: -2587976881441461085
+    second: FlameRoundParticleSheet_36
+  - first:
+      213: 5851557206105369281
+    second: FlameRoundParticleSheet_37
+  - first:
+      213: -4515530635971768972
+    second: FlameRoundParticleSheet_38
+  - first:
+      213: 8918391012493899340
+    second: FlameRoundParticleSheet_39
+  - first:
+      213: -7209059920528620841
+    second: FlameRoundParticleSheet_40
+  - first:
+      213: 8982499507955395380
+    second: FlameRoundParticleSheet_41
+  - first:
+      213: -1170583611645741931
+    second: FlameRoundParticleSheet_42
+  - first:
+      213: 7535480673511048304
+    second: FlameRoundParticleSheet_43
+  - first:
+      213: -2169733007372682709
+    second: FlameRoundParticleSheet_44
+  - first:
+      213: -7993686856177646718
+    second: FlameRoundParticleSheet_45
+  - first:
+      213: 8561408221140832463
+    second: FlameRoundParticleSheet_46
+  - first:
+      213: -3920166086683257247
+    second: FlameRoundParticleSheet_47
+  - first:
+      213: -8718016130052160056
+    second: FlameRoundParticleSheet_48
+  - first:
+      213: -2961018910040711618
+    second: FlameRoundParticleSheet_49
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d412658809cd8300800000000000000
+      internalID: 256081792264705238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc5367773c2d2500800000000000000
+      internalID: 373002960879443126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac5e44a67ba10150800000000000000
+      internalID: 5837135118099963042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_3
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395761f190b499140800000000000000
+      internalID: 4726891786450400659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_4
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0532a25fd0ac18780800000000000000
+      internalID: -8682436445297040560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1563fac4ebc6a5ba0800000000000000
+      internalID: -6099443180733778351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60799f0ebd4aead0800000000000000
+      internalID: -2672237950190129041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b72bf23ae6ecea20800000000000000
+      internalID: 3093100937648744377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94b93c5dd60d79b0800000000000000
+      internalID: -5080897256799226721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1638.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c5b284333239e50800000000000000
+      internalID: 6814829364302797894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f37232ab79185910800000000000000
+      internalID: 1826237667691623408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376a3c3b02075a090800000000000000
+      internalID: -8023883875333462413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_12
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a0b50f278104a40800000000000000
+      internalID: 5350303239253985817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_13
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ff56f20e188ab60800000000000000
+      internalID: 7757593158013550477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_14
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b83f1f39d844ae0800000000000000
+      internalID: -1565971103859111040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2535ddf542596af0800000000000000
+      internalID: -402700231108119249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_16
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e03c525b9f2f60f0800000000000000
+      internalID: -1121625438043754266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9cbff81989d67380800000000000000
+      internalID: -8973746024635974497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12da797af26aa7710800000000000000
+      internalID: 1691847333636451617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1229.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef3e51dd4e472700800000000000000
+      internalID: 515466778489274341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec3f4b6c9b147d80800000000000000
+      internalID: -8253941858434073368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_21
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f7795cab8e49730800000000000000
+      internalID: 4005081857515814717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_22
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316081d02d70c7d40800000000000000
+      internalID: 5583346236776777235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_23
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfe5fccb4f0d8990800000000000000
+      internalID: -7382227395954741294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_24
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7bf8d1cae4c42560800000000000000
+      internalID: 7288166609545919356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e8e080ade4277a0800000000000000
+      internalID: -6380951023685562782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a47869c8b5bf7d0800000000000000
+      internalID: -2883610477021672928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43391ce8b3512c0d0800000000000000
+      internalID: -3404135022796369100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_28
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c42ead88fefada0800000000000000
+      internalID: -5931258813156799417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 820.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98321f8b27d0598f0800000000000000
+      internalID: -534506194393291895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb0831532ddec8e0800000000000000
+      internalID: -1671155267951653947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_31
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb686603fc5a56e0800000000000000
+      internalID: -1848062498227852367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_32
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b3690905f2b7900800000000000000
+      internalID: 683191791546416014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_33
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcc932099de215e0800000000000000
+      internalID: -1940227248020140867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_34
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a8d926a2718d3b0800000000000000
+      internalID: -5487610675140392357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_35
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df89c494fca9e9ce0800000000000000
+      internalID: -1396508619359610627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_36
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac22ceecb8a51cd0800000000000000
+      internalID: -2587976881441461085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_37
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1caa9cca648e43150800000000000000
+      internalID: 5851557206105369281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_38
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d42869fcc9551c0800000000000000
+      internalID: -4515530635971768972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 411.4
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c463cbbcf5d74cb70800000000000000
+      internalID: 8918391012493899340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2c260923644fb90800000000000000
+      internalID: -7209059920528620841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_41
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b6dce06bf38ac70800000000000000
+      internalID: 8982499507955395380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_42
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59436ff386041cfe0800000000000000
+      internalID: -1170583611645741931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_43
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07482747fb7639860800000000000000
+      internalID: 7535480673511048304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_44
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a7c16535f83e1e0800000000000000
+      internalID: -2169733007372682709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_45
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28382db1828b01190800000000000000
+      internalID: -7993686856177646718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_46
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc05536ba6b30d670800000000000000
+      internalID: 8561408221140832463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_47
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16616bec6b5c899c0800000000000000
+      internalID: -3920166086683257247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_48
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c58d1e0582630780800000000000000
+      internalID: -8718016130052160056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRoundParticleSheet_49
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 2.399994
+        width: 204.8
+        height: 409.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e1fcd4df858e6d0800000000000000
+      internalID: -2961018910040711618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIMainScreen : MonoBehaviour
 {
-	public Image splashScreen;
+	public GameObject splashScreen;
+	public Image transition;
 	public Text mainTitle;
+	public ParticleSystem fire;
+	public MeshRenderer wall;
 	public float duration;
 
 	private bool isPlaying = false;
@@ -14,7 +18,19 @@ public class UIMainScreen : MonoBehaviour
 	public void StartGame()
 	{
 		StopAllCoroutines();
-		StartCoroutine(Transition(duration));
+		
+		Sequence startSequence = DOTween.Sequence();
+		//Fade background to black
+		startSequence.Append(transition.DOFade(1f, duration/2f));
+		startSequence.Join(mainTitle.transform.DOScale(new Vector3(1.25f, 1.25f, 1f), duration/4f));
+		//Fade out title
+		startSequence.Append(mainTitle.transform.DOScale(new Vector3(1f, 1f, 1f), duration/4f));
+		startSequence.Join(mainTitle.DOFade(0f, duration/4f));
+		//Fade black screen to game screen
+		startSequence.AppendCallback(() => splashScreen.gameObject.SetActive(false));
+		startSequence.Join(transition.DOFade(0f, duration/2f));
+		//Start game
+		startSequence.AppendCallback(() => GameManager.instance.StartPhase());
 	}
 
 	private void Update()
@@ -27,22 +43,5 @@ public class UIMainScreen : MonoBehaviour
 				StartGame();
 			}
 		}
-	}
-
-	private IEnumerator Transition(float duration)
-	{
-		float t = 0;
-		while(t < duration)
-		{
-			t += Time.deltaTime;
-			float n = 1 - t / duration;
-			splashScreen.color = new Color(splashScreen.color.r, splashScreen.color.g, splashScreen.color.b, n*n);
-			mainTitle.color = new Color(splashScreen.color.r, splashScreen.color.g, splashScreen.color.b, n*n/2);
-
-			yield return null;
-		}
-		splashScreen.gameObject.SetActive(false);
-		mainTitle.gameObject.SetActive(false);
-		GameManager.instance.StartPhase();
 	}
 }
