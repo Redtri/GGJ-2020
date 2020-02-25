@@ -23,18 +23,19 @@ public class UIDialogue : MonoBehaviour
 	{
 		//juicer = GetComponent<TMP_TextJuicer>();
 		tmp = GetComponent<TextMeshProUGUI>();
+		DialogAppear(false);
     }
 
 	private void OnEnable()
 	{
 		GameManager.instance.phaseHelper.onEntranceEnd += OnEntrance;
-		GameManager.instance.phaseHelper.onLeavingEnd += OnLeave;
+		GameManager.instance.phaseHelper.onPhaseEnd += OnLeave;
 	}
 
 	private void OnDisable()
 	{
 		GameManager.instance.phaseHelper.onEntranceEnd -= OnEntrance;
-		GameManager.instance.phaseHelper.onLeavingEnd -= OnLeave;
+		GameManager.instance.phaseHelper.onPhaseEnd -= OnLeave;
 	}
 
 	private void OnEntrance()
@@ -42,9 +43,30 @@ public class UIDialogue : MonoBehaviour
 		SetText(GetString());
 		Character c = GameManager.instance.phaseHelper.currentCharacter;
 		nameText.text = c.c_Name + "  " + c.c_Surname;
+		DialogAppear();
 	}
 
-	private void OnLeave()
+	private void OnLeave(bool anyone)
+	{
+		if(anyone)
+			DialogAppear(false);
+	}
+
+	private void DialogAppear(bool show = true)
+	{
+		Sequence leaveSequence = DOTween.Sequence();
+
+		leaveSequence.Append(tmp.DOFade( (show) ? 1f : 0f, .5f));
+		leaveSequence.Join(tmp.transform.parent.GetComponent<MaskableGraphic>().DOFade((show) ? 1f : 0f, .5f));
+		leaveSequence.Join(nameText.DOFade((show) ? 1f : 0f, .5f));
+		leaveSequence.Join(nameText.transform.parent.GetComponent<MaskableGraphic>().DOFade((show) ? 1f : 0f, .5f));
+
+		if(!show){
+			leaveSequence.AppendCallback(() => ResetFields());
+		}
+	}
+
+	private void ResetFields()
 	{
 		SetText("");
 		nameText.text = "";

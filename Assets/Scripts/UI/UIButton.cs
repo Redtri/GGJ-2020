@@ -19,6 +19,13 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         Validate
     }
 
+	public enum GearType
+	{
+		Sword,
+		Bow,
+		Armor
+	}
+
     private Image img;
 	public Sprite idleSprite;
 	public Sprite hoverSprite;
@@ -29,7 +36,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public UnityEvent clickEvent;
 
     public ButtonType buttonType = ButtonType.Forge;
-
+	public GearType gearType;
     public int gearLevel;
 
 	public bool lockButton = false;
@@ -40,6 +47,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	{
 		img = GetComponent<Image>();
 		SetSprite(idleSprite);
+		HighlightGear(false);
 	}
 
 	private void Update()
@@ -47,9 +55,6 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		if (lockButton)
 		{
 			SetSprite(lockSprite);
-		}else
-		{
-			
 		}
 	}
 
@@ -109,6 +114,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             case ButtonType.Forge:
                 MouseSparkle.instance.SetSparkleSize(0.7f);
                 MouseSparkle.instance.SetBurstAmount(50);
+				HighlightGear(true);
                 break;
             case ButtonType.Validate:
                 MouseSparkle.instance.SetSparkleSize(1f);
@@ -118,8 +124,6 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     }
 
-	
-
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		SetSprite(idleSprite);
@@ -127,6 +131,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         MouseSparkle.instance.SetSparkleSize(0.5f);
         MouseSparkle.instance.SetBurstAmount(30);
+		HighlightGear(false);
     }
 
 	private void SetSprite(Sprite s)
@@ -161,5 +166,10 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		}
 	}
 
-	
+	private void HighlightGear(bool show = true)
+	{
+		CharacterActor charRef = CharacterManager.instance.characterActor;
+
+		charRef.gearParts[(int)gearType].material.SetFloat("_Brightness", (show) ? 3f : 0f);
+	}	
 }
