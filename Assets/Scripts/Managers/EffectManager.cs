@@ -34,9 +34,6 @@ public class EffectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            screenShake.Shake(0.0f, 1.0f);
-        }
         screenShake.Update(Time.time);
     }
 }

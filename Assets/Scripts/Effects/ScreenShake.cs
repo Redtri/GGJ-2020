@@ -23,18 +23,19 @@ public class ScreenShake
         if (shaking) {
             if (time - shakeStartTime < shakeDuration) {
                 cam.position = new Vector3(startPos.x + Random.insideUnitCircle.x * intensity, startPos.y + Random.insideUnitCircle.y * intensity, startPos.z);
-            }
-            else {
+            } else {
                 cam.position = startPos;
                 shaking = false;
             }
         }
     }
 
-    public void Shake(float time, float shakeDura)
+    public void Shake(float shakeDura)
     {
-        shaking = true;
-        shakeDuration = shakeDura;
-        shakeStartTime = Time.time + time;
+        if(GameManager.instance.screenShakeEnabled){
+            shaking = true;
+            shakeDuration = shakeDura;
+            shakeStartTime = Time.time;
+        }
     }
 }

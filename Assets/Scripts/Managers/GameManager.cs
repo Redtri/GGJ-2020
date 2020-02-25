@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using UnityEngine.UI;
 
 [DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
@@ -16,12 +18,17 @@ public class GameManager : MonoBehaviour
     public PlayerHelper playerHelper;
 	public AnimationCurve deathCurve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(1, 0));
 
+    [Header("SYSTEM")]
+    public float pauseTransition;
     public bool gameOver {get; private set;}
     public int nbDead { get; private set; }
     public bool winning { get; private set; }
-
+    public bool screenShakeEnabled{get; private set;}
+    public float volumeSFX {get; private set;}
+    public float volumeMusic {get; private set;}
 	private int phaseCount = 0;
-
+    private bool gameStarted = false;
+    private bool gamePaused = false;
 
     private void Awake()
     {
@@ -34,18 +41,83 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-       // StartPhase();
+        UI_Manager.instance.PauseScreen(false);
+        Reset();
     }
-
-
 
     private void Update()
     {
-        if(Input.anyKeyDown && CharacterManager.instance.endCharArrived) {
-			SceneManager.LoadScene(0);
+        HandlingGameState();
+    }
+
+    private void Reset()
+    {
+        screenShakeEnabled = true;
+    }
+
+    private void HandlingGameState()
+    {
+        if(!gamePaused){
+            if(Input.anyKeyDown){
+                //If the game started, we only check if the ending character has arrived
+                if(gameStarted){
+                    if(CharacterManager.instance.endCharArrived)
+                        UIMainScreen.instance.Fade(true);//.AppendCallback(() => StartPhase()); //TODO : Here, call the reset function
+                    else{
+                        if(Input.GetKeyDown(KeyCode.Escape)){
+                            Pause();
+                        }
+                    }
+                //Otherwise, we are at the beginning of the game
+                }else{
+                    gameStarted = true;
+                    if(!Input.GetKeyDown(KeyCode.Mouse0)){
+                        AudioManager.instance.Validate.Post(GameManager.instance.gameObject);
+                    }
+                    UIMainScreen.instance.Fade(false).AppendCallback(() => StartPhase());
+                }
+            }
+        }else{
+            if(Input.GetKeyDown(KeyCode.Escape)){
+                Pause();
+            }
         }
     }
 
+    //Function called by code
+    public void Pause()
+    {
+        gamePaused = !gamePaused;
+        StartCoroutine(PausingGame());
+    }
+
+    //Function called by button
+    public void OverridePause(bool resume)
+    {
+        if(resume == gamePaused){
+            gamePaused = !gamePaused;
+            StartCoroutine(PausingGame());
+        }
+    }
+
+    private IEnumerator PausingGame()
+    {
+        //TODO : Here, handle pause Sound events
+        float startTime = Time.unscaledTime;
+
+        while(Time.unscaledTime - startTime < pauseTransition + 0.01f){
+            //Just clamping timescale value
+            float newTimeScale = ((gamePaused) ? -Time.unscaledDeltaTime : Time.unscaledDeltaTime); 
+            Time.timeScale = Mathf.Clamp(Time.timeScale + newTimeScale, 0, 1f);
+            //Updating the pause screen fade status in the UI manager
+            UI_Manager.instance.FadePauseScreen(gamePaused, (Time.unscaledTime - startTime)/pauseTransition);
+
+            yield return new WaitForEndOfFrame();
+        }
+        Time.timeScale = (gamePaused) ? 0f : 1f;
+
+        yield return null;
+    }
 
 	//Phase Handling functions
 	public void StartPhase(bool canWait = true)
@@ -78,7 +150,7 @@ public class GameManager : MonoBehaviour
 			phaseHelper.PhaseEnd();
 			if (!gameOver)
 			{
-				EffectManager.instance.screenShake.Shake(0, 0.1f);
+				EffectManager.instance.screenShake.Shake(0.1f);
 				StartCoroutine(CharacterLeaving());
 			}
 		}
@@ -183,8 +255,6 @@ public class GameManager : MonoBehaviour
 		float loseRatio = 1 - winRatio;
 
 		theWinRatio = winRatio;
-		
-		
 
         if(winRatio > 0.5f) {
             winning = true;
@@ -212,5 +282,22 @@ public class GameManager : MonoBehaviour
                 AudioManager.instance.MusicLoose.Post(gameObject);
             }
         }
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        volumeMusic = value;
+        //TODO : Set Wwise volume
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        volumeSFX = value;
+        //TODO : Set Wwise volume
+    }
+
+    public void EnableScreenShake(bool value)
+    {
+        screenShakeEnabled = value;
     }
 }

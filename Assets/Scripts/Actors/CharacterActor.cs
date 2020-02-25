@@ -72,7 +72,7 @@ public class CharacterActor : MonoBehaviour
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
                     ++GameManager.instance.playerHelper.ironAmount;     
-                    EffectManager.instance.screenShake.Shake(0, 0.01f);
+                    EffectManager.instance.screenShake.Shake(0.01f);
 
                 }
             } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
@@ -85,7 +85,7 @@ public class CharacterActor : MonoBehaviour
                          .OnComplete(() => DOVirtual.Float(80f, 0, 0.4f, (float value) => UpdateLens(value, balance)));
 
 
-                EffectManager.instance.screenShake.Shake(0, 0.05f);
+                EffectManager.instance.screenShake.Shake(0.05f);
             }
         }
         LoadGearSkins();
