@@ -40,7 +40,7 @@ public class MouseSparkle : MonoBehaviour
 
             transform.position = point;            
 
-            vfx.SendEvent("OnBurst");
+            //vfx.SendEvent("OnBurst");
 
             //Sound
             AudioManager.instance.HammerHit.Post(GameManager.instance.gameObject);
