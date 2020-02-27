@@ -71,7 +71,8 @@ public class CharacterActor : MonoBehaviour
             if (minus) {
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
-                    ++GameManager.instance.playerHelper.ironAmount;     
+                    ++GameManager.instance.playerHelper.ironAmount;
+                    GameManager.instance.ingots.AddIngot();     
                     EffectManager.instance.screenShake.Shake(0.01f);
 
                 }

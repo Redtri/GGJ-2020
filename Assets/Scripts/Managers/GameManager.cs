@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public PlayerHelper playerHelper;
 	public AnimationCurve deathCurve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(1, 0));
 
+    public UIIngot ingots;
+
     [Header("SYSTEM")]
     public List<OutsideEvent> outsideEvents;
     public List<ParticleEvent> particleEvents;
