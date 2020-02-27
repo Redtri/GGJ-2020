@@ -277,6 +277,6 @@ public class CharacterManager : MonoBehaviour
 
 	public bool WillWait()
 	{
-		return Random.Range(0.0f, 1.0f) <= .9f;//percentNobody/100f;
+		return Random.Range(0.0f, 1.0f) <= percentNobody/100f;
 	}
 }
