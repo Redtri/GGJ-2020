@@ -16315,6 +16315,11 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 1397745360}
+    - target: {fileID: 271178515700752492, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
+        type: 3}
+      propertyPath: bubbleAlpha
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 271178515700752493, guid: 98de34e4b3c9ce04fa820b9c6acbac10,
         type: 3}
       propertyPath: m_AnchoredPosition.x
