@@ -5,6 +5,8 @@ using UnityEngine.VFX;
 
 public class MouseSparkle : MonoBehaviour
 {
+    public GameObject player;
+    public ParticleSystem hammerFX;
     private  VisualEffect vfx;
     private Camera cam;
 
@@ -45,7 +47,8 @@ public class MouseSparkle : MonoBehaviour
             //Sound
             AudioManager.instance.HammerHit.Post(GameManager.instance.gameObject);
 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("Forge");
+            player.GetComponent<Animator>().SetTrigger("Forge");
+            hammerFX.Play(true);
         }
     }
 

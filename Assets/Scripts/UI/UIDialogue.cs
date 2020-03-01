@@ -9,11 +9,11 @@ using UnityEngine.UI;
 public class UIDialogue : MonoBehaviour
 {
 	public DialogueScriptableObject dialogData;
-    public GameObject children;
 	public TextMeshProUGUI nameText;
+	public float bubbleAlpha;
 
 	//private TMP_TextJuicer juicer;
-	private TextMeshProUGUI tmp;
+	private TextMeshProUGUI dialogTxt;
     private Text text;
 
 	private float progress = 0;
@@ -22,7 +22,7 @@ public class UIDialogue : MonoBehaviour
 	private void Awake()
 	{
 		//juicer = GetComponent<TMP_TextJuicer>();
-		tmp = GetComponent<TextMeshProUGUI>();
+		dialogTxt = GetComponent<TextMeshProUGUI>();
 		DialogAppear(false);
     }
 
@@ -56,10 +56,10 @@ public class UIDialogue : MonoBehaviour
 	{
 		Sequence leaveSequence = DOTween.Sequence();
 
-		leaveSequence.Append(tmp.DOFade( (show) ? 1f : 0f, .5f));
-		leaveSequence.Join(tmp.transform.parent.GetComponent<MaskableGraphic>().DOFade((show) ? 1f : 0f, .5f));
+		leaveSequence.Append(dialogTxt.DOFade( (show) ? 1f : 0f, .5f));
+		leaveSequence.Join(dialogTxt.transform.parent.GetComponent<MaskableGraphic>().DOFade((show) ? bubbleAlpha : 0f, .5f));
 		leaveSequence.Join(nameText.DOFade((show) ? 1f : 0f, .5f));
-		leaveSequence.Join(nameText.transform.parent.GetComponent<MaskableGraphic>().DOFade((show) ? 1f : 0f, .5f));
+		leaveSequence.Join(nameText.transform.parent.GetComponent<MaskableGraphic>().DOFade((show) ? bubbleAlpha : 0f, .5f));
 
 		if(!show){
 			leaveSequence.AppendCallback(() => ResetFields());
@@ -75,15 +75,15 @@ public class UIDialogue : MonoBehaviour
 
 	public void SetText(string txt) {
 
-        DOTween.To(() => tmp.text, x =>  tmp.text = x, txt, 2.0f);
+        DOTween.To(() => dialogTxt.text, x =>  dialogTxt.text = x, txt, 2.0f);
 
-        tmp.text = "";
+        dialogTxt.text = "";
 	}    
 
 
     private void UpdateText(Text text)
     {
-        tmp.text = text.text;
+        dialogTxt.text = text.text;
     }
 	
 	private string GetString()

@@ -14,11 +14,15 @@ public class GameManager : MonoBehaviour
     public float winPercentAlive;
     public float winLoseAlive;
     public int nbCharCheck;
-    public PhaseHelper phaseHelper;
-    public PlayerHelper playerHelper;
+    [HideInInspector] public PhaseHelper phaseHelper;
+    [HideInInspector] public PlayerHelper playerHelper;
 	public AnimationCurve deathCurve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(1, 0));
 
+    public UIIngot ingots;
+
     [Header("SYSTEM")]
+    public List<OutsideEvent> outsideEvents;
+    public List<ParticleEvent> particleEvents;
     public float pauseTransition;
     public bool gameOver {get; private set;}
     public int nbDead { get; private set; }
@@ -55,6 +59,25 @@ public class GameManager : MonoBehaviour
         screenShakeEnabled = true;
     }
 
+    private void TriggerEvents(bool waitPhase)
+    {
+        Debug.Log("Starting coroutines for outside events");
+        for(int i = 0; i < outsideEvents.Count; ++i){
+            if(outsideEvents[i].isUp && (!outsideEvents[i].onlyTriggerInWaitPhase || waitPhase && outsideEvents[i].onlyTriggerInWaitPhase)){
+                StartCoroutine(OutsideEventCoroutine(outsideEvents[i]));
+            }
+        }
+        for(int i = 0; i < particleEvents.Count; ++i){
+            //Events need to be initialized once, and this function is called at the start of the game for the very first time 
+            if(!waitPhase){
+                particleEvents[i].Init();
+            }
+            if(particleEvents[i].isUp && (!particleEvents[i].onlyTriggerInWaitPhase || waitPhase && particleEvents[i].onlyTriggerInWaitPhase)){
+                StartCoroutine(OutsideEventCoroutine(particleEvents[i]));
+            }
+        }
+    }
+
     private void HandlingGameState()
     {
         if(!gamePaused){
@@ -75,6 +98,7 @@ public class GameManager : MonoBehaviour
                         AudioManager.instance.Validate.Post(GameManager.instance.gameObject);
                     }
                     UIMainScreen.instance.Fade(false).AppendCallback(() => StartPhase());
+                    UIMainScreen.instance.Fade(false).AppendCallback(() => TriggerEvents(false));
                 }
             }
         }else{
@@ -171,10 +195,34 @@ public class GameManager : MonoBehaviour
 	private IEnumerator WaitPhase()
 	{
 		phaseHelper.StartWait();
+        TriggerEvents(true);
 		yield return new WaitForSeconds(phaseHelper.GetWaitDuration());
 		phaseHelper.EndWait();
 		StartPhase(false);
 	}
+
+    private IEnumerator OutsideEventCoroutine(OutsideEvent outEvent)
+    {
+        if((outEvent.onlyTriggerInWaitPhase && phaseHelper.isWaitPhase) || !outEvent.onlyTriggerInWaitPhase){
+            if(outEvent.isUp){
+                Debug.Log("Sound should be played");
+                //outEvent.TryTrigger()?.Post(gameObject);
+                AudioSource src = GetComponent<AudioSource>(); 
+                AudioClip clip =  outEvent.TryTrigger();
+                if(clip){
+                    src.PlayOneShot(clip);
+                    if(outEvent.screenShakeAmount != 0.0f)
+                        EffectManager.instance.screenShake.Shake(1f, outEvent.screenShakeAmount);
+                    if(outEvent.vignetteAmount != 0.0f)
+                        EffectManager.instance.Vign(1f, outEvent.vignetteAmount);
+                }
+
+                yield return new WaitForSeconds(outEvent.currentCooldown);
+                StartCoroutine(OutsideEventCoroutine(outEvent));
+            }
+        }
+        yield return null;
+    }
 
     private IEnumerator CharacterLeaving()
     {

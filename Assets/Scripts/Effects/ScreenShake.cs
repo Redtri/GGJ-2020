@@ -30,12 +30,15 @@ public class ScreenShake
         }
     }
 
-    public void Shake(float shakeDura)
+    public void Shake(float shakeDura, float amount = 0.0f)
     {
         if(GameManager.instance.screenShakeEnabled){
             shaking = true;
             shakeDuration = shakeDura;
             shakeStartTime = Time.time;
+            if(amount != 0.0f){
+                intensity = amount;
+            }
         }
     }
 }

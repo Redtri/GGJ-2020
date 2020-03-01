@@ -10,6 +10,7 @@ public class UI_Manager : MonoBehaviour
     public Canvas pauseScreen;
     public Transform pauseScreenContainer;
     public Transform gameLayout;
+    public UIIngot ingots;
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
     public Image[] bars;

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using DG.Tweening;
 
 public class EffectManager : MonoBehaviour
 {
@@ -35,5 +37,13 @@ public class EffectManager : MonoBehaviour
     void Update()
     {
         screenShake.Update(Time.time);
+    }
+
+    public void Vign(float duration, float intensity)
+    {
+        Vignette vignette = null;
+        postProcessVolume.profile.TryGet<Vignette>(out vignette);
+
+        DOVirtual.Float(0, intensity, duration/2, (float x) => vignette.intensity.value = x).SetLoops(2, LoopType.Yoyo);
     }
 }
