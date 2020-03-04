@@ -1009,6 +1009,7 @@ MonoBehaviour:
   buttonType: 1
   gearLevel: 0
   lockButton: 0
+  isHover: 0
 --- !u!114 &706213107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +1985,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 977128867007685523, guid: f945bb1fea1b0e842bd24a7beea9525b,
+        type: 3}
+      propertyPath: LivingEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 402aae4538b61c74d80679ef1a174e57,
+        type: 2}
     - target: {fileID: 977128867007685549, guid: f945bb1fea1b0e842bd24a7beea9525b,
         type: 3}
       propertyPath: triggerList.Array.size

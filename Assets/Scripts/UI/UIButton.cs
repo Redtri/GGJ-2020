@@ -33,7 +33,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public int gearLevel;
 
 	public bool lockButton = false;
-	private bool isHover = false;
+	public bool isHover = false;
 
 
 	private void Awake()
@@ -63,10 +63,12 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             switch (buttonType)
             {
                 case ButtonType.Forge:
-                    AudioManager.instance.AddItem.Post(GameManager.instance.gameObject);
+                    if(!lockButton)
+                        AudioManager.instance.AddItem.Post(GameManager.instance.gameObject);
                     break;
                 case ButtonType.Validate:
-                    AudioManager.instance.Validate.Post(GameManager.instance.gameObject);
+                    if(!lockButton)
+                        AudioManager.instance.Validate.Post(GameManager.instance.gameObject);
                     break;
             }
 }
@@ -77,7 +79,8 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             switch (buttonType)
             {
                 case ButtonType.Forge:
-                    AudioManager.instance.RemoveItem.Post(GameManager.instance.gameObject);
+                    if (!lockButton)
+                        AudioManager.instance.RemoveItem.Post(GameManager.instance.gameObject);
                     break;
                 case ButtonType.Validate:
                     break;

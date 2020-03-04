@@ -13,7 +13,6 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
     private bool rightClick = false;
     private int index = 0;
 
-
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!GetComponent<UIButton>().lockButton)

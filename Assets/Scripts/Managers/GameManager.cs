@@ -127,21 +127,23 @@ public class GameManager : MonoBehaviour
             phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
 
 			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetVictoryLog(), rand, UIChatlog.TyopeOfLog.Good);
-			
-			//Debug.Log("Vivant");
-		}
+            StartCoroutine(LivingSoundPosting(rand));
+
+            //Debug.Log("Vivant");
+        }
         else // Char Loose
         {
             ++nbDead;
 
             //Sound
-            AudioManager.instance.DeathEvent.Post(GameManager.instance.gameObject);
+            //AudioManager.instance.DeathEvent.Post(GameManager.instance.gameObject);
 
             //Debug.Log("Mort");
 		//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
 			//Debug.Log("Mort");
 			//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
 			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), rand, UIChatlog.TyopeOfLog.Bad);
+            StartCoroutine(DeathSoundPosting(rand));
 
 			if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
             {
@@ -214,5 +216,17 @@ public class GameManager : MonoBehaviour
                 AudioManager.instance.MusicLoose.Post(gameObject);
             }
         }
+    }
+
+    IEnumerator DeathSoundPosting(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        AudioManager.instance.DeathEvent.Post(GameManager.instance.gameObject);
+    }
+
+    IEnumerator LivingSoundPosting(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        AudioManager.instance.LivingEvent.Post(GameManager.instance.gameObject);
     }
 }
