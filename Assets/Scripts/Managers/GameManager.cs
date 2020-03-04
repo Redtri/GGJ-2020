@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public int nbDead { get; private set; }
     public bool winning { get; private set; }
 
+	private int phaseCount = 0;
+
 
     private void Awake()
     {
@@ -45,17 +47,25 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //Phase Handling functions
-    public void StartPhase()
+	//Phase Handling functions
+	public void StartPhase(bool canWait = true)
     {
         if (!gameOver) {
-            if (CharacterManager.instance.charactersInQueue[0].doesExist) {
-                StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
+			if (canWait && CharacterManager.instance.WillWait() && phaseCount > CharacterManager.instance.nbrFirstCharInForge)
+			{
+				StartCoroutine(WaitPhase());
+			}else
+			{
+				StartCoroutine(CharacterEntrance(CharacterManager.instance.charactersInQueue[0]));
+			}
+			phaseCount++;
+			/*if (CharacterManager.instance.charactersInQueue[0].doesExist) {
+                
             }
             else {
                 StartCoroutine(VoidPhase());
-            }
-        } else {
+            }*/
+		} else {
             Debug.Log("Ending character entering");
             CharacterManager.instance.endCharacter.privateText = true;
             CharacterManager.instance.endCharacter.forcedText = (winning) ? "The allies came out victorious! You greatly contributed to the war effort. We would never have won without your excellent services." : "Your efforts were not enough... We lost. If you choose to fight again, pay close attention to what the soldiers need to adapt their equipment!";
@@ -71,8 +81,14 @@ public class GameManager : MonoBehaviour
 
         if(test)
         {
-            //If there was someone in the room, The coroutine for the leaving is called$
-            if (phaseHelper.PhaseEnd())
+			phaseHelper.PhaseEnd();
+			if (!gameOver)
+			{
+				EffectManager.instance.screenShake.Shake(0, 0.1f);
+				StartCoroutine(CharacterLeaving());
+			}
+			//If there was someone in the room, The coroutine for the leaving is called$
+			/*if (phaseHelper.PhaseEnd())
             {
                 if (!gameOver)
                 {
@@ -83,7 +99,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 StartPhase();
-            }
+            }*/
 		}
     }
 
@@ -99,13 +115,21 @@ public class GameManager : MonoBehaviour
         phaseHelper.EntranceEnd();
     }
 
-    private IEnumerator VoidPhase()
+   /* private IEnumerator VoidPhase()
     {
         Debug.Log("Nobody's here");
         yield return new WaitForSeconds(phaseHelper.BlankPhase());
         Debug.Log("Time has passed...");
         EndPhase(true);
-    }
+    }*/
+
+	private IEnumerator WaitPhase()
+	{
+		phaseHelper.StartWait();
+		yield return new WaitForSeconds(phaseHelper.GetWaitDuration());
+		phaseHelper.EndWait();
+		StartPhase(false);
+	}
 
     private IEnumerator CharacterLeaving()
     {

@@ -10,7 +10,8 @@ public class PhaseHelper
     public float leaveDuration;
     public Vector2 waitRange;
     public bool isEntering { get; private set; }
-    public Character currentCharacter;
+	public bool isWaitPhase { get; private set; }
+	public Character currentCharacter;
     public Character previousCharacter;
 
     public delegate void BasicEvent();
@@ -18,11 +19,15 @@ public class PhaseHelper
     public BasicEvent onEntrance;
     public BasicEvent onLeaving;
     public BasicEvent onLeavingEnd;
+	public BasicEvent onWaitStart;
+	public BasicEvent onWaitEnd;
     public delegate void BoolEvent(bool val1);
     public BoolEvent onPhaseEnd;
 
     //Sound
     public int soldiersInc;
+
+	
 
     //New character entering the forge
     public void Enter(Character character, bool end = false)
@@ -85,14 +90,14 @@ public class PhaseHelper
         onPhaseEnd?.Invoke(currentCharacter.doesExist);
         CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
 
-        if (!currentCharacter.doesExist)
-        {
+       // if (!currentCharacter.doesExist)
+       // {
             currentCharacter.privateText = false;
             CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
             CharacterManager.instance.AddCharacterToQueue();
-        }
+      //  }
 
-        return currentCharacter.doesExist;
+      //  return currentCharacter.doesExist;
     }
 
     public void EntranceEnd()
@@ -116,13 +121,31 @@ public class PhaseHelper
         AudioManager.instance.DoorOpen.Post(GameManager.instance.gameObject);
     }
 
+	//No character phase
+	public void StartWait()
+	{
+		isWaitPhase = true;
+		onWaitStart?.Invoke();
+	}
+	//No character phase end
+	public void EndWait()
+	{
+		isWaitPhase = false;
+		onWaitEnd?.Invoke();
+	}
+	//return the duration of the no character phase
+	public float GetWaitDuration()
+	{
+		return Random.Range(waitRange.x, waitRange.y);
+	}
+
     //New blank phase, nobody's here, returns a duration included inside waitRange
-    public float BlankPhase()
+   /* public float BlankPhase()
     {
         currentCharacter = null;
         //Sound
         soldiersInc = 0;
         //Add logic here, trigger events ?
         return Random.Range(waitRange.x, waitRange.y);
-    }
+    }*/
 }
