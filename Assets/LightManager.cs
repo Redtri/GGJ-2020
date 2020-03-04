@@ -14,7 +14,7 @@ public class LightManager : MonoBehaviour
     {
         GameManager.instance.phaseHelper.onEntrance += DisplayLigth;
         GameManager.instance.phaseHelper.onEntranceEnd += HideLigth;
-        GameManager.instance.phaseHelper.onLeaving += DisplayLigth;
+        GameManager.instance.phaseHelper.onLeavingEnd += DisplayLigth;
     }
 
     public void DisplayLigth()

@@ -5,15 +5,20 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
+using Sweet.UI;
 
 public class UIDialogue : MonoBehaviour
 {
 	public DialogueScriptableObject dialogData;
 	public TextMeshProUGUI nameText;
 	public float bubbleAlpha;
+	public UIPageText pageText;
+
+	private TextMeshProUGUI dialogTxt;
 
 	//private TMP_TextJuicer juicer;
-	private TextMeshProUGUI dialogTxt;
+	
+	
     private Text text;
 
 	private float progress = 0;
@@ -23,6 +28,7 @@ public class UIDialogue : MonoBehaviour
 	{
 		//juicer = GetComponent<TMP_TextJuicer>();
 		dialogTxt = GetComponent<TextMeshProUGUI>();
+		//pageText = GetComponent<UIPageText>();
 		DialogAppear(false);
     }
 
@@ -43,7 +49,7 @@ public class UIDialogue : MonoBehaviour
 		SetText(GetString());
 		Character c = GameManager.instance.phaseHelper.currentCharacter;
 		nameText.text = c.c_Name + "  " + c.c_Surname;
-		DialogAppear();
+		//DialogAppear();
 	}
 
 	private void OnLeave(bool anyone)
@@ -54,7 +60,7 @@ public class UIDialogue : MonoBehaviour
 
 	private void DialogAppear(bool show = true)
 	{
-		Sequence leaveSequence = DOTween.Sequence();
+		/*Sequence leaveSequence = DOTween.Sequence();
 
 		leaveSequence.Append(dialogTxt.DOFade( (show) ? 1f : 0f, .5f));
 		leaveSequence.Join(dialogTxt.transform.parent.GetComponent<MaskableGraphic>().DOFade((show) ? bubbleAlpha : 0f, .5f));
@@ -63,7 +69,7 @@ public class UIDialogue : MonoBehaviour
 
 		if(!show){
 			leaveSequence.AppendCallback(() => ResetFields());
-		}
+		}*/
 	}
 
 	private void ResetFields()
@@ -74,16 +80,17 @@ public class UIDialogue : MonoBehaviour
 
 
 	public void SetText(string txt) {
+		pageText.LoadText(txt,true);
+       // DOTween.To(() => dialogTxt.text, x =>  dialogTxt.text = x, txt, 2.0f);
 
-        DOTween.To(() => dialogTxt.text, x =>  dialogTxt.text = x, txt, 2.0f);
-
-        dialogTxt.text = "";
+      //  dialogTxt.text = "";
 	}    
 
 
     private void UpdateText(Text text)
     {
-        dialogTxt.text = text.text;
+		//pageText.SetText(text);
+		//dialogTxt.text = text.text;
     }
 	
 	private string GetString()

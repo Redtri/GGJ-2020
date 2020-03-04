@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using Sweet.UI;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class UI_Manager : MonoBehaviour
     public UIIngot ingots;
     public TextMeshProUGUI ironAmountTxt;
     public TextMeshProUGUI[] gearTexts;
-    public Image[] bars;
+    public UISlider[] bars;
     public UIButton[] buttons;
 
     public Transform reachPos;
@@ -39,6 +40,7 @@ public class UI_Manager : MonoBehaviour
         CharacterManager.instance.onCharacterUpdate += UpdateGearUI;
         GameManager.instance.phaseHelper.onEntranceEnd += EnableButtons;
         GameManager.instance.phaseHelper.onPhaseEnd += DisableButtons;
+		GameManager.instance.phaseHelper.onLeaving += OnCharacterLeave;
         DisableButtons();
     }    
 
@@ -47,13 +49,15 @@ public class UI_Manager : MonoBehaviour
         CharacterManager.instance.onCharacterUpdate -= UpdateGearUI;
         GameManager.instance.phaseHelper.onEntranceEnd -= EnableButtons;
         GameManager.instance.phaseHelper.onPhaseEnd -= DisableButtons;
-    }
+		GameManager.instance.phaseHelper.onLeaving -= OnCharacterLeave;
 
-    public void UpdateGearUI(CharacterActor characterUpdated)
+	}
+
+	public void UpdateGearUI(CharacterActor characterUpdated)
     {
         for(int i = 0; i < characterUpdated.data.gearValue.Length; ++i) {
             gearTexts[i].text = characterUpdated.data.gearValue[i].ToString();
-            bars[i].fillAmount = (float)characterUpdated.data.gearValue[i] / (float)characterUpdated.maxGearUpgrade;
+            bars[i].value = (float)characterUpdated.data.gearValue[i] / (float)characterUpdated.maxGearUpgrade;
         }
         ironAmountTxt.text = GameManager.instance.playerHelper.ironAmount.ToString();
     }
@@ -64,6 +68,29 @@ public class UI_Manager : MonoBehaviour
 			bt.SetLock(false);
 		}
     }
+
+	private void OnCharacterLeave()
+	{
+		Character c = GameManager.instance.phaseHelper.currentCharacter;
+		for (int i = 0; i <c.gearExpectation.Length; i++)
+		{
+			Vector2 exp = c.gearExpectation[i];
+			float min = Mathf.Clamp01(exp.x / Character.maxGearValue);
+			float max = Mathf.Clamp01(exp.y / Character.maxGearValue);
+			float v = GameManager.instance.phaseHelper.currentCharacter.gearValue[i]/Character.maxGearValue;
+			float delta = c.GetDistanceToRange(i);
+			if(delta!=0)
+			bars[i].SetComparator(min,max, 2, 10, 1);
+			/*if (max < 1)
+			{
+				bars[i].SetComparator(max, 1, 2, 10, 1);
+			}else if(min > 0)
+			{
+				bars[i].SetComparator(0, min, 2, 10, 1);
+			}*/
+		}
+		
+	}
 
     public void DisableButtons(bool val1 = false)
     {

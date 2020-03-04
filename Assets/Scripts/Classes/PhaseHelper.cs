@@ -84,11 +84,11 @@ public class PhaseHelper
     }
 
     //Phase is over, returns whether there was anybody in the forge
-    public void PhaseEnd()
+    public bool PhaseEnd()
     {
-		// onPhaseEnd?.Invoke(currentCharacter.doesExist);
-		onPhaseEnd?.Invoke(true);
-		CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
+        if (currentCharacter == null) return true;
+        onPhaseEnd?.Invoke(currentCharacter.doesExist);
+        CharacterManager.instance.characterActor.LeaveForge(leaveDuration);
 
         currentCharacter.privateText = false;
         CharacterManager.instance.charactersInQueue.Remove(CharacterManager.instance.charactersInQueue[0]);
@@ -135,5 +135,10 @@ public class PhaseHelper
 	public float GetWaitDuration()
 	{
 		return Random.Range(waitRange.x, waitRange.y);
+	}
+
+	public void StartLeave()
+	{
+		onLeaving?.Invoke();
 	}
 }

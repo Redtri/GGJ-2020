@@ -25,7 +25,7 @@ public class Character
     public List<GearSkin> gears;
     public Sprite skin;
 
-    const float maxGearValue = 8;
+    public const float maxGearValue = 8;
 
     public Character()
 

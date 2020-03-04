@@ -12,6 +12,9 @@ public class MouseSparkle : MonoBehaviour
 
     public static MouseSparkle instance;
 
+    private bool aButtonIsHovered = false;
+    private bool buttonAreLocked = false;
+
     private void Awake()
     {
         if (!instance)
@@ -45,7 +48,17 @@ public class MouseSparkle : MonoBehaviour
             vfx.SendEvent("OnBurst");
 
             //Sound
-            AudioManager.instance.HammerHit.Post(GameManager.instance.gameObject);
+            foreach (var button in FindObjectsOfType<UIButton>())
+            {
+                if (!aButtonIsHovered && button.isHover)
+                    aButtonIsHovered = true;
+                if (!buttonAreLocked && button.lockButton)
+                    buttonAreLocked = true;
+            }
+            if (!aButtonIsHovered || buttonAreLocked)
+                AudioManager.instance.HammerHit.Post(GameManager.instance.gameObject);
+            aButtonIsHovered = false;
+            buttonAreLocked = false;
 
             player.GetComponent<Animator>().SetTrigger("Forge");
             hammerFX.Play(true);

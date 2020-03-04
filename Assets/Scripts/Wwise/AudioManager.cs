@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event MusicWin;
     public AK.Wwise.Event MusicLoose;
     public AK.Wwise.Event StopAll;
+    public AK.Wwise.Event LivingEvent;
 
 
     public static AudioManager instance;
