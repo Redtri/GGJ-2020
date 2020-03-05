@@ -11,10 +11,9 @@ public class UIDialogue : MonoBehaviour
 {
 	public DialogueScriptableObject dialogData;
 	public TextMeshProUGUI nameText;
-	public float bubbleAlpha;
+	//public float bubbleAlpha;
 	public UIPageText pageText;
-
-	private TextMeshProUGUI dialogTxt;
+	public UITransition transition;
 
 	//private TMP_TextJuicer juicer;
 	
@@ -24,42 +23,62 @@ public class UIDialogue : MonoBehaviour
 	private float progress = 0;
 	public float speed = 10;
 
-	private void Awake()
+	private void Start()
 	{
 		//juicer = GetComponent<TMP_TextJuicer>();
-		dialogTxt = GetComponent<TextMeshProUGUI>();
 		//pageText = GetComponent<UIPageText>();
-		DialogAppear(false);
+		DisplayDialog(false);
     }
 
 	private void OnEnable()
 	{
-		GameManager.instance.phaseHelper.onEntranceEnd += OnEntrance;
-		GameManager.instance.phaseHelper.onPhaseEnd += OnLeave;
+		GameManager.instance.phaseHelper.onEntrance += OnEntranceStart;
+		GameManager.instance.phaseHelper.onEntranceEnd += OnEntranceEnd;
+		GameManager.instance.phaseHelper.onLeaving += OnLeave;
+		
+
 	}
 
 	private void OnDisable()
 	{
-		GameManager.instance.phaseHelper.onEntranceEnd -= OnEntrance;
-		GameManager.instance.phaseHelper.onPhaseEnd -= OnLeave;
+		GameManager.instance.phaseHelper.onEntrance -= OnEntranceStart;
+		GameManager.instance.phaseHelper.onEntranceEnd -= OnEntranceEnd;
+		GameManager.instance.phaseHelper.onLeaving -= OnLeave;
 	}
 
-	private void OnEntrance()
+	private void OnEntranceStart()
 	{
-		SetText(GetString());
+		DisplayDialog(true);
+	}
+
+	private void OnEntranceEnd()
+	{
+		
 		Character c = GameManager.instance.phaseHelper.currentCharacter;
 		nameText.text = c.c_Name + "  " + c.c_Surname;
-		//DialogAppear();
+		SetText(GetString());	
 	}
 
-	private void OnLeave(bool anyone)
+	private void OnLeave()
 	{
-		if(anyone)
-			DialogAppear(false);
+		//if(anyone)
+		DisplayDialog(false);
 	}
 
-	private void DialogAppear(bool show = true)
+	private void DisplayDialog(bool show)
 	{
+		if (show)
+		{
+			ResetFields();
+			transition.Show();
+		}else
+		{
+			transition.Hide();
+			ResetFields();
+		}
+	
+		//Appear and disapear Text
+
 		/*Sequence leaveSequence = DOTween.Sequence();
 
 		leaveSequence.Append(dialogTxt.DOFade( (show) ? 1f : 0f, .5f));
@@ -74,24 +93,19 @@ public class UIDialogue : MonoBehaviour
 
 	private void ResetFields()
 	{
-		SetText("");
-		nameText.text = "";
+		SetText(" ");
+		nameText.text = " ";
 	}
 
 
 	public void SetText(string txt) {
 		pageText.LoadText(txt,true);
+		//Debug.Log("Set text : " + txt);
        // DOTween.To(() => dialogTxt.text, x =>  dialogTxt.text = x, txt, 2.0f);
 
       //  dialogTxt.text = "";
 	}    
 
-
-    private void UpdateText(Text text)
-    {
-		//pageText.SetText(text);
-		//dialogTxt.text = text.text;
-    }
 	
 	private string GetString()
 	{

@@ -35,6 +35,7 @@ namespace Sweet.UI
 		{
 			UpdatePages();
 		}
+
 		#endregion
 
 		#region internal
@@ -120,6 +121,16 @@ namespace Sweet.UI
 			{
 				SetText();
 			}
+		}
+
+		public bool AllPageRead()
+		{
+			bool b = true;
+			foreach(bool r in isRead)
+			{
+				if (!r) b = false;
+			}
+			return b;
 		}
 
 		public bool IsTextAnimationEnd()

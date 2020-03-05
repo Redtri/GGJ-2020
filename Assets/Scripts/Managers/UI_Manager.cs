@@ -39,8 +39,9 @@ public class UI_Manager : MonoBehaviour
     {
         CharacterManager.instance.onCharacterUpdate += UpdateGearUI;
         GameManager.instance.phaseHelper.onEntranceEnd += EnableButtons;
-        GameManager.instance.phaseHelper.onPhaseEnd += DisableButtons;
+       // GameManager.instance.phaseHelper.onPhaseEnd += DisableButtons;
 		GameManager.instance.phaseHelper.onLeaving += OnCharacterLeave;
+		GameManager.instance.phaseHelper.onWaitStart += DisableButtons;
         DisableButtons();
     }    
 
@@ -48,8 +49,10 @@ public class UI_Manager : MonoBehaviour
     {
         CharacterManager.instance.onCharacterUpdate -= UpdateGearUI;
         GameManager.instance.phaseHelper.onEntranceEnd -= EnableButtons;
-        GameManager.instance.phaseHelper.onPhaseEnd -= DisableButtons;
+        //GameManager.instance.phaseHelper.onPhaseEnd -= DisableButtons;
 		GameManager.instance.phaseHelper.onLeaving -= OnCharacterLeave;
+		GameManager.instance.phaseHelper.onWaitStart -= DisableButtons;
+
 
 	}
 
@@ -89,10 +92,10 @@ public class UI_Manager : MonoBehaviour
 				bars[i].SetComparator(0, min, 2, 10, 1);
 			}*/
 		}
-		
+		DisableButtons();
 	}
 
-    public void DisableButtons(bool val1 = false)
+    public void DisableButtons()
     {
         foreach (UIButton bt in buttons) {
 			bt.SetLock(true);

@@ -7,16 +7,32 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public class ButtonGear : MonoBehaviour, IPointerClickHandler
+public class ButtonGear : MonoBehaviour
 {
     public Image bar;
     private bool rightClick = false;
     private int index = 0;
+	private UIButton button;
 
-    public void OnPointerClick(PointerEventData eventData)
+	private void Awake()
+	{
+		button = GetComponent<UIButton>();
+	}
+
+	private void OnEnable()
+	{
+		button.OnClick += OnClick;
+	}
+
+	private void OnDisable()
+	{
+		button.OnClick += OnClick;
+	}
+
+	public void OnClick(PointerEventData eventData)
     {
-        if (!GetComponent<UIButton>().lockButton)
-        {
+       // if (!GetComponent<UIButton>().lockButton)
+       // {
             GameObject myEventSystem = GameObject.Find("EventSystem");
             index = transform.GetSiblingIndex();
             if (eventData.button == PointerEventData.InputButton.Right)
@@ -29,7 +45,7 @@ public class ButtonGear : MonoBehaviour, IPointerClickHandler
             }
             CharacterManager.instance.UpdateActorGearValues(index, rightClick);
             myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-        }       
+      //  }       
     }
     public void UpdateBar(float fillAmount)
     {

@@ -21,8 +21,8 @@ public class PhaseHelper
     public BasicEvent onLeavingEnd;
 	public BasicEvent onWaitStart;
 	public BasicEvent onWaitEnd;
-    public delegate void BoolEvent(bool val1);
-    public BoolEvent onPhaseEnd;
+   // public delegate void BoolEvent(bool val1);
+    //public BasicEvent onPhaseEnd;
 
     //Sound
     public int soldiersInc;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems; // 1
 using System;
 using UnityEngine.Events;
-
+using Sweet.UI;
 
 
 
@@ -13,11 +13,11 @@ using UnityEngine.Events;
 public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    public enum ButtonType
-    {
-        Forge,
-        Validate
-    }
+	public enum ButtonType
+	{
+		Forge,
+		Validate
+	}
 
 	public enum GearType
 	{
@@ -26,7 +26,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		Armor
 	}
 
-    private Image img;
+	private Image img;
 	public Sprite idleSprite;
 	public Sprite hoverSprite;
 	public Sprite leftClickSprite;
@@ -35,17 +35,31 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	[SerializeField]
 	public UnityEvent clickEvent;
 
-    public ButtonType buttonType = ButtonType.Forge;
+	public ButtonType buttonType = ButtonType.Forge;
 	public GearType gearType;
-    public int gearLevel;
+	public int gearLevel;
 
 	public bool lockButton = false;
 	public bool isHover = false;
 
+	public UIPageText dialogText;
+
+	public delegate void ClickEvent(PointerEventData evtData);
+	public event ClickEvent OnClick;
+
+	private void Reset()
+	{
+		dialogText = FindObjectOfType<UIPageText>();
+	}
 
 	private void Awake()
 	{
 		img = GetComponent<Image>();
+
+	}
+
+	private void Start()
+	{
 		SetSprite(idleSprite);
 		HighlightGear(false);
 	}
@@ -54,48 +68,71 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	{
 		if (lockButton)
 		{
+
 			SetSprite(lockSprite);
+		}
+		else
+		{
+			if (!dialogText.IsTextAnimationEnd())
+			{
+				SetSprite(lockSprite);
+			}else
+			{
+				if (img.sprite == lockSprite)
+				{
+					if (isHover)
+					{
+						SetSprite(hoverSprite);
+					}else
+					{
+						SetSprite(idleSprite);
+					}		
+				}
+			}
 		}
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		if (lockButton || !dialogText.IsTextAnimationEnd()) return;
+
 		if (eventData.button == PointerEventData.InputButton.Left)
 		{
 			SetSprite(leftClickSprite);
 
-            //Sound
-            switch (buttonType)
-            {
-                case ButtonType.Forge:
-                    if(!lockButton)
-                        AudioManager.instance.AddItem.Post(GameManager.instance.gameObject);
-                    break;
-                case ButtonType.Validate:
-                    if(!lockButton)
-                        AudioManager.instance.Validate.Post(GameManager.instance.gameObject);
-                    break;
-            }
-}
+			//Sound
+			switch (buttonType)
+			{
+				case ButtonType.Forge:
+					//if (!lockButton)
+					AudioManager.instance.AddItem.Post(GameManager.instance.gameObject);
+					break;
+				case ButtonType.Validate:
+					// if(!lockButton)
+					AudioManager.instance.Validate.Post(GameManager.instance.gameObject);
+					break;
+			}
+		}
 		else
 		{
 			SetSprite(rightClickSprite);
-            //Sound
-            switch (buttonType)
-            {
-                case ButtonType.Forge:
-                    if (!lockButton)
-                        AudioManager.instance.RemoveItem.Post(GameManager.instance.gameObject);
-                    break;
-                case ButtonType.Validate:
-                    break;
-            }
-        }
+			//Sound
+			switch (buttonType)
+			{
+				case ButtonType.Forge:
+					// if (!lockButton)
+					AudioManager.instance.RemoveItem.Post(GameManager.instance.gameObject);
+					break;
+				case ButtonType.Validate:
+					break;
+			}
+		}
+		OnClick?.Invoke(eventData);
 
-       
 	}
 	public void OnPointerUp(PointerEventData eventData)
 	{
+		if (lockButton || !dialogText.IsTextAnimationEnd()) return;
 		if (isHover)
 		{
 			SetSprite(hoverSprite);
@@ -106,43 +143,44 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 			SetSprite(idleSprite);
 		}
 	}
-
+	
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		SetSprite(hoverSprite);
 		isHover = true;
 
-        switch (buttonType)
-        {
-            case ButtonType.Forge:
-                MouseSparkle.instance.SetSparkleSize(0.7f);
-                MouseSparkle.instance.SetBurstAmount(50);
+		switch (buttonType)
+		{
+			case ButtonType.Forge:
+				MouseSparkle.instance.SetSparkleSize(0.7f);
+				MouseSparkle.instance.SetBurstAmount(50);
 				HighlightGear(true);
-                break;
-            case ButtonType.Validate:
-                MouseSparkle.instance.SetSparkleSize(1f);
-                MouseSparkle.instance.SetBurstAmount(80);
-                break;
-        }
+				break;
+			case ButtonType.Validate:
+				MouseSparkle.instance.SetSparkleSize(1f);
+				MouseSparkle.instance.SetBurstAmount(80);
+				break;
+		}
 
-    }
+	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		SetSprite(idleSprite);
 		isHover = false;
 
-        MouseSparkle.instance.SetSparkleSize(0.5f);
-        MouseSparkle.instance.SetBurstAmount(30);
+		MouseSparkle.instance.SetSparkleSize(0.5f);
+		MouseSparkle.instance.SetBurstAmount(30);
 		HighlightGear(false);
-    }
+	}
 
 	private void SetSprite(Sprite s)
 	{
-		if (lockButton)
+		if (lockButton || !dialogText.IsTextAnimationEnd())
 		{
 			img.sprite = lockSprite;
-		}else
+		}
+		else
 		{
 			img.sprite = s;
 		}
@@ -161,11 +199,12 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 			if (isHover)
 			{
 				SetSprite(hoverSprite);
-			}else
+			}
+			else
 			{
 				SetSprite(idleSprite);
 			}
-            
+
 		}
 	}
 
@@ -174,5 +213,5 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		CharacterActor charRef = CharacterManager.instance.characterActor;
 
 		charRef.gearParts[(int)gearType].material.SetFloat("_Brightness", (show) ? 3f : 0f);
-	}	
+	}
 }
