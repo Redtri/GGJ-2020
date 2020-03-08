@@ -26,7 +26,7 @@ public class ButtonGear : MonoBehaviour
 
 	private void OnDisable()
 	{
-		button.OnClick += OnClick;
+		button.OnClick -= OnClick;
 	}
 
 	public void OnClick(PointerEventData eventData)

@@ -75,7 +75,7 @@ public class CharacterActor : MonoBehaviour
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
                     ++GameManager.instance.playerHelper.ironAmount;
-                    GameManager.instance.ingots.AddIngot();     
+                    GameManager.instance.ingots.AddIngot();
                     EffectManager.instance.screenShake.Shake(0.01f);
 
                     GearFlash(index);
@@ -83,7 +83,8 @@ public class CharacterActor : MonoBehaviour
             } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
                 ++data.gearValue[index];
                 --GameManager.instance.playerHelper.ironAmount;
-                
+                GameManager.instance.ingots.RemoveIngot();
+
                 GearFlash(index);
 
                 WhiteBalance balance = null;
