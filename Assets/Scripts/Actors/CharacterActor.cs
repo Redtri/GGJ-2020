@@ -25,6 +25,8 @@ public class CharacterActor : MonoBehaviour
 
 
     private Vector3 basePosition;
+    
+    private static readonly int FlashGlow = Shader.PropertyToID("_FlashGlow");
 
     void Start()
     {
@@ -78,15 +80,11 @@ public class CharacterActor : MonoBehaviour
                     GameManager.instance.ingots.AddIngot();
                     EffectManager.instance.screenShake.Shake(0.01f);
 
-                    GearFlash(index);
                 }
             } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
                 ++data.gearValue[index];
                 --GameManager.instance.playerHelper.ironAmount;
                 GameManager.instance.ingots.RemoveIngot();
-
-                GearFlash(index);
-
                 WhiteBalance balance = null;
                 EffectManager.instance.postProcessVolume.profile.TryGet(out balance);
                 DOVirtual.Float(0, 80f, 0.2f, (float value) => UpdateLens(value, balance))
@@ -96,13 +94,18 @@ public class CharacterActor : MonoBehaviour
                 EffectManager.instance.screenShake.Shake(0.05f);
             }
         }
+        
+        GearFlash(index);
         LoadGearSkins();
     }
 
     private void GearFlash(int i)
     {
-        gearParts[i].material.DOFloat(4.0f, "_FlashGlow", 0.3f)
-            .OnComplete(() => gearParts[i].material.SetFloat("_FlashGlow", 0.0f)).SetLoops(2, LoopType.Yoyo).SetEase(flashAnimationCurve);
+        gearParts[i].material
+            .DOFloat(4.0f, "_FlashGlow", 0.3f)
+            .OnComplete(() => gearParts[i].material.SetFloat(FlashGlow, 0.0f))
+            .SetLoops(2, LoopType.Yoyo)
+            .SetEase(flashAnimationCurve);
     }
 
     public void LoadCharacterProfile(Character character)
