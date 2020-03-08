@@ -5,7 +5,7 @@ Shader "Sprites/Outline"
 		[PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
 		_Color ("Tint", Color) = (1,1,1,1)
 		_Brightness("Outline Brightness", Range(0,8)) = 3.2
-		_Width("Outline Width", Range(0,0.05)) = 0.003
+		_Width("Outline Width", Range(0,0.5)) = 0.003
 		_Glowing("Glowing Speed", Range(0.1, 5)) = 0.0
 		_OutlineTex ("Outline Texture", 2D) = "white" {}
 		_SpeedX("Scroll Speed X", Range(-20,20)) = 0.003	
@@ -94,6 +94,8 @@ Shader "Sprites/Outline"
 				fixed4 c = tex2D(_MainTex, IN.texcoord) * _Color;
 				fixed4 t = tex2D(_OutlineTex, float2(IN.texcoord.x + (_Time.x * _SpeedX), IN.texcoord.y + (_Time.x * _SpeedY))) * _Color;
 				c.rgb *= c.a;
+
+				//if (c.a < 0.2f) return fixed4(0, 0, 0, 0);
 				
 				float glow = sin(_Time.g * (float)_Glowing);
 				
