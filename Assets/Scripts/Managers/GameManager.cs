@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         theWinRatio = 0f;
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         onGameEnd?.Invoke();
         Init();
