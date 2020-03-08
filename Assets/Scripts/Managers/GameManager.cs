@@ -339,12 +339,14 @@ public class GameManager : MonoBehaviour
                 Debug.Log("WIN!");
                 //Sound
                 AudioManager.instance.MusicWin.Post(gameObject);
+                AudioManager.instance.SetIntensityCalm();
             }
             else if( winRatio <= winLoseAlive) {
                 gameOver = true;
                 Debug.Log("LOSE");
                 //Sound
                 AudioManager.instance.MusicLoose.Post(gameObject);
+                AudioManager.instance.SetIntensityCalm();
             }
         }
     }
@@ -370,11 +372,13 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(delay);
         AudioManager.instance.DeathEvent.Post(GameManager.instance.gameObject);
+        Debug.Log("Dead sound");
     }
 
     IEnumerator LivingSoundPosting(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
         AudioManager.instance.LivingEvent.Post(GameManager.instance.gameObject);
+        Debug.Log("Living sound");
     }
 }

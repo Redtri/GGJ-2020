@@ -56,7 +56,9 @@ public class MouseSparkle : MonoBehaviour
                     buttonAreLocked = true;
             }
             if (!aButtonIsHovered || buttonAreLocked)
+            {
                 AudioManager.instance.HammerHit.Post(GameManager.instance.gameObject);
+            }
             aButtonIsHovered = false;
             buttonAreLocked = false;
 

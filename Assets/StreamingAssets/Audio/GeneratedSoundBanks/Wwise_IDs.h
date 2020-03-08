@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CATAPULT_HIT = 1548123135U;
         static const AkUniqueID FOLEY_DOOR = 3332999173U;
         static const AkUniqueID FORGE_FIRE_LOOP = 870714546U;
         static const AkUniqueID PLAY_BATTLEFIELDAMBIANCE = 3316639316U;
@@ -38,6 +39,20 @@ namespace AK
 
     namespace STATES
     {
+        namespace BATTLEINTENSITY
+        {
+            static const AkUniqueID GROUP = 2514675686U;
+
+            namespace STATE
+            {
+                static const AkUniqueID CALM = 3753286132U;
+                static const AkUniqueID EXTREME = 2188986819U;
+                static const AkUniqueID HIGH = 3550808449U;
+                static const AkUniqueID LOW = 545371365U;
+                static const AkUniqueID MEDIUM = 2849147824U;
+            } // namespace STATE
+        } // namespace BATTLEINTENSITY
+
         namespace DOORSTATES
         {
             static const AkUniqueID GROUP = 33159115U;
@@ -65,6 +80,9 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID INTENSITY = 2470328564U;
+        static const AkUniqueID MASTERVOLUME = 2918011349U;
+        static const AkUniqueID MUSICVOLUME = 2346531308U;
+        static const AkUniqueID SFXVOLUME = 988953028U;
         static const AkUniqueID SIDECHAIN = 1883033791U;
     } // namespace GAME_PARAMETERS
 
@@ -88,6 +106,7 @@ namespace AK
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
+        static const AkUniqueID SFX_GENERAL = 515334391U;
         static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES

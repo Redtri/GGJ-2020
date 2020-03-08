@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630bd66eb738c6343bb0e3dc5e494528, type: 3}
+  m_Name: DF546ECA-97D0-49E7-89D0-7673A77F4F4F
+  m_EditorClassIdentifier: 
+  objectName: RestartGame
+  id: 2905552884
+  guid: DF546ECA-97D0-49E7-89D0-7673A77F4F4F

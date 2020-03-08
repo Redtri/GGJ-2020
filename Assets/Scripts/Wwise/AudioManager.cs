@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event MusicLoose;
     public AK.Wwise.Event StopAll;
     public AK.Wwise.Event LivingEvent;
+    public AK.Wwise.Event Restart;
+    public AK.Wwise.Event CatapultHit;
 
 
     public static AudioManager instance;
@@ -45,6 +47,7 @@ public class AudioManager : MonoBehaviour
     public void SetIntensityCalm()
     {
         IntensityCalm.Post(gameObject);
+        //Debug.Log("Pamplemousse");
     }
 
     public void SetIntensityLow()
