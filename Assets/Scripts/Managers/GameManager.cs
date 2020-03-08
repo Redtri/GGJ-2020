@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
-
+using Sweet.UI;
 [DefaultExecutionOrder(-2000)]
 public class GameManager : MonoBehaviour
 {
@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
             phaseHelper.currentCharacter.gearValue[1] = Random.Range(0, phaseHelper.currentCharacter.gearValue[1]);
             phaseHelper.currentCharacter.gearValue[2] = Random.Range(0, phaseHelper.currentCharacter.gearValue[2]);
 
-			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetVictoryLog(), rand, UIChatlog.TyopeOfLog.Good);
+			UILog.AddLogMessage(phaseHelper.currentCharacter.GetVictoryLog(), rand, UILog.LogType.Positive);
             StartCoroutine(LivingSoundPosting(rand));
 
             //Debug.Log("Vivant");
@@ -275,7 +275,7 @@ public class GameManager : MonoBehaviour
 		//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
 			//Debug.Log("Mort");
 			//	UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(),Random.Range(3,20));
-			UIChatlog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), rand, UIChatlog.TyopeOfLog.Bad);
+			UILog.AddLogMessage(phaseHelper.currentCharacter.GetDeathLog(), rand, UILog.LogType.Negative);
             StartCoroutine(DeathSoundPosting(rand));
 
 			if (CharacterManager.instance.charactersAlive.Contains(phaseHelper.currentCharacter))
@@ -294,11 +294,11 @@ public class GameManager : MonoBehaviour
         CheckWinLose();
 		if (theWinRatio > 0.5f)
 		{
-			UIChatlog.AddLogMessage((int)(theWinRatio * 100) + "% chances to win the war", rand + 2, UIChatlog.TyopeOfLog.Good);
+			UILog.AddLogMessage((int)(theWinRatio * 100) + "% chances to win the war", rand + 2, UILog.LogType.Positive);
 		}
 		else
 		{
-			UIChatlog.AddLogMessage((int)(theWinRatio * 100) + "% chances to win the war", rand + 2, UIChatlog.TyopeOfLog.Bad);
+			UILog.AddLogMessage((int)(theWinRatio * 100) + "% chances to win the war", rand + 2, UILog.LogType.Negative);
 		}
 	}
 	private float theWinRatio;

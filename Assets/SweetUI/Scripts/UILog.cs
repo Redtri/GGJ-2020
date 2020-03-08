@@ -68,5 +68,33 @@ namespace Sweet.UI
 			UITextBase temp = Instantiate(textAsset, scrollRect.content.transform);
 			temp.SetText(text, animatedLog);
 		}
+
+		private IEnumerator WaitBeforeLog(string txt, float delay,LogType logType)
+		{
+			yield return new WaitForSeconds(delay);
+			AddLog(txt, logType);
+		}
+
+		public static void AddLogMessage(string txt,float delay, LogType logType)
+		{
+			UILog log = FindObjectOfType<UILog>();
+			if (log)
+			{
+				log.StartCoroutine( log.WaitBeforeLog(txt, delay, logType));
+			}else
+			{
+				Debug.LogError("No UIlog");
+			}
+		}
+
+		public void Clear()
+		{
+			UITextBase[] txtBase = GetComponentsInChildren<UITextBase>();
+
+			for(int i =0; i<txtBase.Length; i++)
+			{
+				Destroy(txtBase[i].gameObject);
+			}
+		}
 	}
 }

@@ -21,6 +21,7 @@ public class CharacterActor : MonoBehaviour
     [Header("Dotween")]
     public Transform reachPosition;
     public AnimationCurve sinuoisde;
+    public AnimationCurve flashAnimationCurve;
 
 
     private Vector3 basePosition;
@@ -37,6 +38,8 @@ public class CharacterActor : MonoBehaviour
 
     public void LoadGearSkins()
     {
+        
+        
         for (int i = 0; i < data.gears.Count; ++i) {
             switch (data.gearValue[i]) {
                 case 0:
@@ -75,10 +78,13 @@ public class CharacterActor : MonoBehaviour
                     GameManager.instance.ingots.AddIngot();     
                     EffectManager.instance.screenShake.Shake(0.01f);
 
+                    GearFlash(index);
                 }
             } else if(GameManager.instance.playerHelper.ironAmount > 0 && data.gearValue[index] < maxGearUpgrade) {
                 ++data.gearValue[index];
                 --GameManager.instance.playerHelper.ironAmount;
+                
+                GearFlash(index);
 
                 WhiteBalance balance = null;
                 EffectManager.instance.postProcessVolume.profile.TryGet(out balance);
@@ -92,6 +98,12 @@ public class CharacterActor : MonoBehaviour
         LoadGearSkins();
     }
 
+    public void GearFlash(int i)
+    {
+        gearParts[i].material.DOFloat(4.0f, "_FlashGlow", 0.3f)
+            .OnComplete(() => gearParts[i].material.SetFloat("_FlashGlow", 0.0f)).SetLoops(2, LoopType.Yoyo).SetEase(flashAnimationCurve);
+    }
+
     public void LoadCharacterProfile(Character character)
     {
         data = character;
@@ -99,7 +111,6 @@ public class CharacterActor : MonoBehaviour
 
     public void EnterForge(float entranceDuration)
     {
-
         Sequence myAwesomeSequence = DOTween.Sequence();
         myAwesomeSequence.Append(transform.DOMoveX(reachPosition.position.x, entranceDuration));       
         myAwesomeSequence.Join(transform.DOMoveY(reachPosition.position.y, entranceDuration).SetEase(sinuoisde));
