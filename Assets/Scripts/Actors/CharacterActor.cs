@@ -31,9 +31,9 @@ public class CharacterActor : MonoBehaviour
         basePosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
-    void Update()
+    public void EndGame()
     {
-        
+        LeaveForge(0.1f);
     }
 
     public void LoadGearSkins()

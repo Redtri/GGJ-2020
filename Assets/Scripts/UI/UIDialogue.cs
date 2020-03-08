@@ -35,8 +35,7 @@ public class UIDialogue : MonoBehaviour
 		GameManager.instance.phaseHelper.onEntrance += OnEntranceStart;
 		GameManager.instance.phaseHelper.onEntranceEnd += OnEntranceEnd;
 		GameManager.instance.phaseHelper.onLeaving += OnLeave;
-		
-
+		GameManager.instance.onGameEnd += EndGame;
 	}
 
 	private void OnDisable()
@@ -44,6 +43,12 @@ public class UIDialogue : MonoBehaviour
 		GameManager.instance.phaseHelper.onEntrance -= OnEntranceStart;
 		GameManager.instance.phaseHelper.onEntranceEnd -= OnEntranceEnd;
 		GameManager.instance.phaseHelper.onLeaving -= OnLeave;
+		GameManager.instance.onGameEnd -= EndGame;
+	}
+
+	private void EndGame()
+	{
+		DisplayDialog(false);
 	}
 
 	private void OnEntranceStart()
@@ -61,11 +66,10 @@ public class UIDialogue : MonoBehaviour
 
 	private void OnLeave()
 	{
-		//if(anyone)
 		DisplayDialog(false);
 	}
 
-	private void DisplayDialog(bool show)
+	public void DisplayDialog(bool show)
 	{
 		if (show)
 		{
