@@ -54,16 +54,18 @@ public class CharacterManager : MonoBehaviour
 
 	}
 
-	private void Start()
+	public void Init()
 	{
+		if (endCharArrived)
+			characterActor.LeaveForge(0.1f);
+		endCharArrived = false;
 		percentNewChar = 100f - percentNobody - percentAlive;
 
 		charactersInQueue = new List<Character>();
 		charactersAlive = new List<Character>();
 
 
-		for (int i = 0; i < nbrFirstCharInForge; i++)
-		{
+		for (int i = 0; i < nbrFirstCharInForge; i++) {
 			AddCharacterToQueue(true, i);
 		}
 		endCharacter = SimpleCharaCreation();
@@ -71,7 +73,11 @@ public class CharacterManager : MonoBehaviour
 		onCharacterUpdate?.Invoke(characterActor);
 
 		UI_Manager.instance.UpdateGearUI(characterActor);
+	}
 
+	public void EndGame()
+	{
+		characterActor.EndGame();
 	}
 
 	//Character functions

@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     private bool gameStarted = false;
     private bool gamePaused = false;
 
+    public event BasicEvent onGameEnd;
+
     private void Awake()
     {
         if (!instance) {
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UI_Manager.instance.PauseScreen(false);
-        Reset();
+        Init();
     }
 
     private void Update()
@@ -54,9 +56,22 @@ public class GameManager : MonoBehaviour
         HandlingGameState();
     }
 
-    private void Reset()
+    private void Init()
     {
+        CharacterManager.instance.Init();
         screenShakeEnabled = true;
+        nbDead = 0;
+        winning = false;
+        phaseCount = 0;
+        gameStarted = false;
+        gameOver = false;
+        theWinRatio = 0f;
+    }
+
+    private void EndGame()
+    {
+        onGameEnd?.Invoke();
+        Init();
     }
 
     private void TriggerEvents(bool waitPhase)
@@ -85,7 +100,7 @@ public class GameManager : MonoBehaviour
                 //If the game started, we only check if the ending character has arrived
                 if(gameStarted){
                     if(CharacterManager.instance.endCharArrived)
-                        UIMainScreen.instance.Fade(true);//.AppendCallback(() => StartPhase()); //TODO : Here, call the reset function
+                        UIMainScreen.instance.Fade(true).AppendCallback(() => EndGame()); //TODO : Here, call the reset function
                     else{
                         if(Input.GetKeyDown(KeyCode.Escape)){
                             Pause();
@@ -341,13 +356,13 @@ public class GameManager : MonoBehaviour
 
     public void SetMusicVolume(float value)
     {
-        volumeMusic = value;
+        volumeMusic = value * 100f;
         //TODO : Set Wwise volume
     }
 
     public void SetSFXVolume(float value)
     {
-        volumeSFX = value;
+        volumeSFX = value * 100f;
         //TODO : Set Wwise volume
     }
 

@@ -20,6 +20,10 @@ Shader "Sprites/Outline"
 		_StencilWriteMask ("Stencil Write Mask", Float) = 255
 		_StencilReadMask ("Stencil Read Mask", Float) = 255
 		_ColorMask ("Color Mask", Float) = 15
+		
+		_FlashGlow ("Flash Intensity", Float) = 1
+		_FlashSize ("Flash Size", Range(0, 3)) = 1
+		_FlashColor("Flash Color", Color) = (1,1,1,1)
 	}
 
 	SubShader
@@ -88,7 +92,17 @@ Shader "Sprites/Outline"
 			float _Width;
 			float _SpeedX, _SpeedY;
 			float _Glowing;
-
+			
+			float _FlashGlow;
+			float _FlashSize;
+			float4 _FlashColor;
+			
+			void Unity_Ellipse_float(float2 UV, float Width, float Height, out float4 Out)
+            {
+                 float d = length((UV * 2 - 1) / float2(Width, Height));
+                 Out = saturate((1 - d) / fwidth(d));
+            }
+			
 			fixed4 frag(v2f IN) : SV_Target
 			{				
 				fixed4 c = tex2D(_MainTex, IN.texcoord) * _Color;
@@ -121,10 +135,25 @@ Shader "Sprites/Outline"
 				c = outlines;
 				#else
 				// show outlines +sprite
+				
+				 float4 outSphereColor;                
+                float2 coordTest = IN.texcoord;
+                coordTest.x += sin(coordTest.x / 3);
+                coordTest.y += cos(coordTest.y / 3);
+                
+                Unity_Ellipse_float(coordTest, _FlashSize,  _FlashSize, outSphereColor);
+                
+                outSphereColor *= _FlashColor;
+                
+               	 c.rgb = c.rgb + c.rgb*outSphereColor * _FlashGlow;	
+				
+				
 				c.rgb = c.rgb + outlines;
 				#endif
 				
-				return  c;
+                float highlight_value = clamp( cos(_Time.y * 2 - 0.1f), 0, 1);      
+                		
+				return c;
 			}
 		ENDCG
 		}
