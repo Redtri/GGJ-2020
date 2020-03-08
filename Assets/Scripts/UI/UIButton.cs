@@ -163,7 +163,6 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 				MouseSparkle.instance.SetBurstAmount(80);
 				break;
 		}
-
 	}
 
 	private void SetCursor(bool isHover)
