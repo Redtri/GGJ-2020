@@ -26317,102 +26317,20 @@ MonoBehaviour:
       maxRandomOffset: {x: 0, y: 0, z: 0}
       basePosition: {x: 0, y: 0, z: 0}
   pauseTransition: 1
---- !u!82 &1051172731
-AudioSource:
+--- !u!114 &1051172731
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051172726}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02138c08c41471e418cb381f82aadd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorArrow: {fileID: 2800000, guid: f00886e8260ded34b850fcca18188ede, type: 3}
+  cursorHover: {fileID: 2800000, guid: 511eb8c8c401c0849880cedd760d50d9, type: 3}
 --- !u!1 &1053954394
 GameObject:
   m_ObjectHideFlags: 0
@@ -26590,6 +26508,7 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -68153,6 +68072,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 425440834126380243, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025828794863400743, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -68181,12 +68105,12 @@ PrefabInstance:
     - target: {fileID: 2766105941652831207, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.22
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2766105941652831207, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 2766105941652831207, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
@@ -68212,6 +68136,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133059022068059858, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133059022068059858, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133059022068059858, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5133059023367116545, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
@@ -68303,9 +68242,34 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5343337851199408727, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343337851199408727, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343337851199408727, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343337851199408727, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
       propertyPath: sinuoisde.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: flashAnimationCurve.m_Curve.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
@@ -68362,6 +68326,26 @@ PrefabInstance:
         type: 3}
       propertyPath: sinuoisde.m_Curve.Array.data[1].tangentMode
       value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: flashAnimationCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: flashAnimationCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: flashAnimationCurve.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582474984642919288, guid: 740a55039304e2e42b36d39cc7303b00,
+        type: 3}
+      propertyPath: flashAnimationCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 740a55039304e2e42b36d39cc7303b00, type: 3}
@@ -68712,6 +68696,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 93efaa09728465b4598c83f3e5e8d13a,
         type: 3}
+    - target: {fileID: 1950810130172498494, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: cursorArrow
+      value: 
+      objectReference: {fileID: 2800000, guid: f00886e8260ded34b850fcca18188ede, type: 3}
+    - target: {fileID: 1950810130172498494, guid: c2fa9092032695344802f24b52557b14,
+        type: 3}
+      propertyPath: cursorHover
+      value: 
+      objectReference: {fileID: 2800000, guid: fd7d2bc8d01411e4387e2a2de59fa6a8, type: 3}
     - target: {fileID: 7516592737835997223, guid: c2fa9092032695344802f24b52557b14,
         type: 3}
       propertyPath: m_AnchoredPosition.y

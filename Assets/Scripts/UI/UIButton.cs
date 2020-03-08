@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems; // 1
 using System;
+using System.Security.Permissions;
 using UnityEngine.Events;
 using Sweet.UI;
 
@@ -55,7 +56,6 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	private void Awake()
 	{
 		img = GetComponent<Image>();
-
 	}
 
 	private void Start()
@@ -148,6 +148,8 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	{
 		SetSprite(hoverSprite);
 		isHover = true;
+		SetCursor(isHover);
+		
 
 		switch (buttonType)
 		{
@@ -164,10 +166,17 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
 	}
 
+	private void SetCursor(bool isHover)
+	{
+		CursorManager.instance.SetHoverCursor(isHover);
+	}
+
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		SetSprite(idleSprite);
 		isHover = false;
+
+		SetCursor(isHover);
 
 		MouseSparkle.instance.SetSparkleSize(0.5f);
 		MouseSparkle.instance.SetBurstAmount(30);
