@@ -106,7 +106,6 @@ public class CharacterActor : MonoBehaviour
 
         foreach(var sprite in GetComponentsInChildren<SpriteRenderer>())
         {
-            Debug.Break();
             sprite.material.color = new Color(0, 0, 0, 0.0f);
             sprite.material.DOColor(new Color(1, 1, 1, 1.0f), 1.0f);
             //sprite.DOColor(new Color(1, 1, 1, 1.0f), 1.0f);
