@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
+		Time.timeScale = 1;
         CharacterManager.instance.Init();
         screenShakeEnabled = true;
         nbDead = 0;
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
         theWinRatio = 0f;
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         onGameEnd?.Invoke();
         Init();
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
                 //If the game started, we only check if the ending character has arrived
                 if(gameStarted){
                     if(CharacterManager.instance.endCharArrived)
-                        UIMainScreen.instance.Fade(true).AppendCallback(() => EndGame()); //TODO : Here, call the reset function
+                        Menu(); //TODO : Here, call the reset function
                     else{
                         if(Input.GetKeyDown(KeyCode.Escape)){
                             Pause();
@@ -122,6 +123,18 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+	public void Menu()
+	{
+		Time.timeScale = 1;
+		UIMainScreen.instance.Fade(true).AppendCallback(() => EndGame());
+		OverridePause(true);
+	}
+
+	public void Quit()
+	{
+		Application.Quit();
+	}
 
     //Function called by code
     public void Pause()

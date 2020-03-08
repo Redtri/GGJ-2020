@@ -72,7 +72,7 @@ public class CharacterActor : MonoBehaviour
 
     public void UpdateGearValue(int index, bool minus = false)
     {
-        if (data.gearValue.Length > 0 && index < data.gearValue.Length) {
+		if (data.gearValue.Length > 0 && index < data.gearValue.Length) {
             if (minus) {
                 if(data.gearValue[index] > 0) {
                     --data.gearValue[index];
