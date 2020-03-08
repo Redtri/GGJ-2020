@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
                 //If the game started, we only check if the ending character has arrived
                 if(gameStarted){
                     if(CharacterManager.instance.endCharArrived)
-                        UIMainScreen.instance.Fade(true).AppendCallback(() => EndGame()); //TODO : Here, call the reset function
+                        Menu(); //TODO : Here, call the reset function
                     else{
                         if(Input.GetKeyDown(KeyCode.Escape)){
                             Pause();
@@ -123,6 +123,13 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+	public void Menu()
+	{
+		Time.timeScale = 1;
+		UIMainScreen.instance.Fade(true).AppendCallback(() => EndGame());
+		OverridePause(true);
+	}
 
 	public void Quit()
 	{
