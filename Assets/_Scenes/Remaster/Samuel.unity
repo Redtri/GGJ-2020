@@ -26963,7 +26963,7 @@ PrefabInstance:
     - target: {fileID: 4959649648085037765, guid: 0d6c69975c3298d41923ed3153a29c67,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7467983259183060341, guid: 0d6c69975c3298d41923ed3153a29c67,
         type: 3}
@@ -68153,12 +68153,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 425440834126380243, guid: 740a55039304e2e42b36d39cc7303b00,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e29b7460a3114fb48af33c0cb20d3537,
-        type: 3}
     - target: {fileID: 2025828794863400743, guid: 740a55039304e2e42b36d39cc7303b00,
         type: 3}
       propertyPath: m_LocalPosition.x

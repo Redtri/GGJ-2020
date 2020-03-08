@@ -124,7 +124,7 @@ Shader "Sprites/Outline"
 				c.rgb = c.rgb + outlines;
 				#endif
 				
-				return  c ;
+				return  c;
 			}
 		ENDCG
 		}
