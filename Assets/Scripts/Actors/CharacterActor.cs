@@ -98,7 +98,7 @@ public class CharacterActor : MonoBehaviour
         LoadGearSkins();
     }
 
-    public void GearFlash(int i)
+    private void GearFlash(int i)
     {
         gearParts[i].material.DOFloat(4.0f, "_FlashGlow", 0.3f)
             .OnComplete(() => gearParts[i].material.SetFloat("_FlashGlow", 0.0f)).SetLoops(2, LoopType.Yoyo).SetEase(flashAnimationCurve);
