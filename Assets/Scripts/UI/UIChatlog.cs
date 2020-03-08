@@ -6,10 +6,10 @@ using System.Linq;
 
 
 
-public class UIChatlog : MonoBehaviour
+public class UIChatLog : MonoBehaviour
 {
 
-	private Text[] texts;
+	/*private Text[] texts;
 	private int count = 0;
 
 	public float minTimeNeutralLog = 2;
@@ -98,8 +98,7 @@ public class UIChatlog : MonoBehaviour
         }
     }
 
-	public static void AddLogMessage(string message, float delay, TyopeOfLog typeOfLog)
-	{
-		FindObjectOfType<UIChatlog>().SendMessage(message, delay,typeOfLog);
-	}
+
+
+	*/
 }
