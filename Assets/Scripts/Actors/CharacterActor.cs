@@ -106,8 +106,9 @@ public class CharacterActor : MonoBehaviour
 
         foreach(var sprite in GetComponentsInChildren<SpriteRenderer>())
         {
-            sprite.color = new Color(0, 0, 0, 0.0f);
-            sprite.DOColor(new Color(1, 1, 1, 1.0f), 1.0f);
+            sprite.material.color = new Color(0, 0, 0, 0.0f);
+            sprite.material.DOColor(new Color(1, 1, 1, 1.0f), 1.0f);
+            //sprite.DOColor(new Color(1, 1, 1, 1.0f), 1.0f);
         }
 
         //GetComponent<Animator>().SetTrigger("entrance");
@@ -121,8 +122,8 @@ public class CharacterActor : MonoBehaviour
         myAwesomeSequence.Join(transform.DOMoveY(basePosition.y, leaveDuration).SetEase(sinuoisde));
 
         foreach (var sprite in GetComponentsInChildren<SpriteRenderer>())
-        {
-            sprite.DOColor(new Color(0, 0, 0, 0.0f), 1.0f);
+        { 
+            sprite.material.DOColor(new Color(0, 0, 0, 0.0f), 1.0f);
         }
 
         //GetComponent<Animator>().SetTrigger("leaving");
