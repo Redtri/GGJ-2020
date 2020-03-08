@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
+		Time.timeScale = 1;
         CharacterManager.instance.Init();
         screenShakeEnabled = true;
         nbDead = 0;

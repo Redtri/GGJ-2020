@@ -146,8 +146,7 @@ Shader "Sprites/Outline"
                 outSphereColor *= _FlashColor;
                 
                	 c.rgb = c.rgb + c.rgb*outSphereColor * _FlashGlow;	
-				
-				
+								
 				c.rgb = c.rgb + outlines;
 				#endif
 				
