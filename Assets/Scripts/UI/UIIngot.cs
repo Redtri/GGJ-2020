@@ -7,6 +7,7 @@ using DG.Tweening;
 public class UIIngot : MonoBehaviour
 {
     public Image fixedIngot;
+    public Vector3 baseScale;
     public GameObject ingotSystemPrefab;
     public Transform where;
 
@@ -19,5 +20,10 @@ public class UIIngot : MonoBehaviour
             fixedIngot.DOFade(0f, tmp.main.startLifetime.constant/2).SetLoops(2, LoopType.Yoyo);
         }
         tmp.GetComponent<ParticleSystemRenderer>().material.DOFloat(0f, "_Heat", tmp.main.startLifetime.constant);
+    }
+
+    public void RemoveIngot()
+    {
+        fixedIngot.transform.DOShakeScale(0.5f).OnComplete(() => fixedIngot.transform.DOScale(baseScale, 0.5f));
     }
 }
