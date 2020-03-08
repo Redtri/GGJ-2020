@@ -26217,8 +26217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winPercentAlive: 0.7
-  winLoseAlive: 0.3
-  nbCharCheck: 10
+  winLoseAlive: 0.9
+  nbCharCheck: 2
   phaseHelper:
     entranceDuration: 1
     leaveDuration: 1

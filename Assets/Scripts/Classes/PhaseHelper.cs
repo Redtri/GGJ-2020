@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void BasicEvent();
 
 [System.Serializable]
 public class PhaseHelper
@@ -14,7 +15,6 @@ public class PhaseHelper
 	public Character currentCharacter;
     public Character previousCharacter;
 
-    public delegate void BasicEvent();
     public BasicEvent onEntranceEnd;
     public BasicEvent onEntrance;
     public BasicEvent onLeaving;
