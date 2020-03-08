@@ -108,6 +108,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+	public void Quit()
+	{
+		Application.Quit();
+	}
+
     //Function called by code
     public void Pause()
     {
