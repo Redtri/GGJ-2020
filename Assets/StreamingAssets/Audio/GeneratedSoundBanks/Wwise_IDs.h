@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_FORGE = 3017358643U;
+        static const AkUniqueID CATAPULT_HIT = 1548123135U;
         static const AkUniqueID FOLEY_DOOR = 3332999173U;
         static const AkUniqueID PLAY_BATTLEFIELDAMBIANCE = 3316639316U;
         static const AkUniqueID PLAY_MUSIC_LOOSE = 3640900608U;
@@ -26,7 +27,6 @@ namespace AK
         static const AkUniqueID SET_INTENSITYMEDIUM = 716215376U;
         static const AkUniqueID SET_LOOSING = 1592413729U;
         static const AkUniqueID SET_WINNING = 1205857978U;
-        static const AkUniqueID START_CATAPULT_HIT = 1807806072U;
         static const AkUniqueID STOP_AMBIANCE = 2839405212U;
         static const AkUniqueID UI_ADDITEM = 2921734634U;
         static const AkUniqueID UI_DEATHEVENT = 802821452U;

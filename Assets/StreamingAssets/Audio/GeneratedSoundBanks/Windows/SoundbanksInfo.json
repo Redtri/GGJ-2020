@@ -467,6 +467,13 @@
     "Path": "Battlefield_SNB.bnk",
     "IncludedEvents": [
      {
+      "Id": "1548123135",
+      "Name": "Catapult_Hit",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Catapult_Hit",
+      "GUID": "{624FC905-9759-4AC5-B95D-37B23CFBE26D}",
+      "DurationType": "Infinite"
+     },
+     {
       "Id": "3316639316",
       "Name": "Play_BattlefieldAmbiance",
       "ObjectPath": "\\Events\\SD Event\\Battlefield\\Play_BattlefieldAmbiance",
@@ -542,13 +549,6 @@
       "DurationType": "OneShot",
       "DurationMin": "0.000000",
       "DurationMax": "0.000000"
-     },
-     {
-      "Id": "1807806072",
-      "Name": "Start_Catapult_Hit",
-      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Start_Catapult_Hit",
-      "GUID": "{624FC905-9759-4AC5-B95D-37B23CFBE26D}",
-      "DurationType": "Infinite"
      }
     ],
     "IncludedMemoryFiles": [
