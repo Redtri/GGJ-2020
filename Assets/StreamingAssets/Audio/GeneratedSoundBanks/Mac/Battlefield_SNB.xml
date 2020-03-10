@@ -13,7 +13,6 @@
 			<ShortName>Battlefield_SNB</ShortName>
 			<Path>Battlefield_SNB.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1548123135" Name="Catapult_Hit" ObjectPath="\Events\SD Event\Battlefield\Catapult_Hit" GUID="{624FC905-9759-4AC5-B95D-37B23CFBE26D}" DurationType="OneShot" DurationMin="2.671198" DurationMax="2.671198"/>
 				<Event Id="3316639316" Name="Play_BattlefieldAmbiance" ObjectPath="\Events\SD Event\Battlefield\Play_BattlefieldAmbiance" GUID="{5F243640-E0AB-4CA3-82CC-A9F03A75395D}" DurationType="Infinite"/>
 				<Event Id="4236667796" Name="Set_IntensityCalm" ObjectPath="\Events\SD Event\Battlefield\Set_IntensityCalm" GUID="{325E9F86-6444-4E95-A86F-13B4F2443A5E}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1912983523" Name="Set_IntensityExtreme" ObjectPath="\Events\SD Event\Battlefield\Set_IntensityExtreme" GUID="{4940D3FB-5612-48D8-B9E0-438DB7EDC2C3}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -22,6 +21,7 @@
 				<Event Id="716215376" Name="Set_IntensityMedium" ObjectPath="\Events\SD Event\Battlefield\Set_IntensityMedium" GUID="{27103B4C-70F2-4BF7-AAFE-E54323FA0726}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1592413729" Name="Set_Loosing" ObjectPath="\Events\SD Event\Battlefield\Set_Loosing" GUID="{1092AA1B-5DEE-4167-9ECA-E34220CBC6CE}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1205857978" Name="Set_Winning" ObjectPath="\Events\SD Event\Battlefield\Set_Winning" GUID="{8B38B14C-847B-4043-8FA6-742A844E8BFC}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1807806072" Name="Start_Catapult_Hit" ObjectPath="\Events\SD Event\Battlefield\Start_Catapult_Hit" GUID="{624FC905-9759-4AC5-B95D-37B23CFBE26D}" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="22759682" Language="SFX">
@@ -87,6 +87,10 @@
 				<File Id="109108939" Language="SFX">
 					<ShortName>VO_HumanLaugh_29.wav</ShortName>
 					<Path>SFX\VO_HumanLaugh_29_10C4C929.wem</Path>
+				</File>
+				<File Id="110642077" Language="SFX">
+					<ShortName>Foley_CatapultHit_03.wav</ShortName>
+					<Path>SFX\Foley_CatapultHit_03_D79FB2B7.wem</Path>
 				</File>
 				<File Id="129408918" Language="SFX">
 					<ShortName>Foley_ArrowPassBy_08.wav</ShortName>
@@ -195,6 +199,10 @@
 				<File Id="265082081" Language="SFX">
 					<ShortName>VO_HumanShout_16.wav</ShortName>
 					<Path>SFX\VO_HumanShout_16_10C4C929.wem</Path>
+				</File>
+				<File Id="266606600" Language="SFX">
+					<ShortName>Foley_CatapultHit_02.wav</ShortName>
+					<Path>SFX\Foley_CatapultHit_02_D79FB2B7.wem</Path>
 				</File>
 				<File Id="275013822" Language="SFX">
 					<ShortName>Foley_ArrowHit_06.wav</ShortName>
@@ -735,6 +743,10 @@
 				<File Id="914136314" Language="SFX">
 					<ShortName>Foley_HorsePassBy_08.wav</ShortName>
 					<Path>SFX\Foley_HorsePassBy_08_10C4C929.wem</Path>
+				</File>
+				<File Id="919519955" Language="SFX">
+					<ShortName>Foley_CatapultHit_04.wav</ShortName>
+					<Path>SFX\Foley_CatapultHit_04_D79FB2B7.wem</Path>
 				</File>
 				<File Id="922804477" Language="SFX">
 					<ShortName>Foley_ArmorHit_01.wav</ShortName>

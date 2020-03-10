@@ -467,15 +467,6 @@
     "Path": "Battlefield_SNB.bnk",
     "IncludedEvents": [
      {
-      "Id": "1548123135",
-      "Name": "Catapult_Hit",
-      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Catapult_Hit",
-      "GUID": "{624FC905-9759-4AC5-B95D-37B23CFBE26D}",
-      "DurationType": "OneShot",
-      "DurationMin": "2.671198",
-      "DurationMax": "2.671198"
-     },
-     {
       "Id": "3316639316",
       "Name": "Play_BattlefieldAmbiance",
       "ObjectPath": "\\Events\\SD Event\\Battlefield\\Play_BattlefieldAmbiance",
@@ -551,6 +542,13 @@
       "DurationType": "OneShot",
       "DurationMin": "0.000000",
       "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1807806072",
+      "Name": "Start_Catapult_Hit",
+      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Start_Catapult_Hit",
+      "GUID": "{624FC905-9759-4AC5-B95D-37B23CFBE26D}",
+      "DurationType": "Infinite"
      }
     ],
     "IncludedMemoryFiles": [
@@ -649,6 +647,12 @@
       "Language": "SFX",
       "ShortName": "VO_HumanLaugh_29.wav",
       "Path": "SFX\\VO_HumanLaugh_29_10C4C929.wem"
+     },
+     {
+      "Id": "110642077",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultHit_03.wav",
+      "Path": "SFX\\Foley_CatapultHit_03_D79FB2B7.wem"
      },
      {
       "Id": "129408918",
@@ -811,6 +815,12 @@
       "Language": "SFX",
       "ShortName": "VO_HumanShout_16.wav",
       "Path": "SFX\\VO_HumanShout_16_10C4C929.wem"
+     },
+     {
+      "Id": "266606600",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultHit_02.wav",
+      "Path": "SFX\\Foley_CatapultHit_02_D79FB2B7.wem"
      },
      {
       "Id": "275013822",
@@ -1621,6 +1631,12 @@
       "Language": "SFX",
       "ShortName": "Foley_HorsePassBy_08.wav",
       "Path": "SFX\\Foley_HorsePassBy_08_10C4C929.wem"
+     },
+     {
+      "Id": "919519955",
+      "Language": "SFX",
+      "ShortName": "Foley_CatapultHit_04.wav",
+      "Path": "SFX\\Foley_CatapultHit_04_D79FB2B7.wem"
      },
      {
       "Id": "922804477",

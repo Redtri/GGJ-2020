@@ -5,6 +5,11 @@
   "BasePlatform": "Windows",
   "Plugins": {
    "Plugin": {
+    "Name": "Wwise Parametric EQ",
+    "ID": "6881283",
+    "DLL": "AkParametricEQ"
+   },
+   "Plugin": {
     "Name": "Wwise Compressor",
     "ID": "7077891",
     "DLL": "AkCompressor"

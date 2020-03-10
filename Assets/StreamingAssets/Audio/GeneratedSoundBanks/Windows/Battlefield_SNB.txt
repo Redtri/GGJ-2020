@@ -1,8 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
 	716215376	Set_IntensityMedium			\SD Event\Battlefield\Set_IntensityMedium	
 	1205857978	Set_Winning			\SD Event\Battlefield\Set_Winning	
-	1548123135	Catapult_Hit			\SD Event\Battlefield\Catapult_Hit	
 	1592413729	Set_Loosing			\SD Event\Battlefield\Set_Loosing	
+	1807806072	Start_Catapult_Hit			\SD Event\Battlefield\Start_Catapult_Hit	
 	1912983523	Set_IntensityExtreme			\SD Event\Battlefield\Set_IntensityExtreme	
 	3316639316	Play_BattlefieldAmbiance			\SD Event\Battlefield\Play_BattlefieldAmbiance	
 	3635806469	Set_IntensityLow			\SD Event\Battlefield\Set_IntensityLow	
@@ -59,12 +59,15 @@ Custom State	ID	Name	State Group	Owner		Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2470328564	Intensity			\SD RTPC\Intensity	
 
+Effect plug-ins	ID	Name	Type				Notes
+	34934153	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	22759682	VO_HumanFight_14	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanFight_14_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanFight\Foley_HumanFight_02\VO_HumanFight_14		137024
 	28968322	Foley_CatapultShoot_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_CatapultShoot_04_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\CatapultShoot\Foley_CatapultShoot_02\Foley_CatapultShoot_04		222096
 	33143554	VO_HumanLaugh_31	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_31_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_31		271836
 	34090732	VO_HumanFight_17	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanFight_17_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanFight\Foley_HumanFight_02\VO_HumanFight_17		65684
-	37226127	Foley_CatapultHit_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_CatapultHit_01_D79FB2B7.wem		\Interactive Music Hierarchy\SD\Test_Catapult\Foley_CatapultHit_01		511336
+	37226127	Foley_CatapultHit_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_CatapultHit_01_D79FB2B7.wem		\Interactive Music Hierarchy\SD\CatapultHit\Foley_CatapultHit_01\Foley_CatapultHit_01		511336
 	47231151	VO_HumanShout_14	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanShout_14_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanShoutVictorious\Foley_HumanShout_02\VO_HumanShout_14		1067084
 	49820022	VO_HumanPain_08	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanPain_08_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanPain\VO_HumanPain_02\VO_HumanPain_08		82440
 	50079581	VO_HumanFight_08	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanFight_08_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanFight\Foley_HumanFight_02\VO_HumanFight_08		121024
@@ -76,6 +79,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	81026808	VO_HumanLaugh_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_04_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_04		692036
 	96978677	VO_HumanLaugh_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_01_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_01		328592
 	109108939	VO_HumanLaugh_29	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_29_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_29		192696
+	110642077	Foley_CatapultHit_03	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_CatapultHit_03_D79FB2B7.wem		\Interactive Music Hierarchy\SD\CatapultHit\Foley_CatapultHit_03\Foley_CatapultHit_03		523192
 	129408918	Foley_ArrowPassBy_08	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_ArrowPassBy_08_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\ArrowPassBy\Foley_ArrowPassBy_02\Foley_ArrowPassBy_08		153828
 	131545334	VO_HumanLaugh_09	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_09_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_09		349720
 	143952928	VO_HumanLaugh_32	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_32_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_32		290944
@@ -103,6 +107,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	248179840	Foley_ArrowShoot_05	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_ArrowShoot_05_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\ArrowShoot\Foley_ArrowShoot_02\Foley_ArrowShoot_05		71184
 	262992618	VO_HumanLaugh_43	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_43_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_43		341724
 	265082081	VO_HumanShout_16	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanShout_16_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanShoutDefeat\Foley_HumanShout_02\VO_HumanShout_16		2068328
+	266606600	Foley_CatapultHit_02	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_CatapultHit_02_D79FB2B7.wem		\Interactive Music Hierarchy\SD\CatapultHit\Foley_CatapultHit_02\Foley_CatapultHit_02		445196
 	275013822	Foley_ArrowHit_06	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_ArrowHit_06_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\ArrowHit\Foley_ArrowHit_02\Foley_ArrowHit_06		295564
 	276178405	Foley_SwordHit_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_SwordHit_04_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\SwordHit\Foley_SwordHit_02\Foley_SwordHit_04		493048
 	284067683	VO_HumanLaugh_30	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_30_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_30		248200
@@ -238,6 +243,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	907625347	Foley_ArmorMovement_05	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_ArmorMovement_05_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\ArmorMovement\Foley_ArmorMovement_02\Foley_ArmorMovement_05		266268
 	909392212	VO_HumanDeath_05	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanDeath_05_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanDeath\Foley_HumanDeath_02\VO_HumanDeath_05		183680
 	914136314	Foley_HorsePassBy_08	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_HorsePassBy_08_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HorsePassBy\Foley_HorsePassBy_02\Foley_HorsePassBy_08		734328
+	919519955	Foley_CatapultHit_04	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_CatapultHit_04_D79FB2B7.wem		\Interactive Music Hierarchy\SD\CatapultHit\Foley_CatapultHit_04\Foley_CatapultHit_04		575628
 	922804477	Foley_ArmorHit_01	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\Foley_ArmorHit_01_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\ArmorHit\Foley_ArmorHit_02\Foley_ArmorHit_01		390168
 	934279406	VO_HumanPain_06	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanPain_06_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanPain\VO_HumanPain_02\VO_HumanPain_06		147384
 	936038537	VO_HumanLaugh_17	D:\Documents\- ENJMIN\- PROJETS\Global Game Jam 2020\Repo_Wwise\trunk\GGJ_WwiseProject\.cache\Windows\SFX\VO_HumanLaugh_17_10C4C929.wem		\Actor-Mixer Hierarchy\Ambiances\Battlefield\Amb_Battlefield\Ambiance_Extreme\HumanLaugh\VO_HumanLaugh_02\VO_HumanLaugh_17		421448

@@ -36,6 +36,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3017358643	Amb_Forge			\Default Work Unit\Master Audio Bus\Sound Design\Ambiance\Amb_Forge	
 	3665832216	Amb_Battlefield			\Default Work Unit\Master Audio Bus\Sound Design\Ambiance\Amb_Battlefield	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3902753649	Amb_CatapultHit			\Default Work Unit\Master Audio Bus\Sound Design\Ambiance\Amb_CatapultHit	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 	4035004657	Foleys			\Default Work Unit\Master Audio Bus\Sound Design\Foleys	
 	4134381996	Sound Design			\Default Work Unit\Master Audio Bus\Sound Design	
