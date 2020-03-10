@@ -27,7 +27,8 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event StopAll;
     public AK.Wwise.Event LivingEvent;
     public AK.Wwise.Event Restart;
-    public AK.Wwise.Event CatapultHit;
+    public AK.Wwise.Event StartCatapultHit;
+    public AK.Wwise.Event StopCatapultHit;
 
 
     public static AudioManager instance;

@@ -24,23 +24,8 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 97146d908d069441a767de55422c3069
     GuidInternal: 
-    m_lastTime: -8586179227915376922
+    m_lastTime: -8586178292598995818
     List:
-    - name: Battlefield_Filtered
-      guid: c653fa2b34a3e84cb3d200047bba5e9b
-      id: 1550058001
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: SFX_GENERAL
-        ObjectType: 2
-      - ElementName: Ambiance Battlefield
-        ObjectType: 2
-      - ElementName: Battlefield_Filtered
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\SFX_GENERAL\Ambiance Battlefield\Battlefield_Filtered
     - name: RVB_Battlefield
       guid: 6e6a932451353242a95f3a08cb381711
       id: 1775981102
@@ -49,11 +34,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: SFX_GENERAL
+      - ElementName: Sound Design
+        ObjectType: 2
+      - ElementName: Aux
         ObjectType: 2
       - ElementName: RVB_Battlefield
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\SFX_GENERAL\RVB_Battlefield
+      Path: Default Work Unit\Master Audio Bus\Sound Design\Aux\RVB_Battlefield
     - name: RVB_Forge
       guid: 4f44015fd2472e4ab9e3838631482a63
       id: 3907231393
@@ -62,11 +49,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: SFX_GENERAL
+      - ElementName: Sound Design
+        ObjectType: 2
+      - ElementName: Aux
         ObjectType: 2
       - ElementName: RVB_Forge
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\SFX_GENERAL\RVB_Forge
+      Path: Default Work Unit\Master Audio Bus\Sound Design\Aux\RVB_Forge
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -78,7 +67,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d99ddfa74f0ca64e974551f6fc467fff
     GuidInternal: 
-    m_lastTime: -8586179232251001297
+    m_lastTime: -8586177614012672622
     List:
     - name: Battlefield_SNB
       guid: 2a7fffb18f8bab468d5d8972d113e9de
@@ -118,7 +107,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: bed930c53ead2c4b83ca5c6b9e5cd5b3
     GuidInternal: 
-    m_lastTime: -8586179232251626160
+    m_lastTime: -8586178315553724971
     List:
     - name: Play_Music_Loose
       guid: 7602c7eb88d2d04cb375bffcda8bfebe
@@ -160,19 +149,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: e316d4176dcdd946919c6a078135fbca
     GuidInternal: 
-    m_lastTime: -8586179180346591230
+    m_lastTime: -8586177613872275052
     List:
-    - name: Catapult_Hit
-      guid: 05c94f625997c54ab95d37b23cfbe26d
-      id: 1548123135
+    - name: Amb_Forge
+      guid: a2c647c1b4b5e84cb7eb75a127b537c2
+      id: 3017358643
       PathAndIcons:
       - ElementName: SD Event
         ObjectType: 12
-      - ElementName: Battlefield
+      - ElementName: Ambiance
         ObjectType: 4
-      - ElementName: Catapult_Hit
+      - ElementName: Forge
+        ObjectType: 4
+      - ElementName: Amb_Forge
         ObjectType: 3
-      Path: SD Event\Battlefield\Catapult_Hit
+      Path: SD Event\Ambiance\Forge\Amb_Forge
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -187,22 +178,6 @@ MonoBehaviour:
       - ElementName: Foley_Door
         ObjectType: 3
       Path: SD Event\Foley\Foley_Door
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Forge_Fire_Loop
-      guid: a2c647c1b4b5e84cb7eb75a127b537c2
-      id: 870714546
-      PathAndIcons:
-      - ElementName: SD Event
-        ObjectType: 12
-      - ElementName: Ambiance
-        ObjectType: 4
-      - ElementName: Forge
-        ObjectType: 4
-      - ElementName: Forge_Fire_Loop
-        ObjectType: 3
-      Path: SD Event\Ambiance\Forge\Forge_Fire_Loop
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -372,6 +347,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Start_Catapult_Hit
+      guid: 05c94f625997c54ab95d37b23cfbe26d
+      id: 1807806072
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Start_Catapult_Hit
+        ObjectType: 3
+      Path: SD Event\Battlefield\Start_Catapult_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_Ambiance
       guid: 2cc101567465714285034a2e0e8c671f
       id: 2839405212
@@ -381,6 +370,20 @@ MonoBehaviour:
       - ElementName: Stop_Ambiance
         ObjectType: 3
       Path: SD Event\Stop_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Catapult_Hit
+      guid: f68966b8df79fa47a6d609209c6c934a
+      id: 1075360662
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Stop_Catapult_Hit
+        ObjectType: 3
+      Path: SD Event\Battlefield\Stop_Catapult_Hit
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -426,17 +429,31 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: UI_HammerHit
-      guid: c1ce16eed73a174c8da86a72f6a59110
-      id: 2200300695
+    - name: UI_GameStart
+      guid: 60a3afafde144b40aad89254147f675e
+      id: 2329456136
       PathAndIcons:
       - ElementName: SD Event
         ObjectType: 12
       - ElementName: UI
         ObjectType: 4
-      - ElementName: UI_HammerHit
+      - ElementName: UI_GameStart
         ObjectType: 3
-      Path: SD Event\UI\UI_HammerHit
+      Path: SD Event\UI\UI_GameStart
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_HammerClick
+      guid: c1ce16eed73a174c8da86a72f6a59110
+      id: 2751239240
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: UI_HammerClick
+        ObjectType: 3
+      Path: SD Event\UI\UI_HammerClick
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -520,13 +537,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1c6b60f8ee18ec4a85cda6a1964f4a72
     GuidInternal: 
-    m_lastTime: -8586179232252251012
+    m_lastTime: -8586178637340742121
     List: []
   - PhysicalPath: Game Parameters\SD RTPC.wwu
     ParentPhysicalPath: 
     guid: b29af84eb82ce6438960835af96fc5cb
     GuidInternal: 
-    m_lastTime: -8586179232252251012
+    m_lastTime: -8586178637340242230
     List:
     - name: Intensity
       guid: baddd7195a0b4c4888615536033a132d
@@ -557,13 +574,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8047eb3c6c82ab4fac7c82bee5c5928b
     GuidInternal: 
-    m_lastTime: -8586179232251782375
+    m_lastTime: -8586178637340541066
     List: []
   - PhysicalPath: States\SD States.wwu
     ParentPhysicalPath: 
     guid: 8e360da26bc06e448018c308ac7caf63
     GuidInternal: 
-    m_lastTime: -8586179194001615944
+    m_lastTime: -8586178637340341649
     List:
     - name: BattleIntensity
       guid: a90a35664c3c55468782643086f24cb7
@@ -687,13 +704,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: fedf941db3de6d40a1ce6af5a85ef0ba
     GuidInternal: 
-    m_lastTime: -8586179232255565932
+    m_lastTime: -8586178637340813418
     List: []
   - PhysicalPath: Switches\SD Switches.wwu
     ParentPhysicalPath: 
     guid: 6a5b517a9dd4a847b1d84208107185d6
     GuidInternal: 
-    m_lastTime: -8586179232255409758
+    m_lastTime: -8586178637340441904
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -704,7 +721,9 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /GGJ_WwiseProject
+  - /GGJ_WwiseProject/Events
+  - /GGJ_WwiseProject/Events/SD Event
+  - /GGJ_WwiseProject/Events/SD Event/Battlefield
   - /GGJ_WwiseProject/SoundBanks
-  - /GGJ_WwiseProject/SoundBanks/Main_SNB
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

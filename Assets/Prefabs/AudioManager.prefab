@@ -254,8 +254,13 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 79cbf970d55988b479952e7496dd8329,
       type: 2}
-  CatapultHit:
+  StartCatapultHit:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: fe75597c69b4277478c2f4aa4b8790d5,
+      type: 2}
+  StopCatapultHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 568bc7bc87710984b97fa84f536edca6,
       type: 2}
