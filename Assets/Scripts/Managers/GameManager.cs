@@ -234,16 +234,8 @@ public class GameManager : MonoBehaviour
         if((outEvent.onlyTriggerInWaitPhase && phaseHelper.isWaitPhase) || !outEvent.onlyTriggerInWaitPhase){
             if(outEvent.isUp){
                 Debug.Log("Sound should be played");
-                //outEvent.TryTrigger()?.Post(gameObject);
-                AudioSource src = GetComponent<AudioSource>(); 
-                AudioClip clip =  outEvent.TryTrigger();
-                if(clip){
-                    src.PlayOneShot(clip);
-                    if(outEvent.screenShakeAmount != 0.0f)
-                        EffectManager.instance.screenShake.Shake(1f, outEvent.screenShakeAmount);
-                    if(outEvent.vignetteAmount != 0.0f)
-                        EffectManager.instance.Vign(1f, outEvent.vignetteAmount);
-                }
+
+                outEvent.TryTrigger(gameObject);
 
                 yield return new WaitForSeconds(outEvent.currentCooldown);
                 StartCoroutine(OutsideEventCoroutine(outEvent));

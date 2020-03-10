@@ -42,15 +42,27 @@ public class ParticleEvent : OutsideEvent
         }
     }
 
-    public override AudioClip TryTrigger()
+    public override bool TryTrigger(GameObject go)
     {
         ResetPositions();
-        if(base.TryTrigger() != null)
-        {
-            RandomOffsets();
+        refreshTime = Time.time;
+        if (Random.Range(0, 1) <= triggerChance) {
+            currentCooldown = Random.Range(catapultCooldownRange.x, catapultCooldownRange.y);
 
-            return clip;
+            AudioManager.instance.outsideEvents[(int)eventSFX].Post(go, (uint)AkCallbackType.AK_MusicSyncUserCue, CallbackFunction);
+
+            return true;
         }
-        return null;
+        return false;
+    }
+
+    public override void CallbackFunction(object in_cookie, AkCallbackType in_type, object in_info)
+    {
+        if (screenShakeAmount != 0.0f)
+            EffectManager.instance.screenShake.Shake(1f, screenShakeAmount);
+        if (vignetteAmount != 0.0f)
+            EffectManager.instance.Vign(1f, vignetteAmount);
+
+        RandomOffsets();
     }
 }

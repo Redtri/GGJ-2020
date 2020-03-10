@@ -27,9 +27,7 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event StopAll;
     public AK.Wwise.Event LivingEvent;
     public AK.Wwise.Event Restart;
-    public AK.Wwise.Event StartCatapultHit;
-    public AK.Wwise.Event StopCatapultHit;
-
+    public AK.Wwise.Event[] outsideEvents;
 
     public static AudioManager instance;
 
@@ -70,7 +68,6 @@ public class AudioManager : MonoBehaviour
     {
         IntensityExtreme.Post(gameObject);
     }
-
 
     // Start is called before the first frame update
     void Start()
