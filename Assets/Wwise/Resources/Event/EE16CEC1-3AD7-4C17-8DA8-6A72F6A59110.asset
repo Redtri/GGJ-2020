@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630bd66eb738c6343bb0e3dc5e494528, type: 3}
   m_Name: EE16CEC1-3AD7-4C17-8DA8-6A72F6A59110
   m_EditorClassIdentifier: 
-  objectName: UI_HammerHit
-  id: 2200300695
+  objectName: UI_HammerClick
+  id: 2751239240
   guid: EE16CEC1-3AD7-4C17-8DA8-6A72F6A59110

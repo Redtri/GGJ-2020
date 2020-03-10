@@ -351,15 +351,13 @@ public class GameManager : MonoBehaviour
                 gameOver = true;
                 Debug.Log("WIN!");
                 //Sound
-                AudioManager.instance.MusicWin.Post(gameObject);
-                AudioManager.instance.SetIntensityCalm();
+                AudioManager.instance.MusicWin.Post(AudioManager.instance.gameObject);
             }
             else if( winRatio <= winLoseAlive) {
                 gameOver = true;
                 Debug.Log("LOSE");
                 //Sound
-                AudioManager.instance.MusicLoose.Post(gameObject);
-                AudioManager.instance.SetIntensityCalm();
+                AudioManager.instance.MusicLoose.Post(AudioManager.instance.gameObject);
             }
         }
     }

@@ -24,6 +24,13 @@
     "Path": "SFX_SNB.bnk",
     "IncludedEvents": [
      {
+      "Id": "3017358643",
+      "Name": "Amb_Forge",
+      "ObjectPath": "\\Events\\SD Event\\Ambiance\\Forge\\Amb_Forge",
+      "GUID": "{C147C6A2-B5B4-4CE8-B7EB-75A127B537C2}",
+      "DurationType": "Infinite"
+     },
+     {
       "Id": "3332999173",
       "Name": "Foley_Door",
       "ObjectPath": "\\Events\\SD Event\\Foley\\Foley_Door",
@@ -31,13 +38,6 @@
       "DurationType": "OneShot",
       "DurationMin": "3.948854",
       "DurationMax": "4.287714"
-     },
-     {
-      "Id": "870714546",
-      "Name": "Forge_Fire_Loop",
-      "ObjectPath": "\\Events\\SD Event\\Ambiance\\Forge\\Forge_Fire_Loop",
-      "GUID": "{C147C6A2-B5B4-4CE8-B7EB-75A127B537C2}",
-      "DurationType": "Infinite"
      },
      {
       "Id": "2839405212",
@@ -77,9 +77,9 @@
       "DurationMax": "0.950754"
      },
      {
-      "Id": "2200300695",
-      "Name": "UI_HammerHit",
-      "ObjectPath": "\\Events\\SD Event\\UI\\UI_HammerHit",
+      "Id": "2751239240",
+      "Name": "UI_HammerClick",
+      "ObjectPath": "\\Events\\SD Event\\UI\\UI_HammerClick",
       "GUID": "{EE16CEC1-3AD7-4C17-8DA8-6A72F6A59110}",
       "DurationType": "OneShot",
       "DurationMin": "0.485443",
@@ -91,8 +91,8 @@
       "ObjectPath": "\\Events\\SD Event\\UI\\UI_LivingEvent",
       "GUID": "{93134628-CB60-4246-B0C2-0427C17FBCB0}",
       "DurationType": "OneShot",
-      "DurationMin": "1.495992",
-      "DurationMax": "3.085630"
+      "DurationMin": "1.513375",
+      "DurationMax": "3.035630"
      },
      {
       "Id": "2628486379",
@@ -109,8 +109,8 @@
       "ObjectPath": "\\Events\\SD Event\\UI\\UI_Validate",
       "GUID": "{502C1C04-4231-46D5-A310-E4306911A28E}",
       "DurationType": "OneShot",
-      "DurationMin": "2.713554",
-      "DurationMax": "2.874910"
+      "DurationMin": "2.743554",
+      "DurationMax": "2.904910"
      }
     ],
     "IncludedMemoryFiles": [
@@ -1828,16 +1828,6 @@
       "DurationType": "OneShot",
       "DurationMin": "9.711509",
       "DurationMax": "9.711509"
-     },
-     {
-      "Id": "4236667796",
-      "Name": "Set_IntensityCalm",
-      "ObjectPath": "\\Events\\SD Event\\Battlefield\\Set_IntensityCalm",
-      "GUID": "{325E9F86-6444-4E95-A86F-13B4F2443A5E}",
-      "MaxAttenuation": "0.000000",
-      "DurationType": "OneShot",
-      "DurationMin": "0.000000",
-      "DurationMax": "0.000000"
      }
     ],
     "IncludedMemoryFiles": [

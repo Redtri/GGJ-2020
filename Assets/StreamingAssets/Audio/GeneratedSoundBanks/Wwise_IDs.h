@@ -13,9 +13,9 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_FORGE = 3017358643U;
         static const AkUniqueID CATAPULT_HIT = 1548123135U;
         static const AkUniqueID FOLEY_DOOR = 3332999173U;
-        static const AkUniqueID FORGE_FIRE_LOOP = 870714546U;
         static const AkUniqueID PLAY_BATTLEFIELDAMBIANCE = 3316639316U;
         static const AkUniqueID PLAY_MUSIC_LOOSE = 3640900608U;
         static const AkUniqueID PLAY_MUSIC_SPLASHSCREEN = 2524099115U;
@@ -31,7 +31,7 @@ namespace AK
         static const AkUniqueID UI_ADDITEM = 2921734634U;
         static const AkUniqueID UI_DEATHEVENT = 802821452U;
         static const AkUniqueID UI_DIALEVENT = 3688695384U;
-        static const AkUniqueID UI_HAMMERHIT = 2200300695U;
+        static const AkUniqueID UI_HAMMERCLICK = 2751239240U;
         static const AkUniqueID UI_LIVINGEVENT = 4012865327U;
         static const AkUniqueID UI_REMOVEITEM = 2628486379U;
         static const AkUniqueID UI_VALIDATE = 873092944U;
@@ -97,23 +97,25 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID ADDITEM = 2127285419U;
-        static const AkUniqueID AMBIANCE_BATTLEFIELD = 3005663867U;
-        static const AkUniqueID AMBIANCE_FORGE = 1444523224U;
-        static const AkUniqueID BATTLEFIELD_DRY = 1210761507U;
+        static const AkUniqueID AMB_BATTLEFIELD = 3665832216U;
+        static const AkUniqueID AMB_FORGE = 3017358643U;
+        static const AkUniqueID AMBIANCE = 2981377429U;
+        static const AkUniqueID AUX = 983310469U;
+        static const AkUniqueID FOLEY_FORGE = 2919630506U;
         static const AkUniqueID FOLEYS = 4035004657U;
         static const AkUniqueID FORGE = 12377074U;
         static const AkUniqueID HAMMER = 703486095U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
-        static const AkUniqueID SFX_GENERAL = 515334391U;
+        static const AkUniqueID SOUND_DESIGN = 4134381996U;
         static const AkUniqueID UI = 1551306167U;
+        static const AkUniqueID UI_FORGE = 2605541363U;
         static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES
     {
-        static const AkUniqueID BATTLEFIELD_FILTERED = 1550058001U;
         static const AkUniqueID RVB_BATTLEFIELD = 1775981102U;
         static const AkUniqueID RVB_FORGE = 3907231393U;
     } // namespace AUX_BUSSES

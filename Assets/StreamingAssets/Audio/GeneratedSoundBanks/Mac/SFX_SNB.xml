@@ -13,16 +13,16 @@
 			<ShortName>SFX_SNB</ShortName>
 			<Path>SFX_SNB.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3017358643" Name="Amb_Forge" ObjectPath="\Events\SD Event\Ambiance\Forge\Amb_Forge" GUID="{C147C6A2-B5B4-4CE8-B7EB-75A127B537C2}" DurationType="Infinite"/>
 				<Event Id="3332999173" Name="Foley_Door" ObjectPath="\Events\SD Event\Foley\Foley_Door" GUID="{BBEF8F7F-71EF-4453-ACC6-E9B6073B5058}" DurationType="OneShot" DurationMin="3.948854" DurationMax="4.287714"/>
-				<Event Id="870714546" Name="Forge_Fire_Loop" ObjectPath="\Events\SD Event\Ambiance\Forge\Forge_Fire_Loop" GUID="{C147C6A2-B5B4-4CE8-B7EB-75A127B537C2}" DurationType="Infinite"/>
 				<Event Id="2839405212" Name="Stop_Ambiance" ObjectPath="\Events\SD Event\Stop_Ambiance" GUID="{5601C12C-6574-4271-8503-4A2E0E8C671F}" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2921734634" Name="UI_AddItem" ObjectPath="\Events\SD Event\UI\UI_AddItem" GUID="{5FC3F607-0D6A-4A0C-A391-3ACCC1A6D114}" DurationType="OneShot" DurationMin="0.747152" DurationMax="1.139421"/>
 				<Event Id="802821452" Name="UI_DeathEvent" ObjectPath="\Events\SD Event\UI\UI_DeathEvent" GUID="{2C7847EE-DB03-407A-B4F4-6BCD9E314900}" DurationType="OneShot" DurationMin="1.495992" DurationMax="5.099989"/>
 				<Event Id="3688695384" Name="UI_DialEvent" ObjectPath="\Events\SD Event\UI\UI_DialEvent" GUID="{40687C9C-D309-40C3-B1A6-659B5F931EBC}" DurationType="OneShot" DurationMin="0.929038" DurationMax="0.950754"/>
-				<Event Id="2200300695" Name="UI_HammerHit" ObjectPath="\Events\SD Event\UI\UI_HammerHit" GUID="{EE16CEC1-3AD7-4C17-8DA8-6A72F6A59110}" DurationType="OneShot" DurationMin="0.485443" DurationMax="0.733529"/>
-				<Event Id="4012865327" Name="UI_LivingEvent" ObjectPath="\Events\SD Event\UI\UI_LivingEvent" GUID="{93134628-CB60-4246-B0C2-0427C17FBCB0}" DurationType="OneShot" DurationMin="1.495992" DurationMax="3.085630"/>
+				<Event Id="2751239240" Name="UI_HammerClick" ObjectPath="\Events\SD Event\UI\UI_HammerClick" GUID="{EE16CEC1-3AD7-4C17-8DA8-6A72F6A59110}" DurationType="OneShot" DurationMin="0.485443" DurationMax="0.733529"/>
+				<Event Id="4012865327" Name="UI_LivingEvent" ObjectPath="\Events\SD Event\UI\UI_LivingEvent" GUID="{93134628-CB60-4246-B0C2-0427C17FBCB0}" DurationType="OneShot" DurationMin="1.513375" DurationMax="3.035630"/>
 				<Event Id="2628486379" Name="UI_RemoveItem" ObjectPath="\Events\SD Event\UI\UI_RemoveItem" GUID="{A907C898-ACAE-4D35-A855-64AF947963DC}" DurationType="OneShot" DurationMin="0.498438" DurationMax="0.564884"/>
-				<Event Id="873092944" Name="UI_Validate" ObjectPath="\Events\SD Event\UI\UI_Validate" GUID="{502C1C04-4231-46D5-A310-E4306911A28E}" DurationType="OneShot" DurationMin="2.713554" DurationMax="2.874910"/>
+				<Event Id="873092944" Name="UI_Validate" ObjectPath="\Events\SD Event\UI\UI_Validate" GUID="{502C1C04-4231-46D5-A310-E4306911A28E}" DurationType="OneShot" DurationMin="2.743554" DurationMax="2.904910"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="2209506" Language="SFX">
