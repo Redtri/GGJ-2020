@@ -36,5 +36,7 @@ public class OutsideEvent
             EffectManager.instance.screenShake.Shake(1f, screenShakeAmount);
         if (vignetteAmount != 0.0f)
             EffectManager.instance.Vign(1f, vignetteAmount);
+
+        
     }
 }

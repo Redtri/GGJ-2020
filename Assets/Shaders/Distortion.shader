@@ -84,7 +84,7 @@ Shader "Unlit/Distortion"
                 }
                 float mescouilles = col.rg;
 
-                if(mescouilles >= 0.9){
+                if(mescouilles >= 0.99){
                     col.a = 0;
                 }
                 //col.a = .9;

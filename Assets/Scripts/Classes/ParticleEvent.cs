@@ -33,10 +33,11 @@ public class ParticleEvent : OutsideEvent
     private void RandomOffsets(bool playSystems = true)
     {
         for(int i = 0; i < particleSystems.Count; ++i){
-            particleSystems[i].system.transform.position += new Vector3(Random.Range(particleSystems[i].minRandomOffset.x, particleSystems[i].maxRandomOffset.x),
-                                                                        Random.Range(particleSystems[i].minRandomOffset.y, particleSystems[i].maxRandomOffset.y),
-                                                                        Random.Range(particleSystems[i].minRandomOffset.z, particleSystems[i].maxRandomOffset.z)
-                                                                    );
+            if(!particleSystems[i].system.isPlaying)
+                particleSystems[i].system.transform.position += new Vector3(Random.Range(particleSystems[i].minRandomOffset.x, particleSystems[i].maxRandomOffset.x),
+                                                                            Random.Range(particleSystems[i].minRandomOffset.y, particleSystems[i].maxRandomOffset.y),
+                                                                            Random.Range(particleSystems[i].minRandomOffset.z, particleSystems[i].maxRandomOffset.z)
+                                                                        );
             if(playSystems)
                 particleSystems[i].system.Play(true);
         }
