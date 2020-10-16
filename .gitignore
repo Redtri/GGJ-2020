@@ -67,3 +67,7 @@ crashlytics-build.properties
 *.validationcache
 [Aa]ssets/WwiseSettings.xml
 [Aa]ssets/WwiseSettings.xml.meta
+
+Packages/manifest.json
+
+ProjectSettings/ProjectVersion.txt
