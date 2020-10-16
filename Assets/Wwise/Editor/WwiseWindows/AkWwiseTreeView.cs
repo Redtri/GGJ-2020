@@ -16,19 +16,11 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 
 	public AkWwiseTreeView()
 	{
-#if UNITY_2017_2_OR_NEWER
 		UnityEditor.EditorApplication.playModeStateChanged += (UnityEditor.PlayModeStateChange playMode) =>
 		{
 			if (playMode == UnityEditor.PlayModeStateChange.ExitingEditMode)
 				SaveExpansionStatus();
 		};
-#else
-		UnityEditor.EditorApplication.playmodeStateChanged += () =>
-		{
-			if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && !UnityEditor.EditorApplication.isPlaying)
-				SaveExpansionStatus();
-		};
-#endif
 	}
 
 	public class AkTreeInfo
@@ -51,20 +43,31 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 	private AK.Wwise.TreeView.TreeViewItem AddPathToTreeItem(AK.Wwise.TreeView.TreeViewItem item,
 		AkWwiseProjectData.AkInformation AkInfo)
 	{
+		return AddPathToTreeItem(item, AkInfo.Guid, AkInfo.PathAndIcons);
+	}
+
+	private AK.Wwise.TreeView.TreeViewItem AddPathToTreeItem(AK.Wwise.TreeView.TreeViewItem item,
+		AkWwiseProjectData.AkInfoWorkUnit AkInfo)
+	{
+		return AddPathToTreeItem(item, AkInfo.Guid, AkInfo.PathAndIcons);
+	}
+
+	private AK.Wwise.TreeView.TreeViewItem AddPathToTreeItem(AK.Wwise.TreeView.TreeViewItem item, System.Guid itemGuid,
+		System.Collections.Generic.List<AkWwiseProjectData.PathElement> pathAndIcons)
+	{
 		var parentItem = item;
 
 		var path = "/" + RootItem.Header + "/" + item.Header;
-
-		for (var i = 0; i < AkInfo.PathAndIcons.Count; i++)
+		for (var i = 0; i < pathAndIcons.Count; i++)
 		{
-			var PathElem = AkInfo.PathAndIcons[i];
+			var PathElem = pathAndIcons[i];
 			var childItem = parentItem.FindItemByName(PathElem.ElementName);
 
 			path = path + "/" + PathElem.ElementName;
 
 			if (childItem == null)
 			{
-				if (i != AkInfo.PathAndIcons.Count - 1)
+				if (i != pathAndIcons.Count - 1)
 				{
 					childItem = parentItem.AddItem(PathElem.ElementName,
 						new AkTreeInfo(System.Guid.Empty, PathElem.ObjectType), GetExpansionStatus(path));
@@ -72,9 +75,12 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 				else
 				{
 					var isDraggable = !(PathElem.ObjectType == WwiseObjectType.StateGroup ||
-					                    PathElem.ObjectType == WwiseObjectType.SwitchGroup);
+										PathElem.ObjectType == WwiseObjectType.SwitchGroup ||
+										PathElem.ObjectType == WwiseObjectType.Folder ||
+										PathElem.ObjectType == WwiseObjectType.Bus ||
+										PathElem.ObjectType == WwiseObjectType.WorkUnit);
 					childItem = parentItem.AddItem(PathElem.ElementName, isDraggable, GetExpansionStatus(path),
-						new AkTreeInfo(AkInfo.Guid, PathElem.ObjectType));
+						new AkTreeInfo(itemGuid, PathElem.ObjectType));
 				}
 			}
 
@@ -103,14 +109,20 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 
 		foreach (var wwu in workUnits)
 		{
-			foreach (var akInfo in wwu.List)
-				AddHandlerEvents(AddPathToTreeItem(attachPoint, akInfo));
-		}
-
+            if (wwu.List.Count > 0)
+            {
+                foreach (var akInfo in wwu.List)
+				    AddHandlerEvents(AddPathToTreeItem(attachPoint, akInfo));
+            }
+            else
+            {
+				AddHandlerEvents(AddPathToTreeItem(attachPoint, wwu));
+            }
+        }
 		AddHandlerEvents(attachPoint);
 	}
-
-	public void PopulateItem(AK.Wwise.TreeView.TreeViewItem attachTo, string itemName,
+	
+    public void PopulateItem(AK.Wwise.TreeView.TreeViewItem attachTo, string itemName,
 		System.Collections.Generic.List<AkWwiseProjectData.EventWorkUnit> Events)
 	{
 		var akInfoWwu = new System.Collections.Generic.List<AkWwiseProjectData.AkInfoWorkUnit>(Events.Count);
@@ -118,9 +130,10 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 		{
 			akInfoWwu.Add(new AkWwiseProjectData.AkInfoWorkUnit());
 			akInfoWwu[i].PhysicalPath = Events[i].PhysicalPath;
-			akInfoWwu[i].ParentPhysicalPath = Events[i].ParentPhysicalPath;
+			akInfoWwu[i].ParentPath = Events[i].ParentPath;
+			akInfoWwu[i].PathAndIcons= Events[i].PathAndIcons;
 			akInfoWwu[i].Guid = Events[i].Guid;
-			akInfoWwu[i].List = Events[i].List.ConvertAll(x => (AkWwiseProjectData.AkInformation) x);
+            akInfoWwu[i].List = Events[i].List.ConvertAll(x => (AkWwiseProjectData.AkInformation) x);
 		}
 
 		PopulateItem(attachTo, itemName, akInfoWwu);
@@ -150,10 +163,10 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 		AddHandlerEvents(attachPoint);
 	}
 
-	/// <summary>
-	///     Handler functions for TreeViewControl
-	/// </summary>
-	private void AddHandlerEvents(AK.Wwise.TreeView.TreeViewItem item)
+    /// <summary>
+    ///     Handler functions for TreeViewControl
+    /// </summary>
+    private void AddHandlerEvents(AK.Wwise.TreeView.TreeViewItem item)
 	{
 		// Uncomment this when we support right click
 		item.Click = HandleClick;
@@ -394,7 +407,7 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 		{
 			var saveWordWrap = UnityEngine.GUI.skin.label.wordWrap;
 			UnityEngine.GUI.skin.label.wordWrap = true;
-			UnityEngine.GUILayout.Label(string.Format("Wwise Project not found at path:\n{0}\n\nWwise Picker will not be usable.", AkUtilities.GetFullPath(UnityEngine.Application.dataPath, WwiseSetupWizard.Settings.WwiseProjectPath)), UnityEngine.GUILayout.ExpandHeight(true));
+			UnityEngine.GUILayout.Label(string.Format("Wwise Project not found at path:\n{0}\n\nWwise Picker will not be usable.", AkUtilities.GetFullPath(UnityEngine.Application.dataPath, AkWwiseEditorSettings.Instance.WwiseProjectPath)), UnityEngine.GUILayout.ExpandHeight(true));
 			UnityEngine.GUI.skin.label.wordWrap = saveWordWrap;
 		}
 	}

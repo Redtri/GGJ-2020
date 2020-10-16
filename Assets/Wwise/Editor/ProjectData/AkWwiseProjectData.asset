@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: 83404a80d18b054cb8952c608ddca69a
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586179232251469949
+    m_lastTime: -8585988363218441115
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: 97146d908d069441a767de55422c3069
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178292598995818
+    m_lastTime: -8585988363225189375
     List:
     - name: RVB_Battlefield
       guid: 6e6a932451353242a95f3a08cb381711
@@ -58,16 +60,18 @@ MonoBehaviour:
       Path: Default Work Unit\Master Audio Bus\Sound Design\Aux\RVB_Forge
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: bca94500ef218b468f5c737fd6c07495
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586179232251001297
+    m_lastTime: -8585988363219362771
     List: []
   - PhysicalPath: SoundBanks\Main_SNB.wwu
-    ParentPhysicalPath: 
-    guid: d99ddfa74f0ca64e974551f6fc467fff
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586177614012672622
+    m_lastTime: -8585988363219482633
     List:
     - name: Battlefield_SNB
       guid: 2a7fffb18f8bab468d5d8972d113e9de
@@ -98,16 +102,18 @@ MonoBehaviour:
       Path: Main_SNB\SFX_SNB
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: 2ddaebbf4eb71c43a3d5a96f22b4ea18
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586179232251469949
+    m_lastTime: -8585988363225548543
     List: []
   - PhysicalPath: Events\Music Event.wwu
-    ParentPhysicalPath: 
-    guid: bed930c53ead2c4b83ca5c6b9e5cd5b3
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178315553724971
+    m_lastTime: -8585988363219562502
     List:
     - name: Play_Music_Loose
       guid: 7602c7eb88d2d04cb375bffcda8bfebe
@@ -146,10 +152,11 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
   - PhysicalPath: Events\SD Event.wwu
-    ParentPhysicalPath: 
-    guid: e316d4176dcdd946919c6a078135fbca
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586177613872275052
+    m_lastTime: -8585988363219801834
     List:
     - name: Amb_Forge
       guid: a2c647c1b4b5e84cb7eb75a127b537c2
@@ -164,6 +171,20 @@ MonoBehaviour:
       - ElementName: Amb_Forge
         ObjectType: 3
       Path: SD Event\Ambiance\Forge\Amb_Forge
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Catapult_Event
+      guid: 05c94f625997c54ab95d37b23cfbe26d
+      id: 1385432048
+      PathAndIcons:
+      - ElementName: SD Event
+        ObjectType: 12
+      - ElementName: Battlefield
+        ObjectType: 4
+      - ElementName: Catapult_Event
+        ObjectType: 3
+      Path: SD Event\Battlefield\Catapult_Event
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -347,20 +368,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Start_Catapult_Hit
-      guid: 05c94f625997c54ab95d37b23cfbe26d
-      id: 1807806072
-      PathAndIcons:
-      - ElementName: SD Event
-        ObjectType: 12
-      - ElementName: Battlefield
-        ObjectType: 4
-      - ElementName: Start_Catapult_Hit
-        ObjectType: 3
-      Path: SD Event\Battlefield\Start_Catapult_Hit
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Stop_Ambiance
       guid: 2cc101567465714285034a2e0e8c671f
       id: 2839405212
@@ -370,20 +377,6 @@ MonoBehaviour:
       - ElementName: Stop_Ambiance
         ObjectType: 3
       Path: SD Event\Stop_Ambiance
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Stop_Catapult_Hit
-      guid: f68966b8df79fa47a6d609209c6c934a
-      id: 1075360662
-      PathAndIcons:
-      - ElementName: SD Event
-        ObjectType: 12
-      - ElementName: Battlefield
-        ObjectType: 4
-      - ElementName: Stop_Catapult_Hit
-        ObjectType: 3
-      Path: SD Event\Battlefield\Stop_Catapult_Hit
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -501,10 +494,11 @@ MonoBehaviour:
       minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: b451e9eaee128d41bb3fb0a1485690c6
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586179227730941355
+    m_lastTime: -8585988363219282887
     List:
     - name: masterVolume
       guid: 43ea94c23bbd24428c206333345c8fd3
@@ -534,16 +528,18 @@ MonoBehaviour:
         ObjectType: 13
       Path: Default Work Unit\SFXVolume
   - PhysicalPath: Game Parameters\Music RTPC.wwu
-    ParentPhysicalPath: 
-    guid: 1c6b60f8ee18ec4a85cda6a1964f4a72
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178637340742121
+    m_lastTime: -8585988363219242922
     List: []
   - PhysicalPath: Game Parameters\SD RTPC.wwu
-    ParentPhysicalPath: 
-    guid: b29af84eb82ce6438960835af96fc5cb
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178637340242230
+    m_lastTime: -8585988363219322841
     List:
     - name: Intensity
       guid: baddd7195a0b4c4888615536033a132d
@@ -565,22 +561,25 @@ MonoBehaviour:
       Path: SD RTPC\SideChain
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: ed900ebd7887d644969fa8e625fab224
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586179232251782375
+    m_lastTime: -8585988363219402740
     List: []
   - PhysicalPath: States\Music States.wwu
-    ParentPhysicalPath: 
-    guid: 8047eb3c6c82ab4fac7c82bee5c5928b
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178637340541066
+    m_lastTime: -8585988363219282887
     List: []
   - PhysicalPath: States\SD States.wwu
-    ParentPhysicalPath: 
-    guid: 8e360da26bc06e448018c308ac7caf63
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178637340341649
+    m_lastTime: -8585988363218843476
     List:
     - name: BattleIntensity
       guid: a90a35664c3c55468782643086f24cb7
@@ -695,35 +694,34 @@ MonoBehaviour:
       valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: a298b2434f03514dab6f9bc5def32644
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586179232255409758
+    m_lastTime: -8585988363225628786
     List: []
   - PhysicalPath: Switches\Music Switches.wwu
-    ParentPhysicalPath: 
-    guid: fedf941db3de6d40a1ce6af5a85ef0ba
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178637340813418
+    m_lastTime: -8585988363225548543
     List: []
   - PhysicalPath: Switches\SD Switches.wwu
-    ParentPhysicalPath: 
-    guid: 6a5b517a9dd4a847b1d84208107185d6
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586178637340441904
+    m_lastTime: -8585988363219522576
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
-    ParentPhysicalPath: 
-    guid: 8ffa731843216a40bb39eadf9f8c7eae
+    PathAndIcons: []
+    ParentPath: 
+    guid: 00000000000000000000000000000000
     GuidInternal: 
-    m_lastTime: -8586179232256659463
+    m_lastTime: -8585988363218561193
     List: []
-  ExpandedItems:
-  - /GGJ_WwiseProject
-  - /GGJ_WwiseProject/Events
-  - /GGJ_WwiseProject/Events/SD Event
-  - /GGJ_WwiseProject/Events/SD Event/Battlefield
-  - /GGJ_WwiseProject/SoundBanks
+  ExpandedItems: []
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

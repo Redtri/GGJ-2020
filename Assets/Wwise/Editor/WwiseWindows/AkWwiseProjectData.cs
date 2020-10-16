@@ -261,7 +261,10 @@ public class AkWwiseProjectData : UnityEngine.ScriptableObject
 	public class WorkUnit : System.IComparable
 	{
 		public string PhysicalPath;
-		public string ParentPhysicalPath;
+		public System.Collections.Generic.List<PathElement> PathAndIcons = new System.Collections.Generic.List<PathElement>();
+
+		[UnityEngine.Serialization.FormerlySerializedAs("ParentPhysicalPath")]
+		public string ParentPath;
 
 		[UnityEngine.HideInInspector]
 		[UnityEngine.SerializeField]
@@ -311,10 +314,13 @@ public class AkWwiseProjectData : UnityEngine.ScriptableObject
 
 			return PhysicalPath.CompareTo(otherWwu.PhysicalPath);
 		}
+
+
+		public virtual System.Collections.ArrayList GetChildrenArrayList() { return null; }
 	}
 
 	[System.Serializable]
-	public class GenericWorkUnit<T> : WorkUnit where T : AkBaseInformation
+	public class GenericWorkUnit<T> : WorkUnit where T : AkInformation
 	{
 		public System.Collections.Generic.List<T> List = new System.Collections.Generic.List<T>();
 
@@ -325,6 +331,11 @@ public class AkWwiseProjectData : UnityEngine.ScriptableObject
 					return item;
 
 			return null;
+		}
+
+		public override System.Collections.ArrayList GetChildrenArrayList()
+		{
+			return System.Collections.ArrayList.Adapter(List);
 		}
 	}
 
